@@ -9,9 +9,10 @@
   "rules": {
     "react/prop-types": 0,
     "no-console": "off",
-    "quotes": [2, "single", { "avoidEscape": true }]
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "module-resolver/use-alias": 2
   },
-  "plugins": ["react", "import"],
+  "plugins": ["react", "import", "module-resolver"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2018,
