@@ -1,4 +1,4 @@
-# React Component Library
+# React component library for Directories project
 
 > **List of the technologies used in the project:**
 
@@ -17,7 +17,7 @@
 > ### Preview Components
 
 - `$ npm start`
-  - _live reloading and preview of the components at http://localhost:6060_
+  - _live reloading and preview of the components at `http://localhost:6060`_
 
 > ### Testing
 
@@ -28,7 +28,7 @@
 **Note: Update the package version in [`package.json`](https://github.com/moneyadviceservice/react_library/package.json) before building**
 
 - `$ npm run prepublishOnly`
-  - _cleanup and rebuild the files in the lib directory_
+  - _cleanup and rebuild the files in the `lib` directory_
 - `$ npm run postbuild`
   - _shows the contents of the package that will be published to NPM_
 
@@ -37,3 +37,8 @@
 - `$ npm login`
   - _use maps credentials in keypass to sign in_
 - `$ npm publish`
+
+> ### Build the Documentation
+
+- `$ npm run docs:build`
+  - _generate the Styleguidist documentation to the `dist-docs` directory_

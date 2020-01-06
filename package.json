@@ -11,6 +11,7 @@
   "scripts": {
     "start": "styleguidist server",
     "test": "jest",
+    "docs:build": "styleguidist build",
     "build": "rollup -c",
     "prepublishOnly": "rm -rf lib && npm run build",
     "postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"

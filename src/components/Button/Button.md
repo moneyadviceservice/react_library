@@ -1,7 +1,7 @@
 A very simple button.
 
 ```jsx
-import Button from './index';
+import { Button } from '@maps/react_library';
 
-<Button text="We Salute You!" />;
+<Button text='I MUST BE DREAMING' />
 ```
