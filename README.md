@@ -1,6 +1,7 @@
 # React component library for Directories project
+![Travis (.org)](https://img.shields.io/travis/moneyadviceservice/react_library)
 
-> **List of the technologies used in the project:**
+**List of the technologies used in the project:**
 
 - [React](https://reactjs.org/) for creating components and styled-components for styling;
 - [Styleguidist](https://react-styleguidist.js.org/) for both live development and generating documentation;
@@ -25,7 +26,7 @@
 
 > ### Build for Production
 
-**Note: Update the package version in [`package.json`](https://github.com/moneyadviceservice/react_library/package.json) before building**
+**Note:** Update the package version in [`package.json`](https://github.com/moneyadviceservice/react_library/package.json) before building
 
 - `$ npm run prepublishOnly`
   - _cleanup and rebuild the files in the `lib` directory_
