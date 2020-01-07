@@ -1,9 +1,12 @@
-import { css } from 'styled-components'
+import { breakpoints } from '../config/constants'
+import { resolveMedia } from '../config/helpers'
 
 export const DIMENSIONS = ['xs', 'sm', 'md', 'lg', 'xl']
 
 export const BASE_CONF = {
-  mediaQuery: 'only screen',
+  // breakpoints
+  breakpoints,
+  // column numbers
   columns: {
     xs: 12,
     sm: 12,
@@ -35,42 +38,11 @@ export const BASE_CONF = {
     lg: 90, // max-width: 1440px
     xl: 90, // max-width: 1440px
   },
-  breakpoints: {
-    xs: 1,
-    sm: 48, // 768px
-    md: 64, // 1024px
-    lg: 90, // 1440px
-    xl: 120, // 1920px
-  },
   media: {},
 }
 
-export default function resolveConfig() {
-  // create media queries
-  BASE_CONF.media = Object.keys(BASE_CONF.breakpoints).reduce(
-    (media, breakpoint) => {
-      const breakpointWidth = BASE_CONF.breakpoints[breakpoint]
-      // only screen and (min-width: "width")
-      media[breakpoint] = makeMedia(
-        [
-          BASE_CONF.mediaQuery,
-          breakpointWidth >= 0 && `(min-width: ${breakpointWidth}rem)`,
-        ]
-          .filter(Boolean)
-          .join(' and ')
-      )
-      return media
-    },
-    {}
-  )
-  // console.log(BASE_CONF.media)
+export default function gridConfig() {
+  BASE_CONF.media = resolveMedia
+  // return config with media queries
   return BASE_CONF
-}
-
-function makeMedia(media) {
-  return (...args) => css`
-    @media ${media} {
-      ${css(...args)}
-    }
-  `
 }
