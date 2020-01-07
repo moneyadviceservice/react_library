@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import theme from '../../config/theme'
 import { resolveMedia } from '../../config/helpers'
@@ -35,7 +36,6 @@ const Wrapper = styled.button`
     width: auto;
     transition: background 0.2s ease;
     font-size: 0.95rem;
-    margin-top: 20px;
     line-height: 1;
     ${props => {
       if (props.primary) {
@@ -62,5 +62,16 @@ const Wrapper = styled.button`
 function Button({ text, onClick }) {
   return <Wrapper onClick={onClick}>{text}</Wrapper>
 }
+
+// Documentation
+Button.propTypes = {
+  /** text inside button */
+  text: PropTypes.string,
+}
+
+Button.defaultProps = {
+  text: '',
+}
+
 /** @component */
 export default Button

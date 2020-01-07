@@ -67,13 +67,17 @@ const Row = styled.div`
 `
 
 // Documentation
+const boolOrArray = PropTypes.oneOfType([PropTypes.bool, PropTypes.array])
+
+const stringOrObject = PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+
 Row.propTypes = {
   /**	reverses the direction of the row */
-  reverse: PropTypes.bool,
+  reverse: boolOrArray,
   /**	align the content vertically */
-  align: PropTypes.string,
+  align: stringOrObject,
   /**	align the content horizontally */
-  justify: PropTypes.string,
+  justify: stringOrObject,
   /**	content */
   children: PropTypes.node,
   /** enables debug */

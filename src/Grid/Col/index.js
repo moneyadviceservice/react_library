@@ -7,7 +7,6 @@ const Col = styled.div`
   flex: 1 0 auto;
   max-width: 100%;
   display: flex;
-  padding: ${props => props.padding}px;
 
   ${p =>
     !p.noGutter &&
@@ -114,27 +113,25 @@ const numberOrObject = PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
 const boolOrArray = PropTypes.oneOfType([PropTypes.bool, PropTypes.array])
 
 Col.propTypes = {
-  /**	sets the number of columns on screens xs */
-  xs: PropTypes.number,
+  /** sets the number of columns on screens xs */
+  xs: numberOrString,
   /** sets the number of columns on screens sm */
-  sm: PropTypes.number,
+  sm: numberOrString,
   /** sets the number of columns on screens md */
-  md: PropTypes.number,
-  /**	sets the number of columns on screens lg */
-  lg: PropTypes.number,
-  /**	sets the number of columns on screens xl */
-  xl: PropTypes.number,
-  /** sets custom padding */
-  padding: PropTypes.number,
-  /** align the content horizontally */
-  align: PropTypes.string,
+  md: numberOrString,
+  /** sets the number of columns on screens lg */
+  lg: numberOrString,
+  /** sets the number of columns on screens xl */
+  xl: numberOrString,
   /** align the content vertically */
-  justify: PropTypes.string,
-  /** sets the number of the offset columns */
-  offSet: PropTypes.number,
+  align: stringOrObject,
+  /**	align the content horizontally */
+  justify: stringOrObject,
+  /**	sets the number of the offset columns */
+  offSet: numberOrObject,
   /**	reverses the direction of the column */
-  reverse: PropTypes.bool,
-  /** removes the gutter */
+  reverse: boolOrArray,
+  /**	removes the gutter */
   noGutter: PropTypes.bool,
   /** content */
   children: PropTypes.node,
@@ -148,7 +145,6 @@ Col.defaultProps = {
   md: 'auto',
   lg: 'auto',
   xl: 'auto',
-  padding: '0.5rem',
   reverse: false,
   noGutter: false,
   children: null,
