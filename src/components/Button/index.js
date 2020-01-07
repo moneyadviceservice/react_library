@@ -1,8 +1,9 @@
+import React from 'react'
 import styled from 'styled-components'
 import theme from '../../config/theme'
 import { resolveMedia } from '../../config/helpers'
 
-const Button = styled.button`
+const Wrapper = styled.button`
   align-items: center;
   width: auto;
   margin-left: 1.6666666667%;
@@ -58,5 +59,8 @@ const Button = styled.button`
     `}
 `
 
+function Button({ text, onClick }) {
+  return <Wrapper onClick={onClick}>{text}</Wrapper>
+}
 /** @component */
 export default Button
