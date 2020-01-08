@@ -9,6 +9,12 @@ module.exports = {
           exclude: /node_modules/,
           loader: 'babel-loader',
         },
+        {
+          test: /\.(woff|woff2)$/,
+          use: {
+            loader: 'url-loader',
+          },
+        },
       ],
     },
   },
@@ -26,7 +32,10 @@ module.exports = {
     {
       name: 'Components',
       content: './src/docs/components.md',
-      components: () => ['./src/components/Button/index.js'],
+      components: () => [
+        './src/components/Button/index.js',
+        './src/components/Typography/index.js',
+      ],
       exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
     },
