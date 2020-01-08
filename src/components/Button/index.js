@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import theme from '../../config/theme'
-import { resolveMedia } from '../../config/helpers'
+import { button, typography } from '../config/styles'
+import { resolveMedia } from '../config/helpers'
 
 const Wrapper = styled.button`
-  font-family: 'museo_sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  ${typography.fontBody}
 
   // doesn't work as well with italics as with regular text
   -webkit-font-smoothing: antialiased;
@@ -26,12 +25,12 @@ const Wrapper = styled.button`
   &:active {
     background: ${props =>
       props.primary
-        ? theme.button.primary.activeBackground
-        : theme.button.default.activeBackground};
+        ? button.primary.activeBackground
+        : button.default.activeBackground};
     border-color: ${props =>
       props.primary
-        ? theme.button.primary.activeBorderColor
-        : theme.button.default.activeBorderColor};
+        ? button.primary.activeBorderColor
+        : button.default.activeBorderColor};
     text-decoration: none;
     color: #000000;
     outline: 0;
@@ -41,13 +40,13 @@ const Wrapper = styled.button`
     padding-top: 9px;
     border-bottom-color: ${props =>
       props.primary
-        ? theme.button.primary.borderBottomColor
-        : theme.button.default.borderBottomColor};
+        ? button.primary.borderBottomColor
+        : button.default.borderBottomColor};
     border-top: 3px solid
       ${props =>
         props.primary
-          ? theme.button.primary.activeBorderColor
-          : theme.button.default.activeBorderColor};
+          ? button.primary.activeBorderColor
+          : button.default.activeBorderColor};
   }
 
   &.is-disabled,
@@ -55,26 +54,24 @@ const Wrapper = styled.button`
     box-shadow: none;
     background: ${props =>
       props.primary
-        ? theme.button.primary.disabledBackground
-        : theme.button.default.disabledBackground};
+        ? button.primary.disabledBackground
+        : button.default.disabledBackground};
     border-color: ${props =>
       props.primary
-        ? theme.button.primary.disabledBorderColor
-        : theme.button.default.disabledBorderColor};
+        ? button.primary.disabledBorderColor
+        : button.default.disabledBorderColor};
     color: #666969;
   }
 
   border-bottom: 4px solid
     ${props =>
       props.primary
-        ? theme.button.primary.borderBottomColor
-        : theme.button.default.borderBottomColor};
+        ? button.primary.borderBottomColor
+        : button.default.borderBottomColor};
   background: ${props =>
-    props.primary
-      ? theme.button.primary.background
-      : theme.button.default.background};
+    props.primary ? button.primary.background : button.default.background};
   color: ${props =>
-    props.primary ? theme.button.primary.color : theme.button.default.color};
+    props.primary ? button.primary.color : button.default.color};
 
   ${resolveMedia.sm``}
 `
