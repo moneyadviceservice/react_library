@@ -5,72 +5,108 @@ import theme from '../../config/theme'
 import { resolveMedia } from '../../config/helpers'
 
 const Wrapper = styled.button`
-  align-items: center;
-  width: auto;
-  margin-left: 1.6666666667%;
-  margin-right: 1.6666666667%;
-  font-size: 0.75rem;
-  border-radius: 4px;
-  margin-bottom: 0;
-  line-height: 1.5;
-  filter: none;
-  text-align: center;
-  white-space: nowrap;
-  padding: 5px 22px;
+  font-family: 'museo_sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+
+  // doesn't work as well with italics as with regular text
+  -webkit-font-smoothing: antialiased;
+  // improves antialiasing in Chrome and Windows
+  text-shadow: 1px 1px transparent;
+
+  font-size: 16px;
+  line-height: 24px;
+
+  padding: 12px 22px;
+  transition: background 0.2s ease;
   border: none;
-  border-bottom: 3px solid
+  border-radius: 4px;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: ${props =>
+      props.primary
+        ? theme.button.primary.activeBackground
+        : theme.button.default.activeBackground};
+    border-color: ${props =>
+      props.primary
+        ? theme.button.primary.activeBorderColor
+        : theme.button.default.activeBorderColor};
+    text-decoration: none;
+    color: #000000;
+    outline: 0;
+  }
+
+  &:active {
+    padding-top: 9px;
+    border-bottom-color: ${props =>
+      props.primary
+        ? theme.button.primary.borderBottomColor
+        : theme.button.default.borderBottomColor};
+    border-top: 3px solid
+      ${props =>
+        props.primary
+          ? theme.button.primary.activeBorderColor
+          : theme.button.default.activeBorderColor};
+  }
+
+  &.is-disabled,
+  &[disabled] {
+    box-shadow: none;
+    background: ${props =>
+      props.primary
+        ? theme.button.primary.disabledBackground
+        : theme.button.default.disabledBackground};
+    border-color: ${props =>
+      props.primary
+        ? theme.button.primary.disabledBorderColor
+        : theme.button.default.disabledBorderColor};
+    color: #666969;
+  }
+
+  border-bottom: 4px solid
     ${props =>
       props.primary
-        ? theme.primaryButtonButtomColor
-        : theme.alternateButtonButtomColor};
+        ? theme.button.primary.borderBottomColor
+        : theme.button.default.borderBottomColor};
   background: ${props =>
     props.primary
-      ? theme.primaryButtonBackground
-      : theme.alternateButtonBackground};
-  color: ${theme.textColor};
-  border-buttom-color: ${props =>
-    props.primary ? theme.primaryButtonBorder : theme.alternateButtonBorder};
+      ? theme.button.primary.background
+      : theme.button.default.background};
+  color: ${props =>
+    props.primary ? theme.button.primary.color : theme.button.default.color};
 
-  ${resolveMedia.sm`
-    cursor: pointer;
-    width: auto;
-    transition: background 0.2s ease;
-    font-size: 0.95rem;
-    line-height: 1;
-    ${props => {
-      if (props.primary) {
-        return `
-                &:hover{
-                    outline: none;
-                    background: #edde74;
-                    border-buttom-color: #e1c260;
-            
-            `
-      } else {
-        return `
-
-            &:hover{
-                outline: none;
-                background: #ecf0ef;
-                border-buttom-color: #d1d5d5;
-            `
-      }
-    }}
-    `}
+  ${resolveMedia.sm``}
 `
 
-function Button({ text, onClick }) {
-  return <Wrapper onClick={onClick}>{text}</Wrapper>
+function Button({ primary, text, onClick, disabled }) {
+  return (
+    <Wrapper primary={primary} onClick={onClick} disabled={disabled}>
+      {text}
+    </Wrapper>
+  )
 }
 
 // Documentation
 Button.propTypes = {
   /** text inside button */
   text: PropTypes.string,
+  /** primary button styles */
+  primary: PropTypes.bool,
+  /** disables button clicks */
+  disabled: PropTypes.bool,
+  /** on click event */
+  onClick: PropTypes.func,
 }
 
 Button.defaultProps = {
-  text: '',
+  text: null,
+  primary: false,
+  disabled: false,
+  onClick: event => {
+    // eslint-disable-next-line no-console
+    console.log('You have clicked me!', event.target)
+  },
 }
 
 /** @component */
