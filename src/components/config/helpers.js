@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 import { breakpoints, mediaQuery } from './constants'
-import theme from './styles'
+import { theme } from './styles'
 
 export const resolveMedia = Object.keys(breakpoints).reduce(
   (media, breakpoint) => {
