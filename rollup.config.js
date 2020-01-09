@@ -1,13 +1,13 @@
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import resolve from 'rollup-plugin-node-resolve';
-import external from 'rollup-plugin-peer-deps-external';
-import { terser } from 'rollup-plugin-terser';
-import { uglify } from 'rollup-plugin-uglify';
-import packageJSON from './package.json';
+import babel from 'rollup-plugin-babel'
+import commonjs from 'rollup-plugin-commonjs'
+import resolve from 'rollup-plugin-node-resolve'
+import external from 'rollup-plugin-peer-deps-external'
+import { terser } from 'rollup-plugin-terser'
+import { uglify } from 'rollup-plugin-uglify'
+import packageJSON from './package.json'
 
-const input = './src/index.js';
-const minifyExtension = pathToFile => pathToFile.replace(/\.js$/, '.min.js');
+const input = './src/index.js'
+const minifyExtension = pathToFile => pathToFile.replace(/\.js$/, '.min.js')
 
 export default [
   // CommonJS
@@ -16,33 +16,33 @@ export default [
     output: {
       file: packageJSON.main,
       format: 'cjs',
-      sourcemap: true
+      sourcemap: true,
     },
     plugins: [
       babel({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
       }),
       external(),
       resolve(),
-      commonjs()
-    ]
+      commonjs(),
+    ],
   },
   // Minified
   {
     input,
     output: {
       file: minifyExtension(packageJSON.main),
-      format: 'cjs'
+      format: 'cjs',
     },
     plugins: [
       babel({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
       }),
       external(),
       resolve(),
       commonjs(),
-      uglify()
-    ]
+      uglify(),
+    ],
   },
   // UMD
   {
@@ -53,17 +53,17 @@ export default [
       name: '@maps/react_library',
       globals: {
         react: 'React',
-        'styled-components': 'styled'
-      }
+        'styled-components': 'styled',
+      },
     },
     plugins: [
       babel({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
       }),
       external(),
       resolve(),
-      commonjs()
-    ]
+      commonjs(),
+    ],
   },
   {
     input,
@@ -73,18 +73,18 @@ export default [
       name: '@maps/react_library',
       globals: {
         react: 'React',
-        'styled-components': 'styled'
-      }
+        'styled-components': 'styled',
+      },
     },
     plugins: [
       babel({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
       }),
       external(),
       resolve(),
       commonjs(),
-      terser()
-    ]
+      terser(),
+    ],
   },
   // ES
   {
@@ -92,32 +92,32 @@ export default [
     output: {
       file: packageJSON.module,
       format: 'es',
-      exports: 'named'
+      exports: 'named',
     },
     plugins: [
       babel({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
       }),
       external(),
       resolve(),
-      commonjs()
-    ]
+      commonjs(),
+    ],
   },
   {
     input,
     output: {
       file: minifyExtension(packageJSON.module),
       format: 'es',
-      exports: 'named'
+      exports: 'named',
     },
     plugins: [
       babel({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
       }),
       external(),
       resolve(),
       commonjs(),
-      terser()
-    ]
-  }
-];
+      terser(),
+    ],
+  },
+]

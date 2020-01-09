@@ -1,4 +1,5 @@
 const path = require('path')
+const { version } = require('./package.json')
 
 module.exports = {
   webpackConfig: {
@@ -9,10 +10,17 @@ module.exports = {
           exclude: /node_modules/,
           loader: 'babel-loader',
         },
+        {
+          test: /\.(woff|woff2)$/,
+          use: {
+            loader: 'url-loader',
+          },
+        },
       ],
     },
   },
   title: 'React components library for Directories project',
+  version,
   styleguideDir: 'dist-docs',
   moduleAliases: {
     '@maps/react_library': path.resolve(__dirname, 'src'),
@@ -26,14 +34,21 @@ module.exports = {
     {
       name: 'Components',
       content: './src/docs/components.md',
-      components: 'src/components/**/*.js',
-      exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
+      components: () => ['./src/components/Button/index.js'],
+      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
+    },
+    {
+      name: 'Typography',
+      content: './src/components/Typography/typography.md',
+      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
+      usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
+      components: () => ['./src/components/Typography/Headers/index.js'],
     },
     {
       name: 'Grid',
       content: './src/docs/grid/grid.md',
-      exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
+      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
       pagePerSection: true,
       sectionDepth: 1,
@@ -41,48 +56,34 @@ module.exports = {
         {
           name: 'Components',
           components: () => [
-            './src/Grid/Container/index.js',
-            './src/Grid/Row/index.js',
-            './src/Grid/Col/index.js',
+            './src/components/Grid/Container/index.js',
+            './src/components/Grid/Row/index.js',
+            './src/components/Grid/Col/index.js',
           ],
-          exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
-          usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
         },
         {
           name: 'Usage',
           content: './src/docs/grid/usage.md',
-          exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
-          usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
           sections: [
             {
               name: 'Responsive',
               content: './src/docs/grid/responsive.md',
-              exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
-              usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
             },
             {
               name: 'Offset',
               content: './src/docs/grid/offset.md',
-              exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
-              usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
             },
             {
               name: 'Aligment',
               content: './src/docs/grid/alignment.md',
-              exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
-              usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
             },
             {
               name: 'Row Reverse',
               content: './src/docs/grid/row_reverse.md',
-              exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
-              usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
             },
             {
               name: 'Column Reverse',
               content: './src/docs/grid/column_reverse.md',
-              exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
-              usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
             },
           ],
         },

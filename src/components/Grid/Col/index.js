@@ -104,33 +104,25 @@ const Col = styled.div`
 `
 
 // Documentation
-const numberOrString = PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-
-const stringOrObject = PropTypes.oneOfType([PropTypes.string, PropTypes.object])
-
-const numberOrObject = PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
-
-const boolOrArray = PropTypes.oneOfType([PropTypes.bool, PropTypes.array])
-
 Col.propTypes = {
   /** sets the number of columns on screens xs */
-  xs: numberOrString,
+  xs: PropTypes.oneOf(['string', 'number']),
   /** sets the number of columns on screens sm */
-  sm: numberOrString,
+  sm: PropTypes.oneOf(['string', 'number']),
   /** sets the number of columns on screens md */
-  md: numberOrString,
+  md: PropTypes.oneOf(['string', 'number']),
   /** sets the number of columns on screens lg */
-  lg: numberOrString,
+  lg: PropTypes.oneOf(['string', 'number']),
   /** sets the number of columns on screens xl */
-  xl: numberOrString,
+  xl: PropTypes.oneOf(['string', 'object']),
   /** align the content vertically */
-  align: stringOrObject,
+  align: PropTypes.oneOf(['string', 'object']),
   /**	align the content horizontally */
-  justify: stringOrObject,
+  justify: PropTypes.oneOf(['string', 'object']),
   /**	sets the number of the offset columns */
-  offSet: numberOrObject,
+  offSet: PropTypes.oneOf(['number', 'object']),
   /**	reverses the direction of the column */
-  reverse: boolOrArray,
+  reverse: PropTypes.oneOf(['bool', 'array']),
   /**	removes the gutter */
   noGutter: PropTypes.bool,
   /** content */
