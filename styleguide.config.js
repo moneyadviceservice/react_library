@@ -1,4 +1,5 @@
 const path = require('path')
+const { version } = require('./package.json')
 
 module.exports = {
   webpackConfig: {
@@ -19,6 +20,7 @@ module.exports = {
     },
   },
   title: 'React components library for Directories project',
+  version,
   styleguideDir: 'dist-docs',
   moduleAliases: {
     '@maps/react_library': path.resolve(__dirname, 'src'),
@@ -32,12 +34,16 @@ module.exports = {
     {
       name: 'Components',
       content: './src/docs/components.md',
-      components: () => [
-        './src/components/Button/index.js',
-        './src/components/Typography/index.js',
-      ],
+      components: () => ['./src/components/Button/index.js'],
       exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
+    },
+    {
+      name: 'Typography',
+      content: './src/components/Typography/typography.md',
+      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
+      usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
+      components: () => ['./src/components/Typography/Headers/index.js'],
     },
     {
       name: 'Grid',

@@ -1,6 +1,5 @@
 import { css } from 'styled-components'
 import { breakpoints, mediaQuery } from './constants'
-import { theme } from './styles'
 
 export const resolveMedia = Object.keys(breakpoints).reduce(
   (media, breakpoint) => {
@@ -24,6 +23,8 @@ export const resolveMedia = Object.keys(breakpoints).reduce(
   {}
 )
 
+/**
+
 export const backgroundMixin = css`
   background: ${props =>
     props.background ? theme.alternateBackground : theme.primaryBackground};
@@ -45,3 +46,4 @@ export const colorMixin = css`
   color: ${props =>
     props.color ? theme.accentColor : theme.textColor}; //set value
 `
+*/
