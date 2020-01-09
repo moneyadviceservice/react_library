@@ -1,18 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { button, typography } from '../config/styles'
-import { resolveMedia } from '../config/helpers'
+import { button } from '../config/styles'
 
 const Wrapper = styled.button`
-  ${typography.fontBody}
-
-  // doesn't work as well with italics as with regular text
   -webkit-font-smoothing: antialiased;
-  // improves antialiasing in Chrome and Windows
   text-shadow: 1px 1px transparent;
 
   font-size: 16px;
+  ${props => props.theme.typography.fontNormal}
   line-height: 24px;
 
   padding: 12px 22px;
@@ -32,7 +28,6 @@ const Wrapper = styled.button`
         ? button.primary.activeBorderColor
         : button.default.activeBorderColor};
     text-decoration: none;
-    color: #000000;
     outline: 0;
   }
 
@@ -72,14 +67,13 @@ const Wrapper = styled.button`
     props.primary ? button.primary.background : button.default.background};
   color: ${props =>
     props.primary ? button.primary.color : button.default.color};
-
-  ${resolveMedia.sm``}
 `
 
-function Button({ primary, text, onClick, disabled }) {
+function Button({ primary, text, onClick, disabled, children }) {
   return (
     <Wrapper primary={primary} onClick={onClick} disabled={disabled}>
       {text}
+      {children}
     </Wrapper>
   )
 }
@@ -94,10 +88,13 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   /** on click event */
   onClick: PropTypes.func,
+  /** content */
+  children: PropTypes.node,
 }
 
 Button.defaultProps = {
   text: null,
+  children: null,
   primary: false,
   disabled: false,
   onClick: event => {
