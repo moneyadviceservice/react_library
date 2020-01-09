@@ -21,6 +21,7 @@ export default [
     plugins: [
       babel({
         exclude: 'node_modules/**',
+        runtimeHelpers: true,
       }),
       external(),
       resolve(),
@@ -37,6 +38,7 @@ export default [
     plugins: [
       babel({
         exclude: 'node_modules/**',
+        runtimeHelpers: true,
       }),
       external(),
       resolve(),
@@ -59,6 +61,7 @@ export default [
     plugins: [
       babel({
         exclude: 'node_modules/**',
+        runtimeHelpers: true,
       }),
       external(),
       resolve(),
@@ -79,6 +82,7 @@ export default [
     plugins: [
       babel({
         exclude: 'node_modules/**',
+        runtimeHelpers: true,
       }),
       external(),
       resolve(),
@@ -97,6 +101,7 @@ export default [
     plugins: [
       babel({
         exclude: 'node_modules/**',
+        runtimeHelpers: true,
       }),
       external(),
       resolve(),
@@ -113,6 +118,7 @@ export default [
     plugins: [
       babel({
         exclude: 'node_modules/**',
+        runtimeHelpers: true,
       }),
       external(),
       resolve(),
