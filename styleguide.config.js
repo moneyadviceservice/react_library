@@ -25,7 +25,7 @@ module.exports = {
   version,
   styleguideDir: 'dist-docs',
   moduleAliases: {
-    '@maps/react_library': path.resolve(__dirname, 'src'),
+    '@moneypensionservice/directories': path.resolve(__dirname, 'src'),
   },
   pagePerSection: true,
   sections: [

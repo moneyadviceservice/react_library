@@ -1,7 +1,7 @@
 Multiple heading classes are available. It is **required** to specify the **`tag`** prop to define the type of header rendered.
 
 ```jsx
-import { ThemeProvider, Header } from '@maps/react_library';
+import { ThemeProvider, Header } from '@moneypensionservice/directories';
 
 <ThemeProvider>
   <Header tag='h1' align='left' text='Heading One' />

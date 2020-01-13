@@ -1,7 +1,7 @@
 The prop `reverse` receives an array with the screens that will have the flow reversed. If it is passed as boolean, the stream will be inverted at all breakpoints.
 
 ```jsx
-import { Container, Row, Col } from '@maps/react_library';
+import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row reverse={['md']}>

@@ -1,7 +1,7 @@
 Multiple Button Classes.
 
 ```jsx
-import { ThemeProvider, Button, Row } from '@maps/react_library';
+import { ThemeProvider, Button, Row } from '@moneypensionservice/directories';
 
 <ThemeProvider>
   <Row justify='space-between'>
