@@ -1,5 +1,5 @@
 
 
-<p>`import { Container, Row, Col } from '@maps/react_library'`<p>
+<p>`import { Container, Row, Col } from '@moneypensionservice/directories'`<p>
 
-Resize your window to see the responsive magic happening 😎
+Resize your window to see the responsive magic happening!

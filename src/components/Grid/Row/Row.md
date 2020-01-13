@@ -1,5 +1,5 @@
 ```jsx
-import { Container, Row, Col } from '@maps/react_library';
+import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row debug>

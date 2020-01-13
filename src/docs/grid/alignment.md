@@ -13,7 +13,7 @@ The prop **`align`** receives a string or a object with the screens and their re
 Just pass a valid value from flexbox api to align prop:
 
 ```jsx
-import { Container, Row, Col } from '@maps/react_library';
+import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row debug style={{height: 80}} align='center'>
@@ -34,7 +34,7 @@ In this case, the **`align`** prop must receive an object with the screens and t
 >💡Tip! When passed an object, since this grid is mobile-first, if a value is entered for a screen (i.e XS), the other screens (SM, MD, LG and XL) will inherit these values ​​if not set. With that in mind, if you enter align={{xs: 'center', lg: 'flex-end'}}, we'll have XS to MD with align set to center and LG to XL set to flex-end.
 
 ```jsx
-import { Container, Row, Col } from '@maps/react_library';
+import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row debug style={{height: 80}} align={{xs: 'center', lg: 'flex-end'}}>
@@ -64,7 +64,7 @@ The prop **`justify`** receives a string or a object with the screens and their 
 Just pass a valid value from flexbox api to the `justify` prop:
 
 ```jsx
-import { Container, Row, Col } from '@maps/react_library';
+import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row debug justify='center'>
@@ -88,7 +88,7 @@ In this case, the `justify` prop must receive an object with the screens and the
 >💡Tip! When passed an object, since this grid is mobile-first, if a value is entered for a screen (i.e XS), the other screens (SM, MD, LG and XL) will inherit these values ​​if not set. With that in mind, if you enter justify={{xs: 'center', lg: 'space-between'}}, we'll have XS to MD with justify set to center and LG to XL set to space-between.
 
 ```jsx
-import { Container, Row, Col } from '@maps/react_library';
+import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row debug justify={{xs: 'center', lg: 'space-between'}}>

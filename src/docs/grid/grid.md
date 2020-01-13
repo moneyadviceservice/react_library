@@ -7,7 +7,7 @@ Number of columns: xs: 12, sm: 12, md: 12, lg: 12, xl: 12
 Breakpoints size: xs: 1rem, sm: 48rem, md: 64rem, lg: 90rem, xl: 120rem
 
 ```jsx
-import { Container, Row, Col } from '@maps/react_library';
+import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row>

@@ -3,7 +3,7 @@
 If you enter a number, the number of columns of the screen xs will be used as base. in this example, 8 columns of 12 will be used for both offset and column size, ie 50%.
 
 ```jsx
-import { Container, Row, Col } from '@maps/react_library';
+import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row>
@@ -17,7 +17,7 @@ import { Container, Row, Col } from '@maps/react_library';
 In this case, the offset prop must receive an object with the screens and their respective values.
 
 ```jsx
-import { Container, Row, Col } from '@maps/react_library';
+import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row><Col debug xs={1} offset={{ xs:0, sm:6, lg:11}}>One</Col></Row>
