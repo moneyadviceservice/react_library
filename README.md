@@ -9,6 +9,18 @@
 - [Rollup](https://rollupjs.org/guide/en/) and [Babel](https://babeljs.io/) for bundling the library for publishing to [NPM](https://www.npmjs.com/);
 - [Travis CI](https://travis-ci.org/) for auto-deployment of the documentation to GitHub pages.
 
+## Usage
+
+> ### Installation
+
+- `$ npm i @moneypensionservice/directories`
+
+> ### Usage
+
+- `import { Container, Row, Col } from '@moneypensionservice/directories'`
+
+[Check the documentation](https://moneyadviceservice.github.io/react_library/) for more examples.
+
 
 ## Development Scripts
 
@@ -16,14 +28,17 @@
 
 - `$ npm install`
 
+
 > ### Preview Components
 
 - `$ npm start`
   - _live reloading and preview of the components at `http://localhost:6060`_
 
+
 > ### Testing
 
 - `$ npm test`
+
 
 > ### Build for Production
 
@@ -34,11 +49,21 @@
 - `$ npm run postbuild`
   - _shows the contents of the package that will be published to NPM_
 
+
 > ### Publish Package to NPM
 
-- `$ npm login`
-  - _use maps credentials in keypass to sign in_
-- `$ npm publish`
+Create an account at [npmjs.com](https://www.npmjs.com/signup). You should ask for an invitation to join the organisation.
+
+- `$ npm adduser --scope=@moneypensionservice`
+  - _use maps credentials in keypass to sign in:_
+  - _Username: your npmjs.com username_
+  - _Password: your npmjs.com password_
+  - _Email: your npmjs.com email_
+
+Now you should be ready to publish the package:
+
+- `$ npm publish --access=public`
+
 
 > ### Deploying the [Documentation](https://moneyadviceservice.github.io/react_library/)
 
