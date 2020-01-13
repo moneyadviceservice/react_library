@@ -6,10 +6,8 @@ import theme from './theme'
 const GlobalTheme = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
-        {children}
-      </>
+      <GlobalStyle />
+      {children}
     </ThemeProvider>
   )
 }

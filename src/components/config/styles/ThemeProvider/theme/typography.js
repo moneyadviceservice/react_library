@@ -1,25 +1,21 @@
 import { css } from 'styled-components'
-// fonts
-import MuseoSans300Woff from '../../../../../assets/Fonts/MuseoSans300.woff'
-import MuseoSans500Woff from '../../../../../assets/Fonts/MuseoSans500.woff'
-import MuseoSans700Woff from '../../../../../assets/Fonts/MuseoSans700.woff'
-import MuseoSans900Woff from '../../../../../assets/Fonts/MuseoSlab900.woff'
 
+// fonts
 const typography = {
   fontFace: css`
     @font-face {
       font-family: 'MuseoSans';
       font-style: normal;
       font-weight: normal;
-      src: 
-        url('${MuseoSans300Woff}') format('woff'),
-        url('${MuseoSans500Woff}') format('woff'),
-        url('${MuseoSans700Woff}') format('woff'),
-        url('${MuseoSans900Woff}') format('woff');
+      src: local('MuseoSans'), local('Museo_Sans'),
+        url('../../../../../assets/Fonts/MuseoSans300.woff') format('woff'),
+        url('../../../../../assets/Fonts/MuseoSans500.woff') format('woff'),
+        url('../../../../../assets/Fonts/MuseoSans700.woff') format('woff'),
+        url('../../../../../assets/Fonts/MuseoSlab900.woff') format('woff');
     }
   `,
   fontFamily: css`
-    font-family: 'museo_sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Museo_Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   `,
   fontLighter: css`
     font-weight: 300;
