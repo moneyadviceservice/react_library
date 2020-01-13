@@ -2,7 +2,7 @@
   "name": "@moneypensionservice/directories",
   "version": "1.0.0",
   "description": "React component library for Directories project",
-  "homepage": "https://moneyadviceservice.github.io/react_library/"
+  "homepage": "https://moneyadviceservice.github.io/react_library/",
   "main": "lib/index.js",
   "files": [
     "/lib"
