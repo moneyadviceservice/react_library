@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import { resolveMedia } from '../../config/helpers'
+import { resolveMedia } from '../../../utils/helpers'
 
 // Headers
 const headerStyles = css`
-  ${props => props.theme.typography.fontHeavy}
+  font-weight: ${props => props.theme.typography.fontHeavy};
   color: ${props => (props.color ? props.color : props.theme.colors.black)};
   width: ${({ width }) => width};
   text-align: ${({ align }) => align};

@@ -1,5 +1,5 @@
-import { breakpoints } from '../config/constants'
-import { resolveMedia } from '../config/helpers'
+import { breakpoints } from '../../utils/constants'
+import { resolveMedia } from '../../utils/helpers'
 
 export const DIMENSIONS = ['xs', 'sm', 'md', 'lg', 'xl']
 
