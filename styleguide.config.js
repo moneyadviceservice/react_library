@@ -21,6 +21,9 @@ module.exports = {
       ],
     },
   },
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, './src/components/ThemeProvider'),
+  },
   title: 'React components library for Directories project',
   version,
   styleguideDir: 'dist-docs',
@@ -32,6 +35,19 @@ module.exports = {
     {
       name: 'Documentation',
       content: './src/docs/documentation.md',
+      exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
+      usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
+      sectionDepth: 1,
+      sections: [
+        {
+          name: 'ThemeProvider',
+          content: './src/components/ThemeProvider/ThemeProvider.md',
+        },
+        {
+          name: 'Generic Props',
+          content: './src/docs/generic_props.md',
+        },
+      ],
     },
     {
       name: 'Components',
