@@ -1,106 +1,99 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { button } from '../config/styles'
+import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
+// wrapper
+import { ButtonWrapper } from './buttonStyles'
 
-const Wrapper = styled.button`
-  -webkit-font-smoothing: antialiased;
-  text-shadow: 1px 1px transparent;
+function Button({
+  as,
+  a11yTitle,
+  primary,
+  text,
+  onClick,
+  disabled,
+  type = 'button',
+  children,
+  margin,
+  alignSelf,
+  href,
+  onBlur,
+  onFocus,
+  onMouseOut,
+  onMouseOver,
+  ...rest
+}) {
+  const domTag = !as && href ? 'a' : as
 
-  font-size: 16px;
-  ${props => props.theme.typography.fontNormal}
-  line-height: 24px;
+  const [hover, setHover] = useState(false)
 
-  padding: 12px 22px;
-  transition: background 0.2s ease;
-  border: none;
-  border-radius: 4px;
+  const [focus, setFocus] = useState()
 
-  &:focus,
-  &:hover,
-  &:active {
-    background: ${props =>
-      props.primary
-        ? button.primary.activeBackground
-        : button.default.activeBackground};
-    border-color: ${props =>
-      props.primary
-        ? button.primary.activeBorderColor
-        : button.default.activeBorderColor};
-    text-decoration: none;
-    outline: 0;
-  }
-
-  &:active {
-    padding-top: 9px;
-    border-bottom-color: ${props =>
-      props.primary
-        ? button.primary.borderBottomColor
-        : button.default.borderBottomColor};
-    border-top: 3px solid
-      ${props =>
-        props.primary
-          ? button.primary.activeBorderColor
-          : button.default.activeBorderColor};
-  }
-
-  &.is-disabled,
-  &[disabled] {
-    box-shadow: none;
-    background: ${props =>
-      props.primary
-        ? button.primary.disabledBackground
-        : button.default.disabledBackground};
-    border-color: ${props =>
-      props.primary
-        ? button.primary.disabledBorderColor
-        : button.default.disabledBorderColor};
-    color: #666969;
-  }
-
-  border-bottom: 4px solid
-    ${props =>
-      props.primary
-        ? button.primary.borderBottomColor
-        : button.default.borderBottomColor};
-  background: ${props =>
-    props.primary ? button.primary.background : button.default.background};
-  color: ${props =>
-    props.primary ? button.primary.color : button.default.color};
-`
-
-function Button({ primary, text, onClick, disabled, children }) {
   return (
-    <Wrapper primary={primary} onClick={onClick} disabled={disabled}>
+    <ButtonWrapper
+      as={domTag}
+      aria-label={a11yTitle}
+      primary={primary}
+      onClick={onClick}
+      disabled={disabled}
+      type={!href ? type : undefined}
+      margin={margin}
+      alignSelf={alignSelf}
+      href={href}
+      onFocus={() => {
+        setFocus(true)
+      }}
+      onBlur={() => {
+        setFocus(false)
+      }}
+      focus={focus}
+      onMouseOver={() => {
+        setHover(true)
+      }}
+      onMouseOut={() => {
+        setHover(false)
+      }}
+      active={hover}
+      {...rest}
+    >
       {text}
       {children}
-    </Wrapper>
+    </ButtonWrapper>
   )
 }
 
 // Documentation
 Button.propTypes = {
-  /** text inside button */
+  /** The DOM tag or react component to use for the element. */
+  as: PropTypes.oneOf([PropTypes.string, PropTypes.func]),
+  /** If specified, the button will behave like an anchor tag. */
+  href: PropTypes.string,
+  /** Label text to place inside the button. */
   text: PropTypes.string,
-  /** primary button styles */
+  /** Whether this is a primary button. There should be at most one per page or screen. */
   primary: PropTypes.bool,
-  /** disables button clicks */
+  /** Whether the button is disabled. */
   disabled: PropTypes.bool,
-  /** on click event */
+  /** On click event. This triggers specific function. */
   onClick: PropTypes.func,
-  /** content */
+  /** Button content. */
   children: PropTypes.node,
+  /** The type of button. Sets the type to submit for the default button on forms. */
+  type: PropTypes.oneOf(['submit', 'button', 'reset']),
+  ...genericPropTypes,
 }
 
 Button.defaultProps = {
+  as: null,
+  href: null,
   text: null,
   children: null,
   primary: false,
   disabled: false,
   onClick: event => {
-    // eslint-disable-next-line no-console
     console.log('You have clicked me!', event.target)
   },
+  type: 'button',
+  ...genericPropsDefaults,
 }
 
 /** @component */
