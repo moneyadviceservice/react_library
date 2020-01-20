@@ -17,18 +17,10 @@ const typography = {
   fontFamily: css`
     font-family: 'Museo_Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   `,
-  fontLighter: css`
-    font-weight: 300;
-  `,
-  fontLight: css`
-    font-weight: 400;
-  `,
-  fontMedium: css`
-    font-weight: 500;
-  `,
-  fontHeavy: css`
-    font-weight: 700;
-  `,
+  fontLighter: 300,
+  fontLight: 400,
+  fontMedium: 500,
+  fontHeavy: 700,
 }
 
 export default typography
