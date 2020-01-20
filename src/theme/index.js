@@ -1,9 +1,9 @@
-import { default as typography } from './typography'
+import { default as typographyGenerate } from './typography'
 import { default as colorsGenerate } from './colors'
 import { default as sizeGenerate } from './sizes'
 
 const defaultTheme = {
-  typography,
+  typography: typographyGenerate(),
   colors: colorsGenerate(),
   sizes: sizeGenerate(),
 }
