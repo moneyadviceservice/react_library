@@ -5,6 +5,7 @@ import config, { DIMENSIONS } from '../config'
 const Row = styled.div`
   box-sizing: border-box;
   display: flex;
+  flex-direction: row;
   flex: 1 0 auto;
   flex-wrap: wrap;
   

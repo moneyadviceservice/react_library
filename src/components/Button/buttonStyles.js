@@ -67,18 +67,19 @@ const hoverStyle = css`
 
 const activeStyle = css`
   &:active {
-    padding-top: 9px;
+    padding-top: ${props => !props.padding && '9px'};
     border-bottom-color: ${props =>
       !props.border &&
       (props.primary
         ? props.theme.colors.button.primary.borderBottomColor
         : props.theme.colors.button.borderBottomColor)};
-    border-top: 3px solid
-      ${props =>
-        !props.border &&
-        (props.primary
+    border-top: ${props =>
+      !props.border &&
+      `3px solid ${
+        props.primary
           ? props.theme.colors.button.primary.activeBorderColor
-          : props.theme.colors.button.activeBorderColor)};
+          : props.theme.colors.button.activeBorderColor
+      }`};
   }
 `
 
