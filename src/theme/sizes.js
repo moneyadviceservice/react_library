@@ -38,8 +38,8 @@ export default function(baseSpacing = 24, scale = 6) {
         radius: `${baseSpacing / 6}px`,
       },
       padding: {
-        vertical: `${baseSpacing / 3}px`,
-        horizontal: `${baseSpacing - borderWidth}px`,
+        vertical: `${baseSpacing / 3}px`, //8px
+        horizontal: `${baseSpacing - borderWidth}px`, //22px
       },
       paddingMd: {
         vertical: `${baseSpacing / 2}px`,
