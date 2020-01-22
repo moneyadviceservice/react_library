@@ -12,8 +12,8 @@ Visit the [documentation website](https://moneyadviceservice.github.io/react_lib
 - [Rollup](https://rollupjs.org/guide/en/) and [Babel](https://babeljs.io/) for bundling the library for publishing to [NPM](https://www.npmjs.com/);
 - [Travis CI](https://travis-ci.org/) for auto-deployment of the documentation to GitHub pages.
 
-## Installation
-You can install the component library using either of the methods given below.
+## Installing on another project
+You can install the component library on another react project using either of the methods given below.
 
 For npm users:
 ```shell
@@ -25,25 +25,25 @@ For Yarn users:
   $ yarn add @moneypensionservice/directories
 ```
 
-# Development Scripts
+## Running standalone
 
-## Install Dependencies
+### Install Dependencies
 ```shell
   $ npm install
 ```
 
-## Preview Components
+### Preview Components
 ```shell
   $ npm start
 ```
 Live reloading and preview of the components should be available at `http://localhost:6060` powered by Styleguidist.
 
-## Testing
+### Testing
 ```shell
   $ npm test
 ```
 
-## Build and Publish Package to NPM
+### Build and Publish Package to NPM
 Cleanup and rebuild the files in the `lib` directory:
 ```shell
   $ npm run prepublishOnly
