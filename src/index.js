@@ -1,5 +1,5 @@
 // Theme Provider
-export { default as ThemeProvider } from './components/config/styles/ThemeProvider'
+export { default as ThemeProvider } from './components/ThemeProvider'
 // components
 export { default as Button } from './components/Button'
 // typography

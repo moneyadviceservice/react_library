@@ -1,7 +1,7 @@
 import { render, waitForElement } from '@testing-library/react'
 import React from 'react'
-import ThemeProvider from '../config/styles/ThemeProvider'
-import theme from '../config/styles/ThemeProvider/theme'
+import ThemeProvider from '../ThemeProvider'
+import theme from '../../theme'
 import Button from './index'
 
 // Hoist helper functions (but not vars) to reuse between test cases

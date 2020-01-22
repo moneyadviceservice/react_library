@@ -42,7 +42,6 @@ const GlobalStyle = createGlobalStyle`
     ${props => props.theme.typography.fontFamily}
     ${props => props.theme.typography.fontLighter}
     color: ${props => props.theme.colors.black};
-    line-height: 1.25em;
   }
   * {
     font-family: inherit;

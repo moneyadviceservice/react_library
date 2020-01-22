@@ -21,6 +21,9 @@ module.exports = {
       ],
     },
   },
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, './src/components/ThemeProvider'),
+  },
   title: 'React components library for Directories project',
   version,
   styleguideDir: 'dist-docs',
@@ -28,24 +31,46 @@ module.exports = {
     '@moneypensionservice/directories': path.resolve(__dirname, 'src'),
   },
   pagePerSection: true,
+  exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand' code example
+  usageMode: 'expand', // 'hide' | 'collapse' | 'expand' props
   sections: [
     {
       name: 'Documentation',
       content: './src/docs/documentation.md',
+      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand' code example
+      usageMode: 'hide', // 'hide' | 'collapse' | 'expand' props
+      sections: [
+        {
+          name: 'Usage',
+          content: './src/docs/usage.md',
+        },
+        {
+          name: 'ThemeProvider',
+          content: './src/components/ThemeProvider/ThemeProvider.md',
+        },
+        {
+          name: 'Generic Props',
+          content: './src/docs/generic_props.md',
+        },
+      ],
     },
     {
       name: 'Components',
       content: './src/docs/components.md',
-      components: () => ['./src/components/Button/index.js'],
       exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
-    },
-    {
-      name: 'Typography',
-      content: './src/components/Typography/typography.md',
-      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
-      usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
-      components: () => ['./src/components/Typography/Headers/index.js'],
+      pagePerSection: true,
+      sectionDepth: 1,
+      sections: [
+        {
+          name: 'Controls',
+          components: () => ['./src/components/Button/index.js'],
+        },
+        {
+          name: 'Typography',
+          components: () => ['./src/components/Typography/Headers/index.js'],
+        },
+      ],
     },
     {
       name: 'Grid',
