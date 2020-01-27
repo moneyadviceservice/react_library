@@ -114,22 +114,21 @@ export const backgroundStyle = (backgroundArg, textColorArg) => {
   /** if background is object */
   if (typeof backgroundArg === 'object') {
     const styles = []
+    /** font color */
+    let color
+    if (backgroundArg.dark) {
+      color = textColor.light
+      styles.push(css`
+        color: ${color};
+      `)
+    }
     //** if background is an image */
     if (backgroundArg.image) {
-      let color
-      if (backgroundArg.dark === false) {
-        color = textColor.dark
-      } else if (backgroundArg.dark) {
-        color = textColor.light
-      } else if (!textColorArg) {
-        color = 'inherit'
-      }
       styles.push(css`
         background-image: ${backgroundArg.image};
         background-repeat: ${backgroundArg.repeat || 'no-repeat'};
         background-position: ${backgroundArg.position || 'center center'};
         background-size: ${backgroundArg.size || 'cover'};
-        color: ${color};
       `)
       console.log('image!', styles)
     }
@@ -144,16 +143,6 @@ export const backgroundStyle = (backgroundArg, textColorArg) => {
         background-color: ${backgroundColor};
       `)
     }
-    /** if background dark change font color */
-    if (backgroundArg.dark === false) {
-      styles.push(css`
-        color: ${textColor.light || textColor};
-      `)
-    } else if (backgroundArg.dark) {
-      styles.push(css`
-        color: ${textColor.dark || textColor};
-      `)
-    }
     return styles
   }
   /** if background is a string */
@@ -161,7 +150,7 @@ export const backgroundStyle = (backgroundArg, textColorArg) => {
     /** url */
     if (backgroundArg.lastIndexOf('url', 0) === 0) {
       return css`
-        background: ${background} no-repeat center center;
+        background: ${backgroundArg} no-repeat center center;
         background-size: cover;
       `
     } else {
@@ -174,26 +163,32 @@ export const backgroundStyle = (backgroundArg, textColorArg) => {
   return undefined
 }
 
-function hexToRGB(hex, alpha = 1) {
-  // allow for alpha: #RGB, #RGBA, #RRGGBB, or #RRGGBBAA
+function hexToRGB(color, alpha = 1) {
+  // allow for color format: #RGB, #RGBA, #RRGGBB, or #RRGGBBAA
   const hexExp = /^#[A-Za-z0-9]{3,4}$|^#[A-Za-z0-9]{6,8}$/
   const rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?\)/
   const rgbaExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([.0-9]*)\s?\)/
-  // e.g. hsl(240, 60%, 50%)
-  const hslExp = /hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/
   // check if it's a hex value or string
   const canExtractRGBArray = color =>
-    hexExp.test(color) ||
-    rgbExp.test(color) ||
-    rgbaExp.test(color) ||
-    hslExp.test(color)
-
-  if (canExtractRGBArray(hex)) {
-    var r = parseInt(hex.slice(1, 3), 16),
-      g = parseInt(hex.slice(3, 5), 16),
-      b = parseInt(hex.slice(5, 7), 16)
-
-    return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')'
+    hexExp.test(color) || rgbExp.test(color) || rgbaExp.test(color)
+  // return rgb value
+  if (canExtractRGBArray(color)) {
+    let colorArray = []
+    if (hexExp.test(color)) {
+      colorArray =
+        color.length < 7 // 7 is what's needed for '#RRGGBB'
+          ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(`${v}${v}`, 16))
+          : // https://stackoverflow.com/a/42429333
+            color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16))
+    } else if (color.match(rgbExp)) {
+      colorArray = match.splice(1).map(v => parseInt(v, 10))
+    } else if (color.match(rgbaExp)) {
+      colorArray = match.splice(1).map(v => parseFloat(v, 10))
+    } else {
+      return false
+    }
+    const [red, green, blue] = colorArray
+    return `rgba(${red}, ${green}, ${blue}, ${alpha})`
   } else {
     return false
   }
