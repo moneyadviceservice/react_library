@@ -33,19 +33,28 @@ function Container({
 // Documentation
 Container.propTypes = {
   /** The DOM tag or react component to use for the element. */
-  as: PropTypes.oneOf([PropTypes.string, PropTypes.func]),
-  /** A color identifier to use for the background or image. */
-  background: PropTypes.oneOf([PropTypes.string, PropTypes.object]),
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  /** A color identifier or url to use for the background or image. */
+  background: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      color: PropTypes.string,
+      opacity: PropTypes.bool,
+      position: PropTypes.string,
+      image: PropTypes.string,
+      repeat: PropTypes.string,
+      size: PropTypes.string,
+      dark: PropTypes.bool,
+    }),
+  ]),
   /** Content inside element. */
   children: PropTypes.node,
   /** Enables debug styles. */
   debug: PropTypes.bool,
-  /** The orientation to layout the child components in. */
-  direction: PropTypes.oneOf([
-    'column',
-    'row',
-    'column-reverse',
-    'row-reverse',
+  /** The orientation to layout the child components in. 'column', 'row', 'column-reverse', 'row-reverse' */
+  direction: PropTypes.oneOfType([
+    PropTypes.oneOf(['column', 'row', 'column-reverse', 'row-reverse']),
+    PropTypes.object,
   ]),
   /** Makes container full-width across all viewport and device sizes. */
   fluid: PropTypes.bool,
@@ -53,9 +62,6 @@ Container.propTypes = {
 }
 
 Container.defaultProps = {
-  as: null,
-  background: null,
-  children: null,
   debug: false,
   direction: 'row',
   fluid: false,

@@ -4,6 +4,7 @@ import {
   genericStyles,
   backgroundStyle,
 } from '../../../utils/helpers'
+import { responsiveProps } from '../../../utils/flexHelpers'
 
 const fluidStyle = () => css`
   max-width: 100%;
@@ -18,12 +19,6 @@ const debugStyle = () => css`
   outline: #fff solid 1px;
 `
 
-const directionStyle = props => css`
-  min-width: 0;
-  min-height: 0;
-  flex-direction: ${props => props.flexDirection};
-`
-
 const paddingStyle = props => css`
   padding: 0 1rem;
 
@@ -33,20 +28,23 @@ const paddingStyle = props => css`
 `
 
 const ContainerWrapper = styled.div`
+  /** align-self, padding, margin, border */
   ${genericStyles}
-  ${props => console.log(props)}
 
   display: flex;
   outline: none;
-  
+
   /** conditional styles */
+  ${props => props.debug && debugStyle()}
   ${props => !props.padding && paddingStyle()}
   ${props => !props.margin && 'margin: 0 auto;'}
   ${props => !props.fluid && fluidStyle()}
-  ${props => props.debug && debugStyle()}
-  ${props => props.flexDirection && directionStyle()}
   ${props => props.background && backgroundStyle(props.background)}
-  
+
+  /** responsive props */
+  ${props =>
+    props.flexDirection &&
+    responsiveProps('flex-direction', props.flexDirection)}
 `
 
 export default ContainerWrapper

@@ -64,7 +64,7 @@ function Button({
 // Documentation
 Button.propTypes = {
   /** The DOM tag or react component to use for the element. */
-  as: PropTypes.oneOf([PropTypes.string, PropTypes.func]),
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   /** If specified, the button will behave like an anchor tag. */
   href: PropTypes.string,
   /** Label text to place inside the button. */
@@ -83,15 +83,8 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  as: null,
-  href: null,
-  text: null,
-  children: null,
   primary: false,
   disabled: false,
-  onClick: event => {
-    console.log('You have clicked me!', event.target)
-  },
   type: 'button',
   ...genericPropsDefaults,
 }
