@@ -65,6 +65,8 @@ const RowWrapper = styled.div`
 
   display: flex;
   flex: 1 0 auto;
+  min-width: 100%;
+  outline: none;
   flex-wrap: ${props => props.flexWrap};
 
   /** conditional styles */

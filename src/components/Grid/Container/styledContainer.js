@@ -5,26 +5,11 @@ import {
   backgroundStyle,
 } from '../../../utils/helpers'
 import { responsiveProps } from '../../../utils/flexHelpers'
-
-const fluidStyle = () => css`
-  max-width: 100%;
-
-  ${resolveMedia.lg`
-    max-width: 1440px;
-  `}
-`
+import { gridConfig } from '../config'
 
 const debugStyle = () => css`
   background-color: #5901ad40;
   outline: #fff solid 1px;
-`
-
-const paddingStyle = props => css`
-  padding: 0 1rem;
-
-  ${resolveMedia.md`
-    padding: 0 1.5rem;
-  `}
 `
 
 const ContainerWrapper = styled.div`
@@ -36,9 +21,11 @@ const ContainerWrapper = styled.div`
 
   /** conditional styles */
   ${props => props.debug && debugStyle()}
-  ${props => !props.padding && paddingStyle()}
+  ${props =>
+    !props.padding && responsiveProps('padding', gridConfig.containerPadding)}
   ${props => !props.margin && 'margin: 0 auto;'}
-  ${props => !props.fluid && fluidStyle()}
+  ${props =>
+    !props.fluid && responsiveProps('max-width', gridConfig.containerWidth)}
   ${props => props.background && backgroundStyle(props.background)}
 
   /** responsive props */

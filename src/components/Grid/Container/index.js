@@ -63,7 +63,7 @@ Container.propTypes = {
 
 Container.defaultProps = {
   debug: false,
-  direction: 'row',
+  direction: 'column',
   fluid: false,
   ...genericPropsDefaults,
 }
