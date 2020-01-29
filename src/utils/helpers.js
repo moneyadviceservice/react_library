@@ -2,6 +2,12 @@ import { css } from 'styled-components'
 import { breakpoints, mediaQuery, ALIGN_SELF_MAP } from './constants'
 import theme from '../theme'
 
+export const breakpointStyle = (breakpoint, content) => css`
+  @media only screen ${breakpoint && `and (min-width: ${breakpoint}rem)`} {
+    ${content}
+  }
+`
+
 export const resolveMedia = Object.keys(breakpoints).reduce(
   (media, breakpoint) => {
     //current breakpoint
@@ -130,7 +136,6 @@ export const backgroundStyle = (backgroundArg, textColorArg) => {
         background-position: ${backgroundArg.position || 'center center'};
         background-size: ${backgroundArg.size || 'cover'};
       `)
-      console.log('image!', styles)
     }
     //** if background is a color */
     if (backgroundArg.color) {
@@ -138,7 +143,6 @@ export const backgroundStyle = (backgroundArg, textColorArg) => {
       /** if color in hex, convert to rgba with opacity */
       const backgroundColor =
         (typeof color === 'string' && hexToRGB(color, opacity)) || color
-      console.log('colors!', color, backgroundColor)
       styles.push(css`
         background-color: ${backgroundColor};
       `)

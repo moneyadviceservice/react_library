@@ -6,6 +6,8 @@ export const breakpoints = {
   xl: 120, // 1920px
 }
 
+export const dimensions = ['xs', 'sm', 'md', 'lg', 'xl']
+
 export const mediaQuery = 'only screen'
 
 export const ALIGN_SELF_MAP = {
