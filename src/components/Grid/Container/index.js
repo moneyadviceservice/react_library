@@ -15,6 +15,9 @@ function Container({
   debug,
   direction,
   fluid,
+  height,
+  width,
+  ...rest
 }) {
   return (
     <ContainerWrapper
@@ -24,6 +27,9 @@ function Container({
       debug={debug}
       flexDirection={direction}
       fluid={fluid}
+      heightProp={height}
+      widthProp={width}
+      {...rest}
     >
       {children}
     </ContainerWrapper>
@@ -58,6 +64,34 @@ Container.propTypes = {
   ]),
   /** Makes container full-width across all viewport and device sizes. */
   fluid: PropTypes.bool,
+  /** Set a fixed height. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value */
+  height: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'xxsmall',
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+      'xxlarge',
+    ]),
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  /** Set a fixed width. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value  */
+  width: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'xxsmall',
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+      'xxlarge',
+    ]),
+    PropTypes.string,
+    PropTypes.object,
+  ]),
   ...genericPropTypes,
 }
 

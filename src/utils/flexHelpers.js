@@ -20,20 +20,27 @@ export const responsiveProps = (property, values) => {
 }
 
 export const flexStyle = sizeProp => {
+  console.log('size Prop: ', sizeProp.sm)
   if (typeof sizeProp === 'number') {
     return css`
-      flex: 0 1 ${(sizeProp / 12) * 100}%;
-      max-width: ${(sizeProp / 12) * 100}%;
+      flex-basis: ${(sizeProp / 12) * 100}%;
+    `
+  } else if (sizeProp === 'auto') {
+    return css`
+      flex: 0 0 auto;
     `
   } else {
     return dimensions.map(d => {
-      if (breakpoints[d] && sizeProp[d] !== undefined) {
+      if (breakpoints[d] && sizeProp[d] && sizeProp[d] !== 'auto') {
         return css`
           ${breakpointStyle(
             breakpoints[d],
-            `flex: 0 1 ${(sizeProp[d] / 12) * 100}%;
-             max-width: ${(sizeProp[d] / 12) * 100}%;`
+            `flex-basis: ${(sizeProp[d] / 12) * 100}%;`
           )}
+        `
+      } else if (breakpoints[d] && sizeProp[d] === 'auto') {
+        return css`
+          ${breakpointStyle(breakpoints[d], `flex: 1 0 auto; max-width: 100%;`)}
         `
       }
     })

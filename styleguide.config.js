@@ -24,7 +24,7 @@ module.exports = {
   styleguideComponents: {
     Wrapper: path.join(__dirname, './src/components/ThemeProvider'),
   },
-  title: 'React components library for Directories project',
+  title: 'MaPS React Component Library',
   version,
   styleguideDir: 'dist-docs',
   moduleAliases: {
@@ -75,13 +75,13 @@ module.exports = {
     {
       name: 'Grid',
       content: './src/docs/grid/grid.md',
-      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
-      usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
       pagePerSection: true,
       sectionDepth: 1,
       sections: [
         {
           name: 'Components',
+          exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
+          usageMode: 'collapse', // 'hide' | 'collapse' | 'expand'
           components: () => [
             './src/components/Grid/Container/index.js',
             './src/components/Grid/Row/index.js',
@@ -93,24 +93,44 @@ module.exports = {
           content: './src/docs/grid/usage.md',
           sections: [
             {
-              name: 'Responsive',
+              name: 'How it works',
+              content: './src/docs/grid/how_it_works.md',
+            },
+            {
+              name: 'Grid Options',
+              content: './src/docs/grid/grid_options.md',
+            },
+            {
+              name: 'Column Layouts',
+              content: './src/docs/grid/column_layouts.md',
+            },
+            {
+              name: 'Responsive Props',
               content: './src/docs/grid/responsive.md',
             },
             {
-              name: 'Offset',
-              content: './src/docs/grid/offset.md',
+              name: 'Gutters',
+              content: './src/docs/grid/gutters.md',
             },
             {
-              name: 'Aligment',
+              name: 'Alignment',
               content: './src/docs/grid/alignment.md',
             },
             {
-              name: 'Row Reverse',
-              content: './src/docs/grid/row_reverse.md',
+              name: 'Reordering',
+              content: './src/docs/grid/reordering.md',
             },
             {
-              name: 'Column Reverse',
-              content: './src/docs/grid/column_reverse.md',
+              name: 'Offsetting Columns',
+              content: './src/docs/grid/offsetting.md',
+            },
+            {
+              name: 'Nesting',
+              content: './src/docs/grid/nesting.md',
+            },
+            {
+              name: 'Examples',
+              content: './src/docs/grid/examples.md',
             },
           ],
         },

@@ -5,19 +5,46 @@ import {
   flexStyle,
   offsetStyle,
 } from '../../../utils/flexHelpers'
-import { gridConfig } from '../config'
 
 const debugStyle = () => css`
   background-color: #5901ad40;
   outline: #fff solid 1px;
 `
 
-const paddingStyle = () => css`
-  /** remove padding if noGutter prop is present */
+const getSize = (props, size) => props.theme.sizes.size[size] || size
+
+const heightObjectStyle = css`
   ${props =>
-    props.noGutter
-      ? 'padding: 0'
-      : responsiveProps('padding', gridConfig.gutterWidth)}
+    props.heightProp.max &&
+    css`
+      max-height: ${getSize(props, props.heightProp.max)};
+    `};
+  ${props =>
+    props.heightProp.min &&
+    css`
+      min-height: ${getSize(props, props.heightProp.min)};
+    `};
+`
+
+const heightStyle = css`
+  height: ${props => getSize(props, props.heightProp)};
+`
+
+const widthObjectStyle = css`
+  ${props =>
+    props.widthProp.max &&
+    css`
+      max-width: ${getSize(props, props.widthProp.max)};
+    `};
+  ${props =>
+    props.widthProp.min &&
+    css`
+      min-width: ${getSize(props, props.widthProp.min)};
+    `};
+`
+
+const widthStyle = css`
+  width: ${props => getSize(props, props.widthProp)};
 `
 
 const ColWrapper = styled.div`
@@ -25,7 +52,6 @@ const ColWrapper = styled.div`
   ${genericStyles}
 
   display: flex;
-  outline: none;
 
   /** column-based flex size */
   ${props =>
@@ -35,8 +61,13 @@ const ColWrapper = styled.div`
 
   /** conditional styles */
   ${props => props.debug && debugStyle()}
-  ${props => !props.padding && paddingStyle()}
   ${props => props.background && backgroundStyle(props.background)}
+  ${props =>
+    props.heightProp &&
+    (typeof props.heightProp === 'object' ? heightObjectStyle : heightStyle)}
+  ${props =>
+    props.widthProp &&
+    (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle)}
 
   /** responsive props */
   ${props =>

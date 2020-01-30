@@ -14,10 +14,11 @@ function Row({
   children,
   debug,
   direction,
-  fill,
+  grow,
   height,
   justify,
   flexWrap,
+  noGutter,
   onClick,
   width,
   ...rest
@@ -29,11 +30,12 @@ function Row({
       as={as}
       background={background}
       debug={debug}
-      fillProp={fill}
       flexDirection={direction}
       flexWrap={flexWrap}
+      growProp={grow}
       heightProp={height}
       justify={justify}
+      noGutter={noGutter}
       onClick={onClick}
       widthProp={width}
       {...rest}
@@ -85,13 +87,10 @@ Row.propTypes = {
     PropTypes.oneOf(['column', 'row', 'column-reverse', 'row-reverse']),
     PropTypes.object,
   ]),
-  /** Whether the width and/or height should fill the container. 'horizontal', 'vertical' */
-  fill: PropTypes.oneOfType([
-    PropTypes.oneOf(['horizontal', 'vertical']),
-    PropTypes.bool,
-  ]),
   /** Whether children can wrap if they can't all fit. */
   flexWrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+  /** Flex Grow. */
+  grow: PropTypes.bool,
   /** Set a fixed height. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value */
   height: PropTypes.oneOfType([
     PropTypes.oneOf([
@@ -122,6 +121,8 @@ Row.propTypes = {
     ]),
     PropTypes.object,
   ]),
+  /**	Removes the space between children columns. */
+  noGutter: PropTypes.bool,
   /** On click event. This triggers specific function. */
   onClick: PropTypes.func,
   /** Set a fixed width. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value  */
@@ -142,11 +143,13 @@ Row.propTypes = {
 }
 
 Row.defaultProps = {
-  align: 'stretch',
+  align: 'flex-start',
   debug: false,
   direction: 'row',
   flexWrap: 'wrap',
+  grow: true,
   justify: 'flex-start',
+  noGutter: false,
   ...genericPropsDefaults,
 }
 

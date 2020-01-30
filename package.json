@@ -1,7 +1,7 @@
 {
   "name": "@moneypensionservice/directories",
   "version": "0.1.0",
-  "description": "React component library for Directories project",
+  "description": "MaPS React Component Library",
   "homepage": "https://moneyadviceservice.github.io/react_library/",
   "main": "lib/index.js",
   "files": [
@@ -47,7 +47,7 @@
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-styleguidist": "^10.4.1",
+    "react-styleguidist": "^10.6.1",
     "rollup": "^1.28.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",

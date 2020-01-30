@@ -45,7 +45,7 @@ export const genericPropTypes = {
 
 export const genericPropsDefaults = {
   a11yTitle: undefined,
-  alignSelf: 'start',
+  alignSelf: undefined,
   margin: undefined,
   padding: undefined,
   border: undefined,

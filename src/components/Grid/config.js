@@ -1,13 +1,11 @@
 export const gridConfig = {
   // col gutter
   gutterWidth: {
-    xs: '0 16px',
-    md: '0 24px',
+    xs: '0 15px',
   },
   // container padding
   containerPadding: {
-    xs: '0 16px',
-    md: '0 24px',
+    xs: '0 15px',
   },
   // container max-width
   containerWidth: {
