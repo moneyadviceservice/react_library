@@ -103,7 +103,6 @@ Row.propTypes = {
       'xxlarge',
     ]),
     PropTypes.string,
-    PropTypes.object,
   ]),
   /**	Align the contents along the main axis. 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly', 'start', 'end', 'left', 'right' */
   justify: PropTypes.oneOfType([
@@ -137,7 +136,6 @@ Row.propTypes = {
       'xxlarge',
     ]),
     PropTypes.string,
-    PropTypes.object,
   ]),
   ...genericPropTypes,
 }

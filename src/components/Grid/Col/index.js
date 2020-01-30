@@ -101,7 +101,6 @@ Col.propTypes = {
       'xxlarge',
     ]),
     PropTypes.string,
-    PropTypes.object,
   ]),
   /**	Align the contents along the main axis. 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly', 'start', 'end', 'left', 'right' */
   justify: PropTypes.oneOfType([
@@ -147,7 +146,6 @@ Col.propTypes = {
       'xxlarge',
     ]),
     PropTypes.string,
-    PropTypes.object,
   ]),
   ...genericPropTypes,
 }
@@ -157,7 +155,6 @@ Col.defaultProps = {
   debug: false,
   direction: 'column',
   justify: 'flex-start',
-  reverse: false,
   ...genericPropsDefaults,
 }
 

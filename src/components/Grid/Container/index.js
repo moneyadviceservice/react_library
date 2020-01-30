@@ -50,7 +50,6 @@ Container.propTypes = {
       image: PropTypes.string,
       repeat: PropTypes.string,
       size: PropTypes.string,
-      dark: PropTypes.bool,
     }),
   ]),
   /** Content inside element. */
