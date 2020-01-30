@@ -1,7 +1,3 @@
-### Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive breakpoints and predefined props.
-
-#### **How it works:**
-
 Our grid system uses a series of containers, rows, and columns to layout and align content. It’s built with [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) and is fully responsive. Below is an example and an in-depth look at how the grid comes together.
 
 New to or unfamiliar with flexbox?  
@@ -25,7 +21,7 @@ import { Container, Row, Col } from '@moneypensionservice/directories';
 </Container>
 ```
 
-> The above example creates three equal-width columns on small, medium, large, and extra large devices using our predefined grid props. Those columns are centered in the page with the parent `Container` component.
+> The above example creates three equal-width columns on screens larger than 768px which collapse on smaller sreens using our predefined grid props. Those columns are centered in the page with the parent `Container` component.
 
 Breaking it down:
 

@@ -7,7 +7,7 @@ import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container>
   <Row>
-    <Col noGutter sizes={{xs: 12, md: 8}} debug>
+    <Col sizes={{xs: 12, md: 8}} debug>
       Col 1
     </Col>
     <Col sizes={{xs: 12, md: 4}} debug>
