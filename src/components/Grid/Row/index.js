@@ -23,6 +23,15 @@ function Row({
   width,
   ...rest
 }) {
+  const renderChildren = (children, noGutter) => {
+    //The <Row/> renders it's children, but passes in this.props.noGutter to each child
+    return React.Children.map(children, child =>
+      React.cloneElement(child, {
+        noGutter: noGutter,
+      })
+    )
+  }
+
   return (
     <RowWrapper
       align={align}
@@ -35,12 +44,11 @@ function Row({
       growProp={grow}
       heightProp={height}
       justify={justify}
-      noGutter={noGutter}
       onClick={onClick}
       widthProp={width}
       {...rest}
     >
-      {children}
+      {renderChildren(children, noGutter)}
     </RowWrapper>
   )
 }
@@ -148,7 +156,7 @@ Row.defaultProps = {
   grow: true,
   justify: 'flex-start',
   noGutter: false,
-  ...genericPropsDefaults,
+  ...genericPropsDefaults(),
 }
 
 /** @component */

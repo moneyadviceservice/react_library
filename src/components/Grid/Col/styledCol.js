@@ -5,10 +5,15 @@ import {
   flexStyle,
   offsetStyle,
 } from '../../../utils/flexHelpers'
+import { gridConfig } from '../config'
 
 const debugStyle = () => css`
   background-color: #5901ad40;
   outline: #fff solid 1px;
+`
+
+const gutterStyle = () => css`
+  ${responsiveProps('padding', gridConfig.gutterWidth)}
 `
 
 const getSize = (props, size) => props.theme.sizes.size[size] || size
@@ -26,6 +31,7 @@ const ColWrapper = styled.div`
   /** conditional styles */
   ${props => props.debug && debugStyle()}
   ${props => props.background && backgroundStyle(props.background)}
+  ${props => !props.padding && !props.noGutter && gutterStyle()}
 
   /** responsive props */
   ${props =>

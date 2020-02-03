@@ -20,7 +20,6 @@ export const responsiveProps = (property, values) => {
 }
 
 export const flexStyle = sizeProp => {
-  console.log('size Prop: ', sizeProp.sm)
   if (typeof sizeProp === 'number') {
     return css`
       flex-basis: ${(sizeProp / 12) * 100}%;

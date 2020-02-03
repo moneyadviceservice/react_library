@@ -155,7 +155,7 @@ Col.defaultProps = {
   debug: false,
   direction: 'column',
   justify: 'flex-start',
-  ...genericPropsDefaults,
+  ...genericPropsDefaults(),
 }
 
 /** @component */

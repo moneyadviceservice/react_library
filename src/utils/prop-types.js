@@ -43,10 +43,18 @@ export const genericPropTypes = {
   ]),
 }
 
-export const genericPropsDefaults = {
-  a11yTitle: undefined,
-  alignSelf: undefined,
-  margin: undefined,
-  padding: undefined,
-  border: undefined,
+export function genericPropsDefaults({
+  a11yTitle = null,
+  alignSelf = null,
+  margin = null,
+  padding = null,
+  border = null,
+} = {}) {
+  return {
+    a11yTitle: a11yTitle,
+    alignSelf: alignSelf,
+    margin: margin,
+    padding: padding,
+    border: border,
+  }
 }

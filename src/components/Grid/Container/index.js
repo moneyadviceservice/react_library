@@ -98,7 +98,7 @@ Container.defaultProps = {
   debug: false,
   direction: 'column',
   fluid: false,
-  ...genericPropsDefaults,
+  ...genericPropsDefaults(),
 }
 
 /** @component */

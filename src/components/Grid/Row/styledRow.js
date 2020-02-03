@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 import { genericStyles, backgroundStyle } from '../../../utils/helpers'
 import { responsiveProps } from '../../../utils/flexHelpers'
-import { gridConfig } from '../config'
 
 const getSize = (props, size) => props.theme.sizes.size[size] || size
 
@@ -9,14 +8,6 @@ const debugStyle = () => css`
   background-color: #5901ad40;
   outline: #fff solid 1px;
 `
-
-const marginStyle = props =>
-  !props.noGutter &&
-  css`
-    & > * {
-      ${responsiveProps('padding', gridConfig.gutterWidth)}
-    }
-  `
 
 const RowWrapper = styled.div`
   /** align-self, padding, margin, border */
@@ -29,7 +20,6 @@ const RowWrapper = styled.div`
 
   /** conditional styles */
   ${props => props.debug && debugStyle()}
-  ${props => !props.margin && marginStyle(props)}
   ${props => props.background && backgroundStyle(props.background)}
 
   /** responsive props */

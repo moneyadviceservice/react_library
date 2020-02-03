@@ -86,7 +86,7 @@ Button.defaultProps = {
   primary: false,
   disabled: false,
   type: 'button',
-  ...genericPropsDefaults,
+  ...genericPropsDefaults({ alignSelf: 'start' }),
 }
 
 /** @component */
