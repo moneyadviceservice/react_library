@@ -21,14 +21,17 @@ const getSize = (props, size) => props.theme.sizes.size[size] || size
 const ColWrapper = styled.div`
   /** align-self, padding, margin, border */
   ${genericStyles}
-
+  
   display: flex;
+  flex-wrap: ${props => props.flexWrap};
   max-width: 100%;
 
   /** column-based flex size */
-  ${props => (props.sizesProp ? flexStyle(props.sizesProp) : 'flex: 1 0 auto;')}
+  ${props =>
+    props.sizesProp ? flexStyle(props.sizesProp) : 'flex-basis: auto;'}
 
   /** conditional styles */
+  ${props => !props.sizesProp && `flex-grow: ${props.growProp ? 1 : 0};`}
   ${props => props.debug && debugStyle()}
   ${props => props.background && backgroundStyle(props.background)}
   ${props => !props.padding && !props.noGutter && gutterStyle()}

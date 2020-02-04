@@ -16,6 +16,7 @@ function Col({
   direction,
   fill,
   flexWrap,
+  grow,
   height,
   justify,
   offset,
@@ -34,6 +35,7 @@ function Col({
       fillProp={fill}
       flexDirection={direction}
       flexWrap={flexWrap}
+      growProp={grow}
       heightProp={height}
       justify={justify}
       offsetProp={offset}
@@ -89,6 +91,10 @@ Col.propTypes = {
     PropTypes.oneOf(['column', 'row', 'column-reverse', 'row-reverse']),
     PropTypes.object,
   ]),
+  /** Whether children can wrap if they can't all fit. */
+  flexWrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+  /** Flex Grow. This will not work with the sizes prop. */
+  grow: PropTypes.bool,
   /** Set a fixed height. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value */
   height: PropTypes.oneOfType([
     PropTypes.oneOf([
@@ -154,6 +160,8 @@ Col.defaultProps = {
   align: 'stretch',
   debug: false,
   direction: 'column',
+  flexWrap: 'wrap',
+  grow: true,
   justify: 'flex-start',
   ...genericPropsDefaults(),
 }

@@ -4,7 +4,7 @@ Multiple Button Classes.
 import { Button, Row, Col } from '@moneypensionservice/directories';
 
 <Row noGutter>
-  <Col direction='row' justify='space-between'>
+  <Col direction='row' justify='space-evenly'>
     <Button text='Default' />
     <Button disabled text='Default Disabled' />
     <Button primary text='Primary' />

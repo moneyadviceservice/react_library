@@ -26,7 +26,8 @@ export const flexStyle = sizeProp => {
     `
   } else if (sizeProp === 'auto') {
     return css`
-      flex: 0 0 auto;
+      flex-basis: auto;
+      flex-grow: 0;
     `
   } else {
     return dimensions.map(d => {
@@ -39,7 +40,7 @@ export const flexStyle = sizeProp => {
         `
       } else if (breakpoints[d] && sizeProp[d] === 'auto') {
         return css`
-          ${breakpointStyle(breakpoints[d], `flex: 1 0 auto; max-width: 100%;`)}
+          ${breakpointStyle(breakpoints[d], `flex-basis: auto; flex-grow: 1;`)}
         `
       }
     })
