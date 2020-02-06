@@ -1,149 +1,169 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
-import config, { DIMENSIONS, BASE_CONF } from '../config'
+import {
+  genericPropTypes,
+  genericPropsDefaults,
+} from '../../../utils/prop-types'
+import ColWrapper from './styledCol'
 
-const Col = styled.div`
-  box-sizing: border-box;
-  flex: 1 0 auto;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  ${p =>
-    !p.noGutter &&
-    css`
-      ${DIMENSIONS.map(
-        d =>
-          config().breakpoints[d] &&
-          config().media[d]`
-      padding-right: ${config().gutterWidth[d] / 2}rem;
-      padding-left: ${config().gutterWidth[d] / 2}rem;
-    `
-      )}
-    `}
-
-  ${p => css`
-    ${DIMENSIONS.map(
-      d =>
-        BASE_CONF.breakpoints[d] &&
-        BASE_CONF.media[d]`
-      ${p[d] &&
-        `
-        flex: 1 1 ${(p[d] / BASE_CONF.columns[d]) * 100}%;
-        max-width: ${(p[d] / BASE_CONF.columns[d]) * 100}%;
-      `}
-    `
-    )}
-  `}
-
-  ${p =>
-    p.offset &&
-    css`
-      ${DIMENSIONS.map(
-        d =>
-          config().breakpoints[d] &&
-          config().media[d]`
-    ${
-      typeof p.offset === 'object'
-        ? p.offset[d] !== undefined &&
-          `margin-left: ${
-            p.offset[d] > 0 ? (p.offset[d] / config().columns[d]) * 100 : 0
-          }%`
-        : `margin-left: ${(p.offset / config().columns['xs']) * 100}%`
-    };
-    `
-      )}
-    `}
-
-  ${p =>
-    p.reverse &&
-    css`
-      ${Array.isArray(p.reverse)
-        ? DIMENSIONS.map(
-            d =>
-              config().breakpoints[d] &&
-              config().media[d]`
-        flex-direction: ${
-          p.reverse.indexOf(d) !== -1 ? 'column-reverse' : 'column'
-        };
-      `
-          )
-        : 'flex-direction: column-reverse;'}
-    `}
-
-  ${p =>
-    p.align &&
-    css`
-      ${typeof p.align === 'object'
-        ? DIMENSIONS.map(
-            d =>
-              config().breakpoints[d] &&
-              config().media[d]`${p.align[d] && `align-items: ${p.align[d]}`}`
-          )
-        : `align-items: ${p.align};`}
-    `}
-  
-  ${p =>
-    p.justify &&
-    css`
-      ${typeof p.justify === 'object'
-        ? DIMENSIONS.map(
-            d =>
-              config().breakpoints[d] &&
-              config().media[d]`${p.justify[d] &&
-                `justify-content: ${p.justify[d]}`}`
-          )
-        : `justify-content: ${p.justify};`}
-    `}
-  
-  ${({ debug }) =>
-    debug &&
-    css`
-      background-color: #5901ad40;
-      outline: #fff solid 1px;
-    `}
-`
+function Col({
+  a11yTitle,
+  align,
+  as,
+  background,
+  children,
+  debug,
+  direction,
+  fill,
+  flexWrap,
+  grow,
+  height,
+  justify,
+  offset,
+  onClick,
+  sizes,
+  width,
+  ...rest
+}) {
+  return (
+    <ColWrapper
+      align={align}
+      aria-label={a11yTitle}
+      as={as}
+      background={background}
+      debug={debug}
+      fillProp={fill}
+      flexDirection={direction}
+      flexWrap={flexWrap}
+      growProp={grow}
+      heightProp={height}
+      justify={justify}
+      offsetProp={offset}
+      onClick={onClick}
+      sizesProp={sizes}
+      widthProp={width}
+      {...rest}
+    >
+      {children}
+    </ColWrapper>
+  )
+}
 
 // Documentation
 Col.propTypes = {
-  /** sets the number of columns on screens xs */
-  xs: PropTypes.oneOf(['string', 'number']),
-  /** sets the number of columns on screens sm */
-  sm: PropTypes.oneOf(['string', 'number']),
-  /** sets the number of columns on screens md */
-  md: PropTypes.oneOf(['string', 'number']),
-  /** sets the number of columns on screens lg */
-  lg: PropTypes.oneOf(['string', 'number']),
-  /** sets the number of columns on screens xl */
-  xl: PropTypes.oneOf(['string', 'object']),
-  /** align the content vertically */
-  align: PropTypes.oneOf(['string', 'object']),
-  /**	align the content horizontally */
-  justify: PropTypes.oneOf(['string', 'object']),
-  /**	sets the number of the offset columns */
-  offSet: PropTypes.oneOf(['number', 'object']),
-  /**	reverses the direction of the column */
-  reverse: PropTypes.oneOf(['bool', 'array']),
-  /**	removes the gutter */
-  noGutter: PropTypes.bool,
-  /** content */
+  /**	Align the contents along the cross axis. 'stretch', 'flex-start', 'flex-end', 'center', 'baseline', 'first baseline', 'last baseline', 'start', 'end', 'self-start', 'self-end' */
+  align: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'stretch',
+      'flex-start',
+      'flex-end',
+      'center',
+      'baseline',
+      'first baseline',
+      'last baseline',
+      'start',
+      'end',
+      'self-start',
+      'self-end',
+    ]),
+    PropTypes.object,
+  ]),
+  /** The DOM tag or react component to use for the element. */
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  /** A color identifier or url to use for the background or image. */
+  background: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      color: PropTypes.string,
+      opacity: PropTypes.bool,
+      position: PropTypes.string,
+      image: PropTypes.string,
+      repeat: PropTypes.string,
+      size: PropTypes.string,
+    }),
+  ]),
+  /** Content inside element. */
   children: PropTypes.node,
-  /** enables debug */
+  /** Enables debug styles. */
   debug: PropTypes.bool,
+  /** The orientation to layout the child components in. 'column', 'row', 'column-reverse', 'row-reverse' */
+  direction: PropTypes.oneOfType([
+    PropTypes.oneOf(['column', 'row', 'column-reverse', 'row-reverse']),
+    PropTypes.object,
+  ]),
+  /** Whether children can wrap if they can't all fit. */
+  flexWrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+  /** Flex Grow. This will not work with the sizes prop. */
+  grow: PropTypes.bool,
+  /** Set a fixed height. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value */
+  height: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'xxsmall',
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+      'xxlarge',
+    ]),
+    PropTypes.string,
+  ]),
+  /**	Align the contents along the main axis. 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly', 'start', 'end', 'left', 'right' */
+  justify: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'flex-start',
+      'flex-end',
+      'center',
+      'space-between',
+      'space-around',
+      'space-evenly',
+      'start',
+      'end',
+      'left',
+      'right',
+    ]),
+    PropTypes.object,
+  ]),
+  /**	Sets the number of the offset columns. */
+  offSet: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+  /** On click event. This triggers specific function. */
+  onClick: PropTypes.func,
+  /** Sets the number of columns on multiple screen sizes. */
+  sizes: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.oneOf(['auto']),
+    PropTypes.shape({
+      xs: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['auto'])]),
+      sm: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['auto'])]),
+      md: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['auto'])]),
+      lg: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['auto'])]),
+      xl: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['auto'])]),
+    }),
+  ]),
+  /** Set a fixed width. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value  */
+  width: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'xxsmall',
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+      'xxlarge',
+    ]),
+    PropTypes.string,
+  ]),
+  ...genericPropTypes,
 }
 
 Col.defaultProps = {
-  xs: 'auto',
-  sm: 'auto',
-  md: 'auto',
-  lg: 'auto',
-  xl: 'auto',
-  reverse: false,
-  noGutter: false,
-  children: null,
-  debug: false,
   align: 'stretch',
+  debug: false,
+  direction: 'column',
+  flexWrap: 'wrap',
+  grow: true,
   justify: 'flex-start',
+  ...genericPropsDefaults(),
 }
 
 /** @component */

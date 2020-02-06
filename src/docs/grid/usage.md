@@ -1,5 +1,3 @@
+### Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive breakpoints and predefined props.
 
-
-<p>`import { Container, Row, Col } from '@moneypensionservice/directories'`<p>
-
-Resize your window to see the responsive magic happening!
+```import { Container, Row, Col } from '@moneypensionservice/directories'```

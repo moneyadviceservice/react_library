@@ -32,6 +32,16 @@ export default function(baseSpacing = 24, scale = 6) {
       large: `${baseSpacing / 2}px`, // 12
       xlarge: `${baseSpacing}px`, // 24
     },
+    size: {
+      xxsmall: `${baseSpacing * 2}px`, // 48
+      xsmall: `${baseSpacing * 4}px`, // 96
+      small: `${baseSpacing * 8}px`, // 192
+      medium: `${baseSpacing * 16}px`, // 384
+      large: `${baseSpacing * 32}px`, // 768
+      xlarge: `${baseSpacing * 48}px`, // 1152
+      xxlarge: `${baseSpacing * 64}px`, // 1536
+      full: '100%',
+    },
     button: {
       border: {
         size: 'none',

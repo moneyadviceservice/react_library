@@ -1,17 +1,15 @@
 export default function() {
   const colors = {
-    // Colors
-    baseColor: '#428513',
-    accentColor: '#006A00',
-    alternativeColor: '#2F6500',
-
-    alternateBackground: '#edf0f0',
-    primaryBackground: '#ffffff',
-    textColor: '#2e3030',
-    linkColor: '#003d8e',
-
-    black: '#000000',
-
+    // Global Colors
+    dark: 'black',
+    light: 'white',
+    alternate: '#edf0f0', // grey background
+    opacity: {
+      strong: 0.8,
+      medium: 0.4,
+      weak: 0.1,
+    },
+    // Component Colors
     button: {
       borderBottomColor: '#c2d0cc',
       background: '#d1d5d5',

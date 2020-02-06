@@ -1,96 +1,162 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
-import config, { DIMENSIONS } from '../config'
+import {
+  genericPropTypes,
+  genericPropsDefaults,
+} from '../../../utils/prop-types'
+import RowWrapper from './styledRow'
 
-const Row = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  flex: 1 0 auto;
-  flex-wrap: wrap;
-  
-  ${() => css`
-    ${DIMENSIONS.map(
-      d =>
-        config().container[d] &&
-        config().media[d]`
-      margin-left: -${config().gutterWidth[d] / 2}rem;
-      margin-right: -${config().gutterWidth[d] / 2}rem;
-    `
-    )}
-  `}
+function Row({
+  a11yTitle,
+  align,
+  as,
+  background,
+  children,
+  debug,
+  direction,
+  grow,
+  height,
+  justify,
+  flexWrap,
+  noGutter,
+  onClick,
+  width,
+  ...rest
+}) {
+  const renderChildren = (children, noGutter) => {
+    //The <Row/> renders it's children, but passes in this.props.noGutter to each child
+    return React.Children.map(children, child =>
+      React.cloneElement(child, {
+        noGutter: noGutter,
+      })
+    )
+  }
 
-  ${p =>
-    p.reverse &&
-    css`
-      ${Array.isArray(p.reverse)
-        ? DIMENSIONS.map(
-            d =>
-              config().breakpoints[d] &&
-              config().media[d]`
-        flex-direction: ${p.reverse.indexOf(d) !== -1 ? 'row-reverse' : 'row'};
-      `
-          )
-        : 'flex-direction: row-reverse;'}
-    `}
-
-  ${p =>
-    p.align &&
-    css`
-      ${typeof p.align === 'object'
-        ? DIMENSIONS.map(
-            d =>
-              config().breakpoints[d] &&
-              config().media[d]`${p.align[d] && `align-items: ${p.align[d]}`}`
-          )
-        : `align-items: ${p.align};`}
-    `}
-  
-  ${p =>
-    p.justify &&
-    css`
-      ${typeof p.justify === 'object'
-        ? DIMENSIONS.map(
-            d =>
-              config().breakpoints[d] &&
-              config().media[d]`${p.justify[d] &&
-                `justify-content: ${p.justify[d]}`}`
-          )
-        : `justify-content: ${p.justify};`}
-    `}
-
-  ${({ debug }) =>
-    debug &&
-    css`
-      background-color: #5901ad40;
-      outline: #fff solid 1px;
-    `}
-`
+  return (
+    <RowWrapper
+      align={align}
+      aria-label={a11yTitle}
+      as={as}
+      background={background}
+      debug={debug}
+      flexDirection={direction}
+      flexWrap={flexWrap}
+      growProp={grow}
+      heightProp={height}
+      justify={justify}
+      onClick={onClick}
+      widthProp={width}
+      {...rest}
+    >
+      {renderChildren(children, noGutter)}
+    </RowWrapper>
+  )
+}
 
 // Documentation
-const boolOrArray = PropTypes.oneOfType([PropTypes.bool, PropTypes.array])
-
-const stringOrObject = PropTypes.oneOfType([PropTypes.string, PropTypes.object])
-
 Row.propTypes = {
-  /**	reverses the direction of the row */
-  reverse: boolOrArray,
-  /**	align the content vertically */
-  align: stringOrObject,
-  /**	align the content horizontally */
-  justify: stringOrObject,
-  /**	content */
+  /**	Align the contents along the cross axis. 'stretch', 'flex-start', 'flex-end', 'center', 'baseline', 'first baseline', 'last baseline', 'start', 'end', 'self-start', 'self-end' */
+  align: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'stretch',
+      'flex-start',
+      'flex-end',
+      'center',
+      'baseline',
+      'first baseline',
+      'last baseline',
+      'start',
+      'end',
+      'self-start',
+      'self-end',
+    ]),
+    PropTypes.object,
+  ]),
+  /** The DOM tag or react component to use for the element. */
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  /** A color identifier or url to use for the background or image. */
+  background: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      color: PropTypes.string,
+      opacity: PropTypes.bool,
+      position: PropTypes.string,
+      image: PropTypes.string,
+      repeat: PropTypes.string,
+      size: PropTypes.string,
+    }),
+  ]),
+  /** Content inside element. */
   children: PropTypes.node,
-  /** enables debug */
+  /** Enables debug styles. */
   debug: PropTypes.bool,
+  /** The orientation to layout the child components in. 'column', 'row', 'column-reverse', 'row-reverse' */
+  direction: PropTypes.oneOfType([
+    PropTypes.oneOf(['column', 'row', 'column-reverse', 'row-reverse']),
+    PropTypes.object,
+  ]),
+  /** Whether children can wrap if they can't all fit. */
+  flexWrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+  /** Flex Grow. */
+  grow: PropTypes.bool,
+  /** Set a fixed height. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value */
+  height: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'xxsmall',
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+      'xxlarge',
+    ]),
+    PropTypes.string,
+  ]),
+  /**	Align the contents along the main axis. 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly', 'start', 'end', 'left', 'right' */
+  justify: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'flex-start',
+      'flex-end',
+      'center',
+      'space-between',
+      'space-around',
+      'space-evenly',
+      'start',
+      'end',
+      'left',
+      'right',
+    ]),
+    PropTypes.object,
+  ]),
+  /**	Removes the space between children columns. */
+  noGutter: PropTypes.bool,
+  /** On click event. This triggers specific function. */
+  onClick: PropTypes.func,
+  /** Set a fixed width. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value  */
+  width: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'xxsmall',
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+      'xxlarge',
+    ]),
+    PropTypes.string,
+  ]),
+  ...genericPropTypes,
 }
 
 Row.defaultProps = {
-  reverse: false,
-  children: null,
+  align: 'flex-start',
   debug: false,
-  align: 'stretch',
+  direction: 'row',
+  flexWrap: 'wrap',
+  grow: true,
   justify: 'flex-start',
+  noGutter: false,
+  ...genericPropsDefaults(),
 }
 
 /** @component */

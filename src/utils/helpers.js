@@ -2,6 +2,12 @@ import { css } from 'styled-components'
 import { breakpoints, mediaQuery, ALIGN_SELF_MAP } from './constants'
 import theme from '../theme'
 
+export const breakpointStyle = (breakpoint, content) => css`
+  @media only screen ${breakpoint && `and (min-width: ${breakpoint}rem)`} {
+    ${content}
+  }
+`
+
 export const resolveMedia = Object.keys(breakpoints).reduce(
   (media, breakpoint) => {
     //current breakpoint
@@ -73,7 +79,6 @@ export const borderStyle = data => {
       border: ${theme.sizes.borderSize[data] || data};
     `
   }
-
   const styles = []
   const color = data.color || 'black'
   const borderSize = data.size || 'xsmall' // 1px
@@ -106,6 +111,91 @@ export const borderStyle = data => {
     `)
   }
   return styles
+}
+
+export const backgroundStyle = (backgroundArg, textColorArg) => {
+  const textColor = textColorArg || theme.colors
+  const opacity =
+    theme.colors.opacity[backgroundArg.opacity] || backgroundArg.opacity || 1
+  /** if background is object */
+  if (typeof backgroundArg === 'object') {
+    const styles = []
+    /** font color */
+    let color
+    if (backgroundArg.dark) {
+      color = textColor.light
+      styles.push(css`
+        color: ${color};
+      `)
+    }
+    //** if background is an image */
+    if (backgroundArg.image) {
+      styles.push(css`
+        background-image: ${backgroundArg.image};
+        background-repeat: ${backgroundArg.repeat || 'no-repeat'};
+        background-position: ${backgroundArg.position || 'center center'};
+        background-size: ${backgroundArg.size || 'cover'};
+      `)
+    }
+    //** if background is a color */
+    if (backgroundArg.color) {
+      const color = backgroundArg.color
+      /** if color in hex, convert to rgba with opacity */
+      const backgroundColor =
+        (typeof color === 'string' && hexToRGB(color, opacity)) || color
+      styles.push(css`
+        background-color: ${backgroundColor};
+      `)
+    }
+    return styles
+  }
+  /** if background is a string */
+  if (typeof backgroundArg === 'string') {
+    /** url */
+    if (backgroundArg.lastIndexOf('url', 0) === 0) {
+      return css`
+        background: ${backgroundArg} no-repeat center center;
+        background-size: cover;
+      `
+    } else {
+      /** color value */
+      return css`
+        background: ${backgroundArg};
+      `
+    }
+  }
+  return undefined
+}
+
+function hexToRGB(color, alpha = 1) {
+  // allow for color format: #RGB, #RGBA, #RRGGBB, or #RRGGBBAA
+  const hexExp = /^#[A-Za-z0-9]{3,4}$|^#[A-Za-z0-9]{6,8}$/
+  const rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?\)/
+  const rgbaExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([.0-9]*)\s?\)/
+  // check if it's a hex value or string
+  const canExtractRGBArray = color =>
+    hexExp.test(color) || rgbExp.test(color) || rgbaExp.test(color)
+  // return rgb value
+  if (canExtractRGBArray(color)) {
+    let colorArray = []
+    if (hexExp.test(color)) {
+      colorArray =
+        color.length < 7 // 7 is what's needed for '#RRGGBB'
+          ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(`${v}${v}`, 16))
+          : // https://stackoverflow.com/a/42429333
+            color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16))
+    } else if (color.match(rgbExp)) {
+      colorArray = match.splice(1).map(v => parseInt(v, 10))
+    } else if (color.match(rgbaExp)) {
+      colorArray = match.splice(1).map(v => parseFloat(v, 10))
+    } else {
+      return false
+    }
+    const [red, green, blue] = colorArray
+    return `rgba(${red}, ${green}, ${blue}, ${alpha})`
+  } else {
+    return false
+  }
 }
 
 export const genericStyles = css`

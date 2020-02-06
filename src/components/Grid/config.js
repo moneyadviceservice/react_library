@@ -1,48 +1,16 @@
-import { breakpoints } from '../../utils/constants'
-import { resolveMedia } from '../../utils/helpers'
-
-export const DIMENSIONS = ['xs', 'sm', 'md', 'lg', 'xl']
-
-export const BASE_CONF = {
-  // breakpoints
-  breakpoints,
-  // column numbers
-  columns: {
-    xs: 12,
-    sm: 12,
-    md: 12,
-    lg: 12,
-    xl: 12,
-  },
-  // row gutter
+export const gridConfig = {
+  // col gutter
   gutterWidth: {
-    xs: 1,
-    sm: 1,
-    md: 1.5,
-    lg: 1.5,
-    xl: 1.5,
+    xs: '0 10px',
+    sm: '0 15px',
   },
   // container padding
-  paddingWidth: {
-    xs: 1,
-    sm: 1,
-    md: 1.5,
-    lg: 1.5,
-    xl: 1.5,
+  containerPadding: {
+    xs: '0 15px',
   },
-  // container width
-  container: {
-    xs: 'full', // 'full' = max-width: 100%
-    sm: 'full', // 'full' = max-width: 100%
-    md: 'full', // 'full' = max-width: 100%
-    lg: 90, // max-width: 1440px
-    xl: 90, // max-width: 1440px
+  // container max-width
+  containerWidth: {
+    xs: '100%',
+    lg: '1440px',
   },
-  media: {},
-}
-
-export default function gridConfig() {
-  BASE_CONF.media = resolveMedia
-  // return config with media queries
-  return BASE_CONF
 }

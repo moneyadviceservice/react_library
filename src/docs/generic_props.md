@@ -212,3 +212,56 @@ import { Row, Col, Button } from '@moneypensionservice/directories';
   </Col>
 </Row>
 ```
+
+### **background**
+
+> A color identifier to use for the background or image. For example: 'palevioletred' or '#000324'. Or, a 'url()' for an image.
+
+Prop.Type:
+```json
+STRING:
+
+"palevioletred",
+"salmon",
+"#FF1094"
+"url("http://assets.com/img.png")",
+
+OBJECT: 
+
+{
+  "color": "palevioletred",
+  "opacity": 1,
+  "position": "center center",
+  "image": "url("http://assets.com/img.png")",
+  "repeat": "no-repeat",
+  "size": "cover",
+  "dark": true,
+}
+
+Where dark indicates there's a dark background and changes fonts to lighter colors.
+
+Where opacity could be: (this will not work for image backgrounds)
+"weak"
+"medium"
+"strong"
+a number where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent.
+
+Where position could be:
+any valid CSS for background-position
+https://www.w3schools.com/cssref/pr_background-position.asp
+```
+
+```jsx
+import { Container, Row, Col } from '@moneypensionservice/directories';
+
+<Container 
+  background={{
+    image: 'url("https://images.pexels.com/photos/3522094/pexels-photo-3522094.jpeg")',
+    dark: true}}>
+  <Row>
+    <Col style={{height: 300}}>
+      This is a column inside a container.
+    </Col>
+  </Row>
+</Container>
+```

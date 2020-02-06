@@ -1,63 +1,104 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import {
+  genericPropTypes,
+  genericPropsDefaults,
+} from '../../../utils/prop-types'
 
-import config, { DIMENSIONS } from '../config'
+import ContainerWrapper from './styledContainer'
 
-const Container = styled.div`
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 100%;
-  box-sizing: border-box;
-
-  ${() => css`
-    ${DIMENSIONS.map(
-      d =>
-        config().container[d] &&
-        config().media[d]`
-      padding-left: ${config().paddingWidth[d]}rem;
-      padding-right: ${config().paddingWidth[d]}rem;
-    `
-    )}
-  `}
-  
-  ${p =>
-    !p.fluid &&
-    css`
-      ${DIMENSIONS.map(
-        d =>
-          config().container[d] &&
-          config().media[d]`
-      ${
-        typeof config().container[d] === 'number'
-          ? `width: ${config().container[d]}rem;`
-          : 'width: 100%;'
-      }
-    `
-      )}
-    `}
-    
-  ${({ debug }) =>
-    debug &&
-    css`
-      background-color: #5901ad40;
-      outline: #fff solid 1px;
-    `}
-`
+function Container({
+  a11yTitle,
+  as,
+  background,
+  children,
+  debug,
+  direction,
+  fluid,
+  height,
+  width,
+  ...rest
+}) {
+  return (
+    <ContainerWrapper
+      aria-label={a11yTitle}
+      as={as}
+      background={background}
+      debug={debug}
+      flexDirection={direction}
+      fluid={fluid}
+      heightProp={height}
+      widthProp={width}
+      {...rest}
+    >
+      {children}
+    </ContainerWrapper>
+  )
+}
 
 // Documentation
 Container.propTypes = {
-  /** makes container full-width */
-  fluid: PropTypes.bool,
-  /** content */
+  /** The DOM tag or react component to use for the element. */
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  /** A color identifier or url to use for the background or image. */
+  background: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      color: PropTypes.string,
+      opacity: PropTypes.bool,
+      position: PropTypes.string,
+      image: PropTypes.string,
+      repeat: PropTypes.string,
+      size: PropTypes.string,
+    }),
+  ]),
+  /** Content inside element. */
   children: PropTypes.node,
-  /** enables debug */
+  /** Enables debug styles. */
   debug: PropTypes.bool,
+  /** The orientation to layout the child components in. 'column', 'row', 'column-reverse', 'row-reverse' */
+  direction: PropTypes.oneOfType([
+    PropTypes.oneOf(['column', 'row', 'column-reverse', 'row-reverse']),
+    PropTypes.object,
+  ]),
+  /** Makes container full-width across all viewport and device sizes. */
+  fluid: PropTypes.bool,
+  /** Set a fixed height. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value */
+  height: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'xxsmall',
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+      'xxlarge',
+    ]),
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  /** Set a fixed width. 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', any CSS value  */
+  width: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'xxsmall',
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+      'xxlarge',
+    ]),
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  ...genericPropTypes,
 }
 
 Container.defaultProps = {
-  fluid: false,
-  children: null,
   debug: false,
+  direction: 'column',
+  fluid: false,
+  ...genericPropsDefaults(),
 }
 
 /** @component */
