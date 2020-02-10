@@ -1,6 +1,8 @@
 // Theme Provider
 export { default as ThemeProvider } from './components/ThemeProvider'
-// components
+// media queries syntax
+export { resolveMedia } from './utils/helpers'
+// controls
 export { default as Button } from './components/Button'
 // typography
 export { Header } from './components/Typography'

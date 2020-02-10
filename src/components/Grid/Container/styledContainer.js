@@ -3,8 +3,8 @@ import {
   resolveMedia,
   genericStyles,
   backgroundStyle,
+  responsiveProps,
 } from '../../../utils/helpers'
-import { responsiveProps } from '../../../utils/flexHelpers'
 import { gridConfig } from '../config'
 
 const debugStyle = () => css`

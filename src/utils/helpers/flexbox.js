@@ -1,24 +1,13 @@
 import { css } from 'styled-components'
-import { breakpoints, dimensions } from './constants'
-import { breakpointStyle } from './helpers'
+import { breakpoints, dimensions } from '../constants'
+import { breakpointStyle } from './responsive'
 
-export const responsiveProps = (property, values) => {
-  if (typeof values === 'string') {
-    // same values for all screen sizes
-    return `${property}: ${values};`
-  } else if (typeof values === 'object') {
-    return dimensions.map(d => {
-      if (breakpoints[d] && values[d]) {
-        return css`
-          ${breakpointStyle(breakpoints[d], `${property}: ${values[d]};`)}
-        `
-      }
-    })
-  } else {
-    return undefined
-  }
-}
-
+/**
+ * Converts the sizes prop to flex-basis that defines the width of the element inside a flex container.
+ * To be used in the Column component.
+ * @param {number|string|Object} sizeProp The sizes prop.
+ * @returns {string[]} Returns the flex-basis styles for the multiple breakpoints.
+ */
 export const flexStyle = sizeProp => {
   if (typeof sizeProp === 'number') {
     return css`
@@ -47,6 +36,11 @@ export const flexStyle = sizeProp => {
   }
 }
 
+/**
+ * Defines the offset of an element by applying margin-left.
+ * @param {string|Object} offsetProp The offset in columns. Max 12.
+ * @returns {string} Returns the margin-left styles for the multiple breakpoints.
+ */
 export const offsetStyle = offsetProp => {
   if (typeof offsetProp !== 'object') {
     return css`
