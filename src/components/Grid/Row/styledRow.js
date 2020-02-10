@@ -1,6 +1,9 @@
 import styled, { css } from 'styled-components'
-import { genericStyles, backgroundStyle } from '../../../utils/helpers'
-import { responsiveProps } from '../../../utils/flexHelpers'
+import {
+  genericStyles,
+  backgroundStyle,
+  responsiveProps,
+} from '../../../utils/helpers'
 
 const getSize = (props, size) => props.theme.sizes.size[size] || size
 

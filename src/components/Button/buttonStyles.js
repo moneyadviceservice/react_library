@@ -4,7 +4,7 @@ import {
   genericStyles,
   setStyle,
   borderStyle,
-} from '../../utils/helpers'
+} from '../../utils/helpers/index.js'
 
 const defaultStyle = props => css`
   /** border-bottom */

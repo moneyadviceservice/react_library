@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components'
-import { genericStyles, backgroundStyle } from '../../../utils/helpers'
 import {
+  genericStyles,
+  backgroundStyle,
   responsiveProps,
   flexStyle,
   offsetStyle,
-} from '../../../utils/flexHelpers'
+} from '../../../utils/helpers'
 import { gridConfig } from '../config'
 
 const debugStyle = () => css`
