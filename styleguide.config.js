@@ -32,7 +32,7 @@ module.exports = {
   },
   pagePerSection: true,
   exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand' code example
-  usageMode: 'expand', // 'hide' | 'collapse' | 'expand' props
+  usageMode: 'collapse', // 'hide' | 'collapse' | 'expand' props
   sections: [
     {
       name: 'Documentation',
@@ -57,8 +57,6 @@ module.exports = {
     {
       name: 'Components',
       content: './src/docs/components.md',
-      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
-      usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
       pagePerSection: true,
       sectionDepth: 1,
       sections: [
@@ -68,7 +66,8 @@ module.exports = {
         },
         {
           name: 'Typography',
-          components: () => ['./src/components/Typography/Headers/index.js'],
+          content: './src/docs/typography.md',
+          components: () => ['./src/components/Heading/index.js'],
         },
       ],
     },

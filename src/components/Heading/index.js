@@ -41,7 +41,7 @@ Heading.propTypes = {
   ]),
   /** Sets the font-weight property. */
   weight: PropTypes.number,
-  /** Sets custom width tot he element. */
+  /** Sets custom width to the element. */
   width: PropTypes.string,
   ...genericPropTypes,
 }
