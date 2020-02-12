@@ -11,8 +11,10 @@ const fontStyles = props => {
 
   return Object.entries(levelStyles).map(breakpoint => {
     const styles = css`
-      font-size: ${breakpoint[1].size};
-      line-height: ${breakpoint[1].height};
+      ${!props.textSize && `font-size: ${breakpoint[1].size};`}
+      ${!props.lineHeight && `line-height: ${breakpoint[1].height};`}
+      ${!props.margin && `margin-top: ${breakpoint[1].marginTop};`}
+      ${!props.margin && `margin-bottom: ${breakpoint[1].marginBottom};`}
     `
     // breakpoint styles
     return breakpointStyle(breakpoints[breakpoint[0]], styles)
@@ -25,12 +27,17 @@ const StyledHeading = styled.h1`
 
   /** font styles */
   ${props => fontStyles(props)}
+
+  /** conditional styles */
   font-weight: ${props =>
     props.weightProp ? props.weightProp : props.theme.sizes.heading.weight};
   color: ${props =>
     props.colorProp ? props.colorProp : props.theme.colors.black};
 
   /** responsive props */
+  ${props => props.textSize && responsiveProps('font-size', props.textSize)}
+  ${props =>
+    props.lineHeight && responsiveProps('line-height', props.lineHeight)}
   ${props => props.textAlign && responsiveProps('text-align', props.textAlign)}
   ${props => responsiveProps('width', props.widthProp)}
 `
