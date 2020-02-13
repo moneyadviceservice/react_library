@@ -10,11 +10,13 @@ const fontStyles = props => {
   const levelStyles = props.theme.sizes.heading.level[props.level]
 
   return Object.entries(levelStyles).map(breakpoint => {
+    const { size, height, marginTop, marginBottom } = breakpoint[1]
+
     const styles = css`
-      ${!props.textSize && `font-size: ${breakpoint[1].size};`}
-      ${!props.lineHeight && `line-height: ${breakpoint[1].height};`}
-      ${!props.margin && `margin-top: ${breakpoint[1].marginTop};`}
-      ${!props.margin && `margin-bottom: ${breakpoint[1].marginBottom};`}
+      ${!props.textSize && `font-size: ${size};`}
+      ${!props.lineHeight && `line-height: ${height};`}
+      ${!props.margin && `margin-top: ${marginTop};`}
+      ${!props.margin && `margin-bottom: ${marginBottom};`}
     `
     // breakpoint styles
     return breakpointStyle(breakpoints[breakpoint[0]], styles)

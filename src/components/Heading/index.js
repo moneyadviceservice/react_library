@@ -23,10 +23,10 @@ Heading.propTypes = {
   children: PropTypes.node,
   /** Changes the text color. */
   color: PropTypes.string,
-  /** Sets the header tag level */
+  /** Sets the header tag level. */
   level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
-  /** */
-  lineHeight: PropTypes.string,
+  /** Sets the line-height property. */
+  lineHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   /** Sets the horizontal alignment. Values: start, end, left, right, center, justify, justify-all, or match-parent. */
   textAlign: PropTypes.oneOfType([
     PropTypes.oneOf([
@@ -41,8 +41,8 @@ Heading.propTypes = {
     ]),
     PropTypes.object,
   ]),
-  /** */
-  textSize: PropTypes.string,
+  /** Sets the font-size property. */
+  textSize: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   /** Sets the font-weight property. */
   weight: PropTypes.number,
   /** Sets custom width to the element. */
