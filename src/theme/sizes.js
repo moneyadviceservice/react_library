@@ -1,11 +1,6 @@
-export default function(baseSpacing = 24, scale = 6) {
-  const fontSizing = (fontSize, lineHeight) => ({
-    size: `${fontSize / 16}rem`,
-    height: `${lineHeight / 16}rem`,
-    marginTop: `${fontSize / 16}rem`,
-    marginBottom: `${fontSize / 2 / 16}rem`,
-  })
+import { headingSizing, paragraphSizing } from '../utils/helpers'
 
+export default function(baseSpacing = 24, scale = 6) {
   const borderWidth = 2
 
   const sizes = {
@@ -54,35 +49,33 @@ export default function(baseSpacing = 24, scale = 6) {
     heading: {
       level: {
         1: {
-          xs: { ...fontSizing(32, 26) },
-          md: { ...fontSizing(40, 42) }, // 1024px
+          xs: { ...headingSizing(32, 26) },
+          md: { ...headingSizing(40, 42) }, // 1024px
         },
         2: {
-          xs: { ...fontSizing(24, 30) },
-          md: { ...fontSizing(28, 36) }, // 1024px
+          xs: { ...headingSizing(24, 30) },
+          md: { ...headingSizing(28, 36) }, // 1024px
         },
         3: {
-          xs: { ...fontSizing(22, 30) },
+          xs: { ...headingSizing(22, 30) },
         },
         4: {
-          xs: { ...fontSizing(16, 24) },
+          xs: { ...headingSizing(16, 24) },
         },
         5: {
-          xs: { ...fontSizing(14, 20) },
+          xs: { ...headingSizing(14, 20) },
         },
         6: {
-          xs: { ...fontSizing(12, 18) },
+          xs: { ...headingSizing(12, 18) },
         },
       },
       weight: 700,
     },
-    text: {
-      xsmall: { ...fontSizing(-1.5) },
-      small: { ...fontSizing(-1) },
-      medium: { ...fontSizing(0) }, // 18px
-      large: { ...fontSizing(1) }, // 22px
-      xlarge: { ...fontSizing(2) },
-      xxlarge: { ...fontSizing(4) },
+    paragraph: {
+      sizing: {
+        xs: { ...paragraphSizing(16, 24) },
+        md: { ...paragraphSizing(18, 24) }, // 1024px
+      },
     },
   }
 
