@@ -1,7 +1,7 @@
 export default function() {
   const colors = {
     // Global Colors
-    dark: 'black',
+    black: 'black',
     light: 'white',
     alternate: '#edf0f0', // grey background
     opacity: {

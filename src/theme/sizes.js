@@ -1,14 +1,9 @@
 export default function(baseSpacing = 24, scale = 6) {
-  // 24
-  const baseFontSize = baseSpacing * 0.75 // 18
-  const fontScale = baseSpacing / scale // 4
-
-  const fontSizing = factor => ({
-    size: `${baseFontSize + factor * fontScale}px`,
-    height: `${baseSpacing + factor * fontScale}px`,
-    // maxWidth chosen to be ~50 characters wide
-    // see: https://ux.stackexchange.com/a/34125
-    maxWidth: `${baseSpacing * (baseFontSize + factor * fontScale)}px`,
+  const fontSizing = (fontSize, lineHeight) => ({
+    size: `${fontSize / 16}rem`,
+    height: `${lineHeight / 16}rem`,
+    marginTop: `${fontSize / 16}rem`,
+    marginBottom: `${fontSize / 2 / 16}rem`,
   })
 
   const borderWidth = 2
@@ -55,6 +50,31 @@ export default function(baseSpacing = 24, scale = 6) {
         vertical: `${baseSpacing / 2}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
       },
+    },
+    heading: {
+      level: {
+        1: {
+          xs: { ...fontSizing(32, 26) },
+          md: { ...fontSizing(40, 42) }, // 1024px
+        },
+        2: {
+          xs: { ...fontSizing(24, 30) },
+          md: { ...fontSizing(28, 36) }, // 1024px
+        },
+        3: {
+          xs: { ...fontSizing(22, 30) },
+        },
+        4: {
+          xs: { ...fontSizing(16, 24) },
+        },
+        5: {
+          xs: { ...fontSizing(14, 20) },
+        },
+        6: {
+          xs: { ...fontSizing(12, 18) },
+        },
+      },
+      weight: 700,
     },
     text: {
       xsmall: { ...fontSizing(-1.5) },
