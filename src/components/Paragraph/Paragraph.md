@@ -1,4 +1,4 @@
-Many props are available to style paragraphs by default as shown in the example bellow.
+Many props are available to style paragraphs by default as shown in the example below.
 
 ```jsx
 import { Paragraph as P } from '@moneypensionservice/directories';
