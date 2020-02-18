@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 import { StyledParagraph } from './StyledParagraph'
 
-const Paragraph = ({ a11yTitle, color, weight, width, ...rest }) => {
+const Paragraph = ({ a11yTitle, as, color, weight, width, ...rest }) => {
   return (
     <StyledParagraph
       aria-label={a11yTitle}
+      as={as}
       colorProp={color}
       weightProp={weight}
       widthProp={width}
@@ -46,7 +47,7 @@ Paragraph.propTypes = {
   /** Underlines the text. */
   underline: PropTypes.bool,
   /** Sets the font-weight property. */
-  weight: PropTypes.number,
+  weight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Sets custom width to the element. */
   width: PropTypes.string,
   ...genericPropTypes,
