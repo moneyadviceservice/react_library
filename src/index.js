@@ -6,5 +6,6 @@ export { resolveMedia } from './utils/helpers'
 export { default as Button } from './components/Button'
 // typography
 export { Heading } from './components/Heading'
+export { Paragraph } from './components/Paragraph'
 // grid
 export { Container, Row, Col } from './components/Grid'
