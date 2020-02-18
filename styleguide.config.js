@@ -70,6 +70,7 @@ module.exports = {
           components: () => [
             './src/components/Heading/index.js',
             './src/components/Paragraph/index.js',
+            './src/components/Inline/index.js',
           ],
         },
       ],
