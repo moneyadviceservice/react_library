@@ -67,7 +67,10 @@ module.exports = {
         {
           name: 'Typography',
           content: './src/docs/typography.md',
-          components: () => ['./src/components/Heading/index.js'],
+          components: () => [
+            './src/components/Heading/index.js',
+            './src/components/Paragraph/index.js',
+          ],
         },
       ],
     },
