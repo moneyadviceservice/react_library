@@ -7,5 +7,6 @@ export { default as Button } from './components/Button'
 // typography
 export { Heading } from './components/Heading'
 export { Paragraph } from './components/Paragraph'
+export { Inline } from './components/Inline'
 // grid
 export { Container, Row, Col } from './components/Grid'
