@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
-import { StyledParagraph } from './StyledParagraph'
+import { StyledParagraph } from '../Paragraph/StyledParagraph'
 
-const Paragraph = ({ a11yTitle, as, color, weight, width, ...rest }) => {
+const Inline = ({ a11yTitle, as, color, weight, width, ...rest }) => {
   return (
     <StyledParagraph
       aria-label={a11yTitle}
@@ -17,7 +17,9 @@ const Paragraph = ({ a11yTitle, as, color, weight, width, ...rest }) => {
 }
 
 // Documentation
-Paragraph.propTypes = {
+Inline.propTypes = {
+  /** The DOM tag or react component to use for the element. */
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.func]),
   /** Content inside component. */
   children: PropTypes.node,
   /** Changes the text color. */
@@ -53,7 +55,8 @@ Paragraph.propTypes = {
   ...genericPropTypes,
 }
 
-Paragraph.defaultProps = {
+Inline.defaultProps = {
+  as: 'span',
   color: null,
   children: null,
   italic: false,
@@ -68,4 +71,4 @@ Paragraph.defaultProps = {
 }
 
 /** @component */
-export { Paragraph }
+export { Inline }
