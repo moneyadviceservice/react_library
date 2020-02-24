@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { resolveMedia } from '../../utils/helpers'
-import { Container } from '../Grid'
+import ContainerWrapper from '../Grid/Container/styledContainer'
 
-const HeaderContainer = styled(Container)`
+const HeaderContainer = styled(ContainerWrapper)`
   background: ${props =>
     !props.background && props.theme.colors.header.background};
   min-height: 3.375rem;
