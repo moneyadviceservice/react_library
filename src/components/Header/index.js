@@ -47,9 +47,12 @@ const Header = ({
 
 // Documentation
 Header.propTypes = {
-  currentLgn: PropTypes.string.isRequired,
+  /** Current Language Value */
+  currentLgn: PropTypes.oneOf(['en', 'cy']),
+  /** Text to be displayed in Locale Button */
   localeText: PropTypes.string,
-  setLanguage: PropTypes.func,
+  /** Function to trigger by Locale Button */
+  setLgn: PropTypes.func,
   ...genericPropTypes,
 }
 
