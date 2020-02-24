@@ -4,6 +4,8 @@ export { default as ThemeProvider } from './components/ThemeProvider'
 export { resolveMedia } from './utils/helpers'
 // controls
 export { default as Button } from './components/Button'
+//Layout
+export { Header } from './components/Header'
 // typography
 export { Heading } from './components/Heading'
 export { Paragraph } from './components/Paragraph'
