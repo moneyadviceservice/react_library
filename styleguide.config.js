@@ -11,7 +11,11 @@ module.exports = {
           loader: 'babel-loader',
         },
         {
-          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          test: /\.svg$/,
+          use: ['@svgr/webpack'],
+        },
+        {
+          test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
           use: [
             {
               loader: 'file-loader',
@@ -63,6 +67,10 @@ module.exports = {
         {
           name: 'Controls',
           components: () => ['./src/components/Button/index.js'],
+        },
+        {
+          name: 'Layout',
+          components: () => ['./src/components/Header/index.js'],
         },
         {
           name: 'Typography',

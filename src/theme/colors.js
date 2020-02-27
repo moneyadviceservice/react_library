@@ -9,6 +9,8 @@ export default function() {
       medium: 0.4,
       weak: 0.1,
     },
+    linkDefault: '#003d8e',
+    focusBg: '#daaf2d',
     // Component Colors
     button: {
       borderBottomColor: '#c2d0cc',
@@ -29,6 +31,9 @@ export default function() {
         disabledBackground: '#f2ebb2',
         disabledBorderColor: '#eddfb2',
       },
+    },
+    header: {
+      background: '#428513',
     },
   }
 

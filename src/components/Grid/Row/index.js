@@ -88,6 +88,8 @@ Row.propTypes = {
   ]),
   /** Content inside element. */
   children: PropTypes.node,
+  /** Applies default max-width */
+  constrained: PropTypes.bool,
   /** Enables debug styles. */
   debug: PropTypes.bool,
   /** The orientation to layout the child components in. 'column', 'row', 'column-reverse', 'row-reverse' */
@@ -150,6 +152,7 @@ Row.propTypes = {
 
 Row.defaultProps = {
   align: 'flex-start',
+  constrained: false,
   debug: false,
   direction: 'row',
   flexWrap: 'wrap',

@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 import {
-  resolveMedia,
   genericStyles,
   backgroundStyle,
   responsiveProps,
@@ -60,10 +59,6 @@ const ContainerWrapper = styled.div`
   ${props =>
     !props.padding && responsiveProps('padding', gridConfig.containerPadding)}
   ${props => !props.margin && 'margin: 0 auto;'}
-  ${props =>
-    !props.fluid &&
-    !props.widthProp &&
-    responsiveProps('max-width', gridConfig.containerWidth)}
   ${props => props.background && backgroundStyle(props.background)}
   ${props =>
     props.heightProp &&
@@ -71,6 +66,11 @@ const ContainerWrapper = styled.div`
   ${props =>
     props.widthProp &&
     (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle)}
+  ${props =>
+    !props.fluid &&
+    !props.widthProp &&
+    responsiveProps('max-width', gridConfig.containerWidth)}
+  ${props => !props.widthProp && props.fluid && 'width: 100%;'}
 
   /** responsive props */
   ${props =>

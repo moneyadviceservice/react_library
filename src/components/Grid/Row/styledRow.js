@@ -16,7 +16,7 @@ const RowWrapper = styled.div`
   /** align-self, padding, margin, border */
   ${genericStyles}
 
-  max-width: 100%;
+  max-width: ${props => (props.constrained ? '1200px' : '100%')};
   display: flex;
   flex-wrap: ${props => props.flexWrap};
   flex-grow: ${props => (props.growProp ? 1 : 0)};
