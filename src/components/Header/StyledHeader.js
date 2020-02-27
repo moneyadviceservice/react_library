@@ -38,7 +38,6 @@ const LogoContainer = styled.a`
 
   & svg {
     fill: white;
-    height: 46px;
   }
 
   ${resolveMedia.md`
