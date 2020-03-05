@@ -71,7 +71,7 @@ const ContainerWrapper = styled.div`
     !props.widthProp &&
     responsiveProps('max-width', gridConfig.containerWidth)}
   ${props => !props.widthProp && props.fluid && 'width: 100%;'}
-
+${props => console.log(props)}
   /** responsive props */
   ${props =>
     props.flexDirection &&
