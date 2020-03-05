@@ -1,4 +1,4 @@
-MAS Header
+MAS Footer
 
 ```jsx
 import React, { useState } from 'react';
