@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 import {
   FooterContainer,
-  GreyPanelRow,
-  MASBannerRow,
+  FooterPrimary,
+  FooterSecondary,
   ContactPanelColumn,
   ContactPanelRow,
+  FooterNav,
+  SocialMediaLinks,
   FooterLinks,
-  SocialMediaCounter,
-  Images,
   Copyright,
 } from './StyledFooter'
 import { Col } from '../Grid'
@@ -29,23 +29,23 @@ const Footer = ({ as, direction, ...rest }) => {
         </ContactPanelColumn>
       </ContactPanelRow>
 
-      <GreyPanelRow>
-        <SocialMediaCounter sizes={{ xs: 12, md: 6 }} debug>
+      <FooterPrimary>
+        <SocialMediaLinks sizes={{ xs: 12, md: 6 }} debug>
           twiter
-        </SocialMediaCounter>
+        </SocialMediaLinks>
 
-        <FooterLinks sizes={{ xs: 12, sm: 8, md: 4 }} debug>
+        <FooterNav sizes={{ xs: 12, sm: 8, md: 4 }} debug>
           links
-        </FooterLinks>
-        <Images sizes={{ xs: 12, sm: 4, md: 2 }} debug>
+        </FooterNav>
+        <FooterLinks sizes={{ xs: 12, sm: 4, md: 2 }} debug>
           images
-        </Images>
+        </FooterLinks>
 
         <Copyright>copyright</Copyright>
-      </GreyPanelRow>
-      <MASBannerRow debug>
+      </FooterPrimary>
+      <FooterSecondary debug>
         <Col>last row</Col>
-      </MASBannerRow>
+      </FooterSecondary>
     </FooterContainer>
   )
 }

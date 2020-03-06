@@ -13,30 +13,30 @@ const ContactPanelColumn = styled(Col)``
 
 // GREY PANEL
 // Row for the grey column under the contact panel
-const GreyPanelRow = styled(Row)``
+const FooterPrimary = styled(Row)``
 
 // Social media counters
-const SocialMediaCounter = styled(Col)``
+const SocialMediaLinks = styled(Col)``
 
 // Footer Link
-const FooterLinks = styled(Col)``
+const FooterNav = styled(Col)``
 // Blog Button and Language Image
-const Images = styled(Col)``
+const FooterLinks = styled(Col)``
 
 const Copyright = styled(Col)``
 
 // MAS Banner
 // MAS banner row
-const MASBannerRow = styled(Row)``
+const FooterSecondary = styled(Row)``
 
 export {
   FooterContainer,
-  GreyPanelRow,
-  MASBannerRow,
+  FooterPrimary,
+  FooterSecondary,
   ContactPanelColumn,
   ContactPanelRow,
+  FooterNav,
+  SocialMediaLinks,
   FooterLinks,
-  SocialMediaCounter,
-  Images,
   Copyright,
 }
