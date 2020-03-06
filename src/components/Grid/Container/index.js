@@ -13,7 +13,7 @@ function Container({
   background,
   children,
   debug,
-  direction,
+  flexDirection = 'column',
   fluid,
   height,
   width,
@@ -25,7 +25,7 @@ function Container({
       as={as}
       background={background}
       debug={debug}
-      flexDirection={direction}
+      flexDirection={flexDirection}
       fluid={fluid}
       heightProp={height}
       widthProp={width}
@@ -57,7 +57,7 @@ Container.propTypes = {
   /** Enables debug styles. */
   debug: PropTypes.bool,
   /** The orientation to layout the child components in. 'column', 'row', 'column-reverse', 'row-reverse' */
-  direction: PropTypes.oneOfType([
+  flexDirection: PropTypes.oneOfType([
     PropTypes.oneOf(['column', 'row', 'column-reverse', 'row-reverse']),
     PropTypes.object,
   ]),
@@ -96,7 +96,7 @@ Container.propTypes = {
 
 Container.defaultProps = {
   debug: false,
-  direction: 'column',
+  flexDirection: 'column',
   fluid: false,
   ...genericPropsDefaults(),
 }

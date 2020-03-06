@@ -70,7 +70,10 @@ module.exports = {
         },
         {
           name: 'Layout',
-          components: () => ['./src/components/Header/index.js'],
+          components: () => [
+            './src/components/Header/index.js',
+            './src/components/Footer/index.js'
+          ],
         },
         {
           name: 'Typography',
