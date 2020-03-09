@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { Row, Col, Container } from '../Grid'
+import Button from '../Button'
+import { resolveMedia } from '../../utils/helpers'
 
 // Main footer container
 const FooterContainer = styled(Container)``
@@ -9,7 +11,10 @@ const FooterContainer = styled(Container)``
 const ContactPanelRow = styled(Row)``
 
 // Individual social media contact column
-const ContactPanelColumn = styled(Col)``
+const ContactPanelColumn = styled(Col)`
+  justify-content: center;
+  padding: 30px;
+`
 
 // GREY PANEL
 // Row for the grey column under the contact panel
@@ -29,6 +34,17 @@ const Copyright = styled(Col)``
 // MAS banner row
 const FooterSecondary = styled(Row)``
 
+const SocialMediaIcons = styled.span``
+
+const FooterButtons = styled(Button)`
+  font-size: 12px;
+  font-weight: 400;
+
+  ${resolveMedia.md`
+    font-size: 14px;
+`}
+`
+
 export {
   FooterContainer,
   FooterPrimary,
@@ -39,4 +55,6 @@ export {
   SocialMediaLinks,
   FooterLinks,
   Copyright,
+  SocialMediaIcons,
+  FooterButtons,
 }

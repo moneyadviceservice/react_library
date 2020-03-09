@@ -11,21 +11,76 @@ import {
   SocialMediaLinks,
   FooterLinks,
   Copyright,
+  SocialMediaIcons,
+  FooterButtons,
 } from './StyledFooter'
 import { Col } from '../Grid'
+import WhatsAppImg from '../../assets/Images/whatsapp.svg'
+import PhoneImg from '../../assets/Images/phone.svg'
+import WebChatImg from '../../assets/Images/chat.svg'
+import { Heading } from '../Heading'
+import { Paragraph } from '../Paragraph'
+import { Inline } from '../Inline'
 
 const Footer = ({ as, direction, ...rest }) => {
   return (
     <FooterContainer fluid as="footer" {...rest}>
-      <ContactPanelRow debug noGutter>
-        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} debug>
-          webchati
+      <ContactPanelRow>
+        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
+          <WebChatImg width="60px" height="60px" alignSelf="start" />
+          <Heading level={4} textAlign="center">
+            Web Chat
+          </Heading>
+          <Paragraph textAlign="center" textSize="13px">
+            Got a question? Our advisers will point you in the right direction.
+          </Paragraph>
+          <Paragraph textAlign="center" textSize="13px" width="70%">
+            Monday to Friday, 8am to 6pm Saturday, 8am to 3pm Sunday and Bank
+            Holidays, closed
+          </Paragraph>
+          <FooterButtons text="Launch Chat" />
         </ContactPanelColumn>
-        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} debug>
-          whatsapp
+
+        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
+          <WhatsAppImg width="60px" height="60px" alignSelf="start" />
+          <Heading level={4} textAlign="center">
+            WhatsApp
+          </Heading>
+          <Paragraph textAlign="center" textSize="13px">
+            Need help sorting out your debts, have credit questions or want
+            pensions guidance?
+          </Paragraph>
+          <Paragraph textAlign="center" textSize="13px">
+            Add +44 7701 342744 to your Whatsapp and send us a message.
+          </Paragraph>
+          <Paragraph textAlign="center" textSize="13px">
+            For everything else please contact us via Webchat or Telephone.
+          </Paragraph>
+          <FooterButtons text="Launch Chat" />
         </ContactPanelColumn>
-        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} debug>
-          phone
+
+        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
+          <PhoneImg width="60px" height="60px" alignSelf="start" />
+          <Heading level={4} textAlign="center">
+            Contact us
+          </Heading>
+          <Paragraph textAlign="center" textSize="13px">
+            Give us a call for free and impartial money advice.<br></br>
+            <Inline textSize="20px" weight="bold">
+              0800 138 7777
+            </Inline>
+          </Paragraph>
+          <Paragraph textAlign="center" textSize="13px">
+            Monday to Friday, 8am to 6pm Saturday, Sunday and Bank Holidays,
+            closed
+          </Paragraph>
+          <Paragraph textAlign="center" textSize="13px">
+            Our general email address is enquiries@maps.org.uk.
+          </Paragraph>
+          <FooterButtons text="Send Email" />
+          <Paragraph textAlign="center" textSize="13px">
+            We will normally respond to your enquiry within 48 hours of receipt.
+          </Paragraph>
         </ContactPanelColumn>
       </ContactPanelRow>
 

@@ -11,5 +11,6 @@ export { Footer } from './components/Footer'
 export { Heading } from './components/Heading'
 export { Paragraph } from './components/Paragraph'
 export { Inline } from './components/Inline'
+export { Anchor } from './components/Anchor'
 // grid
 export { Container, Row, Col } from './components/Grid'

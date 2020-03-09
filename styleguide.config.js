@@ -72,7 +72,7 @@ module.exports = {
           name: 'Layout',
           components: () => [
             './src/components/Header/index.js',
-            './src/components/Footer/index.js'
+            './src/components/Footer/index.js',
           ],
         },
         {
@@ -82,6 +82,7 @@ module.exports = {
             './src/components/Heading/index.js',
             './src/components/Paragraph/index.js',
             './src/components/Inline/index.js',
+            './src/components/Anchor/index.js',
           ],
         },
       ],
