@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Row, Col, Container } from '../Grid'
 import Button from '../Button'
-import { resolveMedia } from '../../utils/helpers'
+import { resolveMedia, genericStyles } from '../../utils/helpers'
 
 // Main footer container
 const FooterContainer = styled(Container)``
@@ -12,8 +12,10 @@ const ContactPanelRow = styled(Row)``
 
 // Individual social media contact column
 const ContactPanelColumn = styled(Col)`
-  justify-content: center;
-  padding: 30px;
+${genericStyles}
+  justify-content: ${props => (props.justify ? props.justify : 'center')};
+  text-align: ${props => (props.align ? props.align : 'center')};
+  padding-bottom: 30px;
 `
 
 // GREY PANEL

@@ -28,9 +28,7 @@ const Footer = ({ as, direction, ...rest }) => {
       <ContactPanelRow>
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
           <WebChatImg width="60px" height="60px" alignSelf="start" />
-          <Heading level={4} textAlign="center">
-            Web Chat
-          </Heading>
+          <Heading level={2}>Web Chat</Heading>
           <Paragraph textAlign="center" textSize="13px">
             Got a question? Our advisers will point you in the right direction.
           </Paragraph>
@@ -43,9 +41,7 @@ const Footer = ({ as, direction, ...rest }) => {
 
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
           <WhatsAppImg width="60px" height="60px" alignSelf="start" />
-          <Heading level={4} textAlign="center">
-            WhatsApp
-          </Heading>
+          <Heading level={2}>WhatsApp</Heading>
           <Paragraph textAlign="center" textSize="13px">
             Need help sorting out your debts, have credit questions or want
             pensions guidance?
@@ -61,9 +57,7 @@ const Footer = ({ as, direction, ...rest }) => {
 
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
           <PhoneImg width="60px" height="60px" alignSelf="start" />
-          <Heading level={4} textAlign="center">
-            Contact us
-          </Heading>
+          <Heading level={2}>Contact us</Heading>
           <Paragraph textAlign="center" textSize="13px">
             Give us a call for free and impartial money advice.<br></br>
             <Inline textSize="20px" weight="bold">
@@ -84,7 +78,7 @@ const Footer = ({ as, direction, ...rest }) => {
         </ContactPanelColumn>
       </ContactPanelRow>
 
-      <FooterPrimary>
+      {/* <FooterPrimary>
         <SocialMediaLinks sizes={{ xs: 12, md: 6 }} debug>
           twiter
         </SocialMediaLinks>
@@ -100,7 +94,7 @@ const Footer = ({ as, direction, ...rest }) => {
       </FooterPrimary>
       <FooterSecondary debug>
         <Col>last row</Col>
-      </FooterSecondary>
+      </FooterSecondary> */}
     </FooterContainer>
   )
 }
