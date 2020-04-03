@@ -2,19 +2,29 @@ import styled from 'styled-components'
 import { Row, Col, Container } from '../Grid'
 import Button from '../Button'
 import { resolveMedia } from '../../utils/helpers'
+import theme from '../../theme'
 
 // Main footer container
-const FooterContainer = styled(Container)``
+const FooterContainer = styled(Container)`
+  padding: 0;
+`
 
 // CONTACT PANEL
 // Social media contacts row
-const ContactPanelRow = styled(Row)``
+const ContactPanelRow = styled(Row)`
+  padding: 0;
+`
 
 // Individual social media contact column
 const ContactPanelColumn = styled(Col)`
   ${props => !props.justify && 'justify-content: center;'}
   ${props => !props.align && 'text-align: center;'}
+  ${props => !props.height && 'height: 500px;'}
   padding-bottom: 30px;
+  border-right: 1px ${theme.colors.alternate} solid;
+  &:last-child {
+    border: 0;
+  }
 `
 
 // GREY PANEL
