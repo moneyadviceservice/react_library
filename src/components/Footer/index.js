@@ -13,6 +13,8 @@ import {
   Copyright,
   SocialMediaIcons,
   FooterButtons,
+  ContactPanelAdditionalInfoUnorderedList,
+  ContactPanelAdditionalInfoListItem,
 } from './StyledFooter'
 import { Col } from '../Grid'
 import WhatsAppImg from '../../assets/Images/whatsapp.svg'
@@ -34,10 +36,18 @@ const Footer = ({ as, direction, ...rest }) => {
           <Paragraph textAlign="center" textSize="13px" hide>
             Got a question? Our advisers will point you in the right direction.
           </Paragraph>
-          <Paragraph textAlign="center" textSize="13px" width="70%">
-            Monday to Friday, 8am to 6pm Saturday, 8am to 3pm Sunday and Bank
-            Holidays, closed
-          </Paragraph>
+          <ContactPanelAdditionalInfoUnorderedList>
+            <ContactPanelAdditionalInfoListItem>
+              Monday to Friday, 8am to 6pm
+            </ContactPanelAdditionalInfoListItem>
+            <ContactPanelAdditionalInfoListItem>
+              Saturday, 8am to 3pm
+            </ContactPanelAdditionalInfoListItem>
+            <ContactPanelAdditionalInfoListItem>
+              Sunday, and Bank Holidays, closed
+            </ContactPanelAdditionalInfoListItem>
+          </ContactPanelAdditionalInfoUnorderedList>
+
           <FooterButtons text="Launch Chat" />
         </ContactPanelColumn>
 
@@ -70,10 +80,15 @@ const Footer = ({ as, direction, ...rest }) => {
               0800 138 7777
             </Inline>
           </Paragraph>
-          <Paragraph textAlign="center" textSize="13px">
-            Monday to Friday, 8am to 6pm Saturday, Sunday and Bank Holidays,
-            closed
-          </Paragraph>
+
+          <ContactPanelAdditionalInfoUnorderedList>
+            <ContactPanelAdditionalInfoListItem>
+              Monday to Friday, 8am to 6pm
+            </ContactPanelAdditionalInfoListItem>
+            <ContactPanelAdditionalInfoListItem>
+              Saturday, Sunday and Bank Holidays, closed
+            </ContactPanelAdditionalInfoListItem>
+          </ContactPanelAdditionalInfoUnorderedList>
           <Paragraph textAlign="center" textSize="13px">
             Our general email address is enquiries@maps.org.uk.
           </Paragraph>

@@ -3,6 +3,7 @@ import { Row, Col, Container } from '../Grid'
 import Button from '../Button'
 import { resolveMedia } from '../../utils/helpers'
 import theme from '../../theme'
+import { Component } from 'react'
 
 // Main footer container
 const FooterContainer = styled(Container)`
@@ -55,6 +56,12 @@ const FooterButtons = styled(Button)`
     font-size: 14px;
 `}
 `
+// TODO : Separate Components for UL and LI
+const ContactPanelAdditionalInfoUnorderedList = styled.ul`
+  text-align: center;
+  font-size: 13px;
+`
+const ContactPanelAdditionalInfoListItem = styled.li``
 
 export {
   FooterContainer,
@@ -68,4 +75,6 @@ export {
   Copyright,
   SocialMediaIcons,
   FooterButtons,
+  ContactPanelAdditionalInfoUnorderedList,
+  ContactPanelAdditionalInfoListItem,
 }
