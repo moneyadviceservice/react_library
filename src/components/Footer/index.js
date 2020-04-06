@@ -27,9 +27,11 @@ const Footer = ({ as, direction, ...rest }) => {
     <FooterContainer fluid as="footer" {...rest}>
       <ContactPanelRow>
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
-          <WebChatImg width="60px" height="60px" alignSelf="start" />
+          <Heading level={5}>
+            <WebChatImg width="60px" height="60px" alignSelf="start" />
+          </Heading>
           <Heading level={2}>Web Chat</Heading>
-          <Paragraph textAlign="center" textSize="13px">
+          <Paragraph textAlign="center" textSize="13px" hide>
             Got a question? Our advisers will point you in the right direction.
           </Paragraph>
           <Paragraph textAlign="center" textSize="13px" width="70%">
@@ -40,7 +42,9 @@ const Footer = ({ as, direction, ...rest }) => {
         </ContactPanelColumn>
 
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
-          <WhatsAppImg width="60px" height="60px" alignSelf="start" />
+          <Heading level={5}>
+            <WhatsAppImg width="60px" height="60px" alignSelf="start" />
+          </Heading>
           <Heading level={2}>WhatsApp</Heading>
           <Paragraph textAlign="center" textSize="13px">
             Need help sorting out your debts, have credit questions or want
@@ -56,7 +60,9 @@ const Footer = ({ as, direction, ...rest }) => {
         </ContactPanelColumn>
 
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
-          <PhoneImg width="60px" height="60px" alignSelf="start" />
+          <Heading level={5}>
+            <PhoneImg width="60px" height="60px" alignSelf="start" />
+          </Heading>
           <Heading level={2}>Contact us</Heading>
           <Paragraph textAlign="center" textSize="13px">
             Give us a call for free and impartial money advice.<br></br>
