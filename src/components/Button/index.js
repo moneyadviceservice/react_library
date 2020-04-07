@@ -79,6 +79,8 @@ Button.propTypes = {
   children: PropTypes.node,
   /** The type of button. Sets the type to submit for the default button on forms. */
   type: PropTypes.oneOf(['submit', 'button', 'reset']),
+  /** The font weight for the text inside the button */
+  weight: PropTypes.number,
   ...genericPropTypes,
 }
 
@@ -86,6 +88,7 @@ Button.defaultProps = {
   primary: false,
   disabled: false,
   type: 'button',
+  weight: null,
   ...genericPropsDefaults({ alignSelf: 'start' }),
 }
 
