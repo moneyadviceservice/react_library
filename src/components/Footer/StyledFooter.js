@@ -4,6 +4,9 @@ import Button from '../Button'
 import { resolveMedia } from '../../utils/helpers'
 import theme from '../../theme'
 import { Component } from 'react'
+import WebChatImg from '../../assets/Images/chat.svg'
+import WhatsAppImg from '../../assets/Images/whatsapp.svg'
+import PhoneImg from '../../assets/Images/phone.svg'
 
 // Main footer container
 const FooterContainer = styled(Container)`
@@ -26,6 +29,31 @@ const ContactPanelColumn = styled(Col)`
   &:last-child {
     border: 0;
   }
+`
+// The Icons
+
+const WebChat = styled(WebChatImg)`
+  width: 60px;
+  height: 60px;
+  alignf: start;
+  display: block;
+  margin: 0 auto 30px;
+`
+
+const WhatsApp = styled(WhatsAppImg)`
+  width: 60px;
+  height: 60px;
+  alignf: start;
+  display: block;
+  margin: 0 auto 30px;
+`
+
+const Phone = styled(PhoneImg)`
+  width: 60px;
+  height: 60px;
+  alignf: start;
+  display: block;
+  margin: 0 auto 30px;
 `
 
 // GREY PANEL
@@ -77,4 +105,7 @@ export {
   FooterButtons,
   ContactPanelAdditionalInfoUnorderedList,
   ContactPanelAdditionalInfoListItem,
+  WebChat,
+  WhatsApp,
+  Phone,
 }
