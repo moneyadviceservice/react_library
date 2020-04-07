@@ -102,7 +102,10 @@ const ButtonWrapper = styled.button`
   ${props => !props.border && borderStyle(props.theme.sizes.button.border.size)}
 
   /** prop styles */
-  font-weight: ${props => props.theme.typography.fontMedium};
+  ${props =>
+    props.weight
+      ? `font-weight: ${props.weight};`
+      : `font-weight: ${props.theme.typography.fontMedium};`}
   border-radius: ${props => props.theme.sizes.button.border.radius};
   ${props => (props.primary ? primaryStyle(props) : defaultStyle(props))}
 

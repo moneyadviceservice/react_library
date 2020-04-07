@@ -39,8 +39,8 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-size: 1rem;
-    ${props => props.theme.typography.fontFamily}
-    ${props => props.theme.typography.fontLighter}
+    ${props => props.theme.typography.fontFamily};
+    font-weight: ${props => props.theme.typography.fontLighter};
     color: ${props => props.theme.colors.black};
   }
   * {

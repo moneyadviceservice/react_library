@@ -19,8 +19,6 @@ const ContactPanelRow = styled(Row)`
 const ContactPanelColumn = styled(Col)`
   ${props => !props.justify && 'justify-content: center;'}
   ${props => !props.align && 'text-align: center;'}
-  ${props => !props.height && 'height: 500px;'}
-  padding-bottom: 30px;
   border-right: 1px ${theme.colors.alternate} solid;
   &:last-child {
     border: 0;
@@ -47,14 +45,7 @@ const FooterSecondary = styled(Row)``
 
 const SocialMediaIcons = styled.span``
 
-const FooterButtons = styled(Button)`
-  font-size: 12px;
-  font-weight: 400;
-
-  ${resolveMedia.md`
-    font-size: 14px;
-`}
-`
+const FooterButtons = styled(Button)``
 
 export {
   FooterContainer,

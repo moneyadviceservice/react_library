@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 import {
   FooterContainer,
@@ -20,65 +19,76 @@ import PhoneImg from '../../assets/Images/phone.svg'
 import WebChatImg from '../../assets/Images/chat.svg'
 import { Heading } from '../Heading'
 import { Paragraph } from '../Paragraph'
-import { Inline } from '../Inline'
 
 const Footer = ({ as, direction, ...rest }) => {
   return (
     <FooterContainer fluid as="footer" {...rest}>
       <ContactPanelRow>
-        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
-          <Heading level={5}>
-            <WebChatImg width="60px" height="60px" alignSelf="start" />
+        <ContactPanelColumn sizes={{ xs: 12, md: 4 }}>
+          <Heading level={2}>
+            <WebChatImg width="100%" height="60px" />
+            Web Chat
           </Heading>
-          <Heading level={2}>Web Chat</Heading>
-          <Paragraph textAlign="center" textSize="13px" hide>
+          <Paragraph textSize="16px">
             Got a question? Our advisers will point you in the right direction.
           </Paragraph>
-          <Paragraph textAlign="center" textSize="13px" width="70%">
-            Monday to Friday, 8am to 6pm Saturday, 8am to 3pm Sunday and Bank
-            Holidays, closed
+          <Paragraph margin="0px" textSize="16px">
+            Monday to Friday, 8am to 6pm Saturday, 8am to 3pm
           </Paragraph>
-          <FooterButtons text="Launch Chat" />
+          <Paragraph textSize="16px">
+            Sunday and Bank Holidays, closed
+          </Paragraph>
+          <Paragraph textSize="16px">
+            We are currently experiencing high volumes across our service, wait
+            times may be longer than normal.
+          </Paragraph>
+          <FooterButtons text="Launch Chat" alignSelf="center" weight={400} />
         </ContactPanelColumn>
 
-        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
-          <Heading level={5}>
-            <WhatsAppImg width="60px" height="60px" alignSelf="start" />
+        <ContactPanelColumn sizes={{ xs: 12, md: 4 }}>
+          <Heading level={2}>
+            <WhatsAppImg width="100%" height="60px" />
+            WhatsApp
           </Heading>
-          <Heading level={2}>WhatsApp</Heading>
-          <Paragraph textAlign="center" textSize="13px">
+          <Paragraph margin="0px" textSize="16px">
             Need help sorting out your debts, have credit questions or want
             pensions guidance?
           </Paragraph>
-          <Paragraph textAlign="center" textSize="13px">
+          <Paragraph textSize="16px">
             Add +44 7701 342744 to your Whatsapp and send us a message.
           </Paragraph>
-          <Paragraph textAlign="center" textSize="13px">
+          <Paragraph textSize="16px">
             For everything else please contact us via Webchat or Telephone.
           </Paragraph>
-          <FooterButtons text="Launch Chat" />
+          <FooterButtons
+            alignSelf="center"
+            weight={400}
+            text="Launch Chat"
+            href="https://wa.me/447701342744"
+            target="_blank"
+          />
         </ContactPanelColumn>
 
-        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
-          <Heading level={5}>
-            <PhoneImg width="60px" height="60px" alignSelf="start" />
+        <ContactPanelColumn sizes={{ xs: 12, md: 4 }}>
+          <Heading level={2}>
+            <PhoneImg width="100%" height="60px" />
+            Contact us
           </Heading>
-          <Heading level={2}>Contact us</Heading>
-          <Paragraph textAlign="center" textSize="13px">
-            Give us a call for free and impartial money advice.<br></br>
-            <Inline textSize="20px" weight="bold">
-              0800 138 7777
-            </Inline>
+          <Paragraph textSize="16px">
+            Give us a call for free and impartial money advice.
           </Paragraph>
-          <Paragraph textAlign="center" textSize="13px">
+          <Paragraph textSize={{ xs: '24px', sm: '30px' }} weight={700}>
+            0800 138 7777
+          </Paragraph>
+          <Paragraph margin="0px" textSize="16px">
             Monday to Friday, 8am to 6pm Saturday, Sunday and Bank Holidays,
             closed
           </Paragraph>
-          <Paragraph textAlign="center" textSize="13px">
+          <Paragraph textSize="16px">
             Our general email address is enquiries@maps.org.uk.
           </Paragraph>
-          <FooterButtons text="Send Email" />
-          <Paragraph textAlign="center" textSize="13px">
+          <FooterButtons text="Send Email" alignSelf="center" weight={400} />
+          <Paragraph margin="12px 0" textSize="16px">
             We will normally respond to your enquiry within 48 hours of receipt.
           </Paragraph>
         </ContactPanelColumn>
