@@ -33,27 +33,42 @@ const ContactPanelColumn = styled(Col)`
 // The Icons
 
 const WebChat = styled(WebChatImg)`
-  width: 60px;
-  height: 60px;
-  alignf: start;
+  ${resolveMedia.md`
   display: block;
   margin: 0 auto 30px;
+  width: 60px;
+  height: 60px;
+`}
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
 `
 
 const WhatsApp = styled(WhatsAppImg)`
-  width: 60px;
-  height: 60px;
-  alignf: start;
-  display: block;
-  margin: 0 auto 30px;
+  ${resolveMedia.md`
+display: block;
+margin: 0 auto 30px;
+width: 60px;
+height: 60px;
+`}
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
 `
 
 const Phone = styled(PhoneImg)`
-  width: 60px;
-  height: 60px;
-  alignf: start;
+  ${resolveMedia.md`
   display: block;
   margin: 0 auto 30px;
+  width: 60px;
+  height: 60px;
+`}
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
 `
 
 // GREY PANEL
