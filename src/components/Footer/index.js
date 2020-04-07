@@ -13,13 +13,11 @@ import {
   Copyright,
   SocialMediaIcons,
   FooterButtons,
-  ContactPanelAdditionalInfoUnorderedList,
-  ContactPanelAdditionalInfoListItem,
-  WebChat,
-  WhatsApp,
-  Phone,
 } from './StyledFooter'
+import { Col } from '../Grid'
+import WhatsAppImg from '../../assets/Images/whatsapp.svg'
 import PhoneImg from '../../assets/Images/phone.svg'
+import WebChatImg from '../../assets/Images/chat.svg'
 import { Heading } from '../Heading'
 import { Paragraph } from '../Paragraph'
 import { Inline } from '../Inline'
@@ -29,33 +27,25 @@ const Footer = ({ as, direction, ...rest }) => {
     <FooterContainer fluid as="footer" {...rest}>
       <ContactPanelRow>
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
-          <Heading level={2}>
-            <WebChat />
-            Web Chat
+          <Heading level={5}>
+            <WebChatImg width="60px" height="60px" alignSelf="start" />
           </Heading>
-          <Paragraph textAlign="center" textSize="13px">
+          <Heading level={2}>Web Chat</Heading>
+          <Paragraph textAlign="center" textSize="13px" hide>
             Got a question? Our advisers will point you in the right direction.
           </Paragraph>
-          <ContactPanelAdditionalInfoUnorderedList>
-            <ContactPanelAdditionalInfoListItem>
-              Monday to Friday, 8am to 6pm
-            </ContactPanelAdditionalInfoListItem>
-            <ContactPanelAdditionalInfoListItem>
-              Saturday, 8am to 3pm
-            </ContactPanelAdditionalInfoListItem>
-            <ContactPanelAdditionalInfoListItem>
-              Sunday, and Bank Holidays, closed
-            </ContactPanelAdditionalInfoListItem>
-          </ContactPanelAdditionalInfoUnorderedList>
-
+          <Paragraph textAlign="center" textSize="13px" width="70%">
+            Monday to Friday, 8am to 6pm Saturday, 8am to 3pm Sunday and Bank
+            Holidays, closed
+          </Paragraph>
           <FooterButtons text="Launch Chat" />
         </ContactPanelColumn>
 
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
-          <Heading level={2}>
-            <WhatsApp />
-            WhatsApp
+          <Heading level={5}>
+            <WhatsAppImg width="60px" height="60px" alignSelf="start" />
           </Heading>
+          <Heading level={2}>WhatsApp</Heading>
           <Paragraph textAlign="center" textSize="13px">
             Need help sorting out your debts, have credit questions or want
             pensions guidance?
@@ -70,25 +60,20 @@ const Footer = ({ as, direction, ...rest }) => {
         </ContactPanelColumn>
 
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }} direction="row">
-          <Heading level={2}>
-            <Phone />
-            Contact us
+          <Heading level={5}>
+            <PhoneImg width="60px" height="60px" alignSelf="start" />
           </Heading>
+          <Heading level={2}>Contact us</Heading>
           <Paragraph textAlign="center" textSize="13px">
             Give us a call for free and impartial money advice.<br></br>
             <Inline textSize="20px" weight="bold">
               0800 138 7777
             </Inline>
           </Paragraph>
-
-          <ContactPanelAdditionalInfoUnorderedList>
-            <ContactPanelAdditionalInfoListItem>
-              Monday to Friday, 8am to 6pm
-            </ContactPanelAdditionalInfoListItem>
-            <ContactPanelAdditionalInfoListItem>
-              Saturday, Sunday and Bank Holidays, closed
-            </ContactPanelAdditionalInfoListItem>
-          </ContactPanelAdditionalInfoUnorderedList>
+          <Paragraph textAlign="center" textSize="13px">
+            Monday to Friday, 8am to 6pm Saturday, Sunday and Bank Holidays,
+            closed
+          </Paragraph>
           <Paragraph textAlign="center" textSize="13px">
             Our general email address is enquiries@maps.org.uk.
           </Paragraph>

@@ -3,10 +3,6 @@ import { Row, Col, Container } from '../Grid'
 import Button from '../Button'
 import { resolveMedia } from '../../utils/helpers'
 import theme from '../../theme'
-import { Component } from 'react'
-import WebChatImg from '../../assets/Images/chat.svg'
-import WhatsAppImg from '../../assets/Images/whatsapp.svg'
-import PhoneImg from '../../assets/Images/phone.svg'
 
 // Main footer container
 const FooterContainer = styled(Container)`
@@ -29,46 +25,6 @@ const ContactPanelColumn = styled(Col)`
   &:last-child {
     border: 0;
   }
-`
-// The Icons
-
-const WebChat = styled(WebChatImg)`
-  ${resolveMedia.md`
-  display: block;
-  margin: 0 auto 30px;
-  width: 60px;
-  height: 60px;
-`}
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-  vertical-align: middle;
-`
-
-const WhatsApp = styled(WhatsAppImg)`
-  ${resolveMedia.md`
-display: block;
-margin: 0 auto 30px;
-width: 60px;
-height: 60px;
-`}
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-  vertical-align: middle;
-`
-
-const Phone = styled(PhoneImg)`
-  ${resolveMedia.md`
-  display: block;
-  margin: 0 auto 30px;
-  width: 60px;
-  height: 60px;
-`}
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-  vertical-align: middle;
 `
 
 // GREY PANEL
@@ -99,12 +55,6 @@ const FooterButtons = styled(Button)`
     font-size: 14px;
 `}
 `
-// TODO : Separate Components for UL and LI
-const ContactPanelAdditionalInfoUnorderedList = styled.ul`
-  text-align: center;
-  font-size: 13px;
-`
-const ContactPanelAdditionalInfoListItem = styled.li``
 
 export {
   FooterContainer,
@@ -118,9 +68,4 @@ export {
   Copyright,
   SocialMediaIcons,
   FooterButtons,
-  ContactPanelAdditionalInfoUnorderedList,
-  ContactPanelAdditionalInfoListItem,
-  WebChat,
-  WhatsApp,
-  Phone,
 }
