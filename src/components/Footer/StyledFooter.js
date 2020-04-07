@@ -3,10 +3,68 @@ import { Row, Col, Container } from '../Grid'
 import Button from '../Button'
 import { resolveMedia } from '../../utils/helpers'
 import theme from '../../theme'
+import WebChatImg from '../../assets/Images/chat.svg'
+import WhatsAppImg from '../../assets/Images/whatsapp.svg'
+import PhoneImg from '../../assets/Images/phone.svg'
 
 // Main footer container
 const FooterContainer = styled(Container)`
   padding: 0;
+`
+
+// TODO : Separate Components for UL and LI
+// Footer unordered list and list item
+const ContactPanelAdditionalInfoUnorderedList = styled.ul`
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+
+  ${resolveMedia.md`
+  font-size: 16px;
+
+`}
+`
+const ContactPanelAdditionalInfoListItem = styled.li``
+
+// The Icons
+const WebChat = styled(WebChatImg)`
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
+
+  ${resolveMedia.md`
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto 30px;
+`}
+`
+const WhatsApp = styled(WhatsAppImg)`
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
+
+  ${resolveMedia.md`
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto 30px;
+  `}
+`
+const Phone = styled(PhoneImg)`
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
+
+  ${resolveMedia.md`
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto 30px;
+  `}
 `
 
 // CONTACT PANEL
@@ -59,4 +117,9 @@ export {
   Copyright,
   SocialMediaIcons,
   FooterButtons,
+  WebChat,
+  WhatsApp,
+  Phone,
+  ContactPanelAdditionalInfoUnorderedList,
+  ContactPanelAdditionalInfoListItem,
 }

@@ -12,11 +12,13 @@ import {
   Copyright,
   SocialMediaIcons,
   FooterButtons,
+  WebChat,
+  WhatsApp,
+  Phone,
+  ContactPanelAdditionalInfoUnorderedList,
+  ContactPanelAdditionalInfoListItem,
 } from './StyledFooter'
 import { Col } from '../Grid'
-import WhatsAppImg from '../../assets/Images/whatsapp.svg'
-import PhoneImg from '../../assets/Images/phone.svg'
-import WebChatImg from '../../assets/Images/chat.svg'
 import { Heading } from '../Heading'
 import { Paragraph } from '../Paragraph'
 
@@ -26,28 +28,29 @@ const Footer = ({ as, direction, ...rest }) => {
       <ContactPanelRow>
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }}>
           <Heading level={2}>
-            <WebChatImg width="100%" height="60px" />
+            <WebChat />
             Web Chat
           </Heading>
           <Paragraph textSize="16px">
             Got a question? Our advisers will point you in the right direction.
           </Paragraph>
-          <Paragraph margin="0px" textSize="16px">
-            Monday to Friday, 8am to 6pm Saturday, 8am to 3pm
-          </Paragraph>
-          <Paragraph textSize="16px">
-            Sunday and Bank Holidays, closed
-          </Paragraph>
-          <Paragraph textSize="16px">
-            We are currently experiencing high volumes across our service, wait
-            times may be longer than normal.
-          </Paragraph>
+          <ContactPanelAdditionalInfoUnorderedList>
+            <ContactPanelAdditionalInfoListItem>
+              Monday to Friday, 8am to 6pm
+            </ContactPanelAdditionalInfoListItem>
+            <ContactPanelAdditionalInfoListItem>
+              Saturday, 8am to 3pm
+            </ContactPanelAdditionalInfoListItem>
+            <ContactPanelAdditionalInfoListItem>
+              Sunday, and Bank Holidays, closed
+            </ContactPanelAdditionalInfoListItem>
+          </ContactPanelAdditionalInfoUnorderedList>
           <FooterButtons text="Launch Chat" alignSelf="center" weight={400} />
         </ContactPanelColumn>
 
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }}>
           <Heading level={2}>
-            <WhatsAppImg width="100%" height="60px" />
+            <WhatsApp />
             WhatsApp
           </Heading>
           <Paragraph margin="0px" textSize="16px">
@@ -71,7 +74,7 @@ const Footer = ({ as, direction, ...rest }) => {
 
         <ContactPanelColumn sizes={{ xs: 12, md: 4 }}>
           <Heading level={2}>
-            <PhoneImg width="100%" height="60px" />
+            <Phone />
             Contact us
           </Heading>
           <Paragraph textSize="16px">
@@ -80,13 +83,14 @@ const Footer = ({ as, direction, ...rest }) => {
           <Paragraph textSize={{ xs: '24px', sm: '30px' }} weight={700}>
             0800 138 7777
           </Paragraph>
-          <Paragraph margin="0px" textSize="16px">
-            Monday to Friday, 8am to 6pm Saturday, Sunday and Bank Holidays,
-            closed
-          </Paragraph>
-          <Paragraph textSize="16px">
-            Our general email address is enquiries@maps.org.uk.
-          </Paragraph>
+          <ContactPanelAdditionalInfoUnorderedList>
+            <ContactPanelAdditionalInfoListItem>
+              Monday to Friday, 8am to 6pm
+            </ContactPanelAdditionalInfoListItem>
+            <ContactPanelAdditionalInfoListItem>
+              Saturday, Sunday and Bank Holidays, closed
+            </ContactPanelAdditionalInfoListItem>
+          </ContactPanelAdditionalInfoUnorderedList>
           <FooterButtons text="Send Email" alignSelf="center" weight={400} />
           <Paragraph margin="12px 0" textSize="16px">
             We will normally respond to your enquiry within 48 hours of receipt.
