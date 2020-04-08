@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import { resolveMedia } from '../../../utils/helpers'
 import { Row, Col } from '../../Grid'
 import Button from '../../Button'
+import WhatsAppImg from '../../../assets/Images/whatsapp.svg'
+import PhoneImg from '../../../assets/Images/phone.svg'
+import WebChatImg from '../../../assets/Images/chat.svg'
 
 // Contact Panel Container
 const ContactPanelContainer = styled(Col)``
@@ -37,9 +40,50 @@ const ContactPanelColumn = styled(Col)`
 
 const FooterButtons = styled(Button)``
 
+// The Icons
+const WebChatIcon = styled(WebChatImg)`
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
+
+  ${resolveMedia.sm`
+    width: 100%;
+    height: 60px;
+    margin: 0 auto 20px;
+  `}
+`
+const WhatsAppIcon = styled(WhatsAppImg)`
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
+
+  ${resolveMedia.sm`
+    width: 100%;
+    height: 60px;
+    margin: 0 auto 20px;
+  `}
+`
+const PhoneIcon = styled(PhoneImg)`
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
+
+  ${resolveMedia.sm`
+    width: 100%;
+    height: 60px;
+    margin: 0 auto 20px;
+  `}
+`
+
 export {
   ContactPanelContainer,
   ContactPanelRow,
   ContactPanelColumn,
   FooterButtons,
+  WebChatIcon,
+  WhatsAppIcon,
+  PhoneIcon,
 }

@@ -8,10 +8,11 @@ import {
   ContactPanelColumn,
   ContactPanelRow,
   FooterButtons,
+  WebChatIcon,
+  WhatsAppIcon,
+  PhoneIcon,
 } from './StyledContactPanels'
-import WhatsAppImg from '../../../assets/Images/whatsapp.svg'
-import PhoneImg from '../../../assets/Images/phone.svg'
-import WebChatImg from '../../../assets/Images/chat.svg'
+
 import { Heading } from '../../Heading'
 import { Paragraph } from '../../Paragraph'
 
@@ -25,7 +26,7 @@ const ContactPanels = ({ as, direction, ...rest }) => {
       >
         <ContactPanelColumn grow={false}>
           <Heading level={2}>
-            <WebChatImg width="100%" height="60px" />
+            <WebChatIcon />
             Web Chat
           </Heading>
           <Paragraph textSize="16px">
@@ -52,7 +53,7 @@ const ContactPanels = ({ as, direction, ...rest }) => {
       >
         <ContactPanelColumn grow={false}>
           <Heading level={2}>
-            <WhatsAppImg width="100%" height="60px" />
+            <WhatsAppIcon />
             WhatsApp
           </Heading>
           <Paragraph margin="0px" textSize="16px">
@@ -82,7 +83,7 @@ const ContactPanels = ({ as, direction, ...rest }) => {
       >
         <ContactPanelColumn grow={false}>
           <Heading level={2}>
-            <PhoneImg width="100%" height="60px" />
+            <PhoneIcon />
             Contact us
           </Heading>
           <Paragraph textSize="16px">
