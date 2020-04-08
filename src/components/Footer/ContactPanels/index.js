@@ -99,7 +99,12 @@ const ContactPanels = ({ as, direction, ...rest }) => {
           <Paragraph textSize="16px">
             Our general email address is enquiries@maps.org.uk.
           </Paragraph>
-          <FooterButtons text="Send Email" alignSelf="center" weight={400} />
+          <FooterButtons
+            text="Send Email"
+            alignSelf="center"
+            weight={400}
+            href="mailto:enquiries@maps.org.uk"
+          />
           <Paragraph margin="12px 0" textSize="16px">
             We will normally respond to your enquiry within 48 hours of receipt.
           </Paragraph>
