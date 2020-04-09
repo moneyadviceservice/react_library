@@ -48,37 +48,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: inherit;
     line-height: inherit;
   }
-  // anchor
-  a {
-    color: ${props => props.theme.colors.linkDefault};
-    text-decoration: none;
-
-    &:visited {
-      color: inherit;
-    }
-
-    &:hover,
-    &:focus {
-      color: inherit;
-      text-decoration: underline;
-    }
-
-    &:hover {
-      outline: none;
-    }
-
-    &:focus {
-      outline: solid 0.1875rem ${props => props.theme.colors.focusBg};
-      color: ${props => props.theme.colors.focusBg};
-    }
-
-    // Removes active link colour that is applied in Mobile Safari and adds kerning
-    &[href^=tel] {
-      color: inherit;
-      letter-spacing: -1px;
-      text-decoration: none;
-    }
-  }
 
   // Layout & box sizing
   article,
