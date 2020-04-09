@@ -8,6 +8,7 @@ export { default as Button } from './components/Button'
 export { Header } from './components/Header'
 export { Footer } from './components/Footer'
 // typography
+export { Anchor } from './components/Anchor'
 export { Heading } from './components/Heading'
 export { Paragraph } from './components/Paragraph'
 export { Inline } from './components/Inline'
