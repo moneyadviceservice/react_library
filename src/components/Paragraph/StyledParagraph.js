@@ -5,6 +5,7 @@ import {
   responsiveProps,
 } from '../../utils/helpers'
 import { breakpoints } from '../../utils/constants'
+import { resolveMedia } from '../../utils/helpers'
 
 const fontStyles = props => {
   const sizeStyles = props.theme.sizes.paragraph.sizing
@@ -17,6 +18,8 @@ const fontStyles = props => {
       ${!props.lineHeight && `line-height: ${height};`}
       ${!props.margin && `margin-top: ${marginTop};`}
       ${!props.margin && `margin-bottom: ${marginBottom};`}
+    
+      
     `
     // breakpoint styles
     return breakpointStyle(breakpoints[breakpoint[0]], styles)
@@ -39,10 +42,13 @@ const StyledParagraph = styled.p`
 
   /** responsive props */
   ${props => props.textSize && responsiveProps('font-size', props.textSize)}
+  
   ${props =>
     props.lineHeight && responsiveProps('line-height', props.lineHeight)}
   ${props => props.textAlign && responsiveProps('text-align', props.textAlign)}
   ${props => responsiveProps('width', props.widthProp)}
+
+ 
 `
 
 export { StyledParagraph }

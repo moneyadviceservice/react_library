@@ -1,35 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
-import {
-  FooterContainer,
-  FooterPrimary,
-  FooterSecondary,
-  ContactPanelColumn,
-  ContactPanelRow,
-  FooterNav,
-  SocialMediaLinks,
-  FooterLinks,
-  Copyright,
-} from './StyledFooter'
-import { Col } from '../Grid'
+import { FooterContainer } from './StyledFooter'
+import ContactPanels from './ContactPanels'
 
 const Footer = ({ as, direction, ...rest }) => {
   return (
     <FooterContainer fluid as="footer" {...rest}>
-      <ContactPanelRow debug noGutter>
-        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} debug>
-          webchati
-        </ContactPanelColumn>
-        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} debug>
-          whatsapp
-        </ContactPanelColumn>
-        <ContactPanelColumn sizes={{ xs: 12, md: 4 }} debug>
-          phone
-        </ContactPanelColumn>
-      </ContactPanelRow>
-
-      <FooterPrimary>
+      <ContactPanels />
+      {/* <FooterPrimary>
         <SocialMediaLinks sizes={{ xs: 12, md: 6 }} debug>
           twiter
         </SocialMediaLinks>
@@ -45,7 +23,7 @@ const Footer = ({ as, direction, ...rest }) => {
       </FooterPrimary>
       <FooterSecondary debug>
         <Col>last row</Col>
-      </FooterSecondary>
+      </FooterSecondary> */}
     </FooterContainer>
   )
 }

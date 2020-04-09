@@ -71,8 +71,8 @@ module.exports = {
         {
           name: 'Layout',
           components: () => [
+            './src/components/Footer/index.js',
             './src/components/Header/index.js',
-            './src/components/Footer/index.js'
           ],
         },
         {
