@@ -5,7 +5,6 @@ import {
   responsiveProps,
 } from '../../utils/helpers'
 import { breakpoints } from '../../utils/constants'
-import { resolveMedia } from '../../utils/helpers'
 
 const fontStyles = props => {
   const sizeStyles = props.theme.sizes.paragraph.sizing
