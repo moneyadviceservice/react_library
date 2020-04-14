@@ -28,7 +28,7 @@ const ContactPanels = ({ as, ...rest }) => {
       return true
     } else if (day == 6) {
       // saturday
-      hour >= 8 && hour <= 15 ? false : true
+      hour >= 8 && hour < 15 ? false : true
     } else if (hour >= 8 && hour < 18) {
       //  between 8am and 6pm
       return false
