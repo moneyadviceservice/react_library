@@ -16,7 +16,28 @@ import {
 import { Heading } from '../../Heading'
 import { Paragraph } from '../../Paragraph'
 
-const ContactPanels = ({ as, direction, ...rest }) => {
+const ContactPanels = ({ as, ...rest }) => {
+  // returns true if outside opening hours
+  const openingHours = () => {
+    const date = new Date()
+    const day = date.getDay()
+    const hour = date.getHours()
+
+    if (day == 0) {
+      // sunday
+      return true
+    } else if (day == 6) {
+      // saturday
+      hour >= 8 && hour <= 15 ? false : true
+    } else if (hour >= 8 && hour < 18) {
+      //  between 8am and 6pm
+      return false
+    } else {
+      // weekdays outside opening hours
+      return true
+    }
+  }
+
   return (
     <ContactPanelRow align="stretch">
       <ContactPanelContainer
@@ -42,7 +63,12 @@ const ContactPanels = ({ as, direction, ...rest }) => {
             We are currently experiencing high volumes across our service, wait
             times may be longer than normal.
           </Paragraph>
-          <FooterButtons text="Launch Chat" alignSelf="center" weight={400} />
+          <FooterButtons
+            text="Launch Chat"
+            alignSelf="center"
+            weight={400}
+            disabled={openingHours()}
+          />
         </ContactPanelColumn>
       </ContactPanelContainer>
 
@@ -72,6 +98,7 @@ const ContactPanels = ({ as, direction, ...rest }) => {
             text="Launch Chat"
             href="https://wa.me/447701342744"
             target="_blank"
+            disabled={openingHours()}
           />
         </ContactPanelColumn>
       </ContactPanelContainer>
