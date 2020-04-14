@@ -22,7 +22,7 @@ function Button({
   onMouseOver,
   ...rest
 }) {
-  const domTag = !as && href ? 'a' : as
+  const domTag = !as && !disabled && href ? 'a' : as
 
   const [hover, setHover] = useState(false)
 
