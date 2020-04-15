@@ -64,6 +64,7 @@ const ContactPanels = ({ as, ...rest }) => {
             times may be longer than normal.
           </Paragraph>
           <FooterButtons
+            data-test="footer-button"
             text="Launch Chat"
             alignSelf="center"
             weight={400}

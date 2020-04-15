@@ -49,32 +49,32 @@ export default function(baseSpacing = 24, scale = 6) {
     heading: {
       level: {
         1: {
-          xs: { ...headingSizing(32, 26) },
-          md: { ...headingSizing(40, 42) }, // 1024px
+          // xs: { ...headingSizing(32, 26) },
+          // md: { ...headingSizing(40, 42) },
         },
         2: {
-          xs: { ...headingSizing(24, 30) },
-          md: { ...headingSizing(28, 36) }, // 1024px
+          // xs: { ...headingSizing(24, 30) },
+          // md: { ...headingSizing(28, 36) },
         },
         3: {
-          xs: { ...headingSizing(22, 30) },
+          // xs: { ...headingSizing(22, 30) },
         },
         4: {
-          xs: { ...headingSizing(16, 24) },
+          // xs: { ...headingSizing(16, 24) },
         },
         5: {
-          xs: { ...headingSizing(14, 20) },
+          // xs: { ...headingSizing(14, 20) },
         },
         6: {
-          xs: { ...headingSizing(12, 18) },
+          // xs: { ...headingSizing(12, 18) },
         },
       },
       weight: 700,
     },
     paragraph: {
       sizing: {
-        xs: { ...paragraphSizing(16, 24) },
-        md: { ...paragraphSizing(18, 24) }, // 1024px
+        // xs: { ...paragraphSizing(16, 24) },
+        // md: { ...paragraphSizing(18, 24) },
       },
     },
   }
