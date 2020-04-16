@@ -12,7 +12,8 @@ const renderComponent = (props = {}) => {
 
 const openingHours = jest
   .fn()
-  .mockReturnValue(false)
+  .mockReturnValue(true)
+  .mockReturnValueOnce(false)
   .mockReturnValueOnce(true)
 
 describe('Footer Component', () => {
