@@ -6,10 +6,7 @@ import WhatsAppImg from '../../../assets/Images/whatsapp.svg'
 import PhoneImg from '../../../assets/Images/phone.svg'
 import WebChatImg from '../../../assets/Images/chat.svg'
 
-// Contact Panel Container
-const ContactPanelContainer = styled(Col)``
-
-// Social media contacts row
+// Contact Panel Row
 const ContactPanelRow = styled(Row)`
   padding: 0;
 
@@ -32,10 +29,16 @@ const ContactPanelRow = styled(Row)`
   `}
 `
 
+// Contact Panel Container
+const ContactPanelContainer = styled(Col)`
+  ${props => !props.padding && `padding: 0;`}
+`
+
 // Individual social media contact column
 const ContactPanelColumn = styled(Col)`
   ${props => !props.justify && 'justify-content: center;'}
   ${props => !props.align && 'text-align: center;'}
+  ${props => !props.padding && `padding: 24px 15px;`}
 `
 
 const FooterButtons = styled(Button)``

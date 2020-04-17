@@ -21,7 +21,6 @@ const ContactPanels = ({ as, direction, ...rest }) => {
     <ContactPanelRow align="stretch">
       <ContactPanelContainer
         sizes={{ xs: 12, md: 4 }}
-        padding="24px 0"
         align={{ xs: 'center', md: 'flex-start' }}
       >
         <ContactPanelColumn grow={false}>
@@ -48,7 +47,6 @@ const ContactPanels = ({ as, direction, ...rest }) => {
 
       <ContactPanelContainer
         sizes={{ xs: 12, md: 4 }}
-        padding="24px 0"
         align={{ xs: 'center', md: 'flex-start' }}
       >
         <ContactPanelColumn grow={false}>
@@ -78,7 +76,6 @@ const ContactPanels = ({ as, direction, ...rest }) => {
 
       <ContactPanelContainer
         sizes={{ xs: 12, md: 4 }}
-        padding="24px 0"
         align={{ xs: 'center', md: 'flex-start' }}
       >
         <ContactPanelColumn grow={false}>
