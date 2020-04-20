@@ -1,16 +1,18 @@
 export default function() {
   const colors = {
     // Global Colors
-    black: '#000000',
-    white: '#FFFFFF',
     alternate: '#edf0f0', // grey background
+    black: '#000000',
+    focusBg: '#daaf2d',
+    linkDefault: '#003d8e',
+    mapsBlue: '#143960',
+    white: '#FFFFFF',
+    // Opacity Values
     opacity: {
       strong: 0.8,
       medium: 0.4,
       weak: 0.1,
     },
-    linkDefault: '#003d8e',
-    focusBg: '#daaf2d',
     // Component Colors
     button: {
       borderBottomColor: '#c2d0cc',
