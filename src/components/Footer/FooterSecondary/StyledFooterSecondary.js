@@ -9,6 +9,14 @@ const FooterSecondaryContainer = styled(Row)`
   color: white;
 `
 
+const Translation = styled(Col)`
+  flex-grow: 0;
+
+  ${resolveMedia.md`
+    display: none;
+  `}
+`
+
 const Acessibility = styled(Col)`
   flex-grow: 0;
   font-size: 0.875rem;
@@ -35,6 +43,7 @@ const FooterSecondaryListItem = styled.li``
 
 export {
   FooterSecondaryContainer,
+  Translation,
   Acessibility,
   MapsLink,
   ListContainer,

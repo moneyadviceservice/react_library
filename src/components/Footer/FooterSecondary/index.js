@@ -5,6 +5,7 @@ import {
 } from '../../../utils/prop-types'
 import {
   FooterSecondaryContainer,
+  Translation,
   Acessibility,
   MapsLink,
   ListContainer,
@@ -15,10 +16,9 @@ import {
 const FooterSecondary = ({ as, direction, ...rest }) => {
   return (
     <FooterSecondaryContainer>
-      <Acessibility sizes={{ xs: 12, sm: 6, md: 'auto' }}>
-        Report an accessibility problem
-      </Acessibility>
-      <MapsLink sizes={{ xs: 12, sm: 6, md: 'auto' }}>Maps LINK</MapsLink>
+      <Translation sizes="auto">Cymraeg</Translation>
+      <Acessibility sizes="auto">Report an accessibility problem</Acessibility>
+      <MapsLink sizes={{ xs: 12, sm: 'auto' }}>Maps LOGO</MapsLink>
       <ListContainer sizes={{ xs: 12, md: 'auto' }}>
         <List>
           <ListItem>item 1</ListItem>
