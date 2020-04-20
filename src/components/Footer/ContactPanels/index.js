@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   genericPropTypes,
   genericPropsDefaults,
@@ -16,27 +16,29 @@ import {
 import { Heading } from '../../Heading'
 import { Paragraph } from '../../Paragraph'
 
-const ContactPanels = ({ as, ...rest }) => {
-  // returns true if outside opening hours
-  const openingHours = () => {
-    const date = new Date()
+const ContactPanels = () => {
+  const [date, setDate] = useState(new Date())
+  const [open, setOpen] = useState()
+
+  // manage opening hours
+  useEffect(() => {
     const day = date.getDay()
     const hour = date.getHours()
 
     if (day == 0) {
       // sunday
-      return true
+      setOpen(false)
     } else if (day == 6) {
       // saturday
-      hour >= 8 && hour < 15 ? false : true
+      hour >= 8 && hour < 15 ? setOpen(true) : setOpen(false)
     } else if (hour >= 8 && hour < 18) {
-      //  between 8am and 6pm
-      return false
+      //  weekdays between 8am and 6pm
+      setOpen(true)
     } else {
       // weekdays outside opening hours
-      return true
+      setOpen(false)
     }
-  }
+  })
 
   return (
     <ContactPanelRow align="stretch">
@@ -68,7 +70,7 @@ const ContactPanels = ({ as, ...rest }) => {
             text="Launch Chat"
             alignSelf="center"
             weight={400}
-            disabled={openingHours()}
+            disabled={!open}
           />
         </ContactPanelColumn>
       </ContactPanelContainer>
@@ -99,7 +101,7 @@ const ContactPanels = ({ as, ...rest }) => {
             text="Launch Chat"
             href="https://wa.me/447701342744"
             target="_blank"
-            disabled={openingHours()}
+            disabled={!open}
           />
         </ContactPanelColumn>
       </ContactPanelContainer>
