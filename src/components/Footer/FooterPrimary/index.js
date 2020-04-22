@@ -19,6 +19,7 @@ import {
   Copyright,
 } from './StyledFooterPrimary'
 import { Anchor as A } from '../../Anchor'
+import Button from '../../Button'
 import { Paragraph as P } from '../../Paragraph'
 // svg
 import ClearEnglish from '../../../assets/Images/clear_english.svg'
@@ -118,7 +119,13 @@ const FooterPrimary = () => {
           direction="row"
         >
           <BlogContainer sizes={{ xs: 6, sm: 12 }} align="center">
-            BLOG
+            <Button
+              blog
+              text={'Blog'}
+              alignSelf="center"
+              href="https://www.moneyadviceservice.org.uk/blog"
+              target="_blank"
+            />
           </BlogContainer>
           <ClearEnglishContainer sizes={{ xs: 6, sm: 12 }} align="center">
             <A
@@ -136,8 +143,8 @@ const FooterPrimary = () => {
             lineHeight={{ xs: '1.2rem', md: '1.35rem' }}
             margin={{ bottom: 0 }}
           >
-            © Copyright 2020 The Money Advice Service 120 Holborn, London EC1N
-            2TD
+            © Copyright {new Date().getFullYear()} The Money Advice Service 120
+            Holborn, London EC1N 2TD
           </P>
         </Copyright>
       </FooterPrimaryRow>

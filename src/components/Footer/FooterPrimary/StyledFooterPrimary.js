@@ -24,9 +24,15 @@ const SocialLink = styled(Col)`
 `
 
 const SocialLogo = styled(Anchor)`
-  ${props => props.facebook && `background-color: #3c5a99;`}
-  ${props => props.twitter && `background-color: #2ba9e1;`}
-  ${props => props.youtube && `background-color: #cd201f;`}
+  ${props =>
+    props.facebook &&
+    `background-color: #3c5a99; &:hover{background-color: #214782;}`}
+  ${props =>
+    props.twitter &&
+    `background-color: #2ba9e1; &:hover{background-color: #1991b8;}`}
+  ${props =>
+    props.youtube &&
+    `background-color: #cd201f; &:hover{background-color: #b61b1b;}`}
 
   border-radius: 50%;
   width: 60px; 
@@ -49,8 +55,8 @@ const SocialCounter = styled(Paragraph)`
   width: auto;
 
   & span:nth-of-type(1) {
-    font-weight: bold;
     display: block;
+    font-weight: bold;
     font-size: 1.5rem;
     line-height: 1.5rem;
   }
@@ -67,7 +73,6 @@ const SocialCounter = styled(Paragraph)`
   `}
 
   ${resolveMedia.md`
-    display: flex;
     ${props => !props.margin && `margin: 6px 6px 6px;`}
   `}
 `
