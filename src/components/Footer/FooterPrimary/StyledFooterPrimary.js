@@ -1,18 +1,78 @@
 import styled from 'styled-components'
 import { resolveMedia } from '../../../utils/helpers'
 import { Row, Col } from '../../Grid'
+import { Anchor } from '../../Anchor'
+import { Paragraph } from '../../Paragraph'
 
+// row container
 const FooterPrimaryRow = styled(Row)`
   ${props =>
     !props.background && `background-color: ${props.theme.colors.alternate};`}
-  ${props => !props.padding && `padding: 24px 0 12px;`}
+  ${props => !props.padding && `padding: 24px 15px 12px;`}
 `
 
-const SocialMediaLinks = styled(Col)``
+// social media section
+const SocialContainer = styled(Col)`
+  ${props => !props.padding && `padding: 12px 0;`}
+`
 
-const FooterNav = styled(Col)``
+const SocialLink = styled(Col)`
+  flex-grow: 0;
+`
 
-const FooterLinks = styled(Col)``
+const SocialLogo = styled(Anchor)`
+  ${props => props.facebook && `background-color: #3c5a99;`}
+  ${props => props.twitter && `background-color: #2ba9e1;`}
+  ${props => props.youtube && `background-color: #cd201f;`}
+
+  border-radius: 50%;
+  width: 60px; 
+  height: 60px;
+  line-height: 57px;
+  text-align: center;
+
+  & svg {
+    vertical-align: middle;
+    width: 25px; 
+    height: 25px;
+    fill: white;
+  }
+`
+
+const SocialCounter = styled(Paragraph)`
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  width: auto;
+
+  & span:nth-of-type(1) {
+    font-weight: bold;
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  & span:nth-of-type(2) {
+    display: block;
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+  }
+
+  ${resolveMedia.sm`
+    display: flex;
+    ${props => !props.margin && `margin: 6px 0;`}
+  `}
+
+  ${resolveMedia.md`
+    display: flex;
+    ${props => !props.margin && `margin: 6px 6px 6px;`}
+  `}
+`
+
+// navigation links section
+const FooterNav = styled(Col)`
+  ${props => !props.padding && `padding: 12px 0;`}
+`
 
 const LinkList = styled.ul`
   display: flex;
@@ -24,8 +84,24 @@ const LinkListItem = styled.li`
   margin-bottom: 0.75rem;
 `
 
+// blog & clear english section
+const FooterLinks = styled(Col)`
+  ${props => !props.padding && `padding: 12px 0;`}
+`
+const BlogContainer = styled(Col)`
+  ${props => !props.margin && `margin-bottom: 24px;`}
+`
+
+const ClearEnglishContainer = styled(Col)`
+  & svg {
+    width: 80px;
+  }
+`
+
+// copyright section
 const Copyright = styled(Col)`
   line-height: 1.2rem;
+
   ${resolveMedia.sm`
     font-size: 1rem;
     line-height: 1.375rem;
@@ -34,9 +110,14 @@ const Copyright = styled(Col)`
 
 export {
   FooterPrimaryRow,
-  SocialMediaLinks,
+  SocialContainer,
+  SocialLink,
+  SocialLogo,
+  SocialCounter,
   FooterNav,
   FooterLinks,
+  BlogContainer,
+  ClearEnglishContainer,
   LinkList,
   LinkListItem,
   Copyright,
