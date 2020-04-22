@@ -5,9 +5,12 @@ import { Anchor } from '../../Anchor'
 import { Paragraph } from '../../Paragraph'
 
 // row container
-const FooterPrimaryRow = styled(Row)`
+const FooterRow = styled(Row)`
   ${props =>
     !props.background && `background-color: ${props.theme.colors.alternate};`}
+`
+
+const FooterPrimaryRow = styled(Row)`
   ${props => !props.padding && `padding: 24px 15px 12px;`}
 `
 
@@ -109,6 +112,7 @@ const Copyright = styled(Col)`
 `
 
 export {
+  FooterRow,
   FooterPrimaryRow,
   SocialContainer,
   SocialLink,

@@ -5,9 +5,12 @@ import { Anchor } from '../../Anchor'
 import accessibility_svg from '../../../assets/Images/icon_accessibility.svg'
 
 // container row
-const FooterSecondaryContainer = styled(Row)`
+const FooterRow = styled(Row)`
   ${props =>
     !props.background && `background-color: ${props.theme.colors.mapsBlue};`}
+`
+
+const FooterSecondaryContainer = styled(Row)`
   ${props => !props.padding && `padding: 20px 0;`}
   color: white;
 `
@@ -78,6 +81,7 @@ const Translation = styled(Acessibility)`
 `
 
 export {
+  FooterRow,
   FooterSecondaryContainer,
   Translation,
   Acessibility,

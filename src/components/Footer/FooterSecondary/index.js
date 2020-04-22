@@ -4,6 +4,7 @@ import {
   genericPropsDefaults,
 } from '../../../utils/prop-types'
 import {
+  FooterRow,
   FooterSecondaryContainer,
   Translation,
   Acessibility,
@@ -47,39 +48,45 @@ const FooterSecondary = ({ as, direction, ...rest }) => {
   ]
 
   return (
-    <FooterSecondaryContainer justify="space-between">
-      <ListContainer direction="row" align="center" padding="0">
-        <Translation sizes="auto">
-          <A>Cymraeg</A>
-        </Translation>
-        <Acessibility sizes="auto">
-          <A>
-            <AccessibilityIcon />
-            Report an accessibility problem
-          </A>
-        </Acessibility>
-        <MapsLink sizes={{ xs: 12, sm: 'auto' }}>
-          <A>
-            <MapsText>
-              <span>The Money</span>
-              <span>Advice Service</span>
-              <span>is provided by</span>
-            </MapsText>
-            <MapsLogoEn />
-          </A>
-        </MapsLink>
-      </ListContainer>
+    <FooterRow justify="center">
+      <FooterSecondaryContainer
+        justify="space-between"
+        align="center"
+        constrained
+      >
+        <ListContainer direction="row" align="center" padding="0">
+          <Translation sizes="auto">
+            <A>Cymraeg</A>
+          </Translation>
+          <Acessibility sizes="auto">
+            <A>
+              <AccessibilityIcon />
+              Report an accessibility problem
+            </A>
+          </Acessibility>
+          <MapsLink sizes={{ xs: 12, sm: 'auto' }}>
+            <A>
+              <MapsText>
+                <span>The Money</span>
+                <span>Advice Service</span>
+                <span>is provided by</span>
+              </MapsText>
+              <MapsLogoEn />
+            </A>
+          </MapsLink>
+        </ListContainer>
 
-      <ListContainer sizes={{ xs: 12, lg: 'auto' }}>
-        <List>
-          {listItems.map(({ href, text }, key) => (
-            <ListItem key={key}>
-              <A href={href}>{text}</A>
-            </ListItem>
-          ))}
-        </List>
-      </ListContainer>
-    </FooterSecondaryContainer>
+        <ListContainer sizes={{ xs: 12, lg: 'auto' }}>
+          <List>
+            {listItems.map(({ href, text }, key) => (
+              <ListItem key={key}>
+                <A href={href}>{text}</A>
+              </ListItem>
+            ))}
+          </List>
+        </ListContainer>
+      </FooterSecondaryContainer>
+    </FooterRow>
   )
 }
 
