@@ -22,6 +22,7 @@ const Header = ({
           justify="space-between"
           align="center"
           padding="12px 0"
+          margin="auto"
           constrained
         >
           <Col grow={false}>
