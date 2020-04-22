@@ -65,6 +65,8 @@ function Button({
 Button.propTypes = {
   /** The DOM tag or react component to use for the element. */
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  /** Whether this is a blog button. This will apply a different set of styles. */
+  blog: PropTypes.bool,
   /** If specified, the button will behave like an anchor tag. */
   href: PropTypes.string,
   /** Label text to place inside the button. */
@@ -85,8 +87,9 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  primary: false,
+  blog: false,
   disabled: false,
+  primary: false,
   type: 'button',
   weight: null,
   ...genericPropsDefaults({ alignSelf: 'start' }),

@@ -9,6 +9,7 @@ import { Button, Row, Col } from '@moneypensionservice/directories';
     <Button disabled text='Default Disabled' />
     <Button primary text='Primary' />
     <Button primary disabled text='Primary Disabled' />
+    <Button blog text='Blog' />
   </Col>
 </Row>
 ```
