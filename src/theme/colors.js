@@ -33,6 +33,11 @@ export default function() {
         disabledBackground: '#f2ebb2',
         disabledBorderColor: '#eddfb2',
       },
+      // blog
+      blog: {
+        masBlue: '#0076ab',
+        masBlueDark: '#18507a',
+      },
     },
     header: {
       background: '#428513',
