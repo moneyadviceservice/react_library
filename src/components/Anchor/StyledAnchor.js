@@ -12,6 +12,7 @@ const StyledAnchor = styled(Paragraph)`
 
   &:hover {
     outline: none;
+    cursor: pointer;
   }
 
   &:focus {
