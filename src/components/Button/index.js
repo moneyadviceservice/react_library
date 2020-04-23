@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 // wrapper
@@ -24,10 +24,6 @@ function Button({
 }) {
   const domTag = !as && !disabled && href ? 'a' : as
 
-  const [hover, setHover] = useState(false)
-
-  const [focus, setFocus] = useState()
-
   return (
     <ButtonWrapper
       as={domTag}
@@ -39,20 +35,6 @@ function Button({
       margin={margin}
       alignSelf={alignSelf}
       href={href}
-      onFocus={() => {
-        setFocus(true)
-      }}
-      onBlur={() => {
-        setFocus(false)
-      }}
-      focus={focus}
-      onMouseOver={() => {
-        setHover(true)
-      }}
-      onMouseOut={() => {
-        setHover(false)
-      }}
-      active={hover}
       {...rest}
     >
       {text}
@@ -65,6 +47,8 @@ function Button({
 Button.propTypes = {
   /** The DOM tag or react component to use for the element. */
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  /** Whether this is a blog button. This will apply a different set of styles. */
+  blog: PropTypes.bool,
   /** If specified, the button will behave like an anchor tag. */
   href: PropTypes.string,
   /** Label text to place inside the button. */
@@ -85,8 +69,9 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  primary: false,
+  blog: false,
   disabled: false,
+  primary: false,
   type: 'button',
   weight: null,
   ...genericPropsDefaults({ alignSelf: 'start' }),

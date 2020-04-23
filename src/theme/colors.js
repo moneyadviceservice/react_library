@@ -1,17 +1,23 @@
 export default function() {
   const colors = {
     // Global Colors
-    black: '#000000',
-    white: '#FFFFFF',
     alternate: '#edf0f0', // grey background
+    black: '#000000',
+    focusBg: '#daaf2d',
+    mapsBlue: '#143960',
+    white: '#FFFFFF',
+    // Opacity Values
     opacity: {
       strong: 0.8,
       medium: 0.4,
       weak: 0.1,
     },
-    linkDefault: '#003d8e',
-    focusBg: '#daaf2d',
     // Component Colors
+    anchor: {
+      default: '#003d8e',
+      focusBg: '#e8b940',
+      outline: '#daaf2d',
+    },
     button: {
       borderBottomColor: '#c2d0cc',
       background: '#d1d5d5',
@@ -30,6 +36,11 @@ export default function() {
         activeBorderColor: '#e1c260',
         disabledBackground: '#f2ebb2',
         disabledBorderColor: '#eddfb2',
+      },
+      // blog
+      blog: {
+        masBlue: '#0076ab',
+        masBlueDark: '#18507a',
       },
     },
     header: {

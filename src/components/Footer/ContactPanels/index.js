@@ -17,6 +17,7 @@ import { Heading } from '../../Heading'
 import { Paragraph } from '../../Paragraph'
 
 const ContactPanels = () => {
+  
   const [date, setDate] = useState(new Date())
   const [open, setOpen] = useState()
 
@@ -39,12 +40,11 @@ const ContactPanels = () => {
       setOpen(false)
     }
   })
-
+  
   return (
     <ContactPanelRow align="stretch">
       <ContactPanelContainer
         sizes={{ xs: 12, md: 4 }}
-        padding="24px 0"
         align={{ xs: 'center', md: 'flex-start' }}
       >
         <ContactPanelColumn grow={false}>
@@ -76,7 +76,6 @@ const ContactPanels = () => {
 
       <ContactPanelContainer
         sizes={{ xs: 12, md: 4 }}
-        padding="24px 0"
         align={{ xs: 'center', md: 'flex-start' }}
       >
         <ContactPanelColumn grow={false}>
@@ -107,7 +106,6 @@ const ContactPanels = () => {
 
       <ContactPanelContainer
         sizes={{ xs: 12, md: 4 }}
-        padding="24px 0"
         align={{ xs: 'center', md: 'flex-start' }}
       >
         <ContactPanelColumn grow={false}>
