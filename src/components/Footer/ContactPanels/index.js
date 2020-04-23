@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   genericPropTypes,
   genericPropsDefaults,
@@ -17,6 +17,30 @@ import { Heading } from '../../Heading'
 import { Paragraph } from '../../Paragraph'
 
 const ContactPanels = () => {
+  
+  const [date, setDate] = useState(new Date())
+  const [open, setOpen] = useState()
+
+  // manage opening hours
+  useEffect(() => {
+    const day = date.getDay()
+    const hour = date.getHours()
+
+    if (day == 0) {
+      // sunday
+      setOpen(false)
+    } else if (day == 6) {
+      // saturday
+      hour >= 8 && hour < 15 ? setOpen(true) : setOpen(false)
+    } else if (hour >= 8 && hour < 18) {
+      //  weekdays between 8am and 6pm
+      setOpen(true)
+    } else {
+      // weekdays outside opening hours
+      setOpen(false)
+    }
+  })
+  
   return (
     <ContactPanelRow align="stretch">
       <ContactPanelContainer
@@ -41,7 +65,12 @@ const ContactPanels = () => {
             We are currently experiencing high volumes across our service, wait
             times may be longer than normal.
           </Paragraph>
-          <FooterButtons text="Launch Chat" alignSelf="center" weight={400} />
+          <FooterButtons
+            text="Launch Chat"
+            alignSelf="center"
+            weight={400}
+            disabled={!open}
+          />
         </ContactPanelColumn>
       </ContactPanelContainer>
 
@@ -70,6 +99,7 @@ const ContactPanels = () => {
             text="Launch Chat"
             href="https://wa.me/447701342744"
             target="_blank"
+            disabled={!open}
           />
         </ContactPanelColumn>
       </ContactPanelContainer>
