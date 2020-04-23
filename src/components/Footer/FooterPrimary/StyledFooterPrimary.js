@@ -37,7 +37,7 @@ const SocialLogo = styled(Anchor)`
   border-radius: 50%;
   width: 60px; 
   height: 60px;
-  line-height: 57px;
+  line-height: 60px;
   text-align: center;
 
   & svg {
@@ -73,7 +73,7 @@ const SocialCounter = styled(Paragraph)`
   `}
 
   ${resolveMedia.md`
-    ${props => !props.margin && `margin: 6px 6px 6px;`}
+    ${props => !props.margin && `margin: 6px;`}
   `}
 `
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 // wrapper
@@ -24,10 +24,6 @@ function Button({
 }) {
   const domTag = !as && href ? 'a' : as
 
-  const [hover, setHover] = useState(false)
-
-  const [focus, setFocus] = useState()
-
   return (
     <ButtonWrapper
       as={domTag}
@@ -39,20 +35,6 @@ function Button({
       margin={margin}
       alignSelf={alignSelf}
       href={href}
-      onFocus={() => {
-        setFocus(true)
-      }}
-      onBlur={() => {
-        setFocus(false)
-      }}
-      focus={focus}
-      onMouseOver={() => {
-        setHover(true)
-      }}
-      onMouseOut={() => {
-        setHover(false)
-      }}
-      active={hover}
       {...rest}
     >
       {text}

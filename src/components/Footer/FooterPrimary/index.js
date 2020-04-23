@@ -67,7 +67,7 @@ const FooterPrimary = () => {
           sizes={{ xs: 12, md: 6 }}
           direction="row"
           align="center"
-          justify="center"
+          justify="space-around"
           flexWrap="nowrap"
         >
           <SocialLink align="center" direction={{ xs: 'column', lg: 'row' }}>

@@ -18,7 +18,7 @@ import {
 } from './StyledFooterSecondary'
 import MapsLogoEn from '../../../assets/Images/maps_logo_en.svg'
 
-const FooterSecondary = ({ as, direction, ...rest }) => {
+const FooterSecondary = () => {
   const listItems = [
     {
       href: 'https://www.moneyadviceservice.org.uk/en/static/contact-us',

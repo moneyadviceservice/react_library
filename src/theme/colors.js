@@ -4,7 +4,6 @@ export default function() {
     alternate: '#edf0f0', // grey background
     black: '#000000',
     focusBg: '#daaf2d',
-    linkDefault: '#003d8e',
     mapsBlue: '#143960',
     white: '#FFFFFF',
     // Opacity Values
@@ -14,6 +13,11 @@ export default function() {
       weak: 0.1,
     },
     // Component Colors
+    anchor: {
+      default: '#003d8e',
+      focusBg: '#e8b940',
+      outline: '#daaf2d',
+    },
     button: {
       borderBottomColor: '#c2d0cc',
       background: '#d1d5d5',

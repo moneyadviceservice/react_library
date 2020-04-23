@@ -16,7 +16,7 @@ import {
 import { Heading } from '../../Heading'
 import { Paragraph } from '../../Paragraph'
 
-const ContactPanels = ({ as, direction, ...rest }) => {
+const ContactPanels = () => {
   return (
     <ContactPanelRow align="stretch">
       <ContactPanelContainer
