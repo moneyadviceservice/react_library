@@ -28,6 +28,9 @@ module.exports = {
   styleguideComponents: {
     Wrapper: path.join(__dirname, './src/components/ThemeProvider'),
   },
+  theme: {
+    maxWidth: 2000,
+  },
   title: 'MaPS React Component Library',
   version,
   styleguideDir: 'dist-docs',
