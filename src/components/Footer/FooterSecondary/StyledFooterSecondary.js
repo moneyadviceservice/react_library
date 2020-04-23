@@ -71,6 +71,11 @@ const FooterSecondaryListItem = styled.li`
 
 const FooterAnchor = styled(Anchor)`
   color: white;
+  font-size: 14px;
+
+  ${resolveMedia.sm`
+    font-size: 16px;
+  `}
 `
 
 // mobile translation section
