@@ -16,6 +16,7 @@ export default function(baseSpacing = 24) {
   })
 
   const sizes = {
+    baseUnit: 0.375,
     edgeSize: {
       none: '0px',
       xxsmall: '2px',
