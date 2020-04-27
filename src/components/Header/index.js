@@ -31,7 +31,7 @@ const Header = ({
             </LogoContainer>
           </Col>
           <Col grow={false} onClick={setLgn}>
-            <LocaleContainer>
+            <LocaleContainer color="white">
               {localeText
                 ? localeText
                 : currentLgn === 'en'
