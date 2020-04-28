@@ -13,10 +13,7 @@ const HeaderContainer = styled(ContainerWrapper)`
   `}
 `
 
-const LocaleContainer = styled(Anchor)`
-  font-weight: 500;
-  font-size: 0.875rem;
-`
+const LocaleContainer = styled(Anchor)``
 
 const LogoContainer = styled(Anchor)`
   overflow: hidden;
