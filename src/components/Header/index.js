@@ -17,7 +17,7 @@ const Header = ({
 }) => {
   return (
     <>
-      <HeaderContainer fluid as="header" {...rest}>
+      <HeaderContainer fluid forwardedAs={as} {...rest}>
         <Row
           justify="space-between"
           align="center"
