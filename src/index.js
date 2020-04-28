@@ -4,9 +4,11 @@ export { default as ThemeProvider } from './components/ThemeProvider'
 export { resolveMedia } from './utils/helpers'
 // controls
 export { default as Button } from './components/Button'
+// input
+export { Form } from './components/Form'
 //Layout
-export { Header } from './components/Header'
 export { Footer } from './components/Footer'
+export { Header } from './components/Header'
 // typography
 export { Anchor } from './components/Anchor'
 export { Heading } from './components/Heading'

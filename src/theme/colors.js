@@ -43,6 +43,12 @@ export default function() {
         masBlueDark: '#18507a',
       },
     },
+    form: {
+      disabledBackground: '#F3F3F3',
+      disabledText: '#686C6C',
+      inputBorder: '#515151',
+      inputFocus: '#e8b940',
+    },
     header: {
       background: '#428513',
     },

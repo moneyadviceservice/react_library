@@ -72,6 +72,10 @@ module.exports = {
           components: () => ['./src/components/Button/index.js'],
         },
         {
+          name: 'Input',
+          components: () => ['./src/components/Form/index.js'],
+        },
+        {
           name: 'Layout',
           components: () => [
             './src/components/Footer/index.js',
