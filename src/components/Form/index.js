@@ -5,7 +5,7 @@ import StyledForm from './StyledForm'
 
 const Form = ({ a11yTitle, as, children, ...rest }) => {
   return (
-    <StyledForm aria-label={a11yTitle} as={as} {...rest}>
+    <StyledForm aria-label={a11yTitle} forwardedAs={as} {...rest}>
       {children}
     </StyledForm>
   )
