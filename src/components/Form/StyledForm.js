@@ -21,6 +21,8 @@ const StyledForm = styled(Col)`
     border-radius: 0;
     color: ${props => props.theme.colors.black};
     display: inline-block;
+    height: 1.875rem;
+    line-height: 1.875rem;
 
     &[disabled] {
       background-color: ${props => props.theme.colors.form.disabledBackground};
