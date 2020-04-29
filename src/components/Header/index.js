@@ -17,7 +17,7 @@ const Header = ({
 }) => {
   return (
     <>
-      <HeaderContainer fluid as="header" {...rest}>
+      <HeaderContainer fluid forwardedAs={as} {...rest}>
         <Row
           justify="space-between"
           align="center"
@@ -26,12 +26,20 @@ const Header = ({
           constrained
         >
           <Col grow={false}>
-            <LogoContainer href="https://www.moneyadviceservice.org.uk/en">
+            <LogoContainer
+              href="https://www.moneyadviceservice.org.uk/en"
+              margin="0"
+            >
               {currentLgn === 'en' ? <MasLogoEng /> : <MasLogoCy />}
             </LogoContainer>
           </Col>
           <Col grow={false} onClick={setLgn}>
-            <LocaleContainer>
+            <LocaleContainer
+              color="white"
+              textSize="0.875rem"
+              weight="500"
+              margin="0"
+            >
               {localeText
                 ? localeText
                 : currentLgn === 'en'
@@ -58,6 +66,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
+  as: 'header',
   currentLgn: 'en',
   localeText: null,
   setLgn: null,

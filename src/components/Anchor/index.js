@@ -7,7 +7,7 @@ const Anchor = ({ a11yTitle, as, color, weight, width, ...rest }) => {
   return (
     <StyledAnchor
       aria-label={a11yTitle}
-      as={as}
+      forwardedAs={as}
       colorProp={color}
       weightProp={weight}
       widthProp={width}
