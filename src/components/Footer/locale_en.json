@@ -1,0 +1,124 @@
+{
+  "ContactPanels": {
+    "webchat": {
+      "title": "Web chat",
+      "text_1": "Monday to Friday, 8am to 6pm",
+      "text_2": "Saturday, 8am to 3pm",
+      "text_3": "Sunday and Bank Holidays, closed",
+      "button_text": {
+        "available": "Launch chat",
+        "unavailable": "Unavailable",
+        "busy": "Currently busy"
+      },
+      "long_wait": "We are currently experiencing high volumes across our service, wait times may be longer than normal."
+    },
+    "whatsapp": {
+      "title": "WhatsApp",
+      "text_1": "Need help sorting out your debts, have credit questions or want pensions guidance?",
+      "text_2": "Add +44 7701 342744 to your Whatsapp and send us a message.",
+      "text_3": "For everything else please contact us via Webchat or Telephone.",
+      "button_text": {
+        "available": "Launch chat",
+        "unavailable": "Unavailable"
+      }
+    },
+    "contact": {
+      "title": "Contact us",
+      "text_1": "Give us a call for free and impartial money advice.",
+      "phone_number": "0800 138 7777",
+      "phone_url": "tel:+448001387777",
+      "text_2": "Monday to Friday, 8am to 6pm",
+      "text_3": "Saturday, Sunday and Bank Holidays, closed",
+      "email_text": "Our general email address is",
+      "email_address": "enquiries@maps.org.uk",
+      "button_text": "Send Email",
+      "text_4": "We will normally respond to your enquiry within 48 hours of receipt."
+    }
+  },
+  "FooterPrimary": {
+    "social_media": {
+      "facebook": {
+        "number": "72k",
+        "text": "Likes"
+      },
+      "twitter": {
+        "number": "45k",
+        "text": "Followers"
+      },
+      "youtube": {
+        "number": "5.6m",
+        "text": "Views"
+      }
+    },
+    "link_items": [
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/static/about-us",
+        "text": "About us"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/categories/our-debt-work",
+        "text": "Our debt work"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/static/media-centre",
+        "text": "Media centre"
+      },
+      {
+        "href": "http://www.fincap.org.uk/",
+        "text": "Financial Capability"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/categories/partners",
+        "text": "Partners"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/static/jobs",
+        "text": "Jobs"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/categories/tools-and-calculators",
+        "text": "Tools & Calculators"
+      }
+    ],
+    "copyright": {
+      "text": "Copyright",
+      "organisation": "The Money Advice Service",
+      "address": "120 Holborn, London EC1N 2TD"
+    }
+  },
+  "FooterSecondary": {
+    "translation": "Cymraeg",
+    "accessibility": "Report an accessibility problem",
+    "maps_logo": {
+      "text_1": "The Money",
+      "text_2": "Advice Service",
+      "text_3": "is provided by"
+    },
+    "list_items": [
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/static/contact-us",
+        "text": "Contact us"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/static/terms-and-conditions",
+        "text": "Terms & Conditions"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/corporate/privacy",
+        "text": "Privacy Notice"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/static/accessibility",
+        "text": "Accessibility"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/static/cookie_notice_en",
+        "text": "Cookies"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/en/sitemap",
+        "text": "Sitemap"
+      }
+    ]
+  }
+}
