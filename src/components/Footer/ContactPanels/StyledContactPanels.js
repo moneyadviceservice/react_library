@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { resolveMedia } from '../../../utils/helpers'
 import { Row, Col } from '../../Grid'
 import Button from '../../Button'
+import { Anchor } from '../../Anchor'
+// svg icons
 import WhatsAppImg from '../../../assets/Images/whatsapp.svg'
 import PhoneImg from '../../../assets/Images/phone.svg'
 import WebChatImg from '../../../assets/Images/chat.svg'
@@ -81,6 +83,24 @@ const PhoneIcon = styled(PhoneImg)`
   `}
 `
 
+const Email = styled(Anchor)`
+  color: #000;
+
+  &:hover {
+    text-decoration: none;
+    color: #000;
+  }
+`
+
+const PhoneNumber = styled(Email)`
+  font-weight: 700;
+  font-size: 24px;
+
+  ${resolveMedia.sm`
+    font-size: 30px
+  `};
+`
+
 export {
   ContactPanelContainer,
   ContactPanelRow,
@@ -89,4 +109,6 @@ export {
   WebChatIcon,
   WhatsAppIcon,
   PhoneIcon,
+  Email,
+  PhoneNumber,
 }

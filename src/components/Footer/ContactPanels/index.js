@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import {
   genericPropTypes,
   genericPropsDefaults,
@@ -11,13 +11,16 @@ import {
   WebChatIcon,
   WhatsAppIcon,
   PhoneIcon,
+  Email,
+  PhoneNumber,
 } from './StyledContactPanels'
-
+// components
 import { Heading } from '../../Heading'
 import { Paragraph } from '../../Paragraph'
+// context
+import LocaleContext from '../LocaleContext'
 
 const ContactPanels = () => {
-  
   const [date, setDate] = useState(new Date())
   const [open, setOpen] = useState()
 
@@ -40,7 +43,10 @@ const ContactPanels = () => {
       setOpen(false)
     }
   })
-  
+
+  // manage translations
+  let { webchat, whatsapp, contact } = useContext(LocaleContext).ContactPanels
+
   return (
     <ContactPanelRow align="stretch">
       <ContactPanelContainer
@@ -50,27 +56,31 @@ const ContactPanels = () => {
         <ContactPanelColumn grow={false}>
           <Heading level={2}>
             <WebChatIcon />
-            Web Chat
+            {webchat.title}
           </Heading>
-          <Paragraph textSize="16px">
-            Got a question? Our advisers will point you in the right direction.
+          {open && (
+            <Paragraph textSize="16px">{webchat.available_cto}</Paragraph>
+          )}
+          <Paragraph margin="0" textSize="16px">
+            {webchat.text_1}
           </Paragraph>
-          <Paragraph margin="0px" textSize="16px">
-            Monday to Friday, 8am to 6pm Saturday, 8am to 3pm
+          <Paragraph margin="0" textSize="16px">
+            {webchat.text_2}
           </Paragraph>
-          <Paragraph textSize="16px">
-            Sunday and Bank Holidays, closed
-          </Paragraph>
-          <Paragraph textSize="16px">
-            We are currently experiencing high volumes across our service, wait
-            times may be longer than normal.
-          </Paragraph>
+          <Paragraph textSize="16px">{webchat.text_3}</Paragraph>
           <FooterButtons
-            text="Launch Chat"
+            text={
+              open
+                ? webchat.button_text.available
+                : webchat.button_text.unavailable
+            }
             alignSelf="center"
             weight={400}
             disabled={!open}
           />
+          <Paragraph margin="12px 0" textSize="16px">
+            {webchat.long_wait}
+          </Paragraph>
         </ContactPanelColumn>
       </ContactPanelContainer>
 
@@ -81,22 +91,19 @@ const ContactPanels = () => {
         <ContactPanelColumn grow={false}>
           <Heading level={2}>
             <WhatsAppIcon />
-            WhatsApp
+            {whatsapp.title}
           </Heading>
-          <Paragraph margin="0px" textSize="16px">
-            Need help sorting out your debts, have credit questions or want
-            pensions guidance?
-          </Paragraph>
-          <Paragraph textSize="16px">
-            Add +44 7701 342744 to your Whatsapp and send us a message.
-          </Paragraph>
-          <Paragraph textSize="16px">
-            For everything else please contact us via Webchat or Telephone.
-          </Paragraph>
+          <Paragraph textSize="16px">{whatsapp.text_1}</Paragraph>
+          <Paragraph textSize="16px">{whatsapp.text_2}</Paragraph>
+          <Paragraph textSize="16px">{whatsapp.text_3}</Paragraph>
           <FooterButtons
+            text={
+              open
+                ? whatsapp.button_text.available
+                : whatsapp.button_text.unavailable
+            }
             alignSelf="center"
             weight={400}
-            text="Launch Chat"
             href="https://wa.me/447701342744"
             target="_blank"
             disabled={!open}
@@ -111,29 +118,30 @@ const ContactPanels = () => {
         <ContactPanelColumn grow={false}>
           <Heading level={2}>
             <PhoneIcon />
-            Contact us
+            {contact.title}
           </Heading>
-          <Paragraph textSize="16px">
-            Give us a call for free and impartial money advice.
-          </Paragraph>
-          <Paragraph textSize={{ xs: '24px', sm: '30px' }} weight={700}>
-            0800 138 7777
-          </Paragraph>
+          <Paragraph textSize="16px">{contact.text_1}</Paragraph>
+          <PhoneNumber href={contact.phone_url} target="_blank">
+            {contact.phone_number}
+          </PhoneNumber>
           <Paragraph margin="0px" textSize="16px">
-            Monday to Friday, 8am to 6pm Saturday, Sunday and Bank Holidays,
-            closed
+            {contact.text_2}
           </Paragraph>
+          <Paragraph textSize="16px">{contact.text_3}</Paragraph>
           <Paragraph textSize="16px">
-            Our general email address is enquiries@maps.org.uk.
+            {contact.email_text}
+            <Email textSize="16px" href={`mailto:${contact.email_address}`}>
+              {contact.email_address}
+            </Email>
           </Paragraph>
           <FooterButtons
-            text="Send Email"
+            text={contact.button_text}
             alignSelf="center"
             weight={400}
             href="mailto:enquiries@maps.org.uk"
           />
           <Paragraph margin="12px 0" textSize="16px">
-            We will normally respond to your enquiry within 48 hours of receipt.
+            {contact.text_4}
           </Paragraph>
         </ContactPanelColumn>
       </ContactPanelContainer>

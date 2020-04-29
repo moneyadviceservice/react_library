@@ -2,6 +2,7 @@
   "ContactPanels": {
     "webchat": {
       "title": "Gwe-sgwrs",
+      "available_cto": "A oes gennych chi gwestiwn? Bydd ein cynghorwyr yn eich arwain i'r cyfeiriad cywir.",
       "text_1": "Llun i Wener, 8am i 6pm",
       "text_2": "Dydd Sadwrn, 8am i 3pm",
       "text_3": "Dydd Sul a Gwyliau Banc, ar gau",
@@ -29,7 +30,7 @@
       "phone_url": "tel:+448001380555",
       "text_2": "Llun i Wener, 8am i 6pm",
       "text_3": "Dydd Sadwrn ar gau, Dydd Sul a Gwyliau Banc, ar gau",
-      "email_text": "Ein cyfeiriad e-bost cyffredinol yw",
+      "email_text": "Ein cyfeiriad e-bost cyffredinol yw ",
       "email_address": "enquiries@maps.org.uk",
       "button_text": "Anfon e-bost",
       "text_4": "Fel rheol byddwn yn ymateb i’ch ymholiad o fewn 48 awr ar ôl derbyn."
