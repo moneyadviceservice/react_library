@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   genericPropTypes,
   genericPropsDefaults,
@@ -26,39 +26,14 @@ import ClearEnglish from '../../../assets/Images/clear_english.svg'
 import Facebook from '../../../assets/Images/icon_facebook.svg'
 import Twitter from '../../../assets/Images/icon_twitter.svg'
 import Youtube from '../../../assets/Images/icon_youtube.svg'
+// context
+import LocaleContext from '../LocaleContext'
 
 const FooterPrimary = () => {
-  const linkItems = [
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/static/about-us',
-      text: 'About us',
-    },
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/categories/our-debt-work',
-      text: 'Our debt work',
-    },
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/static/media-centre',
-      text: 'Media centre',
-    },
-    {
-      href: 'http://www.fincap.org.uk/',
-      text: 'Financial Capability',
-    },
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/categories/partners',
-      text: 'Partners',
-    },
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/static/jobs',
-      text: 'Jobs',
-    },
-    {
-      href:
-        'https://www.moneyadviceservice.org.uk/en/categories/tools-and-calculators',
-      text: 'Tools & Calculators',
-    },
-  ]
+  // manage translations
+  let { social_media, link_items, copyright } = useContext(
+    LocaleContext
+  ).FooterPrimary
 
   return (
     <FooterRow justify="center">
@@ -75,8 +50,8 @@ const FooterPrimary = () => {
               <Facebook />
             </SocialLogo>
             <SocialCounter>
-              <span>72k</span>
-              <span>Likes</span>
+              <span>{social_media.facebook.number}</span>
+              <span>{social_media.facebook.text}</span>
             </SocialCounter>
           </SocialLink>
           <SocialLink align="center" direction={{ xs: 'column', lg: 'row' }}>
@@ -84,8 +59,8 @@ const FooterPrimary = () => {
               <Twitter />
             </SocialLogo>
             <SocialCounter>
-              <span>45k</span>
-              <span>Followers</span>
+              <span>{social_media.twitter.number}</span>
+              <span>{social_media.twitter.text}</span>
             </SocialCounter>
           </SocialLink>
           <SocialLink align="center" direction={{ xs: 'column', lg: 'row' }}>
@@ -93,8 +68,8 @@ const FooterPrimary = () => {
               <Youtube />
             </SocialLogo>
             <SocialCounter>
-              <span>5.6m</span>
-              <span>Views</span>
+              <span>{social_media.youtube.number}</span>
+              <span>{social_media.youtube.text}</span>
             </SocialCounter>
           </SocialLink>
         </SocialContainer>
@@ -105,7 +80,7 @@ const FooterPrimary = () => {
           a11yTitle="footer"
         >
           <LinkList>
-            {linkItems.map(({ href, text }, key) => (
+            {link_items.map(({ href, text }, key) => (
               <LinkListItem key={key}>
                 <A href={href}>{text}</A>
               </LinkListItem>
@@ -131,6 +106,7 @@ const FooterPrimary = () => {
             <A
               href="https://www.clearest.co.uk/silver-standard"
               target="_blank"
+              width="auto"
             >
               <ClearEnglish />
             </A>
@@ -143,8 +119,10 @@ const FooterPrimary = () => {
             lineHeight={{ xs: '1.2rem', md: '1.35rem' }}
             margin={{ bottom: 0 }}
           >
-            © Copyright {new Date().getFullYear()} The Money Advice Service 120
-            Holborn, London EC1N 2TD
+            ©
+            {` ${copyright.text} ${new Date().getFullYear()} ${
+              copyright.organisation
+            } ${copyright.address}`}
           </P>
         </Copyright>
       </FooterPrimaryRow>
