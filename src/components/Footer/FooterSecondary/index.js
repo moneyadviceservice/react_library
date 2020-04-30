@@ -21,7 +21,7 @@ import MapsLogoEn from '../../../assets/Images/maps_logo_en.svg'
 // context
 import LocaleContext from '../LocaleContext'
 
-const FooterSecondary = ({ setLgn }) => {
+const FooterSecondary = ({ lgnUrl, setLgn }) => {
   let { translation, accessibility, maps_logo, list_items } = useContext(
     LocaleContext
   ).FooterSecondary
@@ -35,7 +35,9 @@ const FooterSecondary = ({ setLgn }) => {
       >
         <ListContainer direction="row" align="center" padding="0">
           <Translation sizes="auto">
-            <A onClick={setLgn}>{translation}</A>
+            <A href={lgnUrl} onClick={setLgn}>
+              {translation}
+            </A>
           </Translation>
           <Acessibility sizes="auto">
             <A>
