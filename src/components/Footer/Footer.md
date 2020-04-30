@@ -2,9 +2,17 @@ MAS Footer
 
 ```jsx
 import React, { useState } from 'react';
-import { Footer } from '@moneypensionservice/directories';
+import { Button, Footer, Row } from '@moneypensionservice/directories';
 
+const [locale, setLocale] = useState('en');
 
-
-<Footer />
+<>
+  <Row>
+    <Button onClick={() => setLocale('en')}>English</Button>
+    <Button onClick={() => setLocale('cy')}>Welsh</Button>
+  </Row>
+  <Footer 
+    currentLgn={locale}
+    setLgn={() => setLocale(locale === 'en' ? 'cy' : 'en')} />
+</>
 ```
