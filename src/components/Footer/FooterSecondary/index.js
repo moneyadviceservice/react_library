@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   genericPropTypes,
   genericPropsDefaults,
@@ -16,36 +16,15 @@ import {
   FooterSecondaryListItem as ListItem,
   FooterAnchor as A,
 } from './StyledFooterSecondary'
+// svg
 import MapsLogoEn from '../../../assets/Images/maps_logo_en.svg'
+// context
+import LocaleContext from '../LocaleContext'
 
-const FooterSecondary = () => {
-  const listItems = [
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/static/contact-us',
-      text: 'Contact us',
-    },
-    {
-      href:
-        'https://www.moneyadviceservice.org.uk/en/static/terms-and-conditions',
-      text: 'Terms & Conditions',
-    },
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/corporate/privacy',
-      text: 'Privacy Notice',
-    },
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/static/accessibility',
-      text: 'Accessibility',
-    },
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/static/cookie_notice_en',
-      text: 'Cookies',
-    },
-    {
-      href: 'https://www.moneyadviceservice.org.uk/en/sitemap',
-      text: 'Sitemap',
-    },
-  ]
+const FooterSecondary = ({ setLgn }) => {
+  let { translation, accessibility, maps_logo, list_items } = useContext(
+    LocaleContext
+  ).FooterSecondary
 
   return (
     <FooterRow justify="center">
@@ -56,20 +35,20 @@ const FooterSecondary = () => {
       >
         <ListContainer direction="row" align="center" padding="0">
           <Translation sizes="auto">
-            <A>Cymraeg</A>
+            <A onClick={setLgn}>{translation}</A>
           </Translation>
           <Acessibility sizes="auto">
             <A>
               <AccessibilityIcon />
-              Report an accessibility problem
+              {accessibility}
             </A>
           </Acessibility>
           <MapsLink sizes={{ xs: 12, sm: 'auto' }}>
             <A>
               <MapsText>
-                <span>The Money</span>
-                <span>Advice Service</span>
-                <span>is provided by</span>
+                <span>{maps_logo.text_1}</span>
+                <span>{maps_logo.text_2}</span>
+                <span>{maps_logo.text_3}</span>
               </MapsText>
               <MapsLogoEn />
             </A>
@@ -78,7 +57,7 @@ const FooterSecondary = () => {
 
         <ListContainer sizes={{ xs: 12, lg: 'auto' }}>
           <List>
-            {listItems.map(({ href, text }, key) => (
+            {list_items.map(({ href, text }, key) => (
               <ListItem key={key}>
                 <A href={href}>{text}</A>
               </ListItem>
