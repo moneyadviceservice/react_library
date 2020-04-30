@@ -25,7 +25,7 @@ const Footer = ({ currentLgn, setLgn, ...rest }) => {
   )
 }
 
-Footer.prototypes = {
+Footer.propTypes = {
   /** Current Language Value */
   currentLgn: PropTypes.oneOf(['en', 'cy']),
   /** Function to be triggered by Locale Button */
