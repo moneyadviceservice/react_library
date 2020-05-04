@@ -1,8 +1,16 @@
 {
   "name": "@moneypensionservice/directories",
-  "version": "0.1.0",
-  "description": "MaPS React Component Library",
+  "version": "1.1.0",
+  "description": "Directories React Component Library",
   "homepage": "https://moneyadviceservice.github.io/react_library/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moneyadviceservice/react_library"
+  },
+  "bugs": {
+    "url": "https://github.com/moneyadviceservice/react_library/issues",
+    "email": "development.team@maps.org.uk"
+  },
   "main": "lib/index.js",
   "files": [
     "/lib"
