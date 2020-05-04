@@ -30,16 +30,19 @@ export const genericPropTypes = {
     PropTypes.oneOf(['none', ...SPACING_SIZES]),
     spacingProp,
     PropTypes.string,
+    PropTypes.object,
   ]),
   padding: PropTypes.oneOfType([
     PropTypes.oneOf([...SPACING_SIZES]),
     spacingProp,
     PropTypes.string,
+    PropTypes.object,
   ]),
   border: PropTypes.oneOfType([
     PropTypes.oneOf(['none', ...SPACING_SIZES]),
     spacingProp,
     PropTypes.string,
+    PropTypes.object,
   ]),
 }
 

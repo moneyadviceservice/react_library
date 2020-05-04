@@ -1,0 +1,125 @@
+{
+  "ContactPanels": {
+    "webchat": {
+      "title": "Gwe-sgwrs",
+      "available_cto": "A oes gennych chi gwestiwn? Bydd ein cynghorwyr yn eich arwain i'r cyfeiriad cywir.",
+      "text_1": "Llun i Wener, 8am i 6pm",
+      "text_2": "Dydd Sadwrn, 8am i 3pm",
+      "text_3": "Dydd Sul a Gwyliau Banc, ar gau",
+      "button_text": {
+        "available": "Lansio sgwrs",
+        "unavailable": "Ddim ar gael",
+        "busy": "Yn brysur ar hyn o bryd"
+      },
+      "long_wait": "Ar hyn o bryd rydym yn profi llawer iawn ar draws ein gwasanaeth, gall amseroedd aros fod yn hirach na'r arfer."
+    },
+    "whatsapp": {
+      "title": "WhatsApp",
+      "text_1": "Angen help i gael trefn ar eich dyledion, neu a oes gennych chi gwestiynau credyd neu eisiau arweiniad ar bensiynau?",
+      "text_2": "Ychwanegwch +44 7701 342744 i’ch Whatsapp ac anfon neges atom.",
+      "text_3": "Ar gyfer popeth arall, cysylltwch â ni trwy Sgwrsio Gwe neu Ffonio.",
+      "button_text": {
+        "available": "Lansio sgwrs",
+        "unavailable": "Ddim ar gael"
+      }
+    },
+    "contact": {
+      "title": "Cysylltwch â ni",
+      "text_1": "Ffoniwch ni am gyngor ariannol am ddim a diduedd.",
+      "phone_number": "0800 138 0555",
+      "phone_url": "tel:+448001380555",
+      "text_2": "Llun i Wener, 8am i 6pm",
+      "text_3": "Dydd Sadwrn ar gau, Dydd Sul a Gwyliau Banc, ar gau",
+      "email_text": "Ein cyfeiriad e-bost cyffredinol yw ",
+      "email_address": "enquiries@maps.org.uk",
+      "button_text": "Anfon e-bost",
+      "text_4": "Fel rheol byddwn yn ymateb i’ch ymholiad o fewn 48 awr ar ôl derbyn."
+    }
+  },
+  "FooterPrimary": {
+    "social_media": {
+      "facebook": {
+        "number": "72k",
+        "text": "Wedi hoffi"
+      },
+      "twitter": {
+        "number": "45k",
+        "text": "Dilynwyr"
+      },
+      "youtube": {
+        "number": "5.6m",
+        "text": "Gwelwyd"
+      }
+    },
+    "link_items": [
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/static/amdanom-ni",
+        "text": "Amdanom ni"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/categories/our-debt-work",
+        "text": "Ein gwaith dyledion"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau",
+        "text": "Canolfan y cyfryngau"
+      },
+      {
+        "href": "http://www.fincap.org.uk/cymru",
+        "text": "Galluogrwydd Ariannol"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/categories/Partners",
+        "text": "Partneriaid"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/static/swyddi",
+        "text": "Swyddi"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/categories/tools-and-calculators",
+        "text": "Offer a chyfrifianellau"
+      }
+    ],
+    "copyright": {
+      "text": "Hawlfraint",
+      "organisation": "The Money Advice Service",
+      "address": "120 Holborn, London EC1N 2TD"
+    }
+  },
+  "FooterSecondary": {
+    "translation": "English",
+    "accessibility": "Adrodd ar broblem hygyrchedd",
+    "maps_logo": {
+      "text_1": "Gwasanaeth",
+      "text_2": "Cynghori Ariannol yn",
+      "text_3": "cael ei ddarparu gan"
+    },
+    "list_items": [
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/static/cysylltu-a-ni",
+        "text": "Cysylltu â ni"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/static/telerau-ac-amodau",
+        "text": "Amodau a Thelerau"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/corporate/polisipreifatrwydd",
+        "text": "Rhybudd preifatrwydd"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/static/hygyrchedd",
+        "text": "Hygyrchedd"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/static/cookie_notice_cy",
+        "text": "Cwcis"
+      },
+      {
+        "href": "https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau",
+        "text": "Map safle"
+      }
+    ]
+  }
+}

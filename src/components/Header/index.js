@@ -11,8 +11,9 @@ const Header = ({
   as,
   children,
   currentLgn,
+  lngUrl,
   localeText,
-  setLgn,
+  setLng,
   ...rest
 }) => {
   return (
@@ -33,12 +34,14 @@ const Header = ({
               {currentLgn === 'en' ? <MasLogoEng /> : <MasLogoCy />}
             </LogoContainer>
           </Col>
-          <Col grow={false} onClick={setLgn}>
+          <Col grow={false}>
             <LocaleContainer
               color="white"
               textSize="0.875rem"
               weight="500"
               margin="0"
+              onClick={setLng}
+              href={lngUrl}
             >
               {localeText
                 ? localeText
@@ -58,18 +61,18 @@ const Header = ({
 Header.propTypes = {
   /** Current Language Value */
   currentLgn: PropTypes.oneOf(['en', 'cy']),
+  /** Server-side fallback url to change language */
+  lngUrl: PropTypes.string,
   /** Text to be displayed in Locale Button */
   localeText: PropTypes.string,
   /** Function to trigger by Locale Button */
-  setLgn: PropTypes.func,
+  setLng: PropTypes.func,
   ...genericPropTypes,
 }
 
 Header.defaultProps = {
   as: 'header',
   currentLgn: 'en',
-  localeText: null,
-  setLgn: null,
   ...genericPropsDefaults(),
 }
 

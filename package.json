@@ -1,8 +1,16 @@
 {
   "name": "@moneypensionservice/directories",
-  "version": "0.1.0",
-  "description": "MaPS React Component Library",
+  "version": "1.1.0",
+  "description": "Directories React Component Library",
   "homepage": "https://moneyadviceservice.github.io/react_library/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moneyadviceservice/react_library"
+  },
+  "bugs": {
+    "url": "https://github.com/moneyadviceservice/react_library/issues",
+    "email": "development.team@maps.org.uk"
+  },
   "main": "lib/index.js",
   "files": [
     "/lib"
@@ -44,7 +52,7 @@
     "eslint-plugin-react": "^7.18.3",
     "file-loader": "^5.1.0",
     "jest": "^25.1.0",
-    "jest-enzyme": "^7.1.2",
+    "json-loader": "^0.5.7",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

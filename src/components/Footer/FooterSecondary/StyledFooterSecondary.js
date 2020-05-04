@@ -73,6 +73,11 @@ const FooterAnchor = styled(Anchor)`
   color: white;
   font-size: 14px;
 
+  &:visited,
+  &:hover {
+    color: white;
+  }
+
   ${resolveMedia.sm`
     font-size: 16px;
   `}
