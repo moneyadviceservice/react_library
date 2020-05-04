@@ -8,5 +8,5 @@ const [lgn, changeLgn] = useState('en');
 
 <Header 
   currentLgn={lgn} 
-  setLgn={() => changeLgn(lgn === 'en' ? 'cy' : 'en')} />
+  setLng={() => changeLgn(lgn === 'en' ? 'cy' : 'en')} />
 ```

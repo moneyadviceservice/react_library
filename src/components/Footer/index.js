@@ -11,7 +11,7 @@ import LocaleEn from './locale_en.json'
 import LocaleCy from './locale_cy.json'
 import LocaleContext from './LocaleContext'
 
-const Footer = ({ currentLgn, lgnUrl, setLgn, ...rest }) => {
+const Footer = ({ currentLgn, lngUrl, setLng, ...rest }) => {
   const i18n = currentLgn === 'en' ? LocaleEn : LocaleCy
 
   return (
@@ -19,7 +19,7 @@ const Footer = ({ currentLgn, lgnUrl, setLgn, ...rest }) => {
       <FooterContainer forwardedAs="footer" fluid {...rest}>
         <ContactPanels />
         <FooterPrimary />
-        <FooterSecondary lgnUrl={lgnUrl} setLgn={setLgn} />
+        <FooterSecondary lngUrl={lngUrl} setLng={setLng} />
       </FooterContainer>
     </LocaleContext.Provider>
   )
@@ -29,9 +29,9 @@ Footer.propTypes = {
   /** Current Language Value */
   currentLgn: PropTypes.oneOf(['en', 'cy']),
   /** Function to be triggered by Locale Button */
-  setLgn: PropTypes.func,
+  setLng: PropTypes.func,
   /** Server-side fallback url to change language */
-  lgnUrl: PropTypes.string,
+  lngUrl: PropTypes.string,
   ...genericPropTypes,
 }
 Footer.defaultProps = {
