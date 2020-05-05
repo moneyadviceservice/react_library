@@ -49,6 +49,9 @@ export default function() {
       inputBorder: '#515151',
       inputFocus: '#e8b940',
     },
+    formfield: {
+      legendText: '#2e3030',
+    },
     header: {
       background: '#428513',
     },

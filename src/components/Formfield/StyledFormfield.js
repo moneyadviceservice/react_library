@@ -1,8 +1,18 @@
 import styled from 'styled-components'
-import { resolveMedia, genericStyles } from '../../utils/helpers'
+import { genericStyles } from '../../utils/helpers'
 
 const StyledFormfield = styled.fieldset`
   ${genericStyles}
+  ${props => !props.padding && `padding: 0 1.125rem;`}
 `
 
-export { StyledFormfield }
+const Legend = styled.legend`
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: ${props => props.theme.colors.formfield.legendText};
+  width: 100%;
+  margin-bottom: 0.75rem;
+`
+
+export { StyledFormfield, Legend }
