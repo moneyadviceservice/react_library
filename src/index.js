@@ -6,6 +6,7 @@ export { resolveMedia } from './utils/helpers'
 export { default as Button } from './components/Button'
 // input
 export { Form } from './components/Form'
+export { Formfield } from './components/Formfield'
 //Layout
 export { Footer } from './components/Footer'
 export { Header } from './components/Header'
