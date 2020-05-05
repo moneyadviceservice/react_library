@@ -1,10 +1,10 @@
-A modified Column component that renders a Form element. All props enabled by the Column component can be used here as well.
-This component also sets some default styles used by its children elements.
+A modified Column component that renders a `form` element. All props enabled by the Column component can be used here as well. <br />
+This component also sets some default styles used by its children elements such as `input`.
 
 ```jsx
 import { Form } from '@moneypensionservice/directories';
 
-<Form margin="6px">
+<Form>
   <fieldset>
     <label>
       Select Me
