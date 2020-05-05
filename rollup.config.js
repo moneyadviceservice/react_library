@@ -5,6 +5,8 @@ import external from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
 import { uglify } from 'rollup-plugin-uglify'
 import packageJSON from './package.json'
+import json from '@rollup/plugin-json'
+import svg from 'rollup-plugin-svg'
 
 const input = './src/index.js'
 const minifyExtension = pathToFile => pathToFile.replace(/\.js$/, '.min.js')
@@ -19,6 +21,8 @@ export default [
       sourcemap: true,
     },
     plugins: [
+      json(),
+      svg(),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -36,6 +40,8 @@ export default [
       format: 'cjs',
     },
     plugins: [
+      json(),
+      svg(),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -59,6 +65,8 @@ export default [
       },
     },
     plugins: [
+      json(),
+      svg(),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -80,6 +88,8 @@ export default [
       },
     },
     plugins: [
+      json(),
+      svg(),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -99,6 +109,8 @@ export default [
       exports: 'named',
     },
     plugins: [
+      json(),
+      svg(),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -116,6 +128,8 @@ export default [
       exports: 'named',
     },
     plugins: [
+      json(),
+      svg(),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
