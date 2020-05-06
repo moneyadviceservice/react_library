@@ -11,6 +11,11 @@ const inputFocusOutline = css`
 `
 
 const StyledForm = styled(Col)`
+  ${props => !props.margin && `margin: 0;`}
+  ${props =>
+    !props.padding &&
+    `padding: 0;`}
+    
   input[type='text'],
   input[type='number'],
   input[type='email'],

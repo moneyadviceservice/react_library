@@ -1,23 +1,21 @@
-# React component library for Directories project
-![Travis (.org)](https://img.shields.io/travis/moneyadviceservice/react_library)
+# MaPS - Directories React Component Library
+[![Build Status](https://img.shields.io/travis/moneyadviceservice/react_library?branch=master)](https://travis-ci.org/github/moneyadviceservice/react_library)
+[![npm version](https://badge.fury.io/js/%40moneypensionservice%2Fdirectories.svg)](https://badge.fury.io/js/%40moneypensionservice%2Fdirectories)
+[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+[![](https://img.shields.io/badge/Website-Money%20Pensions%20Service-green)](https://www.moneyadviceservice.org.uk/)
 
-## Installing the library on a project
-You can install the component library on another react project using either of the methods given below.
-
-For NPM users:
+## Installation
+The component library is available via NPM or Yarn:
 ```shell
   $ npm install @moneypensionservice/directories
-```
-For Yarn users:
-
-```shell
+  # or
   $ yarn add @moneypensionservice/directories
 ```
 
-## Documentation
-Visit the [documentation website](https://moneyadviceservice.github.io/react_library/) for more information.
+## Usage
+You can find a list of all available components on the [documentation website](https://moneyadviceservice.github.io/react_library/) as well as guides to set up the library on your React application.
 
-## List of the technologies used in this library:
+## Technologies used
 
 - [React](https://reactjs.org/) for creating components and [styled-components](https://www.styled-components.com/) for styling;
 - [Styleguidist](https://react-styleguidist.js.org/) for both live development and generating documentation;
@@ -48,14 +46,15 @@ Cleanup and rebuild the files in the `lib` directory:
 ```shell
   $ npm run prepublishOnly
 ```
-Display the contents of the package that will be published to NPM. Make sure the project builds before publishing:
+
+Make sure the project builds before publishing and display the contents of the package that will be published to NPM:
 ```shell
   $ npm run postbuild
 ```
 
-## Publish the package to NPM
+## Publishing package to NPM
 
-If your user is a member of the NPM registry, login:
+If your user is a member of the [NPM registry](https://www.npmjs.com/org/moneypensionservice), login:
 ```shell
   $ npm login --scope=@moneypensionservice
 ```
@@ -65,7 +64,7 @@ Now you should be ready to publish the package:
   $ npm publish --access=public
 ```
 
-### Adding new users to the NPM Registry
+### Adding new users to the [NPM Registry](https://www.npmjs.com/org/moneypensionservice)
 
 Create an account at [npmjs.com](https://www.npmjs.com/signup). You should ask for an invitation to join the organisation registry.
 
@@ -73,6 +72,7 @@ An admin can add a new member to the registry:
 ```shell
   $ npm adduser --scope=@moneypensionservice
 ```
+or via [npmjs.com](npmjs.com) following [this guide](https://docs.npmjs.com/adding-members-to-your-org).
 
 ## Deploying the [documentation](https://moneyadviceservice.github.io/react_library/)
 Documentation will automatically updated via TravisCI when changes are made to the master branch if the build is successfull. It is available online as a GitHub Page at [https://moneyadviceservice.github.io/react_library/](https://moneyadviceservice.github.io/react_library/).
