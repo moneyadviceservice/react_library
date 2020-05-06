@@ -4,6 +4,7 @@ export { default as ThemeProvider } from './components/ThemeProvider'
 export { resolveMedia } from './utils/helpers'
 // controls
 export { default as Button } from './components/Button'
+export { Pagination } from './components/Pagination'
 // input
 export { Form } from './components/Form'
 //Layout
@@ -16,5 +17,3 @@ export { Paragraph } from './components/Paragraph'
 export { Inline } from './components/Inline'
 // grid
 export { Container, Row, Col } from './components/Grid'
-//Utils
-export { Pagination } from './components/Pagination'
