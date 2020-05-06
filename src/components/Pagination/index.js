@@ -6,6 +6,9 @@ import {
   PaginationButton,
   PaginationCounter,
 } from './StyledPagination'
+// translations
+import LocaleEn from './pagination_en.json'
+import LocaleCy from './pagination_cy.json'
 
 const Pagination = ({
   a11yTitle,
@@ -18,6 +21,8 @@ const Pagination = ({
   totalPages,
   ...rest
 }) => {
+  const i18n = currentLng === 'cy' ? LocaleCy : LocaleEn
+
   return (
     <StyledPagination
       aria-label={a11yTitle}
@@ -28,16 +33,20 @@ const Pagination = ({
       {...rest}
     >
       <PaginationButton
-        text="&lt; Prev"
+        text={`\u003C ${i18n.previous}`}
         weight={400}
+        href={prevUrl}
+        onClick={prevClick}
         noShow={currentPage === 1}
       />
       <PaginationCounter>
-        Page {currentPage} of {totalPages}
+        {`${i18n.page} ${currentPage} ${i18n.of} ${totalPages}`}
       </PaginationCounter>
       <PaginationButton
-        text="Next &gt;"
+        text={`${i18n.next} \u003E`}
         weight={400}
+        href={nextUrl}
+        onClick={nextClick}
         noShow={currentPage === totalPages}
       />
     </StyledPagination>
