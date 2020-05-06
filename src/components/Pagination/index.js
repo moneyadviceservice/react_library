@@ -1,55 +1,44 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { genericPropTypes } from '../../utils/prop-types'
+import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 import {
   StyledPagination,
   PaginationButton,
   PaginationCounter,
 } from './StyledPagination'
 
-const Pagination = ({ totalPages, currentPage }) => {
-  const [page, setPage] = useState(currentPage)
-  const [displayPrev, setdisplayPrev] = useState()
-  const [displayNext, setdisplayNext] = useState()
-
-  useEffect(() => {
-    switch (page) {
-      case 1:
-        setdisplayPrev(prevState => true)
-        break
-      case totalPages:
-        setdisplayNext(prevState => true)
-        break
-      default:
-        setdisplayNext(prevState => false)
-        setdisplayPrev(prevState => false)
-    }
-  }, [page])
-
-  const prev = () => {
-    setPage(page - 1)
-  }
-
-  const next = () => {
-    setPage((page % totalPages) + 1)
-  }
+const Pagination = ({
+  a11yTitle,
+  currentLng,
+  currentPage,
+  nextClick,
+  nextUrl,
+  prevClick,
+  prevUrl,
+  totalPages,
+  ...rest
+}) => {
   return (
-    <StyledPagination>
+    <StyledPagination
+      aria-label={a11yTitle}
+      forwardedAs="nav"
+      direction="row"
+      align="center"
+      justify="center"
+      {...rest}
+    >
       <PaginationButton
-        onClick={() => prev()}
-        text=" &lt; Prev "
+        text="&lt; Prev"
         weight={400}
-        displayPrev={displayPrev}
+        noShow={currentPage === 1}
       />
-
       <PaginationCounter>
-        Page {page} of {totalPages}
+        Page {currentPage} of {totalPages}
       </PaginationCounter>
       <PaginationButton
-        onClick={() => next()}
-        text=" Next &gt;"
+        text="Next &gt;"
         weight={400}
-        displayNext={displayNext}
+        noShow={currentPage === totalPages}
       />
     </StyledPagination>
   )
@@ -57,11 +46,26 @@ const Pagination = ({ totalPages, currentPage }) => {
 
 // Documentation
 Pagination.propTypes = {
-  /** Sets the totalpages props of the component. */
-  totalPages: PropTypes.number,
-  /** Sets the currentPage props of the component. */
+  /** Current Language Value */
+  currentLng: PropTypes.oneOf(['en', 'cy']),
+  /** Sets the currentPage being displayed. */
   currentPage: PropTypes.number,
+  /** Function to be triggered by the next button. */
+  nextClick: PropTypes.func,
+  /** Sets a url on the next button. Button will render as an anchor. */
+  nextUrl: PropTypes.string,
+  /** Function to be triggered by the prev button. */
+  prevClick: PropTypes.func,
+  /** Sets a url on the prev button. Button will render as an anchor. */
+  prevUrl: PropTypes.string,
+  /** Sets the total pages to display. */
+  totalPages: PropTypes.number,
   ...genericPropTypes,
+}
+
+Pagination.defaultProps = {
+  currentLng: 'en',
+  ...genericPropsDefaults(),
 }
 
 /** @component */
