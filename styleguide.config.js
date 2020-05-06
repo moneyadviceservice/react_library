@@ -69,7 +69,10 @@ module.exports = {
       sections: [
         {
           name: 'Controls',
-          components: () => ['./src/components/Button/index.js'],
+          components: () => [
+            './src/components/Button/index.js',
+            './src/components/Pagination/index.js',
+          ],
         },
         {
           name: 'Input',

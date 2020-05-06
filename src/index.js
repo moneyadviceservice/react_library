@@ -4,6 +4,7 @@ export { default as ThemeProvider } from './components/ThemeProvider'
 export { resolveMedia } from './utils/helpers'
 // controls
 export { default as Button } from './components/Button'
+export { Pagination } from './components/Pagination'
 // input
 export { Form } from './components/Form'
 export { Formfield } from './components/Formfield'
