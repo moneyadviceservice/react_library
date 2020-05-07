@@ -10,16 +10,20 @@ const Checkbox = ({
   disabled,
   label,
   name,
-  value,
   onChange,
+  required,
+  value,
   ...rest
 }) => (
-  <Label checked={checked} disabled={disabled} {...rest}>
+  <Label disabled={disabled} {...rest}>
     <Field
+      aria-label={a11yTitle}
+      aria-required={required}
       checked={checked}
       disabled={disabled}
       name={name}
       onChange={onChange}
+      required={required}
       type="checkbox"
       value={value}
     />
@@ -41,6 +45,8 @@ Checkbox.propTypes = {
   name: PropTypes.string,
   /** On change trigger function event. */
   onChange: PropTypes.func,
+  /** Indicates that the user must specify a value for the input. */
+  required: PropTypes.bool,
   /** Current value of the form control. Submitted with the form as part of a name/value pair. */
   value: PropTypes.string,
   ...genericPropTypes,
@@ -48,6 +54,7 @@ Checkbox.propTypes = {
 
 Checkbox.defaultProps = {
   disabled: false,
+  required: false,
   value: undefined,
   ...genericPropsDefaults(),
 }
