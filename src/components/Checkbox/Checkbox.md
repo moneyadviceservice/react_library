@@ -7,8 +7,7 @@ import { Form, Formfield, Checkbox } from '@moneypensionservice/directories';
   <Formfield legend="Choose your favorite place:" >
     <Checkbox
       label="Paris"
-      value="paris"
-      checked={true} />
+      value="paris" />
     <Checkbox
       label="Berlin"
       value="berlin" />
