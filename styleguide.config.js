@@ -77,6 +77,7 @@ module.exports = {
         {
           name: 'Input',
           components: () => [
+            './src/components/Checkbox/index.js',
             './src/components/Form/index.js',
             './src/components/Formfield/index.js',
           ],
