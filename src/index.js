@@ -8,6 +8,7 @@ export { Pagination } from './components/Pagination'
 // input
 export { Form } from './components/Form'
 export { Formfield } from './components/Formfield'
+export { Checkbox } from './components/Checkbox'
 //Layout
 export { Footer } from './components/Footer'
 export { Header } from './components/Header'

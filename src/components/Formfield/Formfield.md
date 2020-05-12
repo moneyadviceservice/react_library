@@ -1,5 +1,8 @@
-Does your form contain multiple sections of related inputs? Use `Formfield` to generate a `fieldset` element to group them, and the `legend` prop to provide a label for what this section is for.
-
+Does your form contain multiple sections of related inputs? Use `Formfield` to generate a `fieldset` element to group them, and the `legend` prop to provide a label for what this section is for.<br/>
+Screen readers may repeat the legend for each control in the group, so the legend text should be brief and descriptive.
+#### **Note:**
+Fieldset and legend should only be used when a higher-level label is necessary. Single checkboxes or basic radio buttons that make sense from their labels alone do not require fieldset and legend.<br/>
+Nested fieldsets can cause odd screen reader behavior and should be avoided.
 ```jsx
 import { Form, Formfield } from '@moneypensionservice/directories';
 
@@ -28,3 +31,4 @@ import { Form, Formfield } from '@moneypensionservice/directories';
   </Formfield>
 </Form>
 ```
+
