@@ -3,6 +3,7 @@ export default function() {
     // Global Colors
     alternate: '#edf0f0', // grey background
     black: '#000000',
+    disabledText: '#b7b7b7', // grey disabled
     focusBg: '#daaf2d',
     mapsBlue: '#143960',
     white: '#FFFFFF',
