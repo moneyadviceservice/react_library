@@ -49,7 +49,6 @@ Radio.propTypes = {
 
 Radio.defaultProps = {
   disabled: false,
-  value: undefined,
   ...genericPropsDefaults(),
 }
 
