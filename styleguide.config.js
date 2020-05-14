@@ -80,6 +80,7 @@ module.exports = {
             './src/components/Checkbox/index.js',
             './src/components/Form/index.js',
             './src/components/Formfield/index.js',
+            './src/components/Radio/index.js',
           ],
         },
         {

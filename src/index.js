@@ -6,9 +6,11 @@ export { resolveMedia } from './utils/helpers'
 export { default as Button } from './components/Button'
 export { Pagination } from './components/Pagination'
 // input
+export { Checkbox } from './components/Checkbox'
 export { Form } from './components/Form'
 export { Formfield } from './components/Formfield'
-export { Checkbox } from './components/Checkbox'
+export { Radio } from './components/Radio'
+
 //Layout
 export { Footer } from './components/Footer'
 export { Header } from './components/Header'
