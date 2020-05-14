@@ -1,37 +1,37 @@
-The Radiobutton component allows the user to enable or disable options.
+The Radio input component allows the user to enable or disable options.
 
 ```jsx
 import React, { useState } from 'react';
 import { Form, Formfield, Radiobutton, Paragraph as P } from '@moneypensionservice/directories';
 
-const [fruit, changeValue] = useState('Orange');
+const [fruit, changeValue] = useState('Mango');
 
 <>
 <Form>
   <Formfield legend="Choose your favourite fruit:" label="Fruits">
     <Radio
-      checked={fruit === 'Pear'}
-      onChange={(e) => changeValue(e.target.value)}
-      value="Pear"
-      label="🍐 Pear"
+      checked={fruit === 'Pineapple'}
+      onChange={e => changeValue(e.target.value)}
+      value="Pineapple"
+      label="🍍 Pineapple"
       name="fruits" />
     <Radio
-      checked={fruit === 'Orange'}
-      onChange={(e) => changeValue(e.target.value)}
-      value="Orange"
-      label="🍊 Orange"
+      checked={fruit === 'Mango'}
+      onChange={e => changeValue(e.target.value)}
+      value="Mango"
+      label="🥭 Mango"
       name="fruits" />
     <Radio
-      checked={fruit === 'Kiwi'}
-      onChange={(e) => changeValue(e.target.value)}
-      value="Kiwi"
-      label="🥝 Kiwi"
+      checked={fruit === 'Melon'}
+      onChange={e => changeValue(e.target.value)}
+      value="Melon"
+      label="🍈 Melon"
       name="fruits" />
     <Radio
-      checked={fruit === 'Grape'}
-      onChange={(e) => changeValue(e.target.value)}
-      value="Grape"
-      label="🍇 Grape (disabled)"
+      checked={fruit === 'Banana'}
+      onChange={e => changeValue(e.target.value)}
+      value="Banana"
+      label="🍌 Banana"
       name="fruits"
       disabled />
   </Formfield>
