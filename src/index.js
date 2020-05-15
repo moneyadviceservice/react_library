@@ -5,6 +5,7 @@ export { resolveMedia } from './utils/helpers'
 // controls
 export { default as Button } from './components/Button'
 export { Pagination } from './components/Pagination'
+export { Tooltip } from './components/Tooltip'
 // input
 export { Checkbox } from './components/Checkbox'
 export { Form } from './components/Form'

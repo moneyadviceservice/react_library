@@ -72,6 +72,7 @@ module.exports = {
           components: () => [
             './src/components/Button/index.js',
             './src/components/Pagination/index.js',
+            './src/components/Tooltip/index.js',
           ],
         },
         {
