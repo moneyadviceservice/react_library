@@ -11,12 +11,6 @@ const StyledTooltip = styled.span`
   cursor: pointer;
 `
 
-const Icon = styled(Anchor)`
-  font-style: italic;
-  color: #428513;
-  padding: 0.375rem;
-`
-
 /** Side styles for popup */
 const topStyle = css`
   &:after {
@@ -63,10 +57,10 @@ const Tip = styled.span`
   &:after {
     ${genericStyles}
     display: ${({ show }) => (show ? 'block' : 'none')};
+    ${({ minWidth }) => responsiveProps('min-width', minWidth)}
     position: absolute;
     z-index: 1000;
     background-color: #FFF;
-    min-width: 160px;
     white-space: pre-wrap;
     padding: 4px 6px;
     border: 1px solid black;
@@ -75,6 +69,12 @@ const Tip = styled.span`
     /** Popup Content */
     content: "${({ text }) => text}";
   }
+`
+
+const Icon = styled(Anchor)`
+  font-style: italic;
+  color: #428513;
+  padding: 0.375rem;
 `
 
 export { StyledTooltip, Icon, Tip }
