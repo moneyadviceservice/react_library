@@ -17,15 +17,16 @@ const Icon = styled(Anchor)`
   padding: 0.375rem;
 `
 
+/** Side styles for popup */
 const topStyle = css`
-  &:before {
+  &:after {
     left: 50%;
     bottom: calc(100% + 5px);
     transform: translate(-50%, -0.5em);
   }
 `
 const rightStyle = css`
-  &:before {
+  &:after {
     top: 50%;
     left: calc(100% + 5px);
     right: calc(0em - 5px);
@@ -33,14 +34,14 @@ const rightStyle = css`
   }
 `
 const bottomStyle = css`
-  &:before {
+  &:after {
     left: 50%;
     top: calc(100% + 5px);
     transform: translate(-50%, 0.5em);
   }
 `
 const leftStyle = css`
-  &:before {
+  &:after {
     top: 50%;
     right: calc(100% + 5px);
     left: calc(0em - 5px);
@@ -56,24 +57,23 @@ const sideStyles = {
 }
 
 const Tip = styled.span`
-  ${genericStyles}
-  display: ${({ show }) => (show ? 'block' : 'none')};
   /** Prop-based side styles */
   ${({ side }) => sideStyles[side]}
   /** Popup */
-  &:before {
-    display: block;
+  &:after {
+    ${genericStyles}
+    display: ${({ show }) => (show ? 'block' : 'none')};
     position: absolute;
     z-index: 1000;
     background-color: #FFF;
-    /** Popup Content */
-    content: "${({ text }) => text}";
     min-width: 160px;
     white-space: pre-wrap;
     padding: 4px 6px;
     border: 1px solid black;
     border-radius: 4px;
     box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+    /** Popup Content */
+    content: "${({ text }) => text}";
   }
 `
 

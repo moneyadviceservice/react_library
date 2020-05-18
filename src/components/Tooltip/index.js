@@ -7,19 +7,22 @@ const Tooltip = ({ a11yTitle, children, hover, side, text, ...rest }) => {
   const [show, setShow] = useState(false)
 
   return (
-    <StyledTooltip
-      aria-label={a11yTitle}
-      onClick={() => !hover && setShow(!show)}
-      onMouseEnter={() => hover && setShow(true)}
-      onMouseLeave={() => hover && setShow(false)}
-    >
-      {children || (
-        <Icon weight={700} color="#428513">
-          i
-        </Icon>
-      )}
-      <Tip show={show} text={text} side={side} {...rest} />
-    </StyledTooltip>
+    <>
+      <StyledTooltip
+        aria-label={a11yTitle}
+        onClick={() => !hover && setShow(!show)}
+        onMouseEnter={() => hover && setShow(true)}
+        onMouseLeave={() => hover && setShow(false)}
+      >
+        <Tip show={show} text={text} side={side} {...rest}>
+          {children || (
+            <Icon weight={700} color="#428513">
+              i
+            </Icon>
+          )}
+        </Tip>
+      </StyledTooltip>
+    </>
   )
 }
 
