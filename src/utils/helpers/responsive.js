@@ -27,11 +27,11 @@ export const responsiveProps = (property, values) => {
   } else if (typeof values === 'object') {
     return dimensions.map(d => {
       if (breakpoints[d] && values[d] !== undefined) {
-        console.log(typeof values[d])
+        console.log(property ? `${property}: ${values};` : `${values[d]}`)
         return css`
           ${breakpointStyle(
             breakpoints[d],
-            property ? `${property}: ${values};` : `${values[d]}`
+            property ? `${property}: ${values[d]};` : `${values[d]}`
           )}
         `
       }

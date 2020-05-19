@@ -75,14 +75,17 @@ const Tip = styled.span`
     ${({ minWidth }) => responsiveProps('min-width', minWidth)}
     position: absolute;
     z-index: 1000;
-    background-color: #FFF;
-    white-space: pre-wrap;
-    padding: 4px 6px;
+    padding: 8px;
     border: 1px solid black;
     border-radius: 4px;
     box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
     /** Popup Content */
     content: "${({ text }) => text}";
+    /** text */
+    font-size: 0.875rem;
+    line-height: 1rem;
+    white-space: pre-wrap;
+    background-color: #FFF;
   }
 `
 

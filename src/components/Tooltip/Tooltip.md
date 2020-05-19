@@ -12,7 +12,7 @@ const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
   <Tooltip text={lorem} hover side="top">
     <Button text="Hover me!" />
   </Tooltip>
-  <Tooltip text={lorem} side="bottom">
+  <Tooltip text={lorem} side="bottom" minWidth={{xs: '150px', md: '250px'}}>
     Click me!
   </Tooltip>
   <Tooltip text={lorem} side={{xs: 'bottom', md:'left'}}>
