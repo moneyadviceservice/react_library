@@ -53,7 +53,7 @@ const sideStyles = {
 }
 
 const renderSide = sideProp => {
-  // string
+  // string - fixed width
   if (typeof sideProp === 'string') return sideStyles[sideProp]
   // responsive
   if (typeof sideProp === 'object') {
@@ -71,27 +71,27 @@ const Tip = styled.span`
   /** Popup */
   &:after {
     ${genericStyles}
+    /** conditional styles */
     display: ${({ show }) => (show ? 'block' : 'none')};
     ${({ minWidth }) => responsiveProps('min-width', minWidth)}
+    ${({ padding }) => !padding && `padding: 8px;`}
+    ${({ border }) => !border && `border: 1px solid black; border-radius: 4px;`}
+    /** positioning */
     position: absolute;
     z-index: 1000;
-    padding: 8px;
-    border: 1px solid black;
-    border-radius: 4px;
-    box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
-    /** Popup Content */
+    /** popup content */
     content: "${({ text }) => text}";
     /** text */
     font-size: 0.875rem;
     line-height: 1rem;
     white-space: pre-wrap;
     background-color: #FFF;
+    box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
   }
 `
 
 const Icon = styled(Anchor)`
   font-style: italic;
-  color: #428513;
   padding: 0.375rem;
 `
 

@@ -26,12 +26,16 @@ const Tooltip = ({ a11yTitle, children, hover, ...rest }) => {
 
 // Documentation
 Tooltip.propTypes = {
-  /** Content inside component. If children are available inside the component they'll work as the trigger for it.s */
+  /** Content inside component. If children are available inside the tooltip component they'll work as the trigger. */
   children: PropTypes.node,
+  /** If enabled, the tooltip will show on hover. */
   hover: PropTypes.bool,
+  /** Sets the minimum width of the tooltip. Responsive.e */
   minWidth: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  /** Defines the side where the tooltip shows. Responsive. */
   side: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  text: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** The text to display inside the Tooltip. */
+  text: PropTypes.string,
   ...genericPropTypes,
 }
 
