@@ -20,14 +20,19 @@ export const breakpointStyle = (breakpoint, content) => css`
  * @returns {string[]} The styles for the multiples breakpoints.
  */
 export const responsiveProps = (property, values) => {
+  if (!values) throw new Error('No values provided for responsive props!')
   if (typeof values === 'string') {
     // same values for all screen sizes
-    return `${property}: ${values};`
+    return property ? `${property}: ${values};` : `${values}`
   } else if (typeof values === 'object') {
     return dimensions.map(d => {
-      if (breakpoints[d] && values[d]) {
+      if (breakpoints[d] && values[d] !== undefined) {
+        console.log(typeof values[d])
         return css`
-          ${breakpointStyle(breakpoints[d], `${property}: ${values[d]};`)}
+          ${breakpointStyle(
+            breakpoints[d],
+            property ? `${property}: ${values};` : `${values[d]}`
+          )}
         `
       }
     })

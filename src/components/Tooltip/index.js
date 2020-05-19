@@ -7,22 +7,20 @@ const Tooltip = ({ a11yTitle, children, hover, ...rest }) => {
   const [show, setShow] = useState(false)
 
   return (
-    <>
-      <StyledTooltip
-        aria-label={a11yTitle}
-        onClick={() => !hover && setShow(!show)}
-        onMouseEnter={() => hover && setShow(true)}
-        onMouseLeave={() => hover && setShow(false)}
-      >
-        <Tip show={show} {...rest}>
-          {children || (
-            <Icon weight={700} color="#428513">
-              i
-            </Icon>
-          )}
-        </Tip>
-      </StyledTooltip>
-    </>
+    <StyledTooltip
+      aria-label={a11yTitle}
+      onClick={() => !hover && setShow(!show)}
+      onMouseEnter={() => hover && setShow(true)}
+      onMouseLeave={() => hover && setShow(false)}
+    >
+      <Tip show={show} {...rest}>
+        {children || (
+          <Icon weight={700} color="#428513">
+            i
+          </Icon>
+        )}
+      </Tip>
+    </StyledTooltip>
   )
 }
 
@@ -32,16 +30,14 @@ Tooltip.propTypes = {
   children: PropTypes.node,
   hover: PropTypes.bool,
   minWidth: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  side: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  side: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   text: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-
   ...genericPropTypes,
 }
 
 Tooltip.defaultProps = {
   minWidth: '160px',
   side: 'right',
-
   ...genericPropsDefaults(),
 }
 

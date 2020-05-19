@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components'
-import {
-  resolveMedia,
-  genericStyles,
-  responsiveProps,
-} from '../../utils/helpers'
+import { genericStyles, responsiveProps } from '../../utils/helpers'
 import { Anchor } from '../Anchor'
 
 const StyledTooltip = styled.span`
@@ -14,6 +10,8 @@ const StyledTooltip = styled.span`
 /** Side styles for popup */
 const topStyle = css`
   &:after {
+    top: auto;
+    right: auto;
     left: 50%;
     bottom: calc(100% + 5px);
     transform: translate(-50%, -0.5em);
@@ -21,6 +19,7 @@ const topStyle = css`
 `
 const rightStyle = css`
   &:after {
+    bottom: auto;
     top: 50%;
     left: calc(100% + 5px);
     right: calc(0em - 5px);
@@ -29,6 +28,8 @@ const rightStyle = css`
 `
 const bottomStyle = css`
   &:after {
+    right: auto;
+    bottom: auto;
     left: 50%;
     top: calc(100% + 5px);
     transform: translate(-50%, 0.5em);
@@ -36,23 +37,37 @@ const bottomStyle = css`
 `
 const leftStyle = css`
   &:after {
+    bottom: auto;
+    left: auto;
     top: 50%;
     right: calc(100% + 5px);
-    left: calc(0em - 5px);
     transform: translate(-0.5em, -50%);
   }
 `
 
 const sideStyles = {
-  top: topStyle,
-  right: rightStyle,
-  bottom: bottomStyle,
-  left: leftStyle,
+  top: topStyle[0],
+  right: rightStyle[0],
+  bottom: bottomStyle[0],
+  left: leftStyle[0],
+}
+
+const renderSide = sideProp => {
+  // string
+  if (typeof sideProp === 'string') return sideStyles[sideProp]
+  // responsive
+  if (typeof sideProp === 'object') {
+    const responsiveStyles = {}
+    for (let [key, value] of Object.entries(sideProp)) {
+      responsiveStyles[key] = sideStyles[value]
+    }
+    return responsiveProps(null, responsiveStyles)
+  }
 }
 
 const Tip = styled.span`
   /** Prop-based side styles */
-  ${({ side }) => sideStyles[side]}
+  ${({ side }) => renderSide(side)}
   /** Popup */
   &:after {
     ${genericStyles}

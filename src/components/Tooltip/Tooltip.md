@@ -15,5 +15,8 @@ const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
   <Tooltip text={lorem} side="bottom">
     Click me!
   </Tooltip>
+  <Tooltip text={lorem} side={{xs: 'bottom', md:'left'}}>
+    xs: bottom, md:left
+  </Tooltip>
 </Row>
 ```
