@@ -35,7 +35,7 @@ const defaultStyle = css`
     ${props =>
       !props.border &&
       `border-bottom-color: ${props.theme.colors.button.borderBottomColor};
-        border-top: 3px solid ${props.theme.colors.button.activeBorderColor}`}
+        border-top: 4px solid ${props.theme.colors.button.activeBorderColor}`}
   }
 
   &[disabled] {
@@ -77,7 +77,7 @@ const primaryStyle = css`
     ${props =>
       !props.border &&
       `border-bottom-color: ${props.theme.colors.button.primary.borderBottomColor};
-        border-top: 3px solid ${props.theme.colors.button.primary.activeBorderColor}`}
+        border-top: 4px solid ${props.theme.colors.button.primary.activeBorderColor}`}
   }
 
   &[disabled] {
@@ -146,7 +146,7 @@ const ButtonWrapper = styled.button`
   }
 
   &:active {
-    ${props => !props.padding && !props.blog && 'padding-top: 9px;'};
+    ${props => !props.padding && !props.blog && 'padding-top: 12px;'};
     ${props => !props.border && !props.blog && 'border-bottom: none;'};
   }
 
