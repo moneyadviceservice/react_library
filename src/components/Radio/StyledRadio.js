@@ -3,10 +3,8 @@ import { genericStyles } from '../../utils/helpers'
 
 const Label = styled.label`
   ${genericStyles}
-  ${props =>
-    props.disabled &&
-    `color: ${props.theme.colors.disabledText};`}
-  display: block;
+  ${({ disabled, theme }) => disabled && `color: ${theme.colors.disabledText};`}
+  ${({ hide }) => !hide && `display: block;`}
 `
 
 const Field = styled.input`

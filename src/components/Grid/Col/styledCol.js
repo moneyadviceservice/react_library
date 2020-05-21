@@ -17,39 +17,37 @@ const gutterStyle = () => css`
   ${responsiveProps('padding', gridConfig.gutterWidth)}
 `
 
-const getSize = (props, size) => props.theme.sizes.size[size] || size
+const getSize = (theme, size) => theme.sizes.size[size] || size
 
 const ColWrapper = styled.div`
-  /** align-self, padding, margin, border */
   ${genericStyles}
   
-  display: flex;
   flex-wrap: ${props => props.flexWrap};
   max-width: 100%;
 
   /** column-based flex size */
-  ${props =>
-    props.sizesProp ? flexStyle(props.sizesProp) : 'flex-basis: auto;'}
+  ${({ sizesProp }) => (sizesProp ? flexStyle(sizesProp) : 'flex-basis: auto;')}
 
   /** conditional styles */
-  ${props => !props.sizesProp && `flex-grow: ${props.growProp ? 1 : 0};`}
-  ${props => props.debug && debugStyle()}
-  ${props => props.background && backgroundStyle(props.background)}
-  ${props => !props.padding && !props.noGutter && gutterStyle()}
+  ${({ hide }) => !hide && `display: flex;`}
+  ${({ sizesProp, growProp }) =>
+    !sizesProp && `flex-grow: ${growProp ? 1 : 0};`}
+  ${({ background }) => background && backgroundStyle(background)}
+  ${({ padding, noGutter }) => !padding && !noGutter && gutterStyle()}
 
   /** responsive props */
-  ${props =>
-    props.widthProp &&
-    responsiveProps('width', getSize(props, props.widthProp))}
-  ${props =>
-    props.heightProp &&
-    responsiveProps('height', getSize(props, props.heightProp))}
-  ${props =>
-    props.flexDirection &&
-    responsiveProps('flex-direction', props.flexDirection)}
+  ${({ widthProp, theme }) =>
+    widthProp && responsiveProps('width', getSize(theme, widthProp))}
+  ${({ heightProp, theme }) =>
+    heightProp && responsiveProps('height', getSize(theme, heightProp))}
+  ${({ flexDirection }) =>
+    flexDirection && responsiveProps('flex-direction', flexDirection)}
   ${props => props.align && responsiveProps('align-items', props.align)}
   ${props => props.justify && responsiveProps('justify-content', props.justify)}
   ${props => props.offsetProp && offsetStyle(props.offsetProp)}
+
+  /** debug */
+  ${({ debug }) => debug && debugStyle()}
 `
 
 export default ColWrapper

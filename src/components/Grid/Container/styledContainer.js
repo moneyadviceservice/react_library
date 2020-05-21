@@ -48,34 +48,34 @@ const widthStyle = css`
 `
 
 const ContainerWrapper = styled.div`
-  /** align-self, padding, margin, border */
   ${genericStyles}
-
-  display: flex;
+  /** defaults */
   outline: none;
 
   /** conditional styles */
-  ${props => props.debug && debugStyle()}
-  ${props =>
-    !props.padding && responsiveProps('padding', gridConfig.containerPadding)}
-  ${props => !props.margin && 'margin: 0 auto;'}
-  ${props => props.background && backgroundStyle(props.background)}
-  ${props =>
-    props.heightProp &&
-    (typeof props.heightProp === 'object' ? heightObjectStyle : heightStyle)}
-  ${props =>
-    props.widthProp &&
-    (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle)}
-  ${props =>
-    !props.fluid &&
-    !props.widthProp &&
+  ${({ hide }) => !hide && `display: flex;`}
+  ${({ padding }) =>
+    !padding && responsiveProps('padding', gridConfig.containerPadding)}
+  ${({ margin }) => !margin && 'margin: 0 auto;'}
+  ${({ background }) => background && backgroundStyle(background)}
+  ${({ heightProp }) =>
+    heightProp &&
+    (typeof heightProp === 'object' ? heightObjectStyle : heightStyle)}
+  ${({ widthProp }) =>
+    widthProp &&
+    (typeof widthProp === 'object' ? widthObjectStyle : widthStyle)}
+  ${({ fluid, widthProp }) =>
+    !fluid &&
+    !widthProp &&
     responsiveProps('max-width', gridConfig.containerWidth)}
   ${props => !props.widthProp && props.fluid && 'width: 100%;'}
 
   /** responsive props */
-  ${props =>
-    props.flexDirection &&
-    responsiveProps('flex-direction', props.flexDirection)}
+  ${({ flexDirection }) =>
+    flexDirection && responsiveProps('flex-direction', flexDirection)}
+
+  /** debug */
+  ${({ debug }) => debug && debugStyle()}
 `
 
 export default ContainerWrapper
