@@ -45,6 +45,26 @@ import { Container, Row, Col, Button } from '@moneypensionservice/directories';
 </Container>
 ```
 
+### **hide**
+
+> Hides the element when provided by adding `display: none` to the styles.
+
+```json
+Prop.Type: Boolean
+```
+
+```jsx
+import { useState } from 'react'
+import { Button } from '@moneypensionservice/directories';
+
+const [show, setShow] = useState(true);
+
+<Button 
+  hide={!show}
+  text='Click me!'
+  onClick={() => setShow(false)} />
+```
+
 ### **margin**
 
 > The amount of margin around the component. An object can be specified to distinguish horizontal margin, vertical margin, and margin on a particular side.
