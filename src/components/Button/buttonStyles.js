@@ -8,103 +8,100 @@ import {
 
 const defaultStyle = css`
   /** border-bottom */
-  ${props =>
-    !props.border &&
+  ${({ border, theme }) =>
+    !border &&
     borderStyle({
       side: 'bottom',
-      color: props.theme.colors.button.borderBottomColor,
+      color: theme.colors.button.borderBottomColor,
       size: 'medium',
     })}
-  background: ${props => props.theme.colors.button.background};
-  color: ${props => props.theme.colors.button.color};
-  ${props =>
-    !props.weight && `font-weight: ${props.theme.typography.fontMedium}`};
+  background: ${({ theme }) => theme.colors.button.background};
+  color: ${({ theme }) => theme.colors.button.color};
+  ${({ weight, theme }) =>
+    !weight && `font-weight: ${theme.typography.fontMedium}`};
 
   &:focus,
   &:hover,
   &:active {
-    ${props =>
-      !props.background &&
-      `background-color: ${props.theme.colors.button.activeBackground};`}
-    ${props =>
-      !props.border &&
-      `border-color: ${props.theme.colors.button.activeBorderColor};`}
+    ${({ background, theme }) =>
+      !background &&
+      `background-color: ${theme.colors.button.activeBackground};`}
+    ${({ border, theme }) =>
+      !border && `border-color: ${theme.colors.button.activeBorderColor};`}
   }
 
   &:active {
-    ${props =>
-      !props.border &&
-      `border-bottom-color: ${props.theme.colors.button.borderBottomColor};
-        border-top: 3px solid ${props.theme.colors.button.activeBorderColor}`}
+    ${({ border, theme }) =>
+      !border &&
+      `border-bottom-color: ${theme.colors.button.borderBottomColor};
+        border-top: 4px solid ${theme.colors.button.activeBorderColor}`}
   }
 
   &[disabled] {
-    ${props =>
-      !props.background &&
-      `background-color: ${props.theme.colors.button.disabledBackground};`}
-    ${props =>
-      !props.border &&
-      `border-color: ${props.theme.colors.button.disabledBorderColor};`}
+    ${({ background, theme }) =>
+      !background &&
+      `background-color: ${theme.colors.button.disabledBackground};`}
+    ${({ border, theme }) =>
+      !border && `border-color: ${theme.colors.button.disabledBorderColor};`}
   }
 `
 
 const primaryStyle = css`
   /** border-bottom */
-  ${props =>
-    !props.border &&
+  ${({ border, theme }) =>
+    !border &&
     borderStyle({
       side: 'bottom',
-      color: props.theme.colors.button.primary.borderBottomColor,
+      color: theme.colors.button.primary.borderBottomColor,
       size: 'medium',
     })}
-  background: ${props => props.theme.colors.button.primary.background};
-  color: ${props => props.theme.colors.button.primary.color};
-  ${props =>
-    !props.weight && `font-weight: ${props.theme.typography.fontMedium}`};
+  background: ${({ theme }) => theme.colors.button.primary.background};
+  color: ${({ theme }) => theme.colors.button.primary.color};
+  ${({ weight, theme }) =>
+    !weight && `font-weight: ${theme.typography.fontMedium}`};
 
   &:focus,
   &:hover,
   &:active {
-    ${props =>
-      !props.background &&
-      `background-color: ${props.theme.colors.button.primary.activeBackground};`}
-    ${props =>
-      !props.border &&
-      `border-color: ${props.theme.colors.button.primary.activeBorderColor};`}
+    ${({ background, theme }) =>
+      !background &&
+      `background-color: ${theme.colors.button.primary.activeBackground};`}
+    ${({ border, theme }) =>
+      !border &&
+      `border-color: ${theme.colors.button.primary.activeBorderColor};`}
   }
 
   &:active {
-    ${props =>
-      !props.border &&
-      `border-bottom-color: ${props.theme.colors.button.primary.borderBottomColor};
-        border-top: 3px solid ${props.theme.colors.button.primary.activeBorderColor}`}
+    ${({ border, theme }) =>
+      !border &&
+      `border-bottom-color: ${theme.colors.button.primary.borderBottomColor};
+        border-top: 4px solid ${theme.colors.button.primary.activeBorderColor}`}
   }
 
   &[disabled] {
-    ${props =>
-      !props.background &&
-      `background-color: ${props.theme.colors.button.primary.disabledBackground};`}
-    ${props =>
-      !props.border &&
-      `border-color: ${props.theme.colors.button.primary.disabledBorderColor};`}
+    ${({ background, theme }) =>
+      !background &&
+      `background-color: ${theme.colors.button.primary.disabledBackground};`}
+    ${({ border, theme }) =>
+      !border &&
+      `border-color: ${theme.colors.button.primary.disabledBorderColor};`}
   }
 `
 
 const blogStyle = css`
-  ${props =>
-    !props.background &&
-    `background-color: ${props.theme.colors.button.blog.masBlue};`}
-  color: ${props => props.theme.colors.white};
-  ${props =>
-    !props.weight && `font-weight: ${props.theme.typography.fontHeavy};`}
-  ${props => !props.padding && `padding: 12px 13.5px;`}
-  ${props => !props.border && `border-radius: 5px; border-bottom: none;`}
+  ${({ background, theme }) =>
+    !background && `background-color: ${theme.colors.button.blog.masBlue};`}
+  color: ${({ theme }) => theme.colors.white};
+  ${({ weight, theme }) =>
+    !weight && `font-weight: ${theme.typography.fontHeavy};`}
+  ${({ padding }) => !padding && `padding: 12px 13.5px;`}
+  ${({ border }) => !border && `border-radius: 5px; border-bottom: none;`}
   text-transform: uppercase;
   font-size: 18px;
   line-height: 18px;
 
   &:hover {
-    background-color: ${props => props.theme.colors.button.blog.masBlueDark};
+    background-color: ${({ theme }) => theme.colors.button.blog.masBlueDark};
   }
 `
 
@@ -119,20 +116,21 @@ const ButtonWrapper = styled.button`
   transition: background 0.2s ease;
 
   /** defaults */
-  ${props =>
-    !props.blog &&
+  ${({ blog, theme }) =>
+    !blog &&
     `font-size: 16px;
       line-height: 24px;
-      border-radius: ${props.theme.sizes.button.border.radius};`}
-  ${props =>
-    !props.blog && setStyle('padding', props.theme.sizes.button.padding)}
-  ${props => !props.border && borderStyle(props.theme.sizes.button.border.size)}
+      border-radius: ${theme.sizes.button.border.radius};`}
+  /** padding */
+  ${({ blog, theme }) =>
+    !blog && setStyle('padding', theme.sizes.button.padding)}
+  /** border */
+  ${({ border, theme }) =>
+    !border && borderStyle(theme.sizes.button.border.size)}
 
   ${resolveMedia.md`
-    ${props =>
-      !props.blog &&
-      !props.padding &&
-      setStyle('padding', props.theme.sizes.button.paddingMd)};
+    ${({ blog, padding, theme }) =>
+      !blog && !padding && setStyle('padding', theme.sizes.button.paddingMd)};
   `}
 
   &:focus,
@@ -146,18 +144,18 @@ const ButtonWrapper = styled.button`
   }
 
   &:active {
-    ${props => !props.padding && !props.blog && 'padding-top: 9px;'};
-    ${props => !props.border && !props.blog && 'border-bottom: none;'};
+    ${({ blog, padding }) => !padding && !blog && 'padding-top: 12px;'};
+    ${({ blog, border }) => !border && !blog && 'border-bottom: none;'};
   }
 
   &[disabled] {
     box-shadow: none;
-    ${props =>
-      !props.blog && `color: ${props.theme.colors.button.disabledColor};`};
+    ${({ blog, theme }) =>
+      !blog && `color: ${theme.colors.button.disabledColor};`};
   }
 
   /** prop styles */
-  ${props => props.weight && `font-weight: ${props.weight};`}
+  ${({ weight }) => weight && `font-weight: ${weight};`}
 
   /** conditional styles */
   ${props => {
