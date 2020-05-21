@@ -4,11 +4,11 @@ import { ALIGN_SELF_MAP } from '../constants'
 
 // Returns the styles for generic props to be used in all components.
 export const genericStyles = css`
-  ${props =>
-    props.alignSelf && `align-self: ${ALIGN_SELF_MAP[props.alignSelf]};`}
-  ${props => props.margin && setStyle('margin', props.margin)}
-  ${props => props.padding && setStyle('padding', props.padding)}
-  ${props => props.border && borderStyle(props.border)}
+  ${({ alignSelf }) => alignSelf && `align-self: ${ALIGN_SELF_MAP[alignSelf]};`}
+  ${({ margin }) => margin && setStyle('margin', margin)}
+  ${({ padding }) => padding && setStyle('padding', padding)}
+  ${({ border }) => border && borderStyle(border)}
+  ${({ hide }) => hide && `display: none;`}
 `
 
 /**
