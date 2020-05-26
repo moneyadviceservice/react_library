@@ -11,7 +11,7 @@ const FooterRow = styled(Row)`
 `
 
 const FooterSecondaryContainer = styled(Row)`
-  ${props => !props.padding && `padding: 20px 0;`}
+  ${props => !props.padding && `padding: 10px 0;`}
   color: white;
 `
 
@@ -72,6 +72,7 @@ const FooterSecondaryListItem = styled.li`
 const FooterAnchor = styled(Anchor)`
   color: white;
   font-size: 14px;
+  ${({ margin }) => !margin && `margin: 0;`}
 
   &:visited,
   &:hover {
