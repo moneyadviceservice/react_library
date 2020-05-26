@@ -11,8 +11,8 @@ import LocaleEn from './locale_en.json'
 import LocaleCy from './locale_cy.json'
 import LocaleContext from './LocaleContext'
 
-const Footer = ({ currentLgn, lngUrl, setLng, ...rest }) => {
-  const i18n = currentLgn === 'en' ? LocaleEn : LocaleCy
+const Footer = ({ currentLgn, lngUrl, setLng, translations, ...rest }) => {
+  const i18n = translations || (currentLgn === 'en' ? LocaleEn : LocaleCy)
 
   return (
     <LocaleContext.Provider value={i18n}>
@@ -26,12 +26,14 @@ const Footer = ({ currentLgn, lngUrl, setLng, ...rest }) => {
 }
 
 Footer.propTypes = {
-  /** Current Language Value */
+  /** Current Language Value. */
   currentLgn: PropTypes.oneOf(['en', 'cy']),
-  /** Function to be triggered by Locale Button */
-  setLng: PropTypes.func,
-  /** Server-side fallback url to change language */
+  /** Server-side fallback url to change language. */
   lngUrl: PropTypes.string,
+  /** Function to be triggered by Locale Button. */
+  setLng: PropTypes.func,
+  /** Implements custom translations for the Footer. */
+  translations: PropTypes.object,
   ...genericPropTypes,
 }
 Footer.defaultProps = {
