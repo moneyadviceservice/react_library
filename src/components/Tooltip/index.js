@@ -3,7 +3,15 @@ import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 import { StyledTooltip, Icon, Tip } from './StyledTooltip'
 
-const Tooltip = ({ a11yTitle, children, hover, ...rest }) => {
+const Tooltip = ({
+  a11yTitle,
+  children,
+  hover,
+  minWidth,
+  side,
+  text,
+  ...rest
+}) => {
   const [show, setShow] = useState(false)
 
   return (
@@ -12,8 +20,9 @@ const Tooltip = ({ a11yTitle, children, hover, ...rest }) => {
       onClick={() => !hover && setShow(!show)}
       onMouseEnter={() => hover && setShow(true)}
       onMouseLeave={() => hover && setShow(false)}
+      {...rest}
     >
-      <Tip show={show} {...rest}>
+      <Tip minWidth={minWidth} show={show} side={side} text={text}>
         {children || (
           <Icon weight={700} color="#428513">
             i

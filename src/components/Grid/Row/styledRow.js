@@ -15,15 +15,14 @@ const debugStyle = () => css`
 const RowWrapper = styled.div`
   /** align-self, padding, margin, border */
   ${genericStyles}
-
-  max-width: ${props => (props.constrained ? '1200px' : '100%')};
-  display: flex;
-  flex-wrap: ${props => props.flexWrap};
-  flex-grow: ${props => (props.growProp ? 1 : 0)};
+  /** defaults */
+  max-width: ${({ constrained }) => (constrained ? '1200px' : '100%')};
+  flex-wrap: ${({ flexWrap }) => flexWrap};
+  flex-grow: ${({ growProp }) => (growProp ? 1 : 0)};
 
   /** conditional styles */
-  ${props => props.debug && debugStyle()}
-  ${props => props.background && backgroundStyle(props.background)}
+  ${({ hide }) => !hide && `display: flex;`}
+  ${({ background }) => background && backgroundStyle(background)}
 
   /** responsive props */
   ${props =>
@@ -33,11 +32,13 @@ const RowWrapper = styled.div`
   ${props =>
     props.heightProp &&
     responsiveProps('height', getSize(props, props.heightProp))}
-  ${props =>
-    props.flexDirection &&
-    responsiveProps('flex-direction', props.flexDirection)}
-  ${props => props.align && responsiveProps('align-items', props.align)}
-  ${props => props.justify && responsiveProps('justify-content', props.justify)}
+  ${({ flexDirection }) =>
+    flexDirection && responsiveProps('flex-direction', flexDirection)}
+  ${({ align }) => align && responsiveProps('align-items', align)}
+  ${({ justify }) => justify && responsiveProps('justify-content', justify)}
+
+  /** debug */
+  ${({ debug }) => debug && debugStyle()}
 `
 
 export default RowWrapper

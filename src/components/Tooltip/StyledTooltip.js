@@ -3,53 +3,46 @@ import { genericStyles, responsiveProps } from '../../utils/helpers'
 import { Anchor } from '../Anchor'
 
 const StyledTooltip = styled.span`
+  ${genericStyles}
   position: relative;
   cursor: pointer;
 `
 
 /** Side styles for popup */
 const topStyle = css`
-  &:after {
-    top: auto;
-    right: auto;
-    left: 50%;
-    bottom: calc(100% + 5px);
-    transform: translate(-50%, -0.5em);
-  }
+  top: auto;
+  right: auto;
+  left: 50%;
+  bottom: calc(100% + 5px);
+  transform: translate(-50%, -0.5em);
 `
 const rightStyle = css`
-  &:after {
-    bottom: auto;
-    top: 50%;
-    left: calc(100% + 5px);
-    right: calc(0em - 5px);
-    transform: translate(0.5em, -50%);
-  }
+  bottom: auto;
+  top: 50%;
+  left: calc(100% + 5px);
+  right: calc(0em - 5px);
+  transform: translate(0.5em, -50%);
 `
 const bottomStyle = css`
-  &:after {
-    right: auto;
-    bottom: auto;
-    left: 50%;
-    top: calc(100% + 5px);
-    transform: translate(-50%, 0.5em);
-  }
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  top: calc(100% + 5px);
+  transform: translate(-50%, 0.5em);
 `
 const leftStyle = css`
-  &:after {
-    bottom: auto;
-    left: auto;
-    top: 50%;
-    right: calc(100% + 5px);
-    transform: translate(-0.5em, -50%);
-  }
+  bottom: auto;
+  left: auto;
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translate(-0.5em, -50%);
 `
 
 const sideStyles = {
-  top: topStyle[0],
-  right: rightStyle[0],
-  bottom: bottomStyle[0],
-  left: leftStyle[0],
+  top: topStyle,
+  right: rightStyle,
+  bottom: bottomStyle,
+  left: leftStyle,
 }
 
 const renderSide = sideProp => {
@@ -66,22 +59,21 @@ const renderSide = sideProp => {
 }
 
 const Tip = styled.span`
-  /** Prop-based side styles */
-  ${({ side }) => renderSide(side)}
-  /** Popup */
+  /** Popup pseudo element */
   &:after {
-    ${genericStyles}
     /** conditional styles */
     display: ${({ show }) => (show ? 'block' : 'none')};
     ${({ minWidth }) => responsiveProps('min-width', minWidth)}
-    ${({ padding }) => !padding && `padding: 8px;`}
-    ${({ border }) => !border && `border: 1px solid black; border-radius: 4px;`}
     /** positioning */
     position: absolute;
     z-index: 1000;
+    /** Prop-based side styles */
+    ${({ side }) => renderSide(side)}
     /** popup content */
     content: "${({ text }) => text}";
-    /** text */
+    padding: 8px;
+    border: 1px solid black; 
+    border-radius: 4px;
     font-size: 0.875rem;
     line-height: 1rem;
     white-space: pre-wrap;

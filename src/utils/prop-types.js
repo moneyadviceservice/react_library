@@ -26,6 +26,7 @@ const spacingProp = PropTypes.shape({
 export const genericPropTypes = {
   a11yTitle: PropTypes.string,
   alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  hide: PropTypes.bool,
   margin: PropTypes.oneOfType([
     PropTypes.oneOf(['none', ...SPACING_SIZES]),
     spacingProp,
@@ -49,6 +50,7 @@ export const genericPropTypes = {
 export function genericPropsDefaults({
   a11yTitle = null,
   alignSelf = null,
+  hide = false,
   margin = null,
   padding = null,
   border = null,
@@ -56,6 +58,7 @@ export function genericPropsDefaults({
   return {
     a11yTitle: a11yTitle,
     alignSelf: alignSelf,
+    hide: hide,
     margin: margin,
     padding: padding,
     border: border,
