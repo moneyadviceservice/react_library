@@ -12,7 +12,7 @@ import LocaleCy from './locale_cy.json'
 import LocaleContext from './LocaleContext'
 
 const Footer = ({ currentLgn, lngUrl, setLng, translations, ...rest }) => {
-  const i18n = translations || (currentLgn === 'en' ? LocaleEn : LocaleCy)
+  const i18n = translations || (currentLgn === 'cy' ? LocaleCy : LocaleEn)
 
   return (
     <LocaleContext.Provider value={i18n}>
