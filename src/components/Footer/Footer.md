@@ -13,6 +13,6 @@ const [locale, setLocale] = useState('en');
   </Row>
   <Footer 
     currentLgn={locale}
-    setLng={() => setLocale(locale === 'en' ? 'cy' : 'en')} />
+    setLgn={() => setLocale(locale === 'en' ? 'cy' : 'en')} />
 </>
 ```
