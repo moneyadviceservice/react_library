@@ -11,15 +11,15 @@ import LocaleEn from './locale_en.json'
 import LocaleCy from './locale_cy.json'
 import LocaleContext from './LocaleContext'
 
-const Footer = ({ currentLgn, lngUrl, setLgn, i18nLgn, ...rest }) => {
-  const lgn = i18nLgn || (currentLgn === 'cy' ? LocaleCy : LocaleEn)
+const Footer = ({ currentLng, lngUrl, setLng, i18nLng, ...rest }) => {
+  const lng = i18nLng || (currentLng === 'cy' ? LocaleCy : LocaleEn)
 
   return (
-    <LocaleContext.Provider value={lgn}>
+    <LocaleContext.Provider value={lng}>
       <FooterContainer forwardedAs="footer" fluid {...rest}>
         <ContactPanels />
         <FooterPrimary />
-        <FooterSecondary lngUrl={lngUrl} setLng={setLgn} />
+        <FooterSecondary lngUrl={lngUrl} setLng={setLng} />
       </FooterContainer>
     </LocaleContext.Provider>
   )
@@ -27,17 +27,17 @@ const Footer = ({ currentLgn, lngUrl, setLgn, i18nLgn, ...rest }) => {
 
 Footer.propTypes = {
   /** Current Language Value. */
-  currentLgn: PropTypes.oneOf(['en', 'cy']),
+  currentLng: PropTypes.oneOf(['en', 'cy']),
   /** Server-side fallback url to change language. */
   lngUrl: PropTypes.string,
   /** Function to be triggered by Locale Button. */
-  setLgn: PropTypes.func,
+  setLng: PropTypes.func,
   /** Implements custom translations for the Footer. */
-  i18nLgn: PropTypes.object,
+  i18nLng: PropTypes.object,
   ...genericPropTypes,
 }
 Footer.defaultProps = {
-  currentLgn: 'en',
+  currentLng: 'en',
   ...genericPropsDefaults(),
 }
 

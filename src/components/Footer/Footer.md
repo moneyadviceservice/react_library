@@ -12,7 +12,7 @@ const [locale, setLocale] = useState('en');
     <Button onClick={() => setLocale('cy')}>Welsh</Button>
   </Row>
   <Footer 
-    currentLgn={locale}
-    setLgn={() => setLocale(locale === 'en' ? 'cy' : 'en')} />
+    currentLng={locale}
+    setLng={() => setLocale(locale === 'en' ? 'cy' : 'en')} />
 </>
 ```
