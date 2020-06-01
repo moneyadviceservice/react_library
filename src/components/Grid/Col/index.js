@@ -1,53 +1,61 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 import {
   genericPropTypes,
   genericPropsDefaults,
 } from '../../../utils/prop-types'
+import { useForwardedRef } from '../../../utils/helpers'
 import ColWrapper from './styledCol'
 
-function Col({
-  a11yTitle,
-  align,
-  as,
-  background,
-  children,
-  debug,
-  direction,
-  fill,
-  flexWrap,
-  grow,
-  height,
-  justify,
-  offset,
-  onClick,
-  sizes,
-  width,
-  ...rest
-}) {
-  return (
-    <ColWrapper
-      align={align}
-      aria-label={a11yTitle}
-      as={as}
-      background={background}
-      debug={debug}
-      fillProp={fill}
-      flexDirection={direction}
-      flexWrap={flexWrap}
-      growProp={grow}
-      heightProp={height}
-      justify={justify}
-      offsetProp={offset}
-      onClick={onClick}
-      sizesProp={sizes}
-      widthProp={width}
-      {...rest}
-    >
-      {children}
-    </ColWrapper>
-  )
-}
+const Col = forwardRef(
+  (
+    {
+      a11yTitle,
+      align,
+      as,
+      background,
+      children,
+      debug,
+      direction,
+      fill,
+      flexWrap,
+      grow,
+      height,
+      justify,
+      offset,
+      onClick,
+      sizes,
+      width,
+      ...rest
+    },
+    ref
+  ) => {
+    const colRef = useForwardedRef(ref)
+    return (
+      <ColWrapper
+        align={align}
+        aria-label={a11yTitle}
+        as={as}
+        background={background}
+        debug={debug}
+        fillProp={fill}
+        flexDirection={direction}
+        flexWrap={flexWrap}
+        growProp={grow}
+        heightProp={height}
+        justify={justify}
+        offsetProp={offset}
+        onClick={onClick}
+        ref={colRef}
+        sizesProp={sizes}
+        widthProp={width}
+        {...rest}
+      >
+        {children}
+      </ColWrapper>
+    )
+  }
+)
 
 // Documentation
 Col.propTypes = {
