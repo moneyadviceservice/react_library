@@ -3,6 +3,7 @@ export { default as ThemeProvider } from './components/ThemeProvider'
 // media queries syntax
 export { resolveMedia } from './utils/helpers'
 // controls
+export { Accordion } from './components/Accordion'
 export { default as Button } from './components/Button'
 export { Pagination } from './components/Pagination'
 export { Tooltip } from './components/Tooltip'
