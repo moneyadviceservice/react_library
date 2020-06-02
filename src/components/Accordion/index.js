@@ -20,10 +20,18 @@ const Accordion = ({
   openByDefault,
   ...rest
 }) => {
-  const [open, setOpen] = useState(openByDefault)
+  // set default open state to true
+  const [open, setOpen] = useState(true)
   const contentRef = useRef(null)
   let currentContent = null
 
+  // run this once to manage the open state of accordion
+  // users with js disabled will see the accordion opened
+  useEffect(() => {
+    setOpen(openByDefault)
+  }, [])
+
+  // dynamically change the height of the content element
   useEffect(() => {
     currentContent.style.height = open
       ? `${currentContent.scrollHeight}px`

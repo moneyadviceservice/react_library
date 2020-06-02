@@ -15,11 +15,18 @@ const StyledAccordion = styled(Col)`
 // Accordion Button
 const AccordionBtn = styled(Col)`
   cursor: pointer;
-  padding: 10px 0;
+  padding: 5px 12px;
+  margin: 5px 0;
   border: none;
+  border-radius: 3px;
   outline: none;
   background-color: white;
-  transition: background-color 0.6s ease;
+  transition: 0.6s ease;
+
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.alternate};
+    border: 1px solid black;
+  }
 `
 
 // Icon
@@ -43,11 +50,12 @@ const ContentContainer = styled(Col)`
   height: 0px;
   overflow: hidden;
   transition: ease-out 0.3s;
-  opacity: 0;
-  ${props =>
-    props.show &&
+  opacity: 1;
+
+  ${({ show }) =>
+    !show &&
     css`
-      opacity: 1;
+      opacity: 0;
     `}
 
   &::after {

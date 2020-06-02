@@ -1,4 +1,4 @@
-Accordion Component
+The accordion component lets users show and hide sections of related content on a page. Anchors are used as triggers and collapsing an element will animate the height from its current value to 0.
 
 ```jsx
 import React, { useState } from 'react';
