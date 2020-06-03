@@ -21,15 +21,9 @@ const Accordion = ({
   ...rest
 }) => {
   // set default open state to true
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(openByDefault)
   const contentRef = useRef(null)
   let currentContent = null
-
-  // run this once to manage the open state of accordion
-  // users with js disabled will see the accordion opened
-  useEffect(() => {
-    setOpen(openByDefault)
-  }, [])
 
   // dynamically change the height of the content element
   useEffect(() => {
