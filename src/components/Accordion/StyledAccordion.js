@@ -23,6 +23,7 @@ const AccordionBtn = styled(Col)`
   background-color: white;
   transition: 0.6s ease;
 
+  &:hover,
   &:focus {
     background-color: ${({ theme }) => theme.colors.alternate};
     border: 1px solid black;

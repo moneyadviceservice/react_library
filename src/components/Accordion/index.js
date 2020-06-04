@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
-import { Anchor } from '../Anchor'
+import { Paragraph } from '../Paragraph'
 import {
   AccordionBtn,
   Content,
@@ -50,9 +50,9 @@ const Accordion = ({
         }}
       >
         <Icon fillColor={color} isOpen={open} />
-        <Anchor color={color} margin="0" width="auto">
+        <Paragraph color={color} margin="0" width="auto">
           {title}
-        </Anchor>
+        </Paragraph>
       </AccordionBtn>
       <ContentContainer
         show={open}
