@@ -14,6 +14,9 @@ export default function() {
       weak: 0.1,
     },
     // Component Colors
+    accordion: {
+      default: '#3c97bf',
+    },
     anchor: {
       default: '#003d8e',
       focusBg: '#e8b940',

@@ -70,6 +70,7 @@ module.exports = {
         {
           name: 'Controls',
           components: () => [
+            './src/components/Accordion/index.js',
             './src/components/Button/index.js',
             './src/components/Pagination/index.js',
             './src/components/Tooltip/index.js',
