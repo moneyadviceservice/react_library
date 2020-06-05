@@ -65,11 +65,11 @@ const FooterSecondaryList = styled.ul`
 
   &:not(:last-child) {
     margin-right: 6px;
+    padding-right: 12px;
   }
 `
 
 const FooterSecondaryListItem = styled.li`
-  padding-right: 12px;
   margin-top: 6px;
 `
 
