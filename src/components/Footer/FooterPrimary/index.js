@@ -36,7 +36,7 @@ const FooterPrimary = () => {
   ).FooterPrimary
 
   return (
-    <FooterRow justify="center">
+    <FooterRow justify="center" padding="0">
       <FooterPrimaryRow align="stretch" constrained>
         <SocialContainer
           sizes={{ xs: 12, md: 6 }}
