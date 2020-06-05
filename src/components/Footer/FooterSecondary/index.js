@@ -27,7 +27,7 @@ const FooterSecondary = ({ lngUrl, setLng }) => {
   ).FooterSecondary
 
   return (
-    <FooterRow justify="center">
+    <FooterRow justify="center" padding="0">
       <FooterSecondaryContainer
         justify="space-between"
         align="center"

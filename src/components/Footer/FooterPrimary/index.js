@@ -113,7 +113,7 @@ const FooterPrimary = () => {
           </ClearEnglishContainer>
         </FooterLinks>
 
-        <Copyright padding="0">
+        <Copyright>
           <P
             textSize="1rem"
             lineHeight={{ xs: '1.2rem', md: '1.35rem' }}

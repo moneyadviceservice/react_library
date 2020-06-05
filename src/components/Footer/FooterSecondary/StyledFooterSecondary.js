@@ -11,8 +11,12 @@ const FooterRow = styled(Row)`
 `
 
 const FooterSecondaryContainer = styled(Row)`
-  ${props => !props.padding && `padding: 10px 0;`}
+  ${props => !props.padding && `padding: 10px;`}
   color: white;
+
+  ${resolveMedia.sm`
+    ${props => !props.padding && `padding: 10px 15px;`}
+  `}
 `
 
 // accessibility section
