@@ -44,6 +44,7 @@ const Accordion = ({
         direction="row"
         align="center"
         justify="flex-start"
+        flexWrap="nowrap"
         onClick={() => {
           setOpen(!open)
           if (onChange) onChange()

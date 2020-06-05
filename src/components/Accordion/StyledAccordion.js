@@ -17,6 +17,7 @@ const AccordionBtn = styled(Col)`
   cursor: pointer;
   padding: 5px 12px;
   margin: 5px 0;
+  text-align: left;
   border: 1px solid transparent;
   border-radius: 3px;
   outline: none;
@@ -32,7 +33,7 @@ const AccordionBtn = styled(Col)`
 
 // Icon
 const Icon = styled(Chevron)`
-  width: 12px;
+  min-width: 12px;
   margin-right: 10px;
   transition: transform ease-out 0.3s;
   ${({ fillColor, theme }) => css`
