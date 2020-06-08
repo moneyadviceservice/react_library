@@ -92,6 +92,8 @@ Col.propTypes = {
   ]),
   /** Content inside element. */
   children: PropTypes.node,
+  /** Applies default max-width */
+  constrained: PropTypes.bool,
   /** Enables debug styles. */
   debug: PropTypes.bool,
   /** The orientation to layout the child components in. 'column', 'row', 'column-reverse', 'row-reverse' */
@@ -166,6 +168,7 @@ Col.propTypes = {
 
 Col.defaultProps = {
   align: 'stretch',
+  constrained: false,
   debug: false,
   direction: 'column',
   flexWrap: 'wrap',

@@ -23,7 +23,8 @@ const ColWrapper = styled.div`
   ${genericStyles}
   
   flex-wrap: ${props => props.flexWrap};
-  max-width: 100%;
+  max-width: ${({ constrained }) =>
+    constrained ? gridConfig.constrained : '100%'};
 
   /** column-based flex size */
   ${({ sizesProp }) => (sizesProp ? flexStyle(sizesProp) : 'flex-basis: auto;')}

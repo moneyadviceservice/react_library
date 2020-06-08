@@ -13,4 +13,5 @@ export const gridConfig = {
     xs: '0 10px',
     sm: '0 15px',
   },
+  constrained: '1200px',
 }

@@ -18,8 +18,9 @@ const RowWrapper = styled.div`
   ${genericStyles}
 
   /** defaults */
-  max-width: ${({ constrained }) => (constrained ? '1200px' : '100%')};
-  flex-grow: ${({ growProp }) => (growProp ? 1 : 0)};
+  max-width: ${({ constrained }) =>
+    constrained ? gridConfig.constrained : '100%'};
+  flex-grow: ${({ growProp }) => (growProp ? 1 : 0)}; 
   ${({ flexWrap }) =>
     flexWrap &&
     css`
