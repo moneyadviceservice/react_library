@@ -5,7 +5,7 @@ import {
 } from '../../../utils/prop-types'
 import {
   FooterRow,
-  FooterPrimaryRow,
+  FooterPrimaryContainer,
   SocialContainer,
   SocialLink,
   SocialLogo,
@@ -37,7 +37,7 @@ const FooterPrimary = () => {
 
   return (
     <FooterRow justify="center" padding="0">
-      <FooterPrimaryRow align="stretch" constrained>
+      <FooterPrimaryContainer align="stretch" direction="row" constrained>
         <SocialContainer
           sizes={{ xs: 12, md: 6 }}
           direction="row"
@@ -125,7 +125,7 @@ const FooterPrimary = () => {
             } ${copyright.address}`}
           </P>
         </Copyright>
-      </FooterPrimaryRow>
+      </FooterPrimaryContainer>
     </FooterRow>
   )
 }

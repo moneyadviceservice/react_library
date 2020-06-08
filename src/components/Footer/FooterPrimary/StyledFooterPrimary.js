@@ -10,7 +10,7 @@ const FooterRow = styled(Row)`
     !props.background && `background-color: ${props.theme.colors.alternate};`}
 `
 
-const FooterPrimaryRow = styled(Row)`
+const FooterPrimaryContainer = styled(Col)`
   ${props => !props.padding && `padding: 24px 15px 12px;`}
 `
 
@@ -118,7 +118,7 @@ const Copyright = styled(Col)`
 
 export {
   FooterRow,
-  FooterPrimaryRow,
+  FooterPrimaryContainer,
   SocialContainer,
   SocialLink,
   SocialLogo,

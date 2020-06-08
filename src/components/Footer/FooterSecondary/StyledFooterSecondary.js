@@ -10,7 +10,7 @@ const FooterRow = styled(Row)`
     !props.background && `background-color: ${props.theme.colors.mapsBlue};`}
 `
 
-const FooterSecondaryContainer = styled(Row)`
+const FooterSecondaryContainer = styled(Col)`
   ${props => !props.padding && `padding: 10px;`}
   color: white;
 
