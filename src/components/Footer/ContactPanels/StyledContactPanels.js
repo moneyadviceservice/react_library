@@ -10,8 +10,6 @@ import WebChatImg from '../../../assets/Images/chat.svg'
 
 // Contact Panel Row
 const ContactPanelRow = styled(Row)`
-  padding: 0;
-
   ${resolveMedia.xs`
     & > *:not(:last-child) {
       border-bottom: 1px solid #cbdae0;

@@ -51,12 +51,24 @@ const ContainerWrapper = styled.div`
   ${genericStyles}
   /** defaults */
   outline: none;
+  ${({ padding }) =>
+    !padding &&
+    css`
+      padding: 0;
+    `}
 
   /** conditional styles */
-  ${({ hide }) => !hide && `display: flex;`}
-  ${({ padding }) =>
-    !padding && responsiveProps('padding', gridConfig.containerPadding)}
-  ${({ margin }) => !margin && 'margin: 0 auto;'}
+  ${({ hide }) =>
+    !hide &&
+    css`
+      display: flex;
+    `}
+  
+  ${({ margin }) =>
+    !margin &&
+    css`
+      margin: 0 auto;
+    `}
   ${({ background }) => background && backgroundStyle(background)}
   ${({ heightProp }) =>
     heightProp &&
@@ -64,15 +76,34 @@ const ContainerWrapper = styled.div`
   ${({ widthProp }) =>
     widthProp &&
     (typeof widthProp === 'object' ? widthObjectStyle : widthStyle)}
+  ${({ growProp }) =>
+    growProp &&
+    css`
+      flex-grow: ${growProp ? 1 : 0};
+    `}
+  ${({ flexWrap }) =>
+    flexWrap &&
+    css`
+      flex-wrap: ${flexWrap};
+    `}
+  
+  /** fluid states */
   ${({ fluid, widthProp }) =>
     !fluid &&
     !widthProp &&
     responsiveProps('max-width', gridConfig.containerWidth)}
-  ${props => !props.widthProp && props.fluid && 'width: 100%;'}
+  ${props =>
+    !props.widthProp &&
+    props.fluid &&
+    css`
+      width: 100%;
+    `}
 
   /** responsive props */
   ${({ flexDirection }) =>
     flexDirection && responsiveProps('flex-direction', flexDirection)}
+  ${({ align }) => align && responsiveProps('align-items', align)}
+  ${({ justify }) => justify && responsiveProps('justify-content', justify)}
 
   /** debug */
   ${({ debug }) => debug && debugStyle()}

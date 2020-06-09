@@ -10,9 +10,13 @@ const FooterRow = styled(Row)`
     !props.background && `background-color: ${props.theme.colors.mapsBlue};`}
 `
 
-const FooterSecondaryContainer = styled(Row)`
-  ${props => !props.padding && `padding: 10px 0;`}
+const FooterSecondaryContainer = styled(Col)`
+  ${props => !props.padding && `padding: 10px;`}
   color: white;
+
+  ${resolveMedia.sm`
+    ${props => !props.padding && `padding: 10px 15px;`}
+  `}
 `
 
 // accessibility section
@@ -53,20 +57,24 @@ const MapsLink = styled(Col)`
 const ListContainer = styled(Col)`
   flex-grow: 0;
 `
+const FooterSecondaryListItem = styled.li`
+  margin-top: 6px;
+`
 
 const FooterSecondaryList = styled.ul`
   display: flex;
   flex-wrap: inherit;
   margin: 6px 0;
 
-  &:not(:last-child) {
+  ${FooterSecondaryListItem} {
     margin-right: 6px;
+    padding-right: 12px;
   }
-`
 
-const FooterSecondaryListItem = styled.li`
-  padding-right: 12px;
-  margin-top: 6px;
+  ${FooterSecondaryListItem}:last-child {
+    margin-right: 0;
+    padding-right: 0;
+  }
 `
 
 const FooterAnchor = styled(Anchor)`

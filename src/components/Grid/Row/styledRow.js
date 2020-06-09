@@ -4,6 +4,7 @@ import {
   backgroundStyle,
   responsiveProps,
 } from '../../../utils/helpers'
+import { gridConfig } from '../config'
 
 const getSize = (props, size) => props.theme.sizes.size[size] || size
 
@@ -15,16 +16,24 @@ const debugStyle = () => css`
 const RowWrapper = styled.div`
   /** align-self, padding, margin, border */
   ${genericStyles}
-  /** defaults */
-  max-width: ${({ constrained }) => (constrained ? '1200px' : '100%')};
-  flex-wrap: ${({ flexWrap }) => flexWrap};
-  flex-grow: ${({ growProp }) => (growProp ? 1 : 0)};
 
+  /** defaults */
+  max-width: ${({ constrained }) =>
+    constrained ? gridConfig.constrained : '100%'};
+  flex-grow: ${({ growProp }) => (growProp ? 1 : 0)}; 
+  ${({ flexWrap }) =>
+    flexWrap &&
+    css`
+      flex-wrap: ${flexWrap};
+    `}
+  
   /** conditional styles */
   ${({ hide }) => !hide && `display: flex;`}
   ${({ background }) => background && backgroundStyle(background)}
 
   /** responsive props */
+  ${({ padding }) =>
+    !padding && responsiveProps('padding', gridConfig.rowPadding)}
   ${props =>
     props.widthProp
       ? responsiveProps('width', getSize(props, props.widthProp))

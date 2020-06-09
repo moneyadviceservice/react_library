@@ -22,7 +22,7 @@ const Header = ({
         <Row
           justify="space-between"
           align="center"
-          padding="12px 0"
+          padding="12px 15px"
           margin="auto"
           constrained
         >
