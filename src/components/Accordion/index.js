@@ -16,6 +16,7 @@ const Accordion = ({
   color,
   text,
   title,
+  noBorder,
   onChange,
   openByDefault,
   ...rest
@@ -56,12 +57,14 @@ const Accordion = ({
         </Paragraph>
       </AccordionBtn>
       <ContentContainer
+        borderColor={color}
+        hideBorder={noBorder}
         show={open}
         ref={c => {
           currentContent = c
         }}
       >
-        {text && <Content borderColor={color}>{text}</Content>}
+        {text && <Content>{text}</Content>}
         {children}
       </ContentContainer>
     </StyledAccordion>
@@ -78,6 +81,8 @@ Accordion.propTypes = {
   text: PropTypes.string,
   /** Title of the accordion. */
   title: PropTypes.string,
+  /** Removes border from content. */
+  noBorder: PropTypes.bool,
   /** Callback when the accordion state changes. */
   onChange: PropTypes.func,
   /** Set accordion to be opened by default. */
@@ -86,6 +91,7 @@ Accordion.propTypes = {
 }
 
 Accordion.defaultProps = {
+  noBorder: false,
   openByDefault: false,
   ...genericPropsDefaults(),
 }

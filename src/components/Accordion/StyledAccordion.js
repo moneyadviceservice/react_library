@@ -54,6 +54,28 @@ const ContentContainer = styled(Col)`
   transition: ease-out 0.3s;
   opacity: 1;
 
+  ${({ hideBorder, borderColor, theme }) =>
+    !hideBorder &&
+    css`
+      border-left-width: 5px;
+      border-left-style: solid;
+      border-left-color: ${borderColor
+        ? borderColor
+        : theme.colors.accordion.default};
+    `}
+
+  ${({ padding }) =>
+    !padding &&
+    css`
+      padding-left: 10px;
+    `}
+
+  ${({ margin }) =>
+    !margin &&
+    css`
+      margin-left: 15px;
+    `}
+
   ${({ show }) =>
     !show &&
     css`
@@ -68,20 +90,6 @@ const ContentContainer = styled(Col)`
 `
 
 const Content = styled(Paragraph)`
-  ${({ border, borderColor, theme }) =>
-    !border &&
-    css`
-      border-left-width: 5px;
-      border-left-style: solid;
-      border-left-color: ${borderColor
-        ? borderColor
-        : theme.colors.accordion.default};
-    `}
-  ${({ padding }) =>
-    !padding &&
-    css`
-      padding-left: 10px;
-    `}
   ${({ margin }) =>
     !margin &&
     css`

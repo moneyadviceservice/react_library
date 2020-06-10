@@ -11,7 +11,7 @@ const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
   <Accordion title="Custom Content">
     {lorem}
   </Accordion>
-  <Accordion title="Using other components inside">
+  <Accordion noBorder title="Using other components inside">
     <Button text="I'm inside the Accordion!" />
   </Accordion>
   <Accordion text={lorem} title="Custom color" color="red" />
