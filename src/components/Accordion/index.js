@@ -50,7 +50,7 @@ const Accordion = ({
           if (onChange) onChange()
         }}
       >
-        <Icon fillColor={color} isOpen={open} />
+        <Icon fillcolor={color} isopen={open.toString()} />
         <Paragraph color={color} margin="0" width="auto">
           {title}
         </Paragraph>

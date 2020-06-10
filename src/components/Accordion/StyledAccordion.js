@@ -36,12 +36,12 @@ const Icon = styled(Chevron)`
   min-width: 12px;
   margin-right: 10px;
   transition: transform ease-out 0.3s;
-  ${({ fillColor, theme }) => css`
-    fill: ${fillColor ? fillColor : theme.colors.accordion.default};
+  ${({ fillcolor, theme }) => css`
+    fill: ${fillcolor ? fillcolor : theme.colors.accordion.default};
   `}
 
-  ${({ isOpen }) =>
-    isOpen &&
+  ${({ isopen }) =>
+    isopen === 'true' &&
     css`
       transform: rotate(90deg);
     `}
