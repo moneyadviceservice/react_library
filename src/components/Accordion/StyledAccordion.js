@@ -41,7 +41,7 @@ const Icon = styled(Chevron)`
   `}
 
   ${({ isopen }) =>
-    isopen === 'true' &&
+    isopen &&
     css`
       transform: rotate(90deg);
     `}
