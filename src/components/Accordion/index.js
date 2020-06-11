@@ -12,16 +12,17 @@ import {
 
 const Accordion = ({
   a11yTitle,
+  active,
   children,
   color,
   text,
   title,
+  noBorder,
   onChange,
-  openByDefault,
   ...rest
 }) => {
-  // set default open state to true
-  const [open, setOpen] = useState(openByDefault)
+  // set open state
+  const [open, setOpen] = useState(false)
   const contentRef = useRef(null)
   let currentContent = null
 
@@ -31,6 +32,11 @@ const Accordion = ({
       ? `${currentContent.scrollHeight}px`
       : (currentContent.style.height = '0')
   }, [contentRef, open])
+
+  // manage open state when active prop is used
+  useEffect(() => {
+    setOpen(active)
+  }, [active])
 
   return (
     <StyledAccordion
@@ -45,23 +51,25 @@ const Accordion = ({
         align="center"
         justify="flex-start"
         flexWrap="nowrap"
-        onClick={() => {
+        onClick={e => {
           setOpen(!open)
           if (onChange) onChange()
         }}
       >
-        <Icon fillColor={color} isOpen={open} />
+        <Icon fillcolor={color} isopen={open ? 1 : 0} />
         <Paragraph color={color} margin="0" width="auto">
           {title}
         </Paragraph>
       </AccordionBtn>
       <ContentContainer
+        borderColor={color}
+        hideBorder={noBorder}
         show={open}
         ref={c => {
           currentContent = c
         }}
       >
-        {text && <Content borderColor={color}>{text}</Content>}
+        {text && <Content>{text}</Content>}
         {children}
       </ContentContainer>
     </StyledAccordion>
@@ -70,6 +78,8 @@ const Accordion = ({
 
 // Documentation
 Accordion.propTypes = {
+  /** Set accordion to be opened if true. */
+  active: PropTypes.bool,
   /** Color for the chevron. */
   color: PropTypes.string,
   /** The children elements to render within the acordion. */
@@ -78,15 +88,15 @@ Accordion.propTypes = {
   text: PropTypes.string,
   /** Title of the accordion. */
   title: PropTypes.string,
+  /** Removes border from content. */
+  noBorder: PropTypes.bool,
   /** Callback when the accordion state changes. */
   onChange: PropTypes.func,
-  /** Set accordion to be opened by default. */
-  openByDefault: PropTypes.bool,
   ...genericPropTypes,
 }
 
 Accordion.defaultProps = {
-  openByDefault: false,
+  noBorder: false,
   ...genericPropsDefaults(),
 }
 

@@ -33,15 +33,16 @@ const AccordionBtn = styled(Col)`
 
 // Icon
 const Icon = styled(Chevron)`
+  align-self: flex-start;
   min-width: 12px;
-  margin-right: 10px;
+  margin: 3px 10px 0 0;
   transition: transform ease-out 0.3s;
-  ${({ fillColor, theme }) => css`
-    fill: ${fillColor ? fillColor : theme.colors.accordion.default};
+  ${({ fillcolor, theme }) => css`
+    fill: ${fillcolor ? fillcolor : theme.colors.accordion.default};
   `}
 
-  ${({ isOpen }) =>
-    isOpen &&
+  ${({ isopen }) =>
+    isopen &&
     css`
       transform: rotate(90deg);
     `}
@@ -53,6 +54,28 @@ const ContentContainer = styled(Col)`
   overflow: hidden;
   transition: ease-out 0.3s;
   opacity: 1;
+
+  ${({ hideBorder, borderColor, theme }) =>
+    !hideBorder &&
+    css`
+      border-left-width: 5px;
+      border-left-style: solid;
+      border-left-color: ${borderColor
+        ? borderColor
+        : theme.colors.accordion.default};
+    `}
+
+  ${({ padding }) =>
+    !padding &&
+    css`
+      padding-left: 10px;
+    `}
+
+  ${({ margin }) =>
+    !margin &&
+    css`
+      margin-left: 15px;
+    `}
 
   ${({ show }) =>
     !show &&
@@ -68,20 +91,6 @@ const ContentContainer = styled(Col)`
 `
 
 const Content = styled(Paragraph)`
-  ${({ border, borderColor, theme }) =>
-    !border &&
-    css`
-      border-left-width: 5px;
-      border-left-style: solid;
-      border-left-color: ${borderColor
-        ? borderColor
-        : theme.colors.accordion.default};
-    `}
-  ${({ padding }) =>
-    !padding &&
-    css`
-      padding-left: 10px;
-    `}
   ${({ margin }) =>
     !margin &&
     css`
