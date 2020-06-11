@@ -33,8 +33,9 @@ const AccordionBtn = styled(Col)`
 
 // Icon
 const Icon = styled(Chevron)`
+  align-self: flex-start;
   min-width: 12px;
-  margin-right: 10px;
+  margin: 3px 10px 0 0;
   transition: transform ease-out 0.3s;
   ${({ fillcolor, theme }) => css`
     fill: ${fillcolor ? fillcolor : theme.colors.accordion.default};
