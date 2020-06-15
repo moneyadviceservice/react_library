@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import { resolveMedia } from '../../utils/helpers'
-import Container from '../Grid/Container'
-import { Anchor } from '../Anchor/index'
+import { Container, Row } from '../Grid'
+import { Anchor } from '../Anchor'
 
-const HeaderContainer = styled(Container)`
+const HeaderContainer = styled(Container)``
+
+const HeaderRow = styled(Row)`
   background: ${props =>
     !props.background && props.theme.colors.header.background};
   min-height: 3.375rem;
@@ -26,4 +28,15 @@ const LogoContainer = styled(Anchor)`
   `}
 `
 
-export { HeaderContainer, LogoContainer, LocaleContainer }
+const MapsBannerRow = styled(Row)`
+  background: ${props => !props.background && props.theme.colors.mapsBlue};
+  color: white;
+`
+
+export {
+  HeaderContainer,
+  HeaderRow,
+  LogoContainer,
+  LocaleContainer,
+  MapsBannerRow,
+}
