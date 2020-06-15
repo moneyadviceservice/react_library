@@ -7,6 +7,8 @@ import {
   LogoContainer,
   LocaleContainer,
   MapsBannerRow,
+  MapsLogo,
+  MapsLogoText,
 } from './StyledHeader'
 import { Col } from '../Grid'
 // logos
@@ -30,10 +32,21 @@ const Header = ({
       <HeaderContainer fluid forwardedAs={as} {...rest}>
         <MapsBannerRow justify="center">
           <Col direction="row" justify="flex-end" align="center" constrained>
-            <Col grow={false}>My logo</Col>
+            <MapsLogo
+              grow={false}
+              direction="row"
+              justify="flex-end"
+              align="center"
+            >
+              <MapsLogoText>
+                <span>The Money Advice</span>
+                <span>Service is provided by</span>
+              </MapsLogoText>
+              {currentLgn === 'en' ? <MapsLogoEng /> : <MapsLogoCy />}
+            </MapsLogo>
           </Col>
         </MapsBannerRow>
-        <HeaderRow justify="center">
+        <HeaderRow justify="center" align="center">
           <Col
             direction="row"
             justify="space-between"
