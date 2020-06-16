@@ -4,9 +4,9 @@ MAS Header
 import React, { useState } from 'react';
 import { Header } from '@moneypensionservice/directories';
 
-const [lgn, changeLgn] = useState('en');
+const [lng, changeLng] = useState('en');
 
 <Header 
-  currentLgn={lgn} 
-  setLng={() => changeLgn(lgn === 'en' ? 'cy' : 'en')} />
+  currentLng={lng} 
+  setLng={() => changeLng(lng === 'en' ? 'cy' : 'en')} />
 ```

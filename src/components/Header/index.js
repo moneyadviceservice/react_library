@@ -16,17 +16,23 @@ import MasLogoEng from '../../assets/Images/mas_logo_en.svg'
 import MasLogoCy from '../../assets/Images/mas_logo_cy.svg'
 import MapsLogoEng from '../../assets/Images/maps_logo_en.svg'
 import MapsLogoCy from '../../assets/Images/maps_logo_cy.svg'
+// translations
+import LocaleEn from './locale_en.json'
+import LocaleCy from './locale_cy.json'
 
 const Header = ({
   a11yTitle,
   as,
   children,
-  currentLgn,
+  currentLng,
   lngUrl,
-  localeText,
+  i18nLng,
   setLng,
   ...rest
 }) => {
+  // locale
+  const lng = i18nLng || (currentLng === 'cy' ? LocaleCy : LocaleEn)
+
   return (
     <>
       <HeaderContainer fluid forwardedAs={as} {...rest}>
@@ -39,10 +45,10 @@ const Header = ({
               align="center"
             >
               <MapsLogoText>
-                <span>The Money Advice</span>
-                <span>Service is provided by</span>
+                <span>{lng.mapsLogo.key1}</span>
+                <span>{lng.mapsLogo.key2}</span>
               </MapsLogoText>
-              {currentLgn === 'en' ? <MapsLogoEng /> : <MapsLogoCy />}
+              {currentLng === 'en' ? <MapsLogoEng /> : <MapsLogoCy />}
             </MapsLogo>
           </Col>
         </MapsBannerRow>
@@ -58,7 +64,7 @@ const Header = ({
                 href="https://www.moneyadviceservice.org.uk/en"
                 margin="0"
               >
-                {currentLgn === 'en' ? <MasLogoEng /> : <MasLogoCy />}
+                {currentLng === 'cy' ? <MasLogoCy /> : <MasLogoEng />}
               </LogoContainer>
             </Col>
             <Col grow={false}>
@@ -70,11 +76,7 @@ const Header = ({
                 onClick={setLng}
                 href={lngUrl}
               >
-                {localeText
-                  ? localeText
-                  : currentLgn === 'en'
-                  ? 'Cymraeg'
-                  : 'English'}
+                {lng.localeButton}
               </LocaleContainer>
             </Col>
           </Col>
@@ -88,11 +90,11 @@ const Header = ({
 // Documentation
 Header.propTypes = {
   /** Current Language Value */
-  currentLgn: PropTypes.oneOf(['en', 'cy']),
+  currentLng: PropTypes.oneOf(['en', 'cy']),
   /** Server-side fallback url to change language */
   lngUrl: PropTypes.string,
-  /** Text to be displayed in Locale Button */
-  localeText: PropTypes.string,
+  /** Alternate translations for header. */
+  i18nLng: PropTypes.object,
   /** Function to trigger by Locale Button */
   setLng: PropTypes.func,
   ...genericPropTypes,
@@ -100,7 +102,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   as: 'header',
-  currentLgn: 'en',
+  currentLng: 'en',
   ...genericPropsDefaults(),
 }
 
