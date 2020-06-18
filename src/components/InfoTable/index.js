@@ -1,23 +1,59 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
-import { TableContainer, TableHead, TableContent } from './StyledInfoTable'
+import {
+  TableContainer,
+  TableIcon,
+  TableHead,
+  TableContent,
+  TableText,
+} from './StyledInfoTable'
+import QuestionIcon from '../../assets/Images/question_mark.svg'
 
 const InfoTable = ({
   a11yTitle,
   children,
+  icon,
+  padding,
+  tableColor,
+  textContent,
+  title,
+  titleColor,
   ...rest
 }) => (
+  <TableContainer
+    a11yTitle={a11yTitle || title}
+    tableColor={tableColor}
+    {...rest}
+  >
+    <TableHead
+      direction="row"
+      align="center"
+      flexWrap="nowrap"
+      tableColor={tableColor}
+      titleColor={titleColor}
+    >
+      <TableIcon titleColor={titleColor}>
+        {icon ? icon : <QuestionIcon />}
+      </TableIcon>
+      {title}
+    </TableHead>
+    <TableContent padding={padding}>
+      {textContent && <TableText>{textContent}</TableText>}
+      {children}
+    </TableContent>
+  </TableContainer>
 )
 
 // Documentation
-Radio.propTypes = {
+InfoTable.propTypes = {
   /** Text inside the Label component. Works as the caption for the checkbox element. */
   children: PropTypes.string,
   ...genericPropTypes,
 }
 
-Radio.defaultProps = {
+InfoTable.defaultProps = {
+  titleColor: 'white',
   ...genericPropsDefaults(),
 }
 
