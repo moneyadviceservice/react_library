@@ -13,7 +13,7 @@ const TableContainer = styled(Col)`
 const TableIcon = styled.span`
   margin-right: 10px;
   & > * {
-    width: 30px;
+    height: 30px;
 
     ${({ titleColor }) =>
       css`
@@ -24,7 +24,6 @@ const TableIcon = styled.span`
 
 const TableHead = styled(Col)`
   font-size: 1.375rem;
-  line-height: 1.875rem;
   font-weight: 500;
   padding: 12px;
 
