@@ -17,6 +17,8 @@ const Accordion = ({
   color,
   text,
   title,
+  titleSize,
+  titleWeight,
   noBorder,
   onChange,
   ...rest
@@ -56,7 +58,13 @@ const Accordion = ({
         }}
       >
         <Icon fillcolor={color} isopen={open ? 1 : 0} />
-        <Paragraph color={color} margin="0" width="auto">
+        <Paragraph
+          color={color}
+          margin="0"
+          width="auto"
+          textSize={titleSize}
+          weight={titleWeight}
+        >
           {title}
         </Paragraph>
       </AccordionBtn>
@@ -86,6 +94,10 @@ Accordion.propTypes = {
   text: PropTypes.string,
   /** Title of the accordion. */
   title: PropTypes.string,
+  /** Specifies the font size of the accordion title. */
+  titleSize: PropTypes.string,
+  /** Specifies the font weight of the accordion title. */
+  titleWeight: PropTypes.string,
   /** Removes border from content. */
   noBorder: PropTypes.bool,
   /** Callback when the accordion state changes. */
