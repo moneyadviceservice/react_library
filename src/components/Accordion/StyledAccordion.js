@@ -50,10 +50,9 @@ const Icon = styled(Chevron)`
 
 // Content
 const ContentContainer = styled(Col)`
-  height: 0px;
+  height: auto;
   overflow: hidden;
   transition: ease-out 0.3s;
-  opacity: 1;
 
   ${({ hideBorder, borderColor, theme }) =>
     !hideBorder &&
@@ -77,17 +76,16 @@ const ContentContainer = styled(Col)`
       margin-left: 15px;
     `}
 
-  ${({ show }) =>
-    !show &&
-    css`
-      opacity: 0;
-    `}
-
-  &::after {
-    content: '';
-    display: block;
-    clear: both;
-  }
+  ${({ show, maxHeight }) =>
+    show
+      ? css`
+          opacity: 1;
+          max-height: ${maxHeight};
+        `
+      : css`
+          opacity: 0;
+          max-height: 0;
+        `}
 `
 
 const Content = styled(Paragraph)`

@@ -23,15 +23,14 @@ const Accordion = ({
 }) => {
   // set open state
   const [open, setOpen] = useState(false)
-  const contentRef = useRef(null)
-  let currentContent = null
+  // manage height
+  const [height, setHeight] = useState('0')
+  const contentRef = useRef()
 
   // dynamically change the height of the content element
   useEffect(() => {
-    currentContent.style.height = open
-      ? `${currentContent.scrollHeight}px`
-      : (currentContent.style.height = '0')
-  }, [contentRef, open])
+    setHeight(`${contentRef.current.offsetTop}px`)
+  }, [open])
 
   // manage open state when active prop is used
   useEffect(() => {
@@ -51,7 +50,7 @@ const Accordion = ({
         align="center"
         justify="flex-start"
         flexWrap="nowrap"
-        onClick={e => {
+        onClick={() => {
           setOpen(!open)
           if (onChange) onChange()
         }}
@@ -65,9 +64,8 @@ const Accordion = ({
         borderColor={color}
         hideBorder={noBorder}
         show={open}
-        ref={c => {
-          currentContent = c
-        }}
+        ref={contentRef}
+        maxHeight={height}
       >
         {text && <Content>{text}</Content>}
         {children}
