@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { resolveMedia } from '../../../utils/helpers'
 import { Row, Col } from '../../Grid'
 import Button from '../../Button'
@@ -11,21 +11,22 @@ import WebChatImg from '../../../assets/Images/chat.svg'
 // Contact Panel Row
 const ContactPanelRow = styled(Row)`
   ${resolveMedia.xs`
-    & > *:not(:last-child) {
-      border-bottom: 1px solid #cbdae0;
-    }
+    ${css`
+      & > *:not(:last-child) {
+        border-bottom: 1px solid #cbdae0;
+      }
+    `}
   `}
 
   ${resolveMedia.md`
-    & > *:not(:last-child):after {
-      content: '';
-      border-right: 1px solid #cbdae0;
-      width: 1px;
-      height: 100%;
-    }
-    & > *:not(:last-child) {
-      border-bottom: none;
-    }
+    ${css`
+      & > *:not(:last-child) {
+        border-right: 1px solid #cbdae0;
+      }
+      & > *:not(:last-child) {
+        border-bottom: none;
+      }
+    `}
   `}
 `
 
