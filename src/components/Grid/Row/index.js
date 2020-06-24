@@ -157,7 +157,6 @@ Row.defaultProps = {
   direction: 'row',
   flexWrap: 'wrap',
   grow: true,
-  justify: 'flex-start',
   noGutter: false,
   ...genericPropsDefaults(),
 }

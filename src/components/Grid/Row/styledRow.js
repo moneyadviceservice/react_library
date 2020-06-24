@@ -19,8 +19,9 @@ const RowWrapper = styled.div`
 
   /** max-width */
   ${({ constrained }) =>
+    constrained &&
     css`
-      max-width: ${constrained ? gridConfig.constrained : '100%'};
+      max-width: ${gridConfig.constrained};
     `};
 
   /** defaults */

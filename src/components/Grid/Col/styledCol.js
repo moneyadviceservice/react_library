@@ -21,26 +21,33 @@ const getSize = (theme, size) => theme.sizes.size[size] || size
 
 const ColWrapper = styled.div`
   ${genericStyles}
-  
-  ${({ flexWrap }) =>
-    flexWrap &&
-    css`
-      flex-wrap: ${flexWrap};
-    `};
-  
-  /** max-width */
-   ${({ constrained }) =>
-     css`
-       max-width: ${constrained ? gridConfig.constrained : '100%'};
-     `};
 
   /** column-based flex size */
-  ${({ sizesProp }) =>
-    sizesProp
+  ${({ constrained, sizesProp }) =>
+    constrained
+      ? css`
+          flex-basis: 0%;
+        `
+      : sizesProp
       ? flexStyle(sizesProp)
       : css`
           flex-basis: auto;
         `}
+  
+  ${({ constrained, sizesProp, growProp }) =>
+    !constrained &&
+    !sizesProp &&
+    css`
+      flex-grow: ${growProp ? 1 : 0};
+    `}
+  
+  /** max-width */
+  ${({ constrained }) =>
+    constrained &&
+    css`
+      flex-grow: 1;
+      max-width: ${gridConfig.constrained};
+    `};
 
   /** conditional styles */
   ${({ hide }) =>
@@ -48,11 +55,11 @@ const ColWrapper = styled.div`
     css`
       display: flex;
     `}
-  ${({ sizesProp, growProp }) =>
-    !sizesProp &&
+  ${({ flexWrap }) =>
+    flexWrap &&
     css`
-      flex-grow: ${growProp ? 1 : 0};
-    `}
+      flex-wrap: ${flexWrap};
+    `};
   ${({ background }) => background && backgroundStyle(background)}
   ${({ padding, noGutter }) => !padding && !noGutter && gutterStyle()}
 

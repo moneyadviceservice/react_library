@@ -92,7 +92,7 @@ Col.propTypes = {
   ]),
   /** Content inside element. */
   children: PropTypes.node,
-  /** Applies default max-width */
+  /** Applies the default max-width. This will not work with the sizesProp. */
   constrained: PropTypes.bool,
   /** Enables debug styles. */
   debug: PropTypes.bool,
@@ -173,7 +173,6 @@ Col.defaultProps = {
   direction: 'column',
   flexWrap: 'wrap',
   grow: true,
-  justify: 'flex-start',
   ...genericPropsDefaults(),
 }
 
