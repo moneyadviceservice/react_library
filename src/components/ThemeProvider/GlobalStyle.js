@@ -1,9 +1,9 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 
   // Fonts
-  ${props => props.theme.typography.fontFace}
+  ${({ theme }) => theme.typography.fontFace}
 
   // Resetting margins, paddings, and borders
   html, body,
@@ -39,14 +39,11 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-size: 1rem;
-    ${props => props.theme.typography.fontFamily};
-    font-weight: ${props => props.theme.typography.fontLighter};
-    color: ${props => props.theme.colors.black};
-  }
-  * {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    ${({ theme }) => css`
+      ${theme.typography.fontFamily};
+      font-weight: ${theme.typography.fontLighter};
+      color: ${theme.colors.black};
+    `}
   }
 
   // Layout & box sizing
@@ -108,4 +105,5 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
   }
 `
+
 export default GlobalStyle
