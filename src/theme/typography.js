@@ -10,10 +10,27 @@ export default function() {
     fontFace: css`
       @font-face {
         font-family: 'Museo Sans';
-        src: url(${MuseoSans300}) format('woff'),
-          url(${MuseoSans500}) format('woff'),
-          url(${MuseoSans700}) format('woff'),
-          url(${MuseoSlab900}) format('woff');
+        font-style: normal;
+        font-weight: 300;
+        src: url(${MuseoSans300}) format('woff');
+      }
+      @font-face {
+        font-family: 'Museo Sans';
+        font-style: normal;
+        font-weight: 500;
+        src: url(${MuseoSans500}) format('woff');
+      }
+      @font-face {
+        font-family: 'Museo Sans';
+        font-style: normal;
+        font-weight: 700;
+        src: url(${MuseoSans700}) format('woff');
+      }
+      @font-face {
+        font-family: 'Museo Sans';
+        font-style: normal;
+        font-weight: 900;
+        src: url(${MuseoSlab900}) format('woff');
       }
     `,
     fontFamily: css`
