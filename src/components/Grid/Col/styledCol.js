@@ -22,17 +22,37 @@ const getSize = (theme, size) => theme.sizes.size[size] || size
 const ColWrapper = styled.div`
   ${genericStyles}
   
-  flex-wrap: ${props => props.flexWrap};
-  max-width: ${({ constrained }) =>
-    constrained ? gridConfig.constrained : '100%'};
+  ${({ flexWrap }) =>
+    flexWrap &&
+    css`
+      flex-wrap: ${flexWrap};
+    `};
+  
+  /** max-width */
+   ${({ constrained }) =>
+     css`
+       max-width: ${constrained ? gridConfig.constrained : '100%'};
+     `};
 
   /** column-based flex size */
-  ${({ sizesProp }) => (sizesProp ? flexStyle(sizesProp) : 'flex-basis: auto;')}
+  ${({ sizesProp }) =>
+    sizesProp
+      ? flexStyle(sizesProp)
+      : css`
+          flex-basis: auto;
+        `}
 
   /** conditional styles */
-  ${({ hide }) => !hide && `display: flex;`}
+  ${({ hide }) =>
+    !hide &&
+    css`
+      display: flex;
+    `}
   ${({ sizesProp, growProp }) =>
-    !sizesProp && `flex-grow: ${growProp ? 1 : 0};`}
+    !sizesProp &&
+    css`
+      flex-grow: ${growProp ? 1 : 0};
+    `}
   ${({ background }) => background && backgroundStyle(background)}
   ${({ padding, noGutter }) => !padding && !noGutter && gutterStyle()}
 
@@ -43,9 +63,9 @@ const ColWrapper = styled.div`
     heightProp && responsiveProps('height', getSize(theme, heightProp))}
   ${({ flexDirection }) =>
     flexDirection && responsiveProps('flex-direction', flexDirection)}
-  ${props => props.align && responsiveProps('align-items', props.align)}
-  ${props => props.justify && responsiveProps('justify-content', props.justify)}
-  ${props => props.offsetProp && offsetStyle(props.offsetProp)}
+  ${({ align }) => align && responsiveProps('align-items', align)}
+  ${({ justify }) => justify && responsiveProps('justify-content', justify)}
+  ${({ offsetProp }) => offsetProp && offsetStyle(offsetProp)}
 
   /** debug */
   ${({ debug }) => debug && debugStyle()}
