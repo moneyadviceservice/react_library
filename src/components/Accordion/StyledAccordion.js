@@ -62,7 +62,6 @@ const Icon = styled(Chevron)`
 const ContentContainer = styled(Col)`
   height: auto;
   overflow: hidden;
-  transition: ease-out 0.3s;
 
   ${({ hideBorder, borderColor, theme }) =>
     !hideBorder &&
@@ -89,11 +88,9 @@ const ContentContainer = styled(Col)`
   ${({ show, maxHeight }) =>
     show
       ? css`
-          opacity: 1;
           max-height: ${maxHeight};
         `
       : css`
-          opacity: 0;
           max-height: 0;
         `}
 `
