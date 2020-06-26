@@ -1,3 +1,6 @@
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 // Theme Provider
 export { default as ThemeProvider } from './components/ThemeProvider'
 // media queries syntax
