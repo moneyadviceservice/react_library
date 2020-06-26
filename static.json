@@ -1,0 +1,4 @@
+{
+  "root": "dist-docs/",
+  "clean_urls": true
+}
