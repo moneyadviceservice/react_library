@@ -59,6 +59,9 @@ export default function() {
     header: {
       background: '#428513',
     },
+    infotable: {
+      default: '#24afa8',
+    },
   }
 
   return colors
