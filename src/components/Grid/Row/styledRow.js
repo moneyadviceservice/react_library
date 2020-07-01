@@ -17,10 +17,18 @@ const RowWrapper = styled.div`
   /** align-self, padding, margin, border */
   ${genericStyles}
 
+  /** max-width */
+  ${({ constrained }) =>
+    constrained &&
+    css`
+      max-width: ${gridConfig.constrained};
+    `};
+
   /** defaults */
-  max-width: ${({ constrained }) =>
-    constrained ? gridConfig.constrained : '100%'};
-  flex-grow: ${({ growProp }) => (growProp ? 1 : 0)}; 
+  ${({ growProp }) =>
+    css`
+      flex-grow: ${growProp ? 1 : 0};
+    `}
   ${({ flexWrap }) =>
     flexWrap &&
     css`
@@ -28,7 +36,11 @@ const RowWrapper = styled.div`
     `}
   
   /** conditional styles */
-  ${({ hide }) => !hide && `display: flex;`}
+  ${({ hide }) =>
+    !hide &&
+    css`
+      display: flex;
+    `}
   ${({ background }) => background && backgroundStyle(background)}
 
   /** responsive props */
@@ -37,7 +49,9 @@ const RowWrapper = styled.div`
   ${props =>
     props.widthProp
       ? responsiveProps('width', getSize(props, props.widthProp))
-      : 'width: 100%;'}
+      : css`
+          width: 100%;
+        `}
   ${props =>
     props.heightProp &&
     responsiveProps('height', getSize(props, props.heightProp))}

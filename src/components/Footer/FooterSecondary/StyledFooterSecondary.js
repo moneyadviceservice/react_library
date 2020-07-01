@@ -86,10 +86,6 @@ const FooterAnchor = styled(Anchor)`
   &:hover {
     color: white;
   }
-
-  ${resolveMedia.sm`
-    font-size: 16px;
-  `}
 `
 
 // mobile translation section

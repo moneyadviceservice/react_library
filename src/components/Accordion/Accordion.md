@@ -23,14 +23,14 @@ const handleClick = (current) => {
     active={activeIndex === 0}
     onClick={() => handleClick(0)} />
   <Accordion 
-    title="Custom Content"
+    title="Custom content with border"
     active={activeIndex === 1}
     onClick={() => handleClick(1)} >
     {lorem}
   </Accordion>
   <Accordion 
     noBorder 
-    title="Using other components inside"
+    title="Using other components inside with no content border"
     active={activeIndex === 2}
     onClick={() => handleClick(2)} >
     <Button text="I'm inside the Accordion!" />

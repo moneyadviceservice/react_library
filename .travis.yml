@@ -1,17 +1,21 @@
 language: node_js
 node_js: stable
-
 cache:
   directories:
     - node_modules
-
 before_deploy:
-  - 'npm run docs:build'
-
+  - npm run docs:build
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist-docs
-  on:
-    branch: master
+  - provider: heroku
+    skip_cleanup: true
+    api_key:
+      secure: PP1bIpE02cTihCxMS7OVw832Uy9oPHzw0BNKCdsMT98kVSeXcozdY2e5JA7rsEkMxCIa4NWmb/eE1UsXcoCb6AZBqOHPAtBVyxWOHx7NLVWjcySDcciHW2uhrX12r0MFg64OR8ZytGLVX/+uwpymLIUTeZC2hVGkfqazET0GGuLenK3ujP9DZ9nn+8//OgIL5C4C1gJP13a/LEdzs5mhfiOcNJaVhy17fZa5tFqft67aVBW+2hMbi1lsCazX3DoagI2n9OIisY34C0SfGZEg9SUivYnyWC+sdpT21NDL79DepmfCki4Gl3u5FdzNdUJ1Eo88Qh6S305SZsDZXTCgc/BFiJD3gtRLEZshdMkzLMEomJaO7eCb6FYbBwMm1JPuR11HzygEXjLymOAwWyylRN88UX9ffsypDR2+tYXFCR8Lgg22LaK3EF3uLN/3VcB+u8R6FhQeN7k/fQxX5epJKBh/yhemWDuiiI19dBRoFRdiBItvdwNm5ZP3LyU5ex0MJrShvaOGBruymrWfRYexuCbbGfuYt29Nmc2SEVjd+4Z7S6Geml9ZX13gLsFDWYL4dVaMkt0+WUH/tXMdslvBLVnMEbAERc0UKqD1r4L3F+efl28ijX0ZGGHDqYIDeaZKPQ6Lug2sX0PubRwS4zws+SXXN4OE/aP3gE3MMXbxX1o=
+    app: qa-react-library
+    on:
+      branch: QA
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: dist-docs
+    on:
+      branch: master

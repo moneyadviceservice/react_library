@@ -17,21 +17,22 @@ const Accordion = ({
   color,
   text,
   title,
+  titleSize,
+  titleWeight,
   noBorder,
   onChange,
   ...rest
 }) => {
   // set open state
   const [open, setOpen] = useState(false)
-  const contentRef = useRef(null)
-  let currentContent = null
+  // manage height
+  const [height, setHeight] = useState('0')
+  const contentRef = useRef()
 
   // dynamically change the height of the content element
   useEffect(() => {
-    currentContent.style.height = open
-      ? `${currentContent.scrollHeight}px`
-      : (currentContent.style.height = '0')
-  }, [contentRef, open])
+    setHeight(`${contentRef.current.offsetTop}px`)
+  }, [open])
 
   // manage open state when active prop is used
   useEffect(() => {
@@ -51,13 +52,19 @@ const Accordion = ({
         align="center"
         justify="flex-start"
         flexWrap="nowrap"
-        onClick={e => {
+        onClick={() => {
           setOpen(!open)
           if (onChange) onChange()
         }}
       >
         <Icon fillcolor={color} isopen={open ? 1 : 0} />
-        <Paragraph color={color} margin="0" width="auto">
+        <Paragraph
+          color={color}
+          margin="0"
+          width="auto"
+          textSize={titleSize}
+          weight={titleWeight}
+        >
           {title}
         </Paragraph>
       </AccordionBtn>
@@ -65,9 +72,8 @@ const Accordion = ({
         borderColor={color}
         hideBorder={noBorder}
         show={open}
-        ref={c => {
-          currentContent = c
-        }}
+        ref={contentRef}
+        maxHeight={height}
       >
         {text && <Content>{text}</Content>}
         {children}
@@ -88,6 +94,10 @@ Accordion.propTypes = {
   text: PropTypes.string,
   /** Title of the accordion. */
   title: PropTypes.string,
+  /** Specifies the font size of the accordion title. */
+  titleSize: PropTypes.string,
+  /** Specifies the font weight of the accordion title. */
+  titleWeight: PropTypes.string,
   /** Removes border from content. */
   noBorder: PropTypes.bool,
   /** Callback when the accordion state changes. */

@@ -10,6 +10,11 @@ const StyledAccordion = styled(Col)`
     css`
       width: 100%;
     `}
+  ${({ padding }) =>
+    !padding &&
+    css`
+      padding: 0;
+    `}
 `
 
 // Accordion Button
@@ -33,13 +38,18 @@ const AccordionBtn = styled(Col)`
 
 // Icon
 const Icon = styled(Chevron)`
-  align-self: flex-start;
-  min-width: 12px;
-  margin: 3px 10px 0 0;
+  width: 25px;
+  margin-right: 5px;
   transition: transform ease-out 0.3s;
-  ${({ fillcolor, theme }) => css`
-    fill: ${fillcolor ? fillcolor : theme.colors.accordion.default};
-  `}
+  & path {
+    fill: none;
+    ${({ fillcolor, theme }) => css`
+      stroke: ${fillcolor ? fillcolor : theme.colors.accordion.default};
+    `}
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 20;
+  }
 
   ${({ isopen }) =>
     isopen &&
@@ -50,10 +60,8 @@ const Icon = styled(Chevron)`
 
 // Content
 const ContentContainer = styled(Col)`
-  height: 0px;
+  height: auto;
   overflow: hidden;
-  transition: ease-out 0.3s;
-  opacity: 1;
 
   ${({ hideBorder, borderColor, theme }) =>
     !hideBorder &&
@@ -74,20 +82,17 @@ const ContentContainer = styled(Col)`
   ${({ margin }) =>
     !margin &&
     css`
-      margin-left: 15px;
+      margin-left: 22px;
     `}
 
-  ${({ show }) =>
-    !show &&
-    css`
-      opacity: 0;
-    `}
-
-  &::after {
-    content: '';
-    display: block;
-    clear: both;
-  }
+  ${({ show, maxHeight }) =>
+    show
+      ? css`
+          max-height: ${maxHeight};
+        `
+      : css`
+          max-height: 0;
+        `}
 `
 
 const Content = styled(Paragraph)`

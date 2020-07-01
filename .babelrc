@@ -2,6 +2,7 @@
   "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
     "babel-plugin-styled-components",
+    "@babel/plugin-transform-arrow-functions",
     "@babel/plugin-transform-runtime",
     ["module-resolver", { "root": ["./src"] }]
   ]

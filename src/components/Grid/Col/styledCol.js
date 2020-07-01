@@ -21,18 +21,45 @@ const getSize = (theme, size) => theme.sizes.size[size] || size
 
 const ColWrapper = styled.div`
   ${genericStyles}
-  
-  flex-wrap: ${props => props.flexWrap};
-  max-width: ${({ constrained }) =>
-    constrained ? gridConfig.constrained : '100%'};
 
   /** column-based flex size */
-  ${({ sizesProp }) => (sizesProp ? flexStyle(sizesProp) : 'flex-basis: auto;')}
+  ${({ constrained, sizesProp }) =>
+    constrained
+      ? css`
+          flex-basis: 0%;
+        `
+      : sizesProp
+      ? flexStyle(sizesProp)
+      : css`
+          flex-basis: auto;
+        `}
+  
+  ${({ constrained, sizesProp, growProp }) =>
+    !constrained &&
+    !sizesProp &&
+    css`
+      flex-grow: ${growProp ? 1 : 0};
+    `}
+  
+  /** max-width */
+  ${({ constrained }) =>
+    constrained &&
+    css`
+      flex-grow: 1;
+      max-width: ${gridConfig.constrained};
+    `};
 
   /** conditional styles */
-  ${({ hide }) => !hide && `display: flex;`}
-  ${({ sizesProp, growProp }) =>
-    !sizesProp && `flex-grow: ${growProp ? 1 : 0};`}
+  ${({ hide }) =>
+    !hide &&
+    css`
+      display: flex;
+    `}
+  ${({ flexWrap }) =>
+    flexWrap &&
+    css`
+      flex-wrap: ${flexWrap};
+    `};
   ${({ background }) => background && backgroundStyle(background)}
   ${({ padding, noGutter }) => !padding && !noGutter && gutterStyle()}
 
@@ -43,9 +70,9 @@ const ColWrapper = styled.div`
     heightProp && responsiveProps('height', getSize(theme, heightProp))}
   ${({ flexDirection }) =>
     flexDirection && responsiveProps('flex-direction', flexDirection)}
-  ${props => props.align && responsiveProps('align-items', props.align)}
-  ${props => props.justify && responsiveProps('justify-content', props.justify)}
-  ${props => props.offsetProp && offsetStyle(props.offsetProp)}
+  ${({ align }) => align && responsiveProps('align-items', align)}
+  ${({ justify }) => justify && responsiveProps('justify-content', justify)}
+  ${({ offsetProp }) => offsetProp && offsetStyle(offsetProp)}
 
   /** debug */
   ${({ debug }) => debug && debugStyle()}
