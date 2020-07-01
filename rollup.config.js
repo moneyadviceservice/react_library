@@ -7,6 +7,7 @@ import { uglify } from 'rollup-plugin-uglify'
 import packageJSON from './package.json'
 import json from '@rollup/plugin-json'
 import svgr from '@svgr/rollup'
+import url from 'rollup-plugin-url'
 
 const input = './src/index.js'
 const minifyExtension = pathToFile => pathToFile.replace(/\.js$/, '.min.js')
@@ -23,6 +24,10 @@ export default [
     plugins: [
       json(),
       svgr(),
+      url({
+        include: ['**/*.woff', '**/*.woff2'],
+        limit: Infinity,
+      }),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -42,6 +47,10 @@ export default [
     plugins: [
       json(),
       svgr(),
+      url({
+        include: ['**/*.woff', '**/*.woff2'],
+        limit: Infinity,
+      }),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -67,6 +76,10 @@ export default [
     plugins: [
       json(),
       svgr(),
+      url({
+        include: ['**/*.woff', '**/*.woff2'],
+        limit: Infinity,
+      }),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -90,6 +103,10 @@ export default [
     plugins: [
       json(),
       svgr(),
+      url({
+        include: ['**/*.woff', '**/*.woff2'],
+        limit: Infinity,
+      }),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -111,6 +128,10 @@ export default [
     plugins: [
       json(),
       svgr(),
+      url({
+        include: ['**/*.woff', '**/*.woff2'],
+        limit: Infinity,
+      }),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
@@ -130,6 +151,10 @@ export default [
     plugins: [
       json(),
       svgr(),
+      url({
+        include: ['**/*.woff', '**/*.woff2'],
+        limit: Infinity,
+      }),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
