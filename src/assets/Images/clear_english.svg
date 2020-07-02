@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.85 203.22">
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  viewBox="0 0 158.85 203.22" 
+  role="img"
+  aria-labelledby="clearEnglishTitle clearEnglishDesc" >
+  <title id="clearEnglishTitle">Clear English Standard</title>
+  <desc id="clearEnglishDesc">Plain Language Commission Certificate of Clear Enligh Standard</desc>
   <defs>
     <linearGradient id="a" x1="112.33" x2="136.21" y1="47.34" y2="23.46" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff"/>
