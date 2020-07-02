@@ -39,8 +39,10 @@ const AccordionBtn = styled(Col)`
 // Icon
 const Icon = styled(Chevron)`
   width: 25px;
+  min-width: 25px;
   margin-right: 5px;
   transition: transform ease-out 0.3s;
+
   & path {
     fill: none;
     ${({ fillcolor, theme }) => css`
