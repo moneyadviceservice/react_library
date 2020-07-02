@@ -61,6 +61,7 @@ const Header = ({
           >
             <Col grow={false}>
               <LogoContainer
+                a11yTitle="Money Advice Service"
                 href="https://www.moneyadviceservice.org.uk/en"
                 margin="0"
               >
