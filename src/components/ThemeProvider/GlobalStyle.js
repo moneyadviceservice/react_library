@@ -45,6 +45,9 @@ const GlobalStyle = createGlobalStyle`
       color: ${theme.colors.black};
     `}
   }
+  input, textarea, button {
+    font-family: inherit
+  }
 
   // Layout & box sizing
   article,

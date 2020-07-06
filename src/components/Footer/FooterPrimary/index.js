@@ -104,6 +104,7 @@ const FooterPrimary = () => {
           </BlogContainer>
           <ClearEnglishContainer sizes={{ xs: 6, sm: 12 }} align="center">
             <A
+              a11yTitle="Clear English Standard"
               href="https://www.clearest.co.uk/silver-standard"
               target="_blank"
               width="auto"
