@@ -41,7 +41,18 @@ const FooterSecondary = ({ lngUrl, setLng }) => {
             </A>
           </Translation>
           <Acessibility sizes="auto">
-            <A>
+            <A
+              onClick={() =>
+                window.open(
+                  `http://accessin.org/usersubmit_mas.php?param=${window.location}`,
+                  '',
+                  'resizable=yes,location=no,scrollbars=yes,toolbar=no,left=20,top=0,height=900,width=800'
+                )
+              }
+              href="http://accessin.org/usersubmit_mas.php?param=nojscript"
+              target="_blank"
+              title="Please use this button to tell us if you have an accessibility issue on our website"
+            >
               <AccessibilityIcon />
               {accessibility}
             </A>
