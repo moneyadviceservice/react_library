@@ -48,7 +48,7 @@ const InfoTable = ({
 // Documentation
 InfoTable.propTypes = {
   /** Text inside the Label component. Works as the caption for the checkbox element. */
-  children: PropTypes.string,
+  children: PropTypes.any,
   /** Provide a custom svg icon to the table header. */
   icon: PropTypes.node,
   /** Sets a custom color to the table and border. */
