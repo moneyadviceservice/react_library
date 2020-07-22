@@ -1,4 +1,4 @@
-The Select input component allows the user to enable or disable options.
+The Select input allows a user to select a value from a series of options.
 
 ```jsx
 import React, { useState } from 'react';
@@ -10,8 +10,16 @@ const [animal, changeAnimal] = useState('🐕 Dog');
 <Form>
   <Formfield>
     <Select
+      disabled
+      id="disabled"
+      label="I am disabled!"
+      options={['Try to select me 🙈']}
+    />
+  </Formfield>
+  <Formfield>
+    <Select
       id="animals"
-      label="Select your favourite animal"
+      label="Select your favourite animal:"
       onChange={e => changeAnimal(e.target.value)}
       options={[
         '🐕 Dog',

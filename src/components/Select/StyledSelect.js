@@ -16,7 +16,7 @@ const Label = styled.label`
           display: block;
         `}
 
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
 `
 
 const Field = styled.select`
@@ -25,12 +25,16 @@ const Field = styled.select`
   ${({ margin }) =>
     !margin &&
     css`
-      margin-right: 5px;
+      margin-bottom: 12px;
     `}
   ${({ padding }) =>
     !padding &&
     css`
       padding: 5px;
+    `}
+  ${({ width }) =>
+    css`
+      width: ${width};
     `}
   
   text-transform: none;

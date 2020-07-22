@@ -10,6 +10,7 @@ const Select = ({
   hideLabel,
   id,
   label,
+  width,
   onChange,
   options,
   ...rest
@@ -21,6 +22,7 @@ const Select = ({
       </Label>
     )}
     <Field
+      width={width}
       aria-label={a11yTitle}
       disabled={disabled}
       id={id}
@@ -42,14 +44,16 @@ const Select = ({
 Select.propTypes = {
   /** Add options to the select element without using the provided prop. */
   children: PropTypes.any,
-  /** Whether the form control is disabled. */
+  /** Whether the select element is disabled. */
   disabled: PropTypes.bool,
   /** Hides the select input label. */
   hideLabel: PropTypes.bool,
   /** Id of the select input. Also sets the "for" attribute on the label. Required. */
   id: PropTypes.string.isRequired,
-  /** Caption for the checkbox element. */
+  /** Caption for the select element. */
   label: PropTypes.string,
+  /** Sets the width of the select element. */
+  width: PropTypes.string,
   /** Options for the select element. */
   options: PropTypes.array,
   /** On change trigger function event. */
