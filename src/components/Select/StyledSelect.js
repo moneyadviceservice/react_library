@@ -1,15 +1,39 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { genericStyles } from '../../utils/helpers'
 
 const Label = styled.label`
-  ${genericStyles}
-  ${({ disabled, theme }) => disabled && `color: ${theme.colors.disabledText};`}
-  ${({ hide }) => !hide && `display: block;`}
+  ${({ disabled, theme }) =>
+    disabled &&
+    css`
+      color: ${theme.colors.disabledText};
+    `}
+  ${({ hide }) =>
+    hide
+      ? css`
+          display: none;
+        `
+      : css`
+          display: block;
+        `}
+
+  padding-bottom: 0.75rem;
 `
 
 const Field = styled.select`
-  margin-right: 5px;
-  padding: 0;
+  ${genericStyles}
+
+  ${({ margin }) =>
+    !margin &&
+    css`
+      margin-right: 5px;
+    `}
+  ${({ padding }) =>
+    !padding &&
+    css`
+      padding: 5px;
+    `}
+  
+  text-transform: none;
 `
 
 export { Label, Field }
