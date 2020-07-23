@@ -30,13 +30,14 @@ const Field = styled.select`
   ${({ padding }) =>
     !padding &&
     css`
-      padding: 5px;
+      padding: 3px;
     `}
   ${({ width }) =>
     css`
       width: ${width};
     `}
   
+  height: 30px;
   text-transform: none;
 `
 
