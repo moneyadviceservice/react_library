@@ -12,6 +12,7 @@ export { Checkbox } from './components/Checkbox'
 export { Form } from './components/Form'
 export { Formfield } from './components/Formfield'
 export { Radio } from './components/Radio'
+export { Select } from './components/Select'
 // layout
 export { Footer } from './components/Footer'
 export { Header } from './components/Header'
