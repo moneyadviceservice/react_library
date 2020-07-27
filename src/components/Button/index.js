@@ -8,6 +8,7 @@ function Button({
   as,
   a11yTitle,
   primary,
+  plain,
   text,
   onClick,
   disabled,
@@ -28,6 +29,7 @@ function Button({
     <ButtonWrapper
       as={domTag}
       aria-label={a11yTitle}
+      plain={plain}
       primary={primary}
       onClick={onClick}
       disabled={disabled}

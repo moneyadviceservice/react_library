@@ -158,13 +158,15 @@ const ButtonWrapper = styled.button`
   ${({ weight }) => weight && `font-weight: ${weight};`}
 
   /** conditional styles */
-  ${props => {
-    if (props.blog) {
-      return blogStyle
-    } else if (props.primary) {
-      return primaryStyle
-    } else {
-      return defaultStyle
+  ${({ blog, plain, primary }) => {
+    if (!plain) {
+      if (blog) {
+        return blogStyle
+      } else if (primary) {
+        return primaryStyle
+      } else {
+        return defaultStyle
+      }
     }
   }}
 `
