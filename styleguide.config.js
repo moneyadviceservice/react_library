@@ -89,6 +89,7 @@ module.exports = {
         {
           name: 'Layout',
           components: () => [
+            './src/components/CompanyCard/index.js',
             './src/components/Footer/index.js',
             './src/components/Header/index.js',
             './src/components/InfoTable/index.js',

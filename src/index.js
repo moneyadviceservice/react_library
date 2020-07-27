@@ -14,6 +14,7 @@ export { Formfield } from './components/Formfield'
 export { Radio } from './components/Radio'
 export { Select } from './components/Select'
 // layout
+export { CompanyCard } from './components/CompanyCard'
 export { Footer } from './components/Footer'
 export { Header } from './components/Header'
 export { InfoTable } from './components/InfoTable'
