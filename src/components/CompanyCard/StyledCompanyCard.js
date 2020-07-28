@@ -4,6 +4,7 @@ import { Row, Col } from '../Grid'
 import { Heading } from '../Heading'
 import Button from '../Button'
 import { Paragraph } from '../Paragraph'
+import { Inline } from '../Inline'
 
 const CardContainer = styled(Col)`
   ${({ margin }) =>
@@ -57,4 +58,21 @@ const CardButton = styled(Button)`
   }
 `
 
-export { CardContainer, CardRow, CardCol, CompanyTitle, SubHeading, CardButton }
+const Info = styled(Paragraph)`
+  margin-bottom: 0.25rem;
+`
+
+const InfoTitle = styled(Inline)`
+  font-weight: 700;
+`
+
+export {
+  CardContainer,
+  CardRow,
+  CardCol,
+  CompanyTitle,
+  SubHeading,
+  CardButton,
+  Info,
+  InfoTitle,
+}
