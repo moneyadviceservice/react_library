@@ -47,6 +47,12 @@ export default function() {
         masBlueDark: '#18507a',
       },
     },
+    companyCard: {
+      default: '#003d8e',
+      cardBorder: '#edf0f2',
+      boxShadow: '#d7d7d7',
+      titleBorder: '#edf0f0',
+    },
     form: {
       disabledBackground: '#F3F3F3',
       disabledText: '#686C6C',

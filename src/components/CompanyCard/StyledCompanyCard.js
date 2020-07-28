@@ -20,11 +20,18 @@ const CardContainer = styled(Col)`
   ${({ border }) =>
     !border &&
     css`
-      border: 1px solid #edf0f2;
+      border: 1px solid ${({ theme }) => theme.colors.companyCard.cardBorder};
       border-radius: 5px;
     `}
   
-  box-shadow: 5px 5px 5px rgba(215, 215, 215, 1);
+  /** box-shadow */
+  transition: box-shadow ease-in 0.2s;
+  box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.companyCard.boxShadow};
+
+  &:hover {
+    box-shadow: 4px 4px 4px ${({ theme }) =>
+      theme.colors.companyCard.boxShadow};
+  }
 `
 
 const CardRow = styled(Row)`
@@ -34,8 +41,9 @@ const CardRow = styled(Row)`
 const CardCol = styled(Col)``
 
 const CompanyTitle = styled(Heading)`
-  color: #003d8e;
-  border-bottom: 1px solid #edf0f0;
+  color: ${({ theme }) => theme.colors.companyCard.default};
+  border-bottom: 1px solid
+    ${({ theme }) => theme.colors.companyCard.titleBorder};
 `
 
 const SubHeading = styled(Heading)``
@@ -45,14 +53,22 @@ const CardButton = styled(Button)`
   flex-direction: row;
   align-items: center;
   width: 100%;
-  background-color: transparent;
-  color: #003d8e;
-  border: 1px solid #003d8e;
+  background-color: white;
+  color: ${({ theme }) => theme.colors.companyCard.default};
+  border: 1px solid ${({ theme }) => theme.colors.companyCard.default};
   border-radius: 5px;
   margin-bottom: 10px;
 
+  /** box-shadow */
+  transition: box-shadow ease-in 0.1s;
+
+  &:hover {
+    background-color: white;
+    box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.companyCard.default};
+  }
+
   & svg {
-    fill: #003d8e;
+    fill: ${({ theme }) => theme.colors.companyCard.default};
     width: 20px;
     margin-right: 10px;
   }
