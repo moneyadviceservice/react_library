@@ -15,13 +15,26 @@ import {
 import PhoneIcon from '../../assets/Images/phone_volume.svg'
 import ExternalLinkIcon from '../../assets/Images/external_link.svg'
 import EnvelopeIcon from '../../assets/Images/envelope.svg'
+// translations
+import LocaleEn from './locale_en.json'
+import LocaleCy from './locale_cy.json'
 
-const CompanyCard = ({ a11yTitle, children, data, locale, ...rest }) => {
+const CompanyCard = ({
+  a11yTitle,
+  children,
+  currentLng,
+  data,
+  i18nLng,
+  ...rest
+}) => {
+  // locale
+  const lng = i18nLng || (currentLng === 'cy' ? LocaleCy : LocaleEn)
+
   // destructure firm data from prop
   const { firmName, getInTouch, moreInfo } = data
-
+  // get in touch data
   const { phone, website, email } = getInTouch
-
+  // more info data
   const {
     medicalCondition,
     ageLimit,
@@ -41,7 +54,7 @@ const CompanyCard = ({ a11yTitle, children, data, locale, ...rest }) => {
       </CardRow>
       <CardRow>
         <CardCol sizes={{ xs: 12, sm: 4 }}>
-          <SubHeading level={3}>Get in touch</SubHeading>
+          <SubHeading level={3}>{lng.getInTouch.title}</SubHeading>
           {phone && (
             <CardButton href={`tel:${phone}`}>
               <PhoneIcon />
@@ -51,45 +64,45 @@ const CompanyCard = ({ a11yTitle, children, data, locale, ...rest }) => {
           {website && (
             <CardButton href={website} target="_blank">
               <ExternalLinkIcon />
-              Website
+              {lng.getInTouch.website}
             </CardButton>
           )}
           {email && (
             <CardButton href={`mailto:${email}`}>
               <EnvelopeIcon />
-              Email
+              {lng.getInTouch.email}
             </CardButton>
           )}
         </CardCol>
         <CardCol sizes={{ xs: 12, sm: 8 }}>
-          <SubHeading level={3}>More info</SubHeading>
+          <SubHeading level={3}>{lng.moreInfo.title}</SubHeading>
           {medicalCondition && (
             <Info>
-              <InfoTitle>Medical conditions - </InfoTitle>
+              <InfoTitle>{`${lng.moreInfo.medicalCondition} - `}</InfoTitle>
               {medicalCondition}
             </Info>
           )}
           {ageLimit && (
             <Info>
-              <InfoTitle>Age limits - </InfoTitle>
+              <InfoTitle>{`${lng.moreInfo.ageLimit} - `}</InfoTitle>
               {ageLimit}
             </Info>
           )}
           {destination && (
             <Info>
-              <InfoTitle>Destinations - </InfoTitle>
+              <InfoTitle>{`${lng.moreInfo.destination} - `}</InfoTitle>
               {destination}
             </Info>
           )}
           {durationLimit && (
             <Info>
-              <InfoTitle>Duration limits - </InfoTitle>
+              <InfoTitle>{`${lng.moreInfo.durationLimit} - `}</InfoTitle>
               {durationLimit}
             </Info>
           )}
           {treatmentStage && (
             <Info>
-              <InfoTitle>Treatment stages - </InfoTitle>
+              <InfoTitle>{`${lng.moreInfo.treatmentStage} - `}</InfoTitle>
               {treatmentStage}
             </Info>
           )}
@@ -101,12 +114,17 @@ const CompanyCard = ({ a11yTitle, children, data, locale, ...rest }) => {
 
 // Documentation
 CompanyCard.propTypes = {
+  /** Current Language Value */
+  currentLng: PropTypes.oneOf(['en', 'cy']),
   /** Company data to be displayed inside the card. */
   data: PropTypes.object,
+  /** Alternate translations for header. */
+  i18nLng: PropTypes.object,
   ...genericPropTypes,
 }
 
 CompanyCard.defaultProps = {
+  currentLng: 'en',
   ...genericPropsDefaults(),
 }
 
