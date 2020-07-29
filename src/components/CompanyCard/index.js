@@ -118,7 +118,7 @@ CompanyCard.propTypes = {
   currentLng: PropTypes.oneOf(['en', 'cy']),
   /** Company data to be displayed inside the card. */
   data: PropTypes.object,
-  /** Alternate translations for header. */
+  /** Alternate translations for the card. */
   i18nLng: PropTypes.object,
   ...genericPropTypes,
 }
