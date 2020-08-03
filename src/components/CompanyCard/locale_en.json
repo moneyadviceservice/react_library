@@ -1,0 +1,15 @@
+{
+  "getInTouch": {
+    "title": "Get in touch",
+    "website": "Website",
+    "email": "Email"
+  },
+  "moreInfo": {
+    "title": "More info",
+    "medicalCondition": "Medical conditions",
+    "ageLimit": "Age limits",
+    "destination": "Destinations",
+    "durationLimit": "Duration limits",
+    "treatmentStage": "Treatment stages"
+  }
+}

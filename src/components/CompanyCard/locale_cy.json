@@ -1,0 +1,15 @@
+{
+  "getInTouch": {
+    "title": "Cysylltwch",
+    "website": "Gwefan",
+    "email": "E-bost"
+  },
+  "moreInfo": {
+    "title": "Mwy o wybodaeth",
+    "medicalCondition": "Cyflyrau meddygol",
+    "ageLimit": "Terfynau oedran",
+    "destination": "Cyrchfannau",
+    "durationLimit": "Terfynau hyd",
+    "treatmentStage": "Camau triniaeth"
+  }
+}

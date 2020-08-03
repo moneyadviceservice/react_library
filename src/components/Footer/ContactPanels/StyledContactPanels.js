@@ -5,7 +5,7 @@ import Button from '../../Button'
 import { Anchor } from '../../Anchor'
 // svg icons
 import WhatsAppImg from '../../../assets/Images/whatsapp.svg'
-import PhoneImg from '../../../assets/Images/phone.svg'
+import PhoneImg from '../../../assets/Images/mobile_phone.svg'
 import WebChatImg from '../../../assets/Images/chat.svg'
 
 // Contact Panel Row
