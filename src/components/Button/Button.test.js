@@ -1,44 +1,51 @@
-import { render, waitForElement } from '@testing-library/react'
 import React from 'react'
-import ThemeProvider from '../ThemeProvider'
-import theme from '../../theme'
-import Button from './index'
+import { render, fireEvent } from '../../utils/testing'
+import Button from '../Button'
 
-// Hoist helper functions (but not vars) to reuse between test cases
-const renderComponent = ({ theme, text }) =>
-  render(
-    <ThemeProvider theme={theme}>
-      <Button text={text} />
-    </ThemeProvider>
-  )
+describe('<Button />', () => {
+  describe('Snapshots', () => {
+    it('should match default snapshot', () => {
+      const { container } = render(<Button />)
+      expect(container).toMatchSnapshot()
+    })
+    it('should match default disabled snapshot', () => {
+      const { container } = render(<Button disabled />)
+      expect(container).toMatchSnapshot()
+    })
+    it('should match primary snapshot', () => {
+      const { container } = render(<Button primary />)
+      expect(container).toMatchSnapshot()
+    })
+    it('should match primary disabled snapshot', () => {
+      const { container } = render(<Button primary disabled />)
+      expect(container).toMatchSnapshot()
+    })
+    it('should match blog snapshot', () => {
+      const { container } = render(<Button blog />)
+      expect(container).toMatchSnapshot()
+    })
+    it('should match plain snapshot', () => {
+      const { container } = render(<Button plain />)
+      expect(container).toMatchSnapshot()
+    })
+  })
 
-it('renders button text', async () => {
-  // Render new instance in every test to prevent leaking state
-  const { getByText } = renderComponent({ theme: theme, text: 'We Salute You' })
+  describe('text prop', () => {
+    it('should display value as Button children', () => {
+      const { container } = render(<Button text="Cancel" />)
 
-  await waitForElement(() => getByText(/We Salute You/i))
-})
+      expect(container.querySelector('button').textContent).toBe('Cancel')
+    })
+  })
 
-/**
- * 
- describe('Button', () => {
-  test('should display text', () => {
-    const { container } = render(<Button text="We Salute You!" />)
+  describe('onClick prop', () => {
+    it('should call onClick function when Button is clicked', () => {
+      const onClickMock = jest.fn()
+      const { getByText } = render(<Button onClick={onClickMock} text="ok" />)
 
-    getByText(container, 'We Salute You!')
+      fireEvent.click(getByText('ok'))
+
+      expect(onClickMock).toHaveBeenCalled()
+    })
   })
 })
-
-describe("Button", () => {
-  test("should handle click events", () => {
-    const onClickMock = jest.fn();
-    const { container } = render(
-      <Button text="Click me, maybe?" onClick={onClickMock} />
-    );
-    const component = container.firstChild;
-
-    fireEvent.click(component);
-
-    expect(onClickMock).toBeCalled();
-});
-*/
