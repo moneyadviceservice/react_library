@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio /> Snapshots should match snapshot with checked and disabled prop 1`] = `
+<div>
+  <label
+    class="StyledRadio__Label-sc-1awvsvp-0 fOeuR"
+    disabled=""
+  >
+    <input
+      checked=""
+      class="StyledRadio__Field-sc-1awvsvp-1 atQEc"
+      disabled=""
+      type="radio"
+      value=""
+    />
+  </label>
+</div>
+`;
+
+exports[`<Radio /> Snapshots should match snapshot with checked prop 1`] = `
+<div>
+  <label
+    class="StyledRadio__Label-sc-1awvsvp-0 jyUodG"
+  >
+    <input
+      checked=""
+      class="StyledRadio__Field-sc-1awvsvp-1 atQEc"
+      type="radio"
+      value=""
+    />
+  </label>
+</div>
+`;
+
+exports[`<Radio /> Snapshots should match snapshot with disabled prop 1`] = `
+<div>
+  <label
+    class="StyledRadio__Label-sc-1awvsvp-0 fOeuR"
+    disabled=""
+  >
+    <input
+      class="StyledRadio__Field-sc-1awvsvp-1 atQEc"
+      disabled=""
+      type="radio"
+      value=""
+    />
+  </label>
+</div>
+`;
+
+exports[`<Radio /> Snapshots should match snapshot without props 1`] = `
+<div>
+  <label
+    class="StyledRadio__Label-sc-1awvsvp-0 jyUodG"
+  >
+    <input
+      class="StyledRadio__Field-sc-1awvsvp-1 atQEc"
+      type="radio"
+      value=""
+    />
+  </label>
+</div>
+`;
