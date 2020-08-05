@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> Snapshots should match snapshot with disabled prop 1`] = `
+<div>
+  <label
+    class="StyledCheckbox__Label-sc-1atc3e8-0 fsfXDH"
+    disabled=""
+  >
+    <input
+      aria-required="false"
+      class="StyledCheckbox__Field-sc-1atc3e8-1 jaeJwW"
+      disabled=""
+      type="checkbox"
+      value=""
+    />
+  </label>
+</div>
+`;
+
+exports[`<Checkbox /> Snapshots should match snapshot without props 1`] = `
+<div>
+  <label
+    class="StyledCheckbox__Label-sc-1atc3e8-0 bVAspM"
+  >
+    <input
+      aria-required="false"
+      class="StyledCheckbox__Field-sc-1atc3e8-1 jaeJwW"
+      type="checkbox"
+      value=""
+    />
+  </label>
+</div>
+`;
