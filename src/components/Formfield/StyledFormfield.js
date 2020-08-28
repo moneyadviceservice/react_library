@@ -10,7 +10,8 @@ const Legend = styled.legend`
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: 700;
-  color: ${props => props.theme.colors.formfield.legendText};
+  color: ${({ theme, color }) =>
+    color ? color : theme.colors.formfield.legendText};
   width: 100%;
   margin-bottom: 0.75rem;
 `

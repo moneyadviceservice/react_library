@@ -60,7 +60,7 @@ export default function() {
       inputFocus: '#e8b940',
     },
     formfield: {
-      legendText: '#2e3030',
+      legendText: '#217D21',
     },
     header: {
       background: '#428513',

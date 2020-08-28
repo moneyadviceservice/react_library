@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 import { StyledFormfield, Legend } from './StyledFormfield'
 
-const Formfield = ({ a11yTitle, children, legend, ...rest }) => {
+const Formfield = ({ a11yTitle, children, legend, legendColor, ...rest }) => {
   return (
-    <StyledFormfield aria-label={a11yTitle} {...rest}>
-      {legend && <Legend>{legend}</Legend>}
+    <StyledFormfield aria-label={a11yTitle || legend} {...rest}>
+      {legend && <Legend color={legendColor}>{legend}</Legend>}
       {children}
     </StyledFormfield>
   )
@@ -18,6 +18,8 @@ Formfield.propTypes = {
   children: PropTypes.node,
   /** Creates a legend element that represents a caption for the content. */
   legend: PropTypes.string,
+  /** Changes the color of the legend text. */
+  legendColor: PropTypes.string,
   ...genericPropTypes,
 }
 
