@@ -68,6 +68,11 @@ export default function() {
     infotable: {
       default: '#24afa8',
     },
+    tooltip: {
+      tipBackground: '#FFFFFF',
+      iconColor: '#217d21',
+      iconBackground: '#e3fbe3',
+    },
   }
 
   return colors

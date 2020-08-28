@@ -77,14 +77,24 @@ const Tip = styled.span`
     font-size: 0.875rem;
     line-height: 1rem;
     white-space: pre-wrap;
-    background-color: #FFF;
+    background-color: ${({ theme }) => theme.colors.tooltip.tipBackground};
     box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
   }
 `
 
 const Icon = styled(Anchor)`
+  font-family: 'Times-Italic', 'Times Italic', 'Times', sans-serif;
   font-style: italic;
-  padding: 0.375rem;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.tooltip.iconColor};
+  margin: 0;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: ${({ theme }) => theme.colors.tooltip.iconBackground};
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  display: inline-block;
 `
 
 export { StyledTooltip, Icon, Tip }
