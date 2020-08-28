@@ -1,13 +1,15 @@
-import babel from 'rollup-plugin-babel'
-import commonjs from 'rollup-plugin-commonjs'
-import resolve from 'rollup-plugin-node-resolve'
+// plugins
 import external from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
-import { uglify } from 'rollup-plugin-uglify'
-import packageJSON from './package.json'
-import json from '@rollup/plugin-json'
 import svgr from '@svgr/rollup'
-import url from 'rollup-plugin-url'
+// @rollup
+import url from '@rollup/plugin-url'
+import json from '@rollup/plugin-json'
+import babel from '@rollup/plugin-babel'
+import commonjs from '@rollup/plugin-commonjs'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+// package.json
+import packageJSON from './package.json'
 
 const input = './src/index.js'
 const minifyExtension = pathToFile => pathToFile.replace(/\.js$/, '.min.js')
@@ -30,10 +32,10 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
       external(),
-      resolve(),
+      nodeResolve(),
       commonjs(),
     ],
   },
@@ -53,12 +55,12 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
       external(),
-      resolve(),
+      nodeResolve(),
       commonjs(),
-      uglify(),
+      terser(),
     ],
   },
   // UMD
@@ -82,10 +84,10 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
       external(),
-      resolve(),
+      nodeResolve(),
       commonjs(),
     ],
   },
@@ -109,10 +111,10 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
       external(),
-      resolve(),
+      nodeResolve(),
       commonjs(),
       terser(),
     ],
@@ -134,10 +136,10 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
       external(),
-      resolve(),
+      nodeResolve(),
       commonjs(),
     ],
   },
@@ -157,10 +159,10 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
       external(),
-      resolve(),
+      nodeResolve(),
       commonjs(),
       terser(),
     ],
