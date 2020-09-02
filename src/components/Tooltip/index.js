@@ -23,11 +23,7 @@ const Tooltip = ({
       {...rest}
     >
       <Tip minWidth={minWidth} show={show} side={side} text={text}>
-        {children || (
-          <Icon weight={700} color="#428513">
-            i
-          </Icon>
-        )}
+        {children || <Icon weight={700}>i</Icon>}
       </Tip>
     </StyledTooltip>
   )
