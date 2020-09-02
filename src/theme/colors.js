@@ -70,7 +70,7 @@ export default function() {
     },
     tooltip: {
       tipBackground: '#FFFFFF',
-      iconColor: '#217d21',
+      iconColor: '#428513',
       iconBackground: '#e3fbe3',
     },
   }

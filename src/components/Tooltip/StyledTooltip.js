@@ -88,7 +88,7 @@ const Icon = styled(Anchor)`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.tooltip.iconColor};
   margin: 0;
-  border: 1px solid black;
+  border: 1px solid ${({ theme }) => theme.colors.tooltip.iconColor};
   border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.tooltip.iconBackground};
   width: 25px;
