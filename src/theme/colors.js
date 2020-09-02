@@ -1,3 +1,5 @@
+const masGreen = '#428513'
+
 export default function() {
   const colors = {
     // Global Colors
@@ -60,17 +62,17 @@ export default function() {
       inputFocus: '#e8b940',
     },
     formfield: {
-      legendText: '#217D21',
+      legendText: masGreen,
     },
     header: {
-      background: '#428513',
+      background: masGreen,
     },
     infotable: {
       default: '#24afa8',
     },
     tooltip: {
       tipBackground: '#FFFFFF',
-      iconColor: '#428513',
+      iconColor: masGreen,
       iconBackground: '#e3fbe3',
     },
   }
