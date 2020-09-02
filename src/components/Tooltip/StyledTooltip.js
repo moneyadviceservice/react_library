@@ -95,6 +95,11 @@ const Icon = styled(Anchor)`
   height: 25px;
   text-align: center;
   display: inline-block;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.tooltip.iconColor};
+    text-decoration: none;
+  }
 `
 
 export { StyledTooltip, Icon, Tip }
