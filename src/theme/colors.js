@@ -55,6 +55,9 @@ export default function() {
       boxShadow: '#d7d7d7',
       titleBorder: '#edf0f0',
     },
+    footer: {
+      text: '#515151',
+    },
     form: {
       disabledBackground: '#F3F3F3',
       disabledText: '#686C6C',
