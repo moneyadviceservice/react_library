@@ -23,16 +23,13 @@ const AccordionBtn = styled(Col)`
   padding: 5px 12px;
   margin: 5px 0;
   text-align: left;
-  border: 1px solid transparent;
   border-radius: 3px;
+  border: none;
   outline: none;
   background-color: white;
-  transition: 0.6s ease;
 
-  &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.colors.alternate};
-    border: 1px solid black;
+    outline: solid 3px ${({ theme }) => theme.colors.accordion.outline};
   }
 `
 

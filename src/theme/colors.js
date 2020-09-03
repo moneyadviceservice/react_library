@@ -8,6 +8,7 @@ export default function() {
     disabledText: '#b7b7b7', // grey disabled
     focusBg: '#daaf2d',
     mapsBlue: '#143960',
+    masGreen: masGreen,
     white: '#FFFFFF',
     // Opacity Values
     opacity: {
@@ -18,6 +19,7 @@ export default function() {
     // Component Colors
     accordion: {
       default: '#3c97bf',
+      outline: '#daaf2d',
     },
     anchor: {
       default: '#003d8e',
