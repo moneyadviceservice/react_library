@@ -3,7 +3,11 @@ import Container from '../Grid/Container'
 
 // Main footer container
 const FooterContainer = styled(Container)`
-  ${props => !props.padding && `padding: 0;`}
+  ${({ padding }) => !padding && `padding: 0;`}
+
+  p {
+    color: ${({ theme }) => theme.colors.footer.text};
+  }
 `
 
 export { FooterContainer }

@@ -83,11 +83,11 @@ const PhoneIcon = styled(PhoneImg)`
 `
 
 const Email = styled(Anchor)`
-  color: #000;
+  color: ${({ theme }) => theme.colors.footer.text};
 
   &:hover {
     text-decoration: none;
-    color: #000;
+    color: ${({ theme }) => theme.colors.footer.text};
   }
 `
 
