@@ -75,7 +75,7 @@
   "dependencies": {
     "@babel/runtime": "^7.8.4",
     "regenerator-runtime": "^0.13.5",
-    "styled-components": "^5.x"
+    "styled-components": "^4.4.1"
   },
   "jest": {
     "moduleNameMapper": {
