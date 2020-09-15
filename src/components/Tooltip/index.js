@@ -22,8 +22,9 @@ const Tooltip = ({
       onMouseLeave={() => hover && setShow(false)}
       {...rest}
     >
-      <Tip minWidth={minWidth} show={show} side={side} text={text}>
-        {children || <Icon weight={700}>i</Icon>}
+      {children || <Icon weight={700}>i</Icon>}
+      <Tip minWidth={minWidth} show={show} side={side}>
+        {text}
       </Tip>
     </StyledTooltip>
   )
@@ -40,7 +41,7 @@ Tooltip.propTypes = {
   /** Defines the side where the tooltip shows. Responsive. */
   side: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   /** The text to display inside the Tooltip. */
-  text: PropTypes.string,
+  text: PropTypes.any,
   ...genericPropTypes,
 }
 
