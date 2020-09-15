@@ -123,9 +123,7 @@ const CompanyCard = ({
           {coronavirus_medical_expense !== undefined && (
             <Info>
               <InfoTitle>{`${lng.moreInfo.coronavirusMedicalExpense.title} - `}</InfoTitle>
-              {coronavirus_cancellation_cover
-                ? lng.moreInfo.yes
-                : lng.moreInfo.no}
+              {coronavirus_medical_expense ? lng.moreInfo.yes : lng.moreInfo.no}
               <Tooltip
                 text={lng.moreInfo.coronavirusMedicalExpense.tooltip}
                 side="left"

@@ -4,13 +4,13 @@ import { genericStyles } from '../../utils/helpers'
 const Label = styled.label`
   ${genericStyles}
   ${({ disabled, theme }) => disabled && `color: ${theme.colors.disabledText};`}
-  ${({ hide }) => !hide && `display: block;`}
+  ${({ hide }) => !hide && `display: flex;`}
   ${({ margin }) => !margin && `margin-bottom: 5px;`}
 `
 
 const Field = styled.input`
   margin-right: 10px;
-  padding: 0;
+  margin-top: 5px;
 `
 
 export { Label, Field }

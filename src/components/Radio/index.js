@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 import { Label, Field } from './StyledRadio'
+import { Paragraph as P } from '../Paragraph'
 
 const Radio = ({
   a11yTitle,
@@ -24,7 +25,10 @@ const Radio = ({
       type="radio"
       value={value}
     />
-    {children || label}
+    <P textSize="1rem" margin="0">
+      {label}
+    </P>
+    {children}
   </Label>
 )
 
