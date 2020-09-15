@@ -12,6 +12,7 @@ import {
   InfoTitle,
 } from './StyledCompanyCard'
 import { Tooltip } from '../Tooltip'
+import { Inline } from '../Inline'
 // svg icons
 import PhoneIcon from '../../assets/Images/phone_volume.svg'
 import ExternalLinkIcon from '../../assets/Images/external_link.svg'
@@ -19,6 +20,35 @@ import EnvelopeIcon from '../../assets/Images/envelope.svg'
 // translations
 import LocaleEn from './locale_en.json'
 import LocaleCy from './locale_cy.json'
+
+// tooltip text
+const openingHoursTooltip = ({ week_days, saturdays, sundays }, lng) => {
+  return (
+    <>
+      {week_days.opens && (
+        <>
+          <Inline margin="0" textSize="0.875rem" lineHeight="1rem">
+            {`${lng.openingTimes.weekdays}: ${week_days.open_time} ${lng.openingTimes.to} ${week_days.close_time}`}
+          </Inline>
+          {'\n'}
+        </>
+      )}
+      {saturdays.opens && (
+        <>
+          <Inline margin="0" textSize="0.875rem" lineHeight="1rem">
+            {`${lng.openingTimes.saturday}: ${saturdays.open_time} ${lng.openingTimes.to} ${saturdays.close_time}`}
+          </Inline>
+          {'\n'}
+        </>
+      )}
+      {sundays.opens && (
+        <Inline margin="0" textSize="0.875rem" lineHeight="1rem">
+          {`${lng.openingTimes.sunday}: ${sundays.open_time} ${lng.openingTimes.to} ${sundays.close_time}`}
+        </Inline>
+      )}
+    </>
+  )
+}
 
 const CompanyCard = ({
   a11yTitle,
@@ -45,22 +75,6 @@ const CompanyCard = ({
     medical_equipment_cover,
     medical_screening_company,
   } = overview
-  // tooltip text
-  const tooltipText =
-    `${week_days.opens &&
-      `${lng.openingTimes.weekdays}: ${week_days.open_time} ${lng.openingTimes.to} ${week_days.close_time}`}` +
-    `${
-      saturdays.opens
-        ? ` ` +
-          `${lng.openingTimes.saturday}: ${saturdays.open_time} ${lng.openingTimes.to} ${saturdays.close_time}`
-        : ``
-    }` +
-    `${
-      sundays.opens
-        ? ` ` +
-          `${lng.openingTimes.sunday}: ${sundays.open_time} ${lng.openingTimes.to} ${sundays.close_time}`
-        : ``
-    }`
 
   return (
     <CardContainer aria-label={a11yTitle || company} {...rest}>
@@ -98,7 +112,7 @@ const CompanyCard = ({
             <Info margin={{ top: '5px' }}>
               {lng.openingTimes.title}
               <Tooltip
-                text={tooltipText}
+                text={openingHoursTooltip(opening_times, lng)}
                 minWidth={currentLng === 'cy' ? '275px' : '225px'}
                 margin={{ left: '5px' }}
               />
