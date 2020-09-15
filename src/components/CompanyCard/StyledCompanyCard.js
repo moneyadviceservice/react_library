@@ -46,8 +46,6 @@ const CompanyTitle = styled(Heading)`
     ${({ theme }) => theme.colors.companyCard.titleBorder};
 `
 
-const SubHeading = styled(Heading)``
-
 const CardButton = styled(Button)`
   display: flex;
   flex-direction: row;
@@ -87,7 +85,6 @@ export {
   CardRow,
   CardCol,
   CompanyTitle,
-  SubHeading,
   CardButton,
   Info,
   InfoTitle,
