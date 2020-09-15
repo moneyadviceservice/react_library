@@ -7,18 +7,43 @@ import { Row, Button, CompanyCard } from '@moneypensionservice/directories';
 const [locale, setLocale] = useState('en');
 
 const firm = {
-  firmName: 'Travelocity',
-  getInTouch: {
-    phone: '020123456',
+  company: 'Acme Limited',
+  online: {
+    phone: '020000000',
     website: 'https://acme.org',
-    email: 'support@acme.org'
+    email: 'support@acme.org',
+    telephone_quote: true,
   },
-  moreInfo: {
-    medicalCondition: 'Specialist cancer insurers. Underwitten individually by a medical professional',
-    ageLimit: 'No upper age limit on Single Trip & Annual Multi-trip',
-    destination: 'All destinations covered',
-    durationLimit: 'Up to 6 months for a single continuous trip',
-    treatmentStage: 'Cover available to patients on a waiting list, awaiting test results, terminal prognosis cases. Cover not available to patients going abroad for treatment'
+  opening_times: {
+    week_days: {
+      opens: true,
+      open_time: '9:00',
+      close_time: '17:00',
+    },
+    saturdays: {
+      opens: true,
+      open_time: '10:00',
+      close_time: '16:00',
+    },
+    sundays: {
+      opens: true,
+      open_time: '10:00',
+      close_time: '13:00',
+    }
+  },
+  overview: {
+    coronavirus_cancellation_cover: true,
+    coronavirus_medical_expense: true,
+    cruise_cover: true,
+    medical_conditions_cover:  {
+      most_conditions_covered: false,
+      specialises_in: 'cancer'
+    },
+    medical_equipment_cover: {
+      cover_amount: 1000,
+      offers_cover: true
+    },
+    medical_screening_company: 'verisik'
   }
 };
 
