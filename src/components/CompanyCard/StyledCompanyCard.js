@@ -36,6 +36,7 @@ const CardContainer = styled(Col)`
 
 const CardRow = styled(Row)`
   padding: 0;
+  flex-wrap: nowrap;
 `
 
 const CardCol = styled(Col)``

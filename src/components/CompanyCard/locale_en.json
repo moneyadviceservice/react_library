@@ -4,7 +4,7 @@
     "email": "Email"
   },
   "openingTimes": {
-    "title": "View opening hours",
+    "title": "Opening hours",
     "weekdays": "Monday to Friday",
     "saturday": "Saturday",
     "sunday": "Sunday",
@@ -26,11 +26,11 @@
       }
     },
     "coronavirusMedicalExpense": {
-      "title": "Offers Coronavirus cover for medical expenses",
+      "title": "Coronavirus cover for medical expenses",
       "tooltip": "Not all policies will provide cover for medical emergencies and/or repatriation if you are affected by Coronavirus while you are on your trip,  but many will. So always check this before you buy.  Even if Coronavirus cover is included, always check exactly what is covered."
     },
     "coronavirusCancellationCover": {
-      "title": "Offers Coronavirus cover if trip cancelled",
+      "title": "Coronavirus cover if trip cancelled",
       "tooltip": "Not all policies will provide cancellation cover if the cancellation is linked to Coronavirus, but some will. Even if this cover is included, check the terms and conditions relating to cancellation carefully before you buy."
     },
     "medicalEquipmentCover": {

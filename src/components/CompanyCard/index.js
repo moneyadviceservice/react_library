@@ -87,7 +87,7 @@ const CompanyCard = ({
       </CardRow>
       <CardRow>
         {/** Left Column */}
-        <CardCol sizes={{ xs: 12, sm: 4 }}>
+        <CardCol sizes={{ xs: 12, sm: 3 }}>
           {/** Buttons */}
           {phone && (
             <CardButton href={`tel:${phone}`}>
@@ -119,7 +119,8 @@ const CompanyCard = ({
             </Info>
           )}
         </CardCol>
-        <CardCol sizes={{ xs: 12, sm: 8 }}>
+        {/** Right Column */}
+        <CardCol sizes={{ xs: 12, sm: 9 }}>
           {/** Medical Conditions Cover */}
           {medical_conditions_cover && (
             <Info>
