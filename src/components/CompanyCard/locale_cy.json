@@ -4,7 +4,7 @@
     "email": "E-bost"
   },
   "openingTimes": {
-    "title": "Gweld oriau agor",
+    "title": "Oriau agor",
     "weekdays": "Dydd Llun i Ddydd Gwener",
     "saturday": "Dydd Sadwrn",
     "sunday": "Dydd Sul",
@@ -26,11 +26,11 @@
       }
     },
     "coronavirusMedicalExpense": {
-      "title": "Yn cynnig yswiriant Coronafirws ar gyfer costau meddygol",
+      "title": "Yswiriant coronafirws ar gyfer costau meddygol",
       "tooltip": "Ni fydd pob polisi yn darparu ar gyfer argyfyngau meddygol a/neu ddychwelyd os bydd Coronavirus yn effeithio arnoch tra byddwch ar eich taith, ond bydd llawer yn gwneud hynny. Felly gwiriwch hyn bob amser cyn i chi brynu. Hyd yn oed os yw gorchudd Coronavirus wedi'i gynnwys, gwiriwch yn union beth sydd wedi'i orchuddio."
     },
     "coronavirusCancellationCover": {
-      "title": "Yn cynnig yswiriant Coronafirws os bydd y daith yn cael ei chanslo",
+      "title": "Yswiriant Coronafirws os bydd y daith yn cael ei chanslo",
       "tooltip": "Ni fydd pob polisi yn darparu yswiriant canslo os yw'r canslo'n gysylltiedig â Coronavirus, ond bydd rhai yn gwneud hynny. Hyd yn oed os yw'r gorchudd hwn wedi'i gynnwys, gwiriwch y telerau ac amodau sy'n ymwneud â chanslo yn ofalus cyn i chi brynu."
     },
     "medicalEquipmentCover": {

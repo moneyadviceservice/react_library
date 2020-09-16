@@ -113,7 +113,7 @@ const CompanyCard = ({
               {lng.openingTimes.title}
               <Tooltip
                 text={openingHoursTooltip(opening_times, lng)}
-                minWidth={currentLng === 'cy' ? '275px' : '225px'}
+                minWidth={currentLng === 'cy' ? '275px' : '230px'}
                 margin={{ left: '5px' }}
               />
             </Info>

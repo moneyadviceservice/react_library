@@ -4,6 +4,7 @@ import { Anchor } from '../Anchor'
 
 const StyledTooltip = styled.span`
   ${genericStyles}
+  display: inline-block;
   position: relative;
   cursor: pointer;
 `
@@ -58,7 +59,7 @@ const renderSide = sideProp => {
   }
 }
 
-const Tip = styled.div`
+const Tip = styled.span`
   /** conditional styles */
   display: ${({ show }) => (show ? 'block' : 'none')};
   ${({ minWidth }) => responsiveProps('min-width', minWidth)}
@@ -67,10 +68,11 @@ const Tip = styled.div`
   z-index: 1000;
   /** Prop-based side styles */
   ${({ side }) => renderSide(side)}
-  padding: 8px;
-  border: 1px solid black;
-  border-radius: 4px;
+  padding: 10px;
+  border: 2px solid ${({ theme }) => theme.colors.tooltip.borderColor};
+  border-radius: 2px;
   font-size: 0.875rem;
+  color: ${({ theme }) => theme.colors.tooltip.fontColor};
   line-height: 1rem;
   white-space: pre-wrap;
   background-color: ${({ theme }) => theme.colors.tooltip.tipBackground};

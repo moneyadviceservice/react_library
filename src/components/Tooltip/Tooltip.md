@@ -7,7 +7,7 @@ const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 
 <Row justify="space-evenly" align="center" direction="row">
   <P width="auto" margin="0">
-    Default tooltip <Tooltip text={lorem} />
+    Default tooltip <Tooltip text={`This is a default tooltip.`} />
   </P>
   <Tooltip text={lorem} hover side="top">
     <Button text="Hover me!" />

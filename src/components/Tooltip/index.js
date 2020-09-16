@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
 import { StyledTooltip, Icon, Tip } from './StyledTooltip'
@@ -12,17 +12,42 @@ const Tooltip = ({
   text,
   ...rest
 }) => {
+  const node = useRef()
   const [show, setShow] = useState(false)
+
+  const handleClick = () => {
+    if (!show) {
+      setShow(true)
+      document.addEventListener('click', handleOutsideClick, false)
+    } else {
+      setShow(false)
+      document.removeEventListener('click', handleOutsideClick, false)
+    }
+  }
+
+  const handleOutsideClick = e => {
+    if (node.current && !node.current.contains(e.target)) {
+      setShow(false)
+      document.addEventListener('click', handleOutsideClick, false)
+    }
+    return
+  }
 
   return (
     <StyledTooltip
       aria-label={a11yTitle}
-      onClick={() => !hover && setShow(!show)}
       onMouseEnter={() => hover && setShow(true)}
       onMouseLeave={() => hover && setShow(false)}
+      ref={node}
       {...rest}
     >
-      {children || <Icon weight={700}>i</Icon>}
+      {children ? (
+        <span onClick={() => !hover && handleClick()}>{children}</span>
+      ) : (
+        <Icon weight={700} onClick={() => !hover && handleClick()}>
+          i
+        </Icon>
+      )}
       <Tip minWidth={minWidth} show={show} side={side}>
         {text}
       </Tip>
