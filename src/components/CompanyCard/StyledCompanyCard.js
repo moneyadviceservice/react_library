@@ -5,6 +5,7 @@ import { Heading } from '../Heading'
 import Button from '../Button'
 import { Paragraph } from '../Paragraph'
 import { Inline } from '../Inline'
+import { resolveMedia } from '../../utils/helpers'
 
 const CardContainer = styled(Col)`
   ${({ margin }) =>
@@ -36,7 +37,9 @@ const CardContainer = styled(Col)`
 
 const CardRow = styled(Row)`
   padding: 0;
-  flex-wrap: nowrap;
+  ${resolveMedia.sm`
+    flex-wrap: nowrap;
+  `}
 `
 
 const CardCol = styled(Col)``
