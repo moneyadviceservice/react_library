@@ -48,9 +48,11 @@ const Tooltip = ({
           i
         </Icon>
       )}
-      <Tip minWidth={minWidth} show={show} side={side}>
-        {text}
-      </Tip>
+      {show && (
+        <Tip minWidth={minWidth} side={side}>
+          {text}
+        </Tip>
+      )}
     </StyledTooltip>
   )
 }

@@ -13,6 +13,7 @@ import {
 const Accordion = ({
   a11yTitle,
   active,
+  btnClass,
   children,
   color,
   text,
@@ -48,6 +49,7 @@ const Accordion = ({
       <AccordionBtn
         forwardedAs="button"
         aria-expanded={open}
+        className={btnClass}
         direction="row"
         align="center"
         justify="flex-start"
@@ -86,6 +88,8 @@ const Accordion = ({
 Accordion.propTypes = {
   /** Set accordion to be opened if true. */
   active: PropTypes.bool,
+  /** Adds class to Accordion trigger button. */
+  btnClass: PropTypes.string,
   /** Color for the chevron. */
   color: PropTypes.string,
   /** The children elements to render within the acordion. */

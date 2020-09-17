@@ -61,7 +61,7 @@ const renderSide = sideProp => {
 
 const Tip = styled.span`
   /** conditional styles */
-  display: ${({ show }) => (show ? 'block' : 'none')};
+  display: block;
   ${({ minWidth }) => responsiveProps('min-width', minWidth)}
   /** positioning */
   position: absolute;

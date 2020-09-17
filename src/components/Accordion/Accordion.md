@@ -16,7 +16,8 @@ const handleClick = (current) => {
 <Row direction="column">
   <Accordion 
     text={lorem} 
-    title="Outside" />
+    title="Outside"
+    btnClass="customClass" />
   <Accordion 
     text={lorem + lorem + lorem} 
     title="Opened by default" 
