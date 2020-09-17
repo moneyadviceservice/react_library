@@ -5,6 +5,7 @@ import { Heading } from '../Heading'
 import Button from '../Button'
 import { Paragraph } from '../Paragraph'
 import { Inline } from '../Inline'
+import { resolveMedia } from '../../utils/helpers'
 
 const CardContainer = styled(Col)`
   ${({ margin }) =>
@@ -36,6 +37,9 @@ const CardContainer = styled(Col)`
 
 const CardRow = styled(Row)`
   padding: 0;
+  ${resolveMedia.sm`
+    flex-wrap: nowrap;
+  `}
 `
 
 const CardCol = styled(Col)``
@@ -45,8 +49,6 @@ const CompanyTitle = styled(Heading)`
   border-bottom: 1px solid
     ${({ theme }) => theme.colors.companyCard.titleBorder};
 `
-
-const SubHeading = styled(Heading)``
 
 const CardButton = styled(Button)`
   display: flex;
@@ -87,7 +89,6 @@ export {
   CardRow,
   CardCol,
   CompanyTitle,
-  SubHeading,
   CardButton,
   Info,
   InfoTitle,

@@ -1,15 +1,53 @@
 {
   "getInTouch": {
-    "title": "Get in touch",
     "website": "Website",
     "email": "Email"
   },
+  "openingTimes": {
+    "title": "Opening hours",
+    "weekdays": "Monday to Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "to": "to"
+  },
   "moreInfo": {
-    "title": "More info",
-    "medicalCondition": "Medical conditions",
-    "ageLimit": "Age limits",
-    "destination": "Destinations",
-    "durationLimit": "Duration limits",
-    "treatmentStage": "Treatment stages"
+    "yes": "Yes",
+    "no": "No",
+    "medicalCondition": {
+      "title": "Medical conditions covered",
+      "covered": "Most conditions covered.",
+      "specialised": "Specialises in",
+      "options": {
+        "cancer": "Cancer",
+        "heart_conditions": "Heart conditions",
+        "strokes": "Strokes or central nervous system disorders",
+        "respiratory_problems": "Respiratory problems",
+        "mental_health_conditions": "Psychological or mental health problems"
+      }
+    },
+    "coronavirusMedicalExpense": {
+      "title": "Coronavirus cover for medical expenses",
+      "tooltip": "Not all policies will provide cover for medical emergencies and/or repatriation if you are affected by Coronavirus while you are on your trip,  but many will. So always check this before you buy.  Even if Coronavirus cover is included, always check exactly what is covered."
+    },
+    "coronavirusCancellationCover": {
+      "title": "Coronavirus cover if trip cancelled",
+      "tooltip": "Not all policies will provide cancellation cover if the cancellation is linked to Coronavirus, but some will. Even if this cover is included, check the terms and conditions relating to cancellation carefully before you buy."
+    },
+    "medicalEquipmentCover": {
+      "title": "Medical equipment cover",
+      "offered": "Yes up to £",
+      "notOffered": "Cover for medical equipment not offered."
+    },
+    "cruiseCover": "Cruise cover",
+    "medicalScreening": {
+      "title": "Medical screening",
+      "tooltip": "If you are going to get quotes from different providers, try and use firms that use different medical screening companies. This may give you a wider choice of price and/or cover offered. There is more information on medical screening in our FAQs on the previous screen.",
+      "companies": {
+        "verisik": "Verisk (formerly Healix Risk Rating)",
+        "tamis": "Travel and Medical Insurance Services (TAMIS)",
+        "protectif": "Protectif",
+        "inhouse": "Medical screening undertaken in-house"
+      }
+    }
   }
 }

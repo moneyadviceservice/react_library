@@ -1,16 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
+// components
 import {
   CardContainer,
   CardRow,
   CardCol,
   CompanyTitle,
-  SubHeading,
   CardButton,
   Info,
   InfoTitle,
 } from './StyledCompanyCard'
+import { Tooltip } from '../Tooltip'
+import { Inline } from '../Inline'
 // svg icons
 import PhoneIcon from '../../assets/Images/phone_volume.svg'
 import ExternalLinkIcon from '../../assets/Images/external_link.svg'
@@ -18,6 +20,35 @@ import EnvelopeIcon from '../../assets/Images/envelope.svg'
 // translations
 import LocaleEn from './locale_en.json'
 import LocaleCy from './locale_cy.json'
+
+// tooltip text
+const openingHoursTooltip = ({ week_days, saturdays, sundays }, lng) => {
+  return (
+    <>
+      {week_days.opens && (
+        <>
+          <Inline margin="0" textSize="0.875rem" lineHeight="1rem">
+            {`${lng.openingTimes.weekdays}: ${week_days.open_time} ${lng.openingTimes.to} ${week_days.close_time}`}
+          </Inline>
+          {'\n'}
+        </>
+      )}
+      {saturdays.opens && (
+        <>
+          <Inline margin="0" textSize="0.875rem" lineHeight="1rem">
+            {`${lng.openingTimes.saturday}: ${saturdays.open_time} ${lng.openingTimes.to} ${saturdays.close_time}`}
+          </Inline>
+          {'\n'}
+        </>
+      )}
+      {sundays.opens && (
+        <Inline margin="0" textSize="0.875rem" lineHeight="1rem">
+          {`${lng.openingTimes.sunday}: ${sundays.open_time} ${lng.openingTimes.to} ${sundays.close_time}`}
+        </Inline>
+      )}
+    </>
+  )
+}
 
 const CompanyCard = ({
   a11yTitle,
@@ -29,32 +60,35 @@ const CompanyCard = ({
 }) => {
   // locale
   const lng = i18nLng || (currentLng === 'cy' ? LocaleCy : LocaleEn)
-
   // destructure firm data from prop
-  const { firmName, getInTouch, moreInfo } = data
+  const { company, online, opening_times, overview } = data
   // get in touch data
-  const { phone, website, email } = getInTouch
-  // more info data
+  const { phone, website, email } = online
+  // opening times data
+  const { week_days, saturdays, sundays } = opening_times
+  // overview data
   const {
-    medicalCondition,
-    ageLimit,
-    destination,
-    durationLimit,
-    treatmentStage,
-  } = moreInfo
+    coronavirus_cancellation_cover,
+    coronavirus_medical_expense,
+    cruise_cover,
+    medical_conditions_cover,
+    medical_equipment_cover,
+    medical_screening_company,
+  } = overview
 
   return (
-    <CardContainer aria-label={a11yTitle || firmName} {...rest}>
+    <CardContainer aria-label={a11yTitle || company} {...rest}>
       <CardRow>
-        <CardCol>
+        <CardCol margin={{ bottom: '20px' }}>
           <CompanyTitle level={2} margin="0">
-            {firmName}
+            {company}
           </CompanyTitle>
         </CardCol>
       </CardRow>
       <CardRow>
-        <CardCol sizes={{ xs: 12, sm: 4 }}>
-          <SubHeading level={3}>{lng.getInTouch.title}</SubHeading>
+        {/** Left Column */}
+        <CardCol sizes={{ xs: 12, sm: 3 }}>
+          {/** Buttons */}
           {phone && (
             <CardButton href={`tel:${phone}`}>
               <PhoneIcon />
@@ -73,37 +107,92 @@ const CompanyCard = ({
               {lng.getInTouch.email}
             </CardButton>
           )}
+          {/** Opening Times */}
+          {(week_days.opens || saturdays.opens || sundays.opens) && (
+            <Info margin={{ top: '5px' }}>
+              {lng.openingTimes.title}
+              <Tooltip
+                text={openingHoursTooltip(opening_times, lng)}
+                minWidth={currentLng === 'cy' ? '275px' : '230px'}
+                margin={{ left: '5px' }}
+              />
+            </Info>
+          )}
         </CardCol>
-        <CardCol sizes={{ xs: 12, sm: 8 }}>
-          <SubHeading level={3}>{lng.moreInfo.title}</SubHeading>
-          {medicalCondition && (
+        {/** Right Column */}
+        <CardCol sizes={{ xs: 12, sm: 9 }}>
+          {/** Medical Conditions Cover */}
+          {medical_conditions_cover && (
             <Info>
-              <InfoTitle>{`${lng.moreInfo.medicalCondition} - `}</InfoTitle>
-              {medicalCondition}
+              <InfoTitle>{`${lng.moreInfo.medicalCondition.title} - `}</InfoTitle>
+              {medical_conditions_cover.most_conditions_covered
+                ? lng.moreInfo.medicalCondition.covered
+                : `${lng.moreInfo.medicalCondition.specialised}: ${
+                    lng.moreInfo.medicalCondition.options[
+                      medical_conditions_cover.specialises_in
+                    ]
+                  }`}
             </Info>
           )}
-          {ageLimit && (
+          {/** Coronavirus Cover for Medical Expenses */}
+          {coronavirus_medical_expense !== undefined && (
             <Info>
-              <InfoTitle>{`${lng.moreInfo.ageLimit} - `}</InfoTitle>
-              {ageLimit}
+              <InfoTitle>{`${lng.moreInfo.coronavirusMedicalExpense.title} - `}</InfoTitle>
+              {coronavirus_medical_expense ? lng.moreInfo.yes : lng.moreInfo.no}
+              <Tooltip
+                text={lng.moreInfo.coronavirusMedicalExpense.tooltip}
+                side="left"
+                minWidth="260px"
+                margin={{ left: '5px' }}
+              />
             </Info>
           )}
-          {destination && (
+          {/** Coronavirus Cover for Cancelations */}
+          {coronavirus_cancellation_cover !== undefined && (
             <Info>
-              <InfoTitle>{`${lng.moreInfo.destination} - `}</InfoTitle>
-              {destination}
+              <InfoTitle>{`${lng.moreInfo.coronavirusCancellationCover.title} - `}</InfoTitle>
+              {coronavirus_cancellation_cover
+                ? lng.moreInfo.yes
+                : lng.moreInfo.no}
+              <Tooltip
+                text={lng.moreInfo.coronavirusCancellationCover.tooltip}
+                side="left"
+                minWidth="260px"
+                margin={{ left: '5px' }}
+              />
             </Info>
           )}
-          {durationLimit && (
+          {/** Medical Equipment Cover */}
+          {medical_equipment_cover && (
             <Info>
-              <InfoTitle>{`${lng.moreInfo.durationLimit} - `}</InfoTitle>
-              {durationLimit}
+              <InfoTitle>{`${lng.moreInfo.medicalEquipmentCover.title} - `}</InfoTitle>
+              {medical_equipment_cover.offers_cover
+                ? `${lng.moreInfo.medicalEquipmentCover.offered}${medical_equipment_cover.cover_amount}`
+                : `${lng.moreInfo.medicalEquipmentCover.notOffered}`}
             </Info>
           )}
-          {treatmentStage && (
+          {/** Cruise Cover */}
+          {cruise_cover !== undefined && (
             <Info>
-              <InfoTitle>{`${lng.moreInfo.treatmentStage} - `}</InfoTitle>
-              {treatmentStage}
+              <InfoTitle>{`${lng.moreInfo.cruiseCover} - `}</InfoTitle>
+              {cruise_cover ? lng.moreInfo.yes : lng.moreInfo.no}
+            </Info>
+          )}
+          {/** Medical Screening */}
+          {medical_screening_company && (
+            <Info>
+              <InfoTitle>{`${lng.moreInfo.medicalScreening.title} - `}</InfoTitle>
+              {
+                lng.moreInfo.medicalScreening.companies[
+                  medical_screening_company
+                ]
+              }
+              <Tooltip
+                text={lng.moreInfo.medicalScreening.tooltip}
+                side="left"
+                minWidth="260px"
+                margin={{ left: '5px' }}
+              />
             </Info>
           )}
         </CardCol>

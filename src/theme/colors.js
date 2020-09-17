@@ -76,9 +76,11 @@ export default function() {
       default: '#24afa8',
     },
     tooltip: {
-      tipBackground: '#FFFFFF',
+      borderColor: '#007eae',
+      fontColor: '#515151',
       iconColor: masGreen,
       iconBackground: '#e3fbe3',
+      tipBackground: '#FFFFFF',
     },
   }
 
