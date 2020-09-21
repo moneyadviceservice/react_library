@@ -75,6 +75,10 @@ export default function() {
     infotable: {
       default: '#24afa8',
     },
+    notFound: {
+      heading: masGreen,
+      linksHeading: '#2e3030',
+    },
     tooltip: {
       borderColor: '#007eae',
       fontColor: '#515151',
