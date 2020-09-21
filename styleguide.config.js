@@ -93,6 +93,7 @@ module.exports = {
             './src/components/Footer/index.js',
             './src/components/Header/index.js',
             './src/components/InfoTable/index.js',
+            './src/components/NotFound/index.js',
           ],
         },
         {
