@@ -1,0 +1,15 @@
+{
+  "heading": "Mae'n ddrwg gennym. Ni allwn ddod o hyd i'r dudalen honno.",
+  "subHeading": "Gwiriwch y cyfeiriad y gwnaethoch ei nodi neu ceisiwch eto yn nes ymlaen a dylech allu dod o hyd iddo.",
+  "links": {
+    "title": "Dolenni defnyddiol",
+    "link_1": {
+      "text": "Dychwelwch i hafan y Cyfeiriadur Cyngor Teithio",
+      "url": "https://traveldirectory.moneyadviceservice.org.uk/cy"
+    },
+    "link_2": {
+      "text": "Ewch i hafan y Gwasanaeth Cyngor Arian",
+      "url": "https://www.moneyadviceservice.org.uk/cy"
+    }
+  }
+}

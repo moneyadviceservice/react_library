@@ -10,8 +10,21 @@ import {
 } from './StyledNotFound'
 import { Paragraph as P } from '../Paragraph'
 import { Anchor } from '../Anchor'
+// translations
+import LocaleEn from './locale_en.json'
+import LocaleCy from './locale_cy.json'
 
-const NotFound = ({ a11yTitle, as, ...rest }) => {
+const NotFound = ({
+  a11yTitle,
+  as,
+  children,
+  currentLng,
+  i18nLng,
+  ...rest
+}) => {
+  // locale
+  const lng = i18nLng || (currentLng === 'cy' ? LocaleCy : LocaleEn)
+
   return (
     <NotFoundContainer
       aria-label={a11yTitle}
@@ -22,23 +35,15 @@ const NotFound = ({ a11yTitle, as, ...rest }) => {
       {...rest}
     >
       <NotFoundSection grow={false}>
-        <NotFoundHeading level={1}>
-          We're sorry. We can't find that page.
-        </NotFoundHeading>
-        <P>
-          Please check the address you entered or try again later and you should
-          be able to find it.
-        </P>
+        <NotFoundHeading level={1}>{lng.heading}</NotFoundHeading>
+        <P>{lng.subHeading}</P>
       </NotFoundSection>
       <NotFoundSection grow={false}>
-        <LinksHeading level={2}>Useful links</LinksHeading>
-        <Anchor href="https://traveldirectory.moneyadviceservice.org.uk/">
-          Return to the Travel Advice Directory homepage
-        </Anchor>
-        <Anchor href="https://www.moneyadviceservice.org.uk/">
-          Go to the Money Advice Service homepage
-        </Anchor>
+        <LinksHeading level={2}>{lng.links.title}</LinksHeading>
+        <Anchor href={lng.links.link_1.url}>{lng.links.link_1.text}</Anchor>
+        <Anchor href={lng.links.link_2.url}>{lng.links.link_2.text}</Anchor>
       </NotFoundSection>
+      {children && <NotFoundSection grow={false}>{children}</NotFoundSection>}
     </NotFoundContainer>
   )
 }
@@ -47,14 +52,16 @@ const NotFound = ({ a11yTitle, as, ...rest }) => {
 NotFound.propTypes = {
   /** The DOM tag or react component to use for the element. */
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.func]),
-  /** Content inside component. */
-  children: PropTypes.node,
+  /** Current Language Value */
+  currentLng: PropTypes.oneOf(['en', 'cy']),
+  /** Alternate translations for the card. */
+  i18nLng: PropTypes.object,
   ...genericPropTypes,
 }
 
 NotFound.defaultProps = {
   as: 'section',
-  children: null,
+  currentLng: 'en',
   ...genericPropsDefaults(),
 }
 
