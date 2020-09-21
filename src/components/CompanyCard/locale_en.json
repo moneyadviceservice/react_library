@@ -1,5 +1,9 @@
 {
+  "company": {
+    "noInfo": "Error: company title not available"
+  },
   "getInTouch": {
+    "noInfo": "No contact information available.",
     "website": "Website",
     "email": "Email"
   },
@@ -11,6 +15,7 @@
     "to": "to"
   },
   "moreInfo": {
+    "noInfo": "No more information available to display.",
     "yes": "Yes",
     "no": "No",
     "medicalCondition": {

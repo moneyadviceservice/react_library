@@ -1,5 +1,9 @@
 {
+  "company": {
+    "noInfo": "Gwall: nid yw teitl y cwmni ar gael"
+  },
   "getInTouch": {
+    "noInfo": "Nid oes unrhyw wybodaeth gyswllt ar gael.",
     "website": "Gwefan",
     "email": "E-bost"
   },
@@ -11,6 +15,7 @@
     "to": "i"
   },
   "moreInfo": {
+    "noInfo": "Nid oes mwy o wybodaeth ar gael i'w harddangos.",
     "yes": "Ie",
     "no": "Na",
     "medicalCondition": {

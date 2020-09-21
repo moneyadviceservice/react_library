@@ -61,11 +61,11 @@ const CompanyCard = ({
   // locale
   const lng = i18nLng || (currentLng === 'cy' ? LocaleCy : LocaleEn)
   // destructure firm data from prop
-  const { company, online, opening_times, overview } = data
+  const { company, online, opening_times, overview } = { ...data }
   // get in touch data
-  const { phone, website, email } = online
+  const { phone, website, email } = { ...online }
   // opening times data
-  const { week_days, saturdays, sundays } = opening_times
+  const { week_days, saturdays, sundays } = { ...opening_times }
   // overview data
   const {
     coronavirus_cancellation_cover,
@@ -74,25 +74,30 @@ const CompanyCard = ({
     medical_conditions_cover,
     medical_equipment_cover,
     medical_screening_company,
-  } = overview
+  } = { ...overview }
 
-  return (
+  return company || online || overview ? (
     <CardContainer aria-label={a11yTitle || company} {...rest}>
       <CardRow>
         <CardCol margin={{ bottom: '20px' }}>
-          <CompanyTitle level={2} margin="0">
-            {company}
-          </CompanyTitle>
+          {company ? (
+            <CompanyTitle level={2} margin="0">
+              {company}
+            </CompanyTitle>
+          ) : (
+            <Info>{lng.company.noInfo}</Info>
+          )}
         </CardCol>
       </CardRow>
       <CardRow>
         {/** Left Column */}
         <CardCol sizes={{ xs: 12, sm: 3 }}>
           {/** Buttons */}
+          {!online && <Info>{lng.getInTouch.noInfo}</Info>}
           {phone && (
-            <CardButton href={`tel:${phone}`}>
+            <CardButton href={`tel:${phone.replace(/\s/g, '')}`}>
               <PhoneIcon />
-              {phone}
+              {phone.replace(/\s/g, '')}
             </CardButton>
           )}
           {website && (
@@ -108,19 +113,21 @@ const CompanyCard = ({
             </CardButton>
           )}
           {/** Opening Times */}
-          {(week_days.opens || saturdays.opens || sundays.opens) && (
-            <Info margin={{ top: '5px' }}>
-              {lng.openingTimes.title}
-              <Tooltip
-                text={openingHoursTooltip(opening_times, lng)}
-                minWidth={currentLng === 'cy' ? '275px' : '230px'}
-                margin={{ left: '5px' }}
-              />
-            </Info>
-          )}
+          {opening_times &&
+            (week_days.opens || saturdays.opens || sundays.opens) && (
+              <Info margin={{ top: '5px' }}>
+                {lng.openingTimes.title}
+                <Tooltip
+                  text={openingHoursTooltip(opening_times, lng)}
+                  minWidth={currentLng === 'cy' ? '275px' : '230px'}
+                  margin={{ left: '5px' }}
+                />
+              </Info>
+            )}
         </CardCol>
         {/** Right Column */}
         <CardCol sizes={{ xs: 12, sm: 9 }}>
+          {!overview && <Info>{lng.moreInfo.noInfo}</Info>}
           {/** Medical Conditions Cover */}
           {medical_conditions_cover && (
             <Info>
@@ -167,7 +174,11 @@ const CompanyCard = ({
             <Info>
               <InfoTitle>{`${lng.moreInfo.medicalEquipmentCover.title} - `}</InfoTitle>
               {medical_equipment_cover.offers_cover
-                ? `${lng.moreInfo.medicalEquipmentCover.offered}${medical_equipment_cover.cover_amount}`
+                ? `${
+                    lng.moreInfo.medicalEquipmentCover.offered
+                  }${medical_equipment_cover.cover_amount
+                    .toString()
+                    .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}`
                 : `${lng.moreInfo.medicalEquipmentCover.notOffered}`}
             </Info>
           )}
@@ -198,7 +209,7 @@ const CompanyCard = ({
         </CardCol>
       </CardRow>
     </CardContainer>
-  )
+  ) : null
 }
 
 // Documentation
