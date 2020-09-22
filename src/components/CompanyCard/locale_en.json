@@ -9,7 +9,7 @@
   },
   "openingTimes": {
     "title": "Opening hours",
-    "weekdays": "Monday to Friday",
+    "weekdays": "Weekdays",
     "saturday": "Saturday",
     "sunday": "Sunday",
     "to": "to"
