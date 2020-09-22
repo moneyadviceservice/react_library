@@ -19,6 +19,8 @@ const NotFound = ({
   as,
   children,
   currentLng,
+  linkText,
+  LinkUrl,
   i18nLng,
   ...rest
 }) => {
@@ -40,7 +42,9 @@ const NotFound = ({
       </NotFoundSection>
       <NotFoundSection grow={false}>
         <LinksHeading level={2}>{lng.links.title}</LinksHeading>
-        <Anchor href={lng.links.link_1.url}>{lng.links.link_1.text}</Anchor>
+        <Anchor href={LinkUrl || lng.links.link_1.url}>
+          {linkText || lng.links.link_1.text}
+        </Anchor>
         <Anchor href={lng.links.link_2.url}>{lng.links.link_2.text}</Anchor>
       </NotFoundSection>
       {children && <NotFoundSection grow={false}>{children}</NotFoundSection>}
@@ -54,6 +58,10 @@ NotFound.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.func]),
   /** Current Language Value */
   currentLng: PropTypes.oneOf(['en', 'cy']),
+  /** Alternate text to be displayed in the directory link. */
+  linkText: PropTypes.string,
+  /** Alternate directory link url. */
+  LinkUrl: PropTypes.string,
   /** Alternate translations for the card. */
   i18nLng: PropTypes.object,
   ...genericPropTypes,
