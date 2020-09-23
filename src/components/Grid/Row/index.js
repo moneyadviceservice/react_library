@@ -25,10 +25,13 @@ function Row({
 }) {
   const renderChildren = (children, noGutter) => {
     //The <Row/> renders it's children, but passes in this.props.noGutter to each child
-    return React.Children.map(children, child =>
-      React.cloneElement(child, {
-        noGutter: noGutter,
-      })
+    return React.Children.map(
+      children,
+      child =>
+        child &&
+        React.cloneElement(child, {
+          noGutter: noGutter,
+        })
     )
   }
 

@@ -40,7 +40,7 @@ const firm = {
       specialises_in: 'cancer'
     },
     medical_equipment_cover: {
-      cover_amount: 1000,
+      cover_amount: 1000000,
       offers_cover: true
     },
     medical_screening_company: 'verisik'

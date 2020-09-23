@@ -1,16 +1,21 @@
 {
+  "company": {
+    "noInfo": "Error: company title not available"
+  },
   "getInTouch": {
+    "noInfo": "No contact information available.",
     "website": "Website",
     "email": "Email"
   },
   "openingTimes": {
     "title": "Opening hours",
-    "weekdays": "Monday to Friday",
+    "weekdays": "Weekdays",
     "saturday": "Saturday",
     "sunday": "Sunday",
     "to": "to"
   },
   "moreInfo": {
+    "noInfo": "No more information available to display.",
     "yes": "Yes",
     "no": "No",
     "medicalCondition": {
@@ -31,7 +36,7 @@
     },
     "coronavirusCancellationCover": {
       "title": "Coronavirus cover if trip cancelled",
-      "tooltip": "Not all policies will provide cancellation cover if the cancellation is linked to Coronavirus, but some will. Even if this cover is included, check the terms and conditions relating to cancellation carefully before you buy."
+      "tooltip": "Not all policies will provide cancellation cover if the cancellation is linked to Coronavirus, but some will.\nFirms that have answered 'yes' to this question should offer cover whether or not you have the virus yourself or you have to self-isolate because you have been in contact with someone else who has the virus.\nEven if this cover is included, check the terms and conditions relating to cancellation carefully before you buy."
     },
     "medicalEquipmentCover": {
       "title": "Medical equipment cover",

@@ -1,0 +1,15 @@
+{
+  "heading": "We're sorry. We can't find that page.",
+  "subHeading": "Please check the address you entered or try again later and you should be able to find it.",
+  "links": {
+    "title": "Useful links",
+    "link_1": {
+      "text": "Return to the Travel Advice Directory homepage",
+      "url": "https://traveldirectory.moneyadviceservice.org.uk/en"
+    },
+    "link_2": {
+      "text": "Go to the Money Advice Service homepage",
+      "url": "https://www.moneyadviceservice.org.uk/en"
+    }
+  }
+}
