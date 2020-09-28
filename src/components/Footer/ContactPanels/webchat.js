@@ -39,11 +39,8 @@ const WebchatButton = ({ locale, open }) => {
       .then(imageData => {
         // get image width from response and set busy state
         const i = new Image()
-        i.onload = function() {
-          console.log(i.width + ', ' + i.height)
-          // 170, 46
-          setBusy(false)
-        }
+        i.onload = () => (i.width = 170 && setBusy(false))
+        // live chat img dimensions: 170, 46
         i.src = imageData
       })
       .catch(error => {

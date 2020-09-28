@@ -70,9 +70,11 @@ const ContactPanels = () => {
           </Paragraph>
           <Paragraph textSize="16px">{webchat.text_3}</Paragraph>
           <WebchatButton locale={webchat} open={open} />
-          <Paragraph margin="12px 0" textSize="16px">
-            {webchat.long_wait}
-          </Paragraph>
+          {open && (
+            <Paragraph margin="12px 0" textSize="16px">
+              {webchat.long_wait}
+            </Paragraph>
+          )}
         </ContactPanelColumn>
       </ContactPanelContainer>
 
