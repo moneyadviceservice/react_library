@@ -3,7 +3,7 @@ import axios from 'axios'
 import Button from '../../Button'
 
 const WebchatButton = ({ locale, open }) => {
-  const [busy, setBusy] = useState(true)
+  const [busy, setBusy] = useState(false)
 
   let timestamp = new Date().getTime()
 
@@ -19,6 +19,7 @@ const WebchatButton = ({ locale, open }) => {
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        'X-Requested-With': 'XMLHttpRequest',
       },
       responseType: 'arraybuffer',
       timeout: 10000,
@@ -39,7 +40,7 @@ const WebchatButton = ({ locale, open }) => {
       .then(imageData => {
         // get image width from response and set busy state
         const i = new Image()
-        i.onload = () => (i.width = 170 && setBusy(false))
+        i.onload = () => i.width < 170 && setBusy(true)
         // live chat img dimensions: 170, 46
         i.src = imageData
       })
