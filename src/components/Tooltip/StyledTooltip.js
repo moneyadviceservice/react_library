@@ -73,7 +73,7 @@ const Tip = styled.span`
   border-radius: 2px;
   font-size: 0.875rem;
   color: ${({ theme }) => theme.colors.tooltip.fontColor};
-  line-height: 1rem;
+  line-height: 1.25rem;
   white-space: pre-wrap;
   background-color: ${({ theme }) => theme.colors.tooltip.tipBackground};
   box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);

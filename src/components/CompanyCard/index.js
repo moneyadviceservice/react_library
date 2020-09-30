@@ -181,7 +181,7 @@ const CompanyCard = ({
             <Info>
               <InfoTitle>{`${lng.moreInfo.medicalEquipmentCover.title} - `}</InfoTitle>
               {medical_equipment_cover.offers_cover
-                ? `${lng.moreInfo.medicalEquipmentCover.offered} ${medical_equipment_cover.cover_amount}`
+                ? `${lng.moreInfo.medicalEquipmentCover.offered}${medical_equipment_cover.cover_amount}`
                 : `${lng.moreInfo.medicalEquipmentCover.notOffered}`}
             </Info>
           )}

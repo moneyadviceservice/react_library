@@ -41,7 +41,7 @@
     },
     "medicalEquipmentCover": {
       "title": "Gorchudd offer meddygol",
-      "offered": "Ie: hyd at £",
+      "offered": "Ie, hyd at £",
       "notOffered": "Ni chynigir gorchudd ar gyfer offer meddygol."
     },
     "cruiseCover": "Clawr mordeithio",
