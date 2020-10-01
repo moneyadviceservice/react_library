@@ -10,9 +10,11 @@ import {
   CardButton,
   Info,
   InfoTitle,
+  TooltipAnchor,
 } from './StyledCompanyCard'
 import { Tooltip } from '../Tooltip'
 import { Inline } from '../Inline'
+import { Anchor } from '../Anchor'
 // svg icons
 import PhoneIcon from '../../assets/Images/phone_volume.svg'
 import ExternalLinkIcon from '../../assets/Images/external_link.svg'
@@ -95,9 +97,9 @@ const CompanyCard = ({
           {/** Buttons */}
           {!online && <Info>{lng.getInTouch.noInfo}</Info>}
           {phone && (
-            <CardButton href={`tel:${phone.replace(/\s/g, '')}`}>
+            <CardButton href={`tel:${phone}`}>
               <PhoneIcon />
-              {phone.replace(/\s/g, '')}
+              {phone}
             </CardButton>
           )}
           {website && (
@@ -115,14 +117,15 @@ const CompanyCard = ({
           {/** Opening Times */}
           {opening_times &&
             (week_days.opens || saturdays.opens || sundays.opens) && (
-              <Info margin={{ top: '5px' }}>
-                {lng.openingTimes.title}
-                <Tooltip
-                  text={openingHoursTooltip(opening_times, lng)}
-                  minWidth={currentLng === 'cy' ? '235px' : '185px'}
-                  margin={{ left: '5px' }}
-                />
-              </Info>
+              <Tooltip
+                text={openingHoursTooltip(opening_times, lng)}
+                minWidth={currentLng === 'cy' ? '240px' : '190px'}
+                margin={{ left: '5px' }}
+              >
+                <Anchor width="auto" margin={{ top: '5px' }}>
+                  {lng.openingTimes.title}
+                </Anchor>
+              </Tooltip>
             )}
         </CardCol>
         {/** Right Column */}
@@ -134,7 +137,7 @@ const CompanyCard = ({
               <InfoTitle>{`${lng.moreInfo.medicalCondition.title} - `}</InfoTitle>
               {medical_conditions_cover.most_conditions_covered
                 ? lng.moreInfo.medicalCondition.covered
-                : `${lng.moreInfo.medicalCondition.specialised}: ${
+                : `${lng.moreInfo.medicalCondition.specialised} ${
                     lng.moreInfo.medicalCondition.options[
                       medical_conditions_cover.specialises_in
                     ]
@@ -148,10 +151,12 @@ const CompanyCard = ({
               {coronavirus_medical_expense ? lng.moreInfo.yes : lng.moreInfo.no}
               <Tooltip
                 text={lng.moreInfo.coronavirusMedicalExpense.tooltip}
-                side="left"
+                side={{ xs: 'bottom', md: 'left' }}
                 minWidth="260px"
                 margin={{ left: '5px' }}
-              />
+              >
+                <TooltipAnchor>{lng.moreInfo.info}</TooltipAnchor>
+              </Tooltip>
             </Info>
           )}
           {/** Coronavirus Cover for Cancelations */}
@@ -163,10 +168,12 @@ const CompanyCard = ({
                 : lng.moreInfo.no}
               <Tooltip
                 text={lng.moreInfo.coronavirusCancellationCover.tooltip}
-                side="left"
+                side={{ xs: 'bottom', md: 'left' }}
                 minWidth="260px"
                 margin={{ left: '5px' }}
-              />
+              >
+                <TooltipAnchor>{lng.moreInfo.info}</TooltipAnchor>
+              </Tooltip>
             </Info>
           )}
           {/** Medical Equipment Cover */}
@@ -174,11 +181,7 @@ const CompanyCard = ({
             <Info>
               <InfoTitle>{`${lng.moreInfo.medicalEquipmentCover.title} - `}</InfoTitle>
               {medical_equipment_cover.offers_cover
-                ? `${
-                    lng.moreInfo.medicalEquipmentCover.offered
-                  }${medical_equipment_cover.cover_amount
-                    .toString()
-                    .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}`
+                ? `${lng.moreInfo.medicalEquipmentCover.offered}${medical_equipment_cover.cover_amount}`
                 : `${lng.moreInfo.medicalEquipmentCover.notOffered}`}
             </Info>
           )}
@@ -200,10 +203,12 @@ const CompanyCard = ({
               }
               <Tooltip
                 text={lng.moreInfo.medicalScreening.tooltip}
-                side="left"
+                side={{ xs: 'bottom', md: 'left' }}
                 minWidth="260px"
                 margin={{ left: '5px' }}
-              />
+              >
+                <TooltipAnchor>{lng.moreInfo.info}</TooltipAnchor>
+              </Tooltip>
             </Info>
           )}
         </CardCol>

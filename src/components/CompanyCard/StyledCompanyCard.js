@@ -5,6 +5,7 @@ import { Heading } from '../Heading'
 import Button from '../Button'
 import { Paragraph } from '../Paragraph'
 import { Inline } from '../Inline'
+import { Anchor } from '../Anchor'
 import { resolveMedia } from '../../utils/helpers'
 
 const CardContainer = styled(Col)`
@@ -84,6 +85,11 @@ const InfoTitle = styled(Inline)`
   font-weight: 700;
 `
 
+const TooltipAnchor = styled(Anchor)`
+  font-style: italic;
+  font-size: 16px;
+`
+
 export {
   CardContainer,
   CardRow,
@@ -92,4 +98,5 @@ export {
   CardButton,
   Info,
   InfoTitle,
+  TooltipAnchor,
 }
