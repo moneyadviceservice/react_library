@@ -8,22 +8,12 @@ const WebchatButton = ({ locale, open }) => {
   let timestamp = new Date().getTime()
 
   // prettier-ignore
-  const requestUrl = `https://cors-anywhere.herokuapp.com/https://webchat.moneyadviceservice.org.uk/stat.gif?u=${parseInt(Math.random() * 1000)}-${timestamp}&d=www.moneyadviceservice.org.uk&timestamp=${timestamp}`
+  const requestUrl = `https://webchat.moneyadviceservice.org.uk/stat.gif?u=${parseInt(Math.random() * 1000)}-${timestamp}&d=www.moneyadviceservice.org.uk&timestamp=${timestamp}`
 
   const webchatUrl = `https://webchat.moneyadviceservice.org.uk/newchat/chat.aspx?domain=www.moneyadviceservice.org.uk&timestamp=${timestamp}`
 
   useEffect(() => {
-    axios({
-      method: 'get',
-      url: requestUrl,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-        'X-Requested-With': 'XMLHttpRequest',
-      },
-      responseType: 'arraybuffer',
-      timeout: 10000,
-    })
+    axios(requestUrl)
       .then(({ data }) => {
         // create base64 image from arraybuffer response
         let b64encoded = btoa(
