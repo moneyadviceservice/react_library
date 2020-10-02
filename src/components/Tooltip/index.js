@@ -15,6 +15,7 @@ const Tooltip = ({
   const node = useRef()
   const [show, setShow] = useState(false)
 
+  /** Manage clicks */
   const handleClick = () => {
     if (!show) {
       setShow(true)

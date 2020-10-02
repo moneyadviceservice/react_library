@@ -80,6 +80,7 @@ const CompanyCard = ({
 
   return company || online || overview ? (
     <CardContainer aria-label={a11yTitle || company} {...rest}>
+      {/** Title Row */}
       <CardRow>
         <CardCol margin={{ bottom: '20px' }}>
           {company ? (
@@ -91,9 +92,10 @@ const CompanyCard = ({
           )}
         </CardCol>
       </CardRow>
+      {/** Content Row */}
       <CardRow>
         {/** Left Column */}
-        <CardCol sizes={{ xs: 12, sm: 3 }}>
+        <CardCol left sizes={{ xs: 12, sm: 3 }}>
           {/** Buttons */}
           {!online && <Info>{lng.getInTouch.noInfo}</Info>}
           {phone && (
@@ -121,6 +123,7 @@ const CompanyCard = ({
                 text={openingHoursTooltip(opening_times, lng)}
                 minWidth={currentLng === 'cy' ? '240px' : '190px'}
                 margin={{ left: '5px' }}
+                side="bottom"
               >
                 <Anchor width="auto" margin={{ top: '5px' }}>
                   {lng.openingTimes.title}
