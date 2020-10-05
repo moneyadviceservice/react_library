@@ -81,6 +81,7 @@ export default function() {
     },
     tooltip: {
       borderColor: '#007eae',
+      closeBorder: '#394752',
       fontColor: '#515151',
       iconColor: masGreen,
       iconBackground: '#e3fbe3',

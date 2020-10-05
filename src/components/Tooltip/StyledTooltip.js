@@ -118,7 +118,7 @@ const Icon = styled(Anchor)`
 
 const TipClose = styled(Button)`
   background-color: ${({ theme }) => theme.colors.tooltip.tipBackground};
-  border: 2px solid #394752;
+  border: 2px solid ${({ theme }) => theme.colors.tooltip.closeBorder};
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -131,7 +131,7 @@ const TipClose = styled(Button)`
 
   &:active {
     padding-top: 1px;
-    border-bottom: 2px solid #394752;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.tooltip.closeBorder};
   }
 
   & svg {
