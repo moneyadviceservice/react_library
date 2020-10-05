@@ -154,7 +154,7 @@ const CompanyCard = ({
               {coronavirus_medical_expense ? lng.moreInfo.yes : lng.moreInfo.no}
               <Tooltip
                 text={lng.moreInfo.coronavirusMedicalExpense.tooltip}
-                side={{ xs: 'bottom', md: 'left' }}
+                side="left"
                 minWidth="260px"
                 margin={{ left: '5px' }}
               >
@@ -171,7 +171,7 @@ const CompanyCard = ({
                 : lng.moreInfo.no}
               <Tooltip
                 text={lng.moreInfo.coronavirusCancellationCover.tooltip}
-                side={{ xs: 'bottom', md: 'left' }}
+                side="left"
                 minWidth="260px"
                 margin={{ left: '5px' }}
               >
@@ -206,7 +206,7 @@ const CompanyCard = ({
               }
               <Tooltip
                 text={lng.moreInfo.medicalScreening.tooltip}
-                side={{ xs: 'bottom', md: 'left' }}
+                side="left"
                 minWidth="260px"
                 margin={{ left: '5px' }}
               >

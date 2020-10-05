@@ -54,7 +54,7 @@ const Tooltip = ({
       {show && (
         <Tip minWidth={minWidth} side={side}>
           {text}
-          {closeBtn && (
+          {!hover && closeBtn && (
             <TipClose plain onClick={() => setShow(false)}>
               <MobileClose />
             </TipClose>
