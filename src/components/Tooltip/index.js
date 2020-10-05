@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
-import { StyledTooltip, Icon, Tip } from './StyledTooltip'
+import { StyledTooltip, Icon, Tip, TipClose } from './StyledTooltip'
+import MobileClose from '../../assets/Images/mobile_close.svg'
 
 const Tooltip = ({
   a11yTitle,
@@ -52,6 +53,9 @@ const Tooltip = ({
       {show && (
         <Tip minWidth={minWidth} side={side}>
           {text}
+          <TipClose plain onClick={() => setShow(false)}>
+            <MobileClose />
+          </TipClose>
         </Tip>
       )}
     </StyledTooltip>

@@ -5,6 +5,7 @@ import {
   resolveMedia,
 } from '../../utils/helpers'
 import { Anchor } from '../Anchor'
+import Button from '../Button'
 
 const StyledTooltip = styled.span`
   ${genericStyles}
@@ -115,4 +116,28 @@ const Icon = styled(Anchor)`
   }
 `
 
-export { StyledTooltip, Icon, Tip }
+const TipClose = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.tooltip.tipBackground};
+  border: 2px solid #394752;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 1px;
+  /** positioning */
+  display: inline;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+
+  &:active {
+    padding-top: 1px;
+    border-bottom: 2px solid #394752;
+  }
+
+  & svg {
+    width: 11px;
+    height: 11px;
+  }
+`
+
+export { StyledTooltip, Icon, Tip, TipClose }
