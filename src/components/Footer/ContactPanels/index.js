@@ -15,6 +15,7 @@ import {
   PhoneNumber,
 } from './StyledContactPanels'
 // components
+import WebchatButton from './webchat'
 import { Heading } from '../../Heading'
 import { Paragraph } from '../../Paragraph'
 // context
@@ -68,19 +69,12 @@ const ContactPanels = () => {
             {webchat.text_2}
           </Paragraph>
           <Paragraph textSize="16px">{webchat.text_3}</Paragraph>
-          <FooterButtons
-            text={
-              open
-                ? webchat.button_text.available
-                : webchat.button_text.unavailable
-            }
-            alignSelf="center"
-            weight={400}
-            disabled={!open}
-          />
-          <Paragraph margin="12px 0" textSize="16px">
-            {webchat.long_wait}
-          </Paragraph>
+          <WebchatButton locale={webchat} open={open} />
+          {open && (
+            <Paragraph margin="12px 0" textSize="16px">
+              {webchat.long_wait}
+            </Paragraph>
+          )}
         </ContactPanelColumn>
       </ContactPanelContainer>
 
