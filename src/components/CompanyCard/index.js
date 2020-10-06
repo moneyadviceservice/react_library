@@ -80,6 +80,7 @@ const CompanyCard = ({
 
   return company || online || overview ? (
     <CardContainer aria-label={a11yTitle || company} {...rest}>
+      {/** Title Row */}
       <CardRow>
         <CardCol margin={{ bottom: '20px' }}>
           {company ? (
@@ -91,9 +92,10 @@ const CompanyCard = ({
           )}
         </CardCol>
       </CardRow>
+      {/** Content Row */}
       <CardRow>
         {/** Left Column */}
-        <CardCol sizes={{ xs: 12, sm: 3 }}>
+        <CardCol left sizes={{ xs: 12, sm: 3 }}>
           {/** Buttons */}
           {!online && <Info>{lng.getInTouch.noInfo}</Info>}
           {phone && (
@@ -121,6 +123,7 @@ const CompanyCard = ({
                 text={openingHoursTooltip(opening_times, lng)}
                 minWidth={currentLng === 'cy' ? '240px' : '190px'}
                 margin={{ left: '5px' }}
+                side="bottom"
               >
                 <Anchor width="auto" margin={{ top: '5px' }}>
                   {lng.openingTimes.title}
@@ -151,7 +154,7 @@ const CompanyCard = ({
               {coronavirus_medical_expense ? lng.moreInfo.yes : lng.moreInfo.no}
               <Tooltip
                 text={lng.moreInfo.coronavirusMedicalExpense.tooltip}
-                side={{ xs: 'bottom', md: 'left' }}
+                side="left"
                 minWidth="260px"
                 margin={{ left: '5px' }}
               >
@@ -168,7 +171,7 @@ const CompanyCard = ({
                 : lng.moreInfo.no}
               <Tooltip
                 text={lng.moreInfo.coronavirusCancellationCover.tooltip}
-                side={{ xs: 'bottom', md: 'left' }}
+                side="left"
                 minWidth="260px"
                 margin={{ left: '5px' }}
               >
@@ -203,7 +206,7 @@ const CompanyCard = ({
               }
               <Tooltip
                 text={lng.moreInfo.medicalScreening.tooltip}
-                side={{ xs: 'bottom', md: 'left' }}
+                side="left"
                 minWidth="260px"
                 margin={{ left: '5px' }}
               >

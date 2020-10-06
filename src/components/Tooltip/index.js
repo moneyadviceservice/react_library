@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { genericPropTypes, genericPropsDefaults } from '../../utils/prop-types'
-import { StyledTooltip, Icon, Tip } from './StyledTooltip'
+import { StyledTooltip, Icon, Tip, TipClose } from './StyledTooltip'
+import MobileClose from '../../assets/Images/mobile_close.svg'
 
 const Tooltip = ({
   a11yTitle,
   children,
+  closeBtn,
   hover,
   minWidth,
   side,
@@ -15,6 +17,7 @@ const Tooltip = ({
   const node = useRef()
   const [show, setShow] = useState(false)
 
+  /** Manage clicks */
   const handleClick = () => {
     if (!show) {
       setShow(true)
@@ -51,6 +54,11 @@ const Tooltip = ({
       {show && (
         <Tip minWidth={minWidth} side={side}>
           {text}
+          {!hover && closeBtn && (
+            <TipClose plain onClick={() => setShow(false)}>
+              <MobileClose />
+            </TipClose>
+          )}
         </Tip>
       )}
     </StyledTooltip>
@@ -61,6 +69,8 @@ const Tooltip = ({
 Tooltip.propTypes = {
   /** Content inside component. If children are available inside the tooltip component they'll work as the trigger. */
   children: PropTypes.node,
+  /** If false, the Tooltip close button will not display. */
+  closeBtn: PropTypes.bool,
   /** If enabled, the tooltip will show on hover. */
   hover: PropTypes.bool,
   /** Sets the minimum width of the tooltip. Responsive.e */
@@ -73,6 +83,7 @@ Tooltip.propTypes = {
 }
 
 Tooltip.defaultProps = {
+  closeBtn: true,
   minWidth: '160px',
   side: 'right',
   ...genericPropsDefaults(),

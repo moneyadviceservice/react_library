@@ -43,7 +43,18 @@ const CardRow = styled(Row)`
   `}
 `
 
-const CardCol = styled(Col)``
+const CardCol = styled(Col)`
+  ${({ left }) =>
+    left &&
+    css`
+      ${resolveMedia.xs`
+        margin-bottom: 20px;
+      `}
+      ${resolveMedia.sm`
+        margin-bottom: 0;
+      `}
+    `}
+`
 
 const CompanyTitle = styled(Heading)`
   color: ${({ theme }) => theme.colors.companyCard.default};

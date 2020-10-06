@@ -1,12 +1,20 @@
 import styled, { css } from 'styled-components'
-import { genericStyles, responsiveProps } from '../../utils/helpers'
+import {
+  genericStyles,
+  responsiveProps,
+  resolveMedia,
+} from '../../utils/helpers'
 import { Anchor } from '../Anchor'
+import Button from '../Button'
 
 const StyledTooltip = styled.span`
   ${genericStyles}
   display: inline-block;
-  position: relative;
   cursor: pointer;
+
+  ${resolveMedia.sm`
+    position: relative;
+  `}
 `
 
 /** Side styles for popup */
@@ -60,14 +68,23 @@ const renderSide = sideProp => {
 }
 
 const Tip = styled.span`
-  /** conditional styles */
+  /** general positioning */
   display: block;
-  ${({ minWidth }) => responsiveProps('min-width', minWidth)}
-  /** positioning */
   position: absolute;
   z-index: 1000;
-  /** Prop-based side styles */
-  ${({ side }) => renderSide(side)}
+  /** mobile positioning */
+  left: 0;
+  right: 0;
+  max-width: ${({ minWidth }) => (minWidth === '160px' ? '400px' : minWidth)};
+  margin: auto;
+  /** prop-based side positioning */
+  ${resolveMedia.sm`
+    ${({ minWidth }) => responsiveProps('min-width', minWidth)}
+    ${({ side }) => renderSide(side)}
+    max-width: none;
+    margin: 0;
+  `}
+  /** other styles */
   padding: 10px;
   border: 2px solid ${({ theme }) => theme.colors.tooltip.borderColor};
   border-radius: 2px;
@@ -99,4 +116,28 @@ const Icon = styled(Anchor)`
   }
 `
 
-export { StyledTooltip, Icon, Tip }
+const TipClose = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.tooltip.tipBackground};
+  border: 2px solid ${({ theme }) => theme.colors.tooltip.closeBorder};
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 1px;
+  /** positioning */
+  display: inline;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+
+  &:active {
+    padding-top: 1px;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.tooltip.closeBorder};
+  }
+
+  & svg {
+    width: 11px;
+    height: 11px;
+  }
+`
+
+export { StyledTooltip, Icon, Tip, TipClose }
