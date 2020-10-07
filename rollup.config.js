@@ -5,7 +5,6 @@ import svgr from '@svgr/rollup'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
-import { uglify } from 'rollup-plugin-uglify'
 import url from 'rollup-plugin-url'
 // @rollup
 import json from '@rollup/plugin-json'
@@ -25,6 +24,7 @@ export default [
       sourcemap: true,
     },
     plugins: [
+      external(),
       json(),
       svgr(),
       url({
@@ -35,7 +35,6 @@ export default [
         exclude: 'node_modules/**',
         runtimeHelpers: true,
       }),
-      external(),
       resolve(),
       commonjs(),
     ],
@@ -48,6 +47,7 @@ export default [
       format: 'cjs',
     },
     plugins: [
+      external(),
       json(),
       svgr(),
       url({
@@ -58,10 +58,9 @@ export default [
         exclude: 'node_modules/**',
         runtimeHelpers: true,
       }),
-      external(),
       resolve(),
       commonjs(),
-      uglify(),
+      terser(),
     ],
   },
   // UMD
@@ -77,6 +76,7 @@ export default [
       },
     },
     plugins: [
+      external(),
       json(),
       svgr(),
       url({
@@ -87,7 +87,6 @@ export default [
         exclude: 'node_modules/**',
         runtimeHelpers: true,
       }),
-      external(),
       resolve(),
       commonjs(),
     ],
@@ -104,6 +103,7 @@ export default [
       },
     },
     plugins: [
+      external(),
       json(),
       svgr(),
       url({
@@ -114,7 +114,6 @@ export default [
         exclude: 'node_modules/**',
         runtimeHelpers: true,
       }),
-      external(),
       resolve(),
       commonjs(),
       terser(),
@@ -129,6 +128,7 @@ export default [
       exports: 'named',
     },
     plugins: [
+      external(),
       json(),
       svgr(),
       url({
@@ -139,7 +139,6 @@ export default [
         exclude: 'node_modules/**',
         runtimeHelpers: true,
       }),
-      external(),
       resolve(),
       commonjs(),
     ],
@@ -152,6 +151,7 @@ export default [
       exports: 'named',
     },
     plugins: [
+      external(),
       json(),
       svgr(),
       url({
@@ -162,7 +162,6 @@ export default [
         exclude: 'node_modules/**',
         runtimeHelpers: true,
       }),
-      external(),
       resolve(),
       commonjs(),
       terser(),

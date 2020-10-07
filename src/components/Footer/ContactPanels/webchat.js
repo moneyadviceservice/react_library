@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import Button from '../../Button'
 
 const WebchatButton = ({ locale, open }) => {
@@ -13,7 +12,7 @@ const WebchatButton = ({ locale, open }) => {
   const webchatUrl = `https://webchat.moneyadviceservice.org.uk/newchat/chat.aspx?domain=www.moneyadviceservice.org.uk&timestamp=${timestamp}`
 
   useEffect(() => {
-    axios(requestUrl)
+    fetch(requestUrl)
       .then(({ data }) => {
         // create base64 image from arraybuffer response
         let b64encoded = btoa(
