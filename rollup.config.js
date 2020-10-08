@@ -2,12 +2,12 @@
 import external from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
 import svgr from '@svgr/rollup'
-import commonjs from 'rollup-plugin-commonjs'
-import url from 'rollup-plugin-url'
 // @rollup
 import babel from '@rollup/plugin-babel'
+import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import url from '@rollup/plugin-url'
 // package.json
 import packageJSON from './package.json'
 
@@ -35,7 +35,7 @@ export default [
         babelHelpers: 'runtime',
         exclude: 'node_modules/**',
       }),
-      nodeResolve(),
+      nodeResolve({ rootDir: './src' }),
       commonjs(),
     ],
   },
@@ -66,8 +66,8 @@ export default [
         babelHelpers: 'runtime',
         exclude: 'node_modules/**',
       }),
-      nodeResolve(),
-      commonjs(),
+      nodeResolve({ rootDir: './src' }),
+      commonjs({ sourceMap: false }),
       terser(),
     ],
   },
@@ -97,8 +97,8 @@ export default [
         exclude: 'node_modules/**',
         babelHelpers: 'runtime',
       }),
-      nodeResolve(),
-      commonjs(),
+      nodeResolve({ rootDir: './src', browser: true }),
+      commonjs({ sourceMap: false }),
     ],
   },
   {
@@ -126,8 +126,8 @@ export default [
         exclude: 'node_modules/**',
         babelHelpers: 'runtime',
       }),
-      nodeResolve(),
-      commonjs(),
+      nodeResolve({ rootDir: './src', browser: true }),
+      commonjs({ sourceMap: false }),
       terser(),
     ],
   },

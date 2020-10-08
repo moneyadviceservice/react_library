@@ -5,7 +5,6 @@
       {
         "corejs": { "version": 3 },
         "useBuiltIns": "usage",
-        "modules": false,
         "targets": {
           "edge": "17",
           "firefox": "60",
