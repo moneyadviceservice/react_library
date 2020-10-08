@@ -1,6 +1,6 @@
 {
   "name": "@moneypensionservice/directories",
-  "version": "1.8.14",
+  "version": "1.8.15",
   "description": "Directories React Component Library",
   "homepage": "https://moneyadviceservice.github.io/react_library/",
   "repository": {
@@ -31,7 +31,7 @@
   "peerDependencies": {
     "react": "^16.x",
     "react-dom": "^16.x",
-    "styled-components": "^5.x"
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -74,7 +74,7 @@
   "dependencies": {
     "@babel/runtime": "^7.8.4",
     "core-js": "^3.6.5",
-    "styled-components": "^5.x"
+    "styled-components": "^4.4.1"
   },
   "jest": {
     "moduleNameMapper": {

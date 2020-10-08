@@ -22,7 +22,6 @@ export default [
       { file: packageJSON.main, format: 'cjs', sourcemap: true },
       { file: packageJSON.module, format: 'es', exports: 'named' },
     ],
-    external: [/@babel\/runtime/],
     plugins: [
       external(),
       json(),
@@ -53,7 +52,6 @@ export default [
         exports: 'named',
       },
     ],
-    external: [/@babel\/runtime/],
     plugins: [
       external(),
       json(),
