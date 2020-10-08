@@ -22,7 +22,7 @@ export default [
       { file: packageJSON.main, format: 'cjs', sourcemap: true },
       { file: packageJSON.module, format: 'es', exports: 'named' },
     ],
-    external: ['axios'],
+    external: ['axios', 'domain'],
     plugins: [
       external(),
       json(),
@@ -53,7 +53,7 @@ export default [
         exports: 'named',
       },
     ],
-    external: ['axios'],
+    external: ['axios', 'domain'],
     plugins: [
       external(),
       json(),
