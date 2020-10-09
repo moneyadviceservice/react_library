@@ -1,6 +1,6 @@
 {
   "name": "@moneypensionservice/directories",
-  "version": "1.8.20",
+  "version": "1.8.21",
   "description": "Directories React Component Library",
   "homepage": "https://moneyadviceservice.github.io/react_library/",
   "repository": {
@@ -38,6 +38,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/plugin-transform-arrow-functions": "^7.10.1",
     "@babel/plugin-transform-destructuring": "^7.10.4",
+    "@babel/plugin-transform-parameters": "^7.10.5",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/plugin-transform-template-literals": "^7.10.5",
     "@babel/preset-env": "^7.8.4",
@@ -86,5 +87,19 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
   }
 }

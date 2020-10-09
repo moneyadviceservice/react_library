@@ -35,7 +35,7 @@ export default [
         babelHelpers: 'runtime',
         exclude: 'node_modules/**',
       }),
-      nodeResolve({ rootDir: './src', browser: true }),
+      nodeResolve({ rootDir: './src' }),
       commonjs(),
     ],
   },
@@ -56,7 +56,7 @@ export default [
     external: ['axios'],
     plugins: [
       external(),
-      json(),
+      json({ compact: true }),
       svgr(),
       url({
         include: ['**/*.woff', '**/*.woff2'],
@@ -66,7 +66,7 @@ export default [
         babelHelpers: 'runtime',
         exclude: 'node_modules/**',
       }),
-      nodeResolve({ rootDir: './src', browser: true }),
+      nodeResolve({ rootDir: './src' }),
       commonjs({ sourceMap: false }),
       terser(),
     ],
@@ -116,7 +116,7 @@ export default [
     external: ['axios'],
     plugins: [
       external(),
-      json(),
+      json({ compact: true }),
       svgr(),
       url({
         include: ['**/*.woff', '**/*.woff2'],
