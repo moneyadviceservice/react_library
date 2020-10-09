@@ -1,5 +1,3 @@
-// polyfills
-import 'react-app-polyfill/ie11'
 // Theme Provider
 export { default as ThemeProvider } from './components/ThemeProvider'
 // helpers
