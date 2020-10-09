@@ -1,6 +1,6 @@
 {
   "name": "@moneypensionservice/directories",
-  "version": "1.8.19",
+  "version": "1.8.20",
   "description": "Directories React Component Library",
   "homepage": "https://moneyadviceservice.github.io/react_library/",
   "repository": {
@@ -78,6 +78,7 @@
     "@babel/runtime": "^7.8.4",
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "react-app-polyfill": "^1.0.6",
     "styled-components": "^5.x"
   },
   "jest": {
