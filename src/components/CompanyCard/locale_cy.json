@@ -9,7 +9,7 @@
   },
   "openingTimes": {
     "title": "Oriau agor",
-    "weekdays": "Dyddiau'r Wythnos",
+    "weekdays": "Llun - Gwe",
     "saturday": "Dydd Sadwrn",
     "sunday": "Dydd Sul",
     "to": "i"
@@ -20,8 +20,8 @@
     "yes": "Ie",
     "no": "Na",
     "medicalCondition": {
-      "title": "Cyflyrau meddygol dan sylw",
-      "covered": "Mae'r rhan fwyaf o amodau wedi'u cynnwys",
+      "title": "Cyflyrau meddygol sydd wedi'u cynnwys",
+      "covered": "Mwyafrif o gyflyrau wedi'u cynnwys",
       "specialised": "Yn arbenigo mewn",
       "options": {
         "cancer": "canser",
@@ -32,27 +32,27 @@
       }
     },
     "coronavirusMedicalExpense": {
-      "title": "Yswiriant coronafirws ar gyfer costau meddygol",
-      "tooltip": "Ni fydd pob polisi yn darparu ar gyfer argyfyngau meddygol a/neu ddychwelyd os bydd Coronavirus yn effeithio arnoch tra byddwch ar eich taith, ond bydd llawer yn gwneud hynny. Felly gwiriwch hyn bob amser cyn i chi brynu. Hyd yn oed os yw gorchudd Coronavirus wedi'i gynnwys, gwiriwch yn union beth sydd wedi'i orchuddio."
+      "title": "Yswiriant coronafeirws ar gyfer costau meddygol",
+      "tooltip": "Ni fydd pob polisi yn darparu ar gyfer argyfyngau meddygol a/neu ddychwelyd os bydd Coronafeirws yn effeithio arnoch tra byddwch ar eich taith, ond bydd llawer yn gwneud hynny. Felly gwiriwch hyn bob amser cyn i chi brynu. Hyd yn oed os yw yswiriant Coronafeirws wedi'i gynnwys, gwiriwch yn union beth sydd wedi'i gynnwys."
     },
     "coronavirusCancellationCover": {
-      "title": "Yswiriant Coronafirws os bydd y daith yn cael ei chanslo",
-      "tooltip": "Bydd rhai polisïau yn ad-dalu cost eich taith os bydd yn rhaid i chi ganslo oherwydd Coronavirus, ond YN UNIG os yw'r deiliad polisi'n profi'n bositif am Coronavirus ac yn methu â theithio.\nOs na all deiliad y polisi deithio oherwydd ei fod yn hunan-ynysu neu mewn cwarantîn, ni fydd y mwyafrif o bolisïau yn talu allan.\nGwiriwch yr holl amodau polisi gyda'ch darparwr yn ofalus cyn i chi brynu"
+      "title": "Yswiriant coronafirws pe bai'r daith yn cael ei chanslo",
+      "tooltip": "Bydd rhai polisïau yn ad-dalu cost eich taith os bydd yn rhaid i chi ganslo oherwydd Coronafeirws, ond DIM OND os yw deiliad y polisi'n profi'n bositif am Goronafeirws ac yn methu â theithio.\nOs na all deiliad y polisi deithio oherwydd ei fod yn hunan-ynysu neu mewn cwarantîn, ni fydd y mwyafrif o bolisïau yn talu allan.\nGwiriwch yr holl amodau'r polisi gyda'ch darparwr yn ofalus cyn i chi brynu."
     },
     "medicalEquipmentCover": {
-      "title": "Gorchudd offer meddygol",
-      "offered": "Ie, hyd at £",
-      "notOffered": "Ni chynigir gorchudd ar gyfer offer meddygol."
+      "title": "Yswiriant offer meddygol",
+      "offered": "Oes, hyd at £",
+      "notOffered": "Na"
     },
-    "cruiseCover": "Clawr mordeithio",
+    "cruiseCover": "Yswiriant mordaith",
     "medicalScreening": {
       "title": "Sgrinio meddygol",
-      "tooltip": "Os ydych chi'n mynd i gael dyfynbrisiau gan wahanol ddarparwyr, ceisiwch ddefnyddio cwmnïau sy'n defnyddio gwahanol gwmnïau sgrinio meddygol. Gall hyn roi dewis ehangach i chi o bris a/neu yswiriant a gynigir. Mae mwy o wybodaeth am sgrinio meddygol yn ein Cwestiynau Cyffredin ar y sgrin flaenorol.",
+      "tooltip": "Os ydych yn mynd i gael amcan prisiau gan wahanol ddarparwyr, ceisiwch ddefnyddio cwmnïau sy'n defnyddio gwahanol gwmnïau sgrinio meddygol. Gall hyn roi dewis ehangach i chi o bris a/neu yswiriant a gynigir. Mae mwy o wybodaeth am sgrinio meddygol yn ein Cwestiynau Cyffredin ar y sgrin flaenorol.",
       "companies": {
         "verisik": "Verisk",
         "tamis": "Travel & Medical Ins Svcs",
         "protectif": "Protectif",
-        "inhouse": "Sgrinio meddygol yn fewnol"
+        "inhouse": "Sgrinio meddygol mewnol"
       }
     }
   }
