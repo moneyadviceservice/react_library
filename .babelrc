@@ -1,9 +1,30 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "corejs": {
+          "version": 3,
+          "proposals": false
+        },
+        "useBuiltIns": "usage"
+      }
+    ],
+    "@babel/preset-react"
+  ],
   "plugins": [
     "babel-plugin-styled-components",
     "@babel/plugin-transform-arrow-functions",
-    "@babel/plugin-transform-runtime",
+    "@babel/plugin-transform-destructuring",
+    "@babel/plugin-transform-template-literals",
+    "@babel/plugin-transform-parameters",
+    "@babel/plugin-proposal-object-rest-spread",
+    [
+      "@babel/transform-runtime",
+      {
+        "corejs": 3
+      }
+    ],
     ["module-resolver", { "root": ["./src"] }]
   ]
 }

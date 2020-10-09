@@ -2,13 +2,12 @@
 import external from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
 import svgr from '@svgr/rollup'
-import babel from 'rollup-plugin-babel'
-import commonjs from 'rollup-plugin-commonjs'
-import resolve from 'rollup-plugin-node-resolve'
-import { uglify } from 'rollup-plugin-uglify'
-import url from 'rollup-plugin-url'
 // @rollup
+import babel from '@rollup/plugin-babel'
+import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import url from '@rollup/plugin-url'
 // package.json
 import packageJSON from './package.json'
 
@@ -19,12 +18,13 @@ export default [
   // CommonJS
   {
     input,
-    output: {
-      file: packageJSON.main,
-      format: 'cjs',
-      sourcemap: true,
-    },
+    output: [
+      { file: packageJSON.main, format: 'cjs', sourcemap: true },
+      { file: packageJSON.module, format: 'es', exports: 'named' },
+    ],
+    external: ['axios'],
     plugins: [
+      external(),
       json(),
       svgr(),
       url({
@@ -32,36 +32,43 @@ export default [
         limit: Infinity,
       }),
       babel({
+        babelHelpers: 'runtime',
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
       }),
-      external(),
-      resolve(),
+      nodeResolve({ rootDir: './src' }),
       commonjs(),
     ],
   },
   // Minified
   {
     input,
-    output: {
-      file: minifyExtension(packageJSON.main),
-      format: 'cjs',
-    },
+    output: [
+      {
+        file: minifyExtension(packageJSON.main),
+        format: 'cjs',
+      },
+      {
+        file: minifyExtension(packageJSON.module),
+        format: 'es',
+        exports: 'named',
+      },
+    ],
+    external: ['axios'],
     plugins: [
-      json(),
+      external(),
+      json({ compact: true }),
       svgr(),
       url({
         include: ['**/*.woff', '**/*.woff2'],
         limit: Infinity,
       }),
       babel({
+        babelHelpers: 'runtime',
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
       }),
-      external(),
-      resolve(),
-      commonjs(),
-      uglify(),
+      nodeResolve({ rootDir: './src' }),
+      commonjs({ sourceMap: false }),
+      terser(),
     ],
   },
   // UMD
@@ -74,9 +81,12 @@ export default [
       globals: {
         react: 'React',
         'styled-components': 'styled',
+        axios: 'axios',
       },
     },
+    external: ['axios'],
     plugins: [
+      external(),
       json(),
       svgr(),
       url({
@@ -85,11 +95,10 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
-      external(),
-      resolve(),
-      commonjs(),
+      nodeResolve({ rootDir: './src', browser: true }),
+      commonjs({ sourceMap: false }),
     ],
   },
   {
@@ -101,10 +110,13 @@ export default [
       globals: {
         react: 'React',
         'styled-components': 'styled',
+        axios: 'axios',
       },
     },
+    external: ['axios'],
     plugins: [
-      json(),
+      external(),
+      json({ compact: true }),
       svgr(),
       url({
         include: ['**/*.woff', '**/*.woff2'],
@@ -112,59 +124,10 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
-      external(),
-      resolve(),
-      commonjs(),
-      terser(),
-    ],
-  },
-  // ES
-  {
-    input,
-    output: {
-      file: packageJSON.module,
-      format: 'es',
-      exports: 'named',
-    },
-    plugins: [
-      json(),
-      svgr(),
-      url({
-        include: ['**/*.woff', '**/*.woff2'],
-        limit: Infinity,
-      }),
-      babel({
-        exclude: 'node_modules/**',
-        runtimeHelpers: true,
-      }),
-      external(),
-      resolve(),
-      commonjs(),
-    ],
-  },
-  {
-    input,
-    output: {
-      file: minifyExtension(packageJSON.module),
-      format: 'es',
-      exports: 'named',
-    },
-    plugins: [
-      json(),
-      svgr(),
-      url({
-        include: ['**/*.woff', '**/*.woff2'],
-        limit: Infinity,
-      }),
-      babel({
-        exclude: 'node_modules/**',
-        runtimeHelpers: true,
-      }),
-      external(),
-      resolve(),
-      commonjs(),
+      nodeResolve({ rootDir: './src', browser: true }),
+      commonjs({ sourceMap: false }),
       terser(),
     ],
   },
