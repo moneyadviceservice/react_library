@@ -62,7 +62,7 @@ export default function(baseSpacing = 24) {
     heading: {
       level: {
         1: {
-          xs: { ...headingSizing(32, 26) },
+          xs: { ...headingSizing(32, 36) },
           md: { ...headingSizing(40, 42) },
         },
         2: {
