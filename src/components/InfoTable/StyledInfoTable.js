@@ -23,9 +23,10 @@ const TableIcon = styled.span`
 `
 
 const TableHead = styled(Col)`
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   font-weight: 500;
-  padding: 12px;
+  line-height: 1.4375rem;
+  padding: 0.75rem;
 
   ${({ titleColor }) =>
     css`
@@ -38,10 +39,13 @@ const TableHead = styled(Col)`
 `
 
 const TableContent = styled(Col)`
+  font-size: 1rem;
+  line-height: 1.4375rem;
+  color: ${({ theme }) => theme.colors.infotable.content};
   ${({ padding }) =>
     !padding &&
     css`
-      padding: 12px;
+      padding: 1.5rem;
     `}
 `
 
