@@ -8,7 +8,6 @@ import {
   TableContent,
   TableText,
 } from './StyledInfoTable'
-import QuestionIcon from '../../assets/Images/question_mark.svg'
 
 const InfoTable = ({
   a11yTitle,
@@ -33,9 +32,7 @@ const InfoTable = ({
       tableColor={tableColor}
       titleColor={titleColor}
     >
-      <TableIcon titleColor={titleColor}>
-        {icon ? icon : <QuestionIcon />}
-      </TableIcon>
+      {icon && <TableIcon titleColor={titleColor}>{icon}</TableIcon>}
       {title}
     </TableHead>
     <TableContent padding={padding}>
@@ -47,7 +44,7 @@ const InfoTable = ({
 
 // Documentation
 InfoTable.propTypes = {
-  /** Text inside the Label component. Works as the caption for the checkbox element. */
+  /** Displays inside the table element. */
   children: PropTypes.any,
   /** Provide a custom svg icon to the table header. */
   icon: PropTypes.node,

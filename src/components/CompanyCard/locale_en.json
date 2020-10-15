@@ -42,7 +42,7 @@
     "medicalEquipmentCover": {
       "title": "Medical equipment cover",
       "offered": "Yes, up to £",
-      "notOffered": "Cover for medical equipment not offered."
+      "notOffered": "No"
     },
     "cruiseCover": "Cruise cover",
     "medicalScreening": {

@@ -74,6 +74,7 @@ export default function() {
     },
     infotable: {
       default: '#24afa8',
+      content: '#515151',
     },
     notFound: {
       heading: masGreen,
