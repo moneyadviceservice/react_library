@@ -26,6 +26,7 @@ const InfoTable = ({
     {...rest}
   >
     <TableHead
+      forwardedAs="h3"
       direction="row"
       align="center"
       flexWrap="nowrap"

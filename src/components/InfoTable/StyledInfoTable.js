@@ -23,7 +23,7 @@ const TableIcon = styled.span`
 `
 
 const TableHead = styled(Col)`
-  font-size: 1.125rem;
+  font-size: 1.375rem;
   font-weight: 500;
   line-height: 1.4375rem;
   padding: 0.75rem;
