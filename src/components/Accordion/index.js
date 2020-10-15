@@ -76,6 +76,9 @@ const Accordion = ({
         show={open}
         ref={contentRef}
         maxHeight={height}
+        onClick={e => {
+          e.stopPropagation()
+        }}
       >
         {text && <Content>{text}</Content>}
         {children}
