@@ -2,16 +2,18 @@ import styled from 'styled-components'
 import { Paragraph } from '../Paragraph'
 
 const StyledAnchor = styled(Paragraph)`
-  color: ${props => props.colorProp || props.theme.colors.anchor.default};
+  color: ${({ colorProp, theme }) => colorProp || theme.colors.anchor.default};
   text-decoration: none;
 
   &:visited {
-    color: ${props => props.colorProp || props.theme.colors.anchor.default};
+    color: ${({ colorProp, theme }) =>
+      colorProp || theme.colors.anchor.default};
   }
 
   &:hover,
   &:focus {
-    color: ${props => props.colorProp || props.theme.colors.anchor.default};
+    color: ${({ colorProp, theme }) =>
+      colorProp || theme.colors.anchor.default};
     text-decoration: underline;
   }
 
@@ -21,16 +23,15 @@ const StyledAnchor = styled(Paragraph)`
   }
 
   &:focus {
-    outline: solid 0.1875rem ${props => props.theme.colors.anchor.outline};
-    background-color: ${props => props.theme.colors.anchor.focusBg};
-    color: ${props => props.colorProp || props.theme.colors.black};
+    outline: solid 0.1875rem ${({ theme }) => theme.colors.anchor.outline};
+    background-color: ${({ theme }) => theme.colors.anchor.focusBg};
+    color: ${({ colorProp, theme }) => colorProp || theme.colors.black};
   }
 
   // Removes active link colour that is applied in Mobile Safari and adds kerning
   &[href^='tel'] {
-    color: inherit;
+    ${({ colorProp }) => !colorProp && 'color: inherit;'}
     letter-spacing: -1px;
-    text-decoration: none;
   }
 `
 
