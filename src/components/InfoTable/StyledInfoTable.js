@@ -26,7 +26,7 @@ const TableHead = styled(Col)`
   font-size: 1.375rem;
   font-weight: 500;
   line-height: 1.4375rem;
-  padding: 0.75rem;
+  padding: 0.75rem 1.5rem;
 
   ${({ titleColor }) =>
     css`
