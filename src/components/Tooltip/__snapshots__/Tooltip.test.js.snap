@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tooltip /> Snapshot should match hover snapshot 1`] = `
+<div>
+  <span
+    class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
+  >
+    <span>
+      <span>
+        hover
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Tooltip /> Snapshot should match hover snapshot 2`] = `
+<div>
+  <span
+    class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
+  >
+    <span>
+      <span>
+        hover
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Tooltip /> Snapshot should match snapshot 1`] = `
+<div>
+  <span
+    class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
+  >
+    <a
+      class="StyledParagraph-sc-1toaej-0 drRbGa StyledAnchor-sc-1qj1ci5-0 fNhjgf StyledTooltip__Icon-sc-1uvk9zg-2 kLqhMp"
+    >
+      i
+    </a>
+  </span>
+</div>
+`;
+
+exports[`<Tooltip /> Snapshot should match snapshot 2`] = `
+<div>
+  <span
+    class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
+  >
+    <a
+      class="StyledParagraph-sc-1toaej-0 drRbGa StyledAnchor-sc-1qj1ci5-0 fNhjgf StyledTooltip__Icon-sc-1uvk9zg-2 kLqhMp"
+    >
+      i
+    </a>
+  </span>
+</div>
+`;
