@@ -1,34 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Tooltip /> Snapshot should match hover snapshot 1`] = `
-<div>
-  <span
-    class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
-  >
-    <span>
-      <span>
-        hover
-      </span>
-    </span>
-  </span>
-</div>
-`;
-
-exports[`<Tooltip /> Snapshot should match hover snapshot 2`] = `
-<div>
-  <span
-    class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
-  >
-    <span>
-      <span>
-        hover
-      </span>
-    </span>
-  </span>
-</div>
-`;
-
-exports[`<Tooltip /> Snapshot should match snapshot 1`] = `
+exports[`<Tooltip /> Snapshot should match click snapshot 1`] = `
 <div>
   <span
     class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
@@ -42,7 +14,7 @@ exports[`<Tooltip /> Snapshot should match snapshot 1`] = `
 </div>
 `;
 
-exports[`<Tooltip /> Snapshot should match snapshot 2`] = `
+exports[`<Tooltip /> Snapshot should match click snapshot 2`] = `
 <div>
   <span
     class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
@@ -52,6 +24,34 @@ exports[`<Tooltip /> Snapshot should match snapshot 2`] = `
     >
       i
     </a>
+  </span>
+</div>
+`;
+
+exports[`<Tooltip /> Snapshot should match hover snapshot with children 1`] = `
+<div>
+  <span
+    class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
+  >
+    <span>
+      <span>
+        hover
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Tooltip /> Snapshot should match hover snapshot with children 2`] = `
+<div>
+  <span
+    class="StyledTooltip-sc-1uvk9zg-0 dWzGPd"
+  >
+    <span>
+      <span>
+        hover
+      </span>
+    </span>
   </span>
 </div>
 `;
