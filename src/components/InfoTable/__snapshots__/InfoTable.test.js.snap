@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfoTable /> Snapshots should match snapshot with tableColor and titleColor props 1`] = `
+<div>
+  <div
+    aria-label="example"
+    class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledInfoTable__TableContainer-t9zemp-0 iRNxLK"
+  >
+    <h3
+      class="styledCol__ColWrapper-sc-1mivnjm-0 cJqMBd StyledInfoTable__TableHead-t9zemp-2 dWFYiL"
+    >
+      example
+    </h3>
+    <div
+      class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledInfoTable__TableContent-t9zemp-3 esOBTz"
+    >
+      <p
+        class="StyledParagraph-sc-1toaej-0 gpltyO StyledInfoTable__TableText-t9zemp-4"
+      >
+        example content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<InfoTable /> Snapshots should match snapshot with title and textContent props 1`] = `
+<div>
+  <div
+    aria-label="example"
+    class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledInfoTable__TableContainer-t9zemp-0 egTFuN"
+  >
+    <h3
+      class="styledCol__ColWrapper-sc-1mivnjm-0 cJqMBd StyledInfoTable__TableHead-t9zemp-2 ekcFyQ"
+    >
+      example
+    </h3>
+    <div
+      class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledInfoTable__TableContent-t9zemp-3 esOBTz"
+    >
+      <p
+        class="StyledParagraph-sc-1toaej-0 gpltyO StyledInfoTable__TableText-t9zemp-4"
+      >
+        example content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<InfoTable /> Snapshots should match snapshot with title prop and children 1`] = `
+<div>
+  <div
+    aria-label="example"
+    class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledInfoTable__TableContainer-t9zemp-0 egTFuN"
+  >
+    <h3
+      class="styledCol__ColWrapper-sc-1mivnjm-0 cJqMBd StyledInfoTable__TableHead-t9zemp-2 ekcFyQ"
+    >
+      example
+    </h3>
+    <div
+      class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledInfoTable__TableContent-t9zemp-3 esOBTz"
+    >
+      <p>
+        example child
+      </p>
+    </div>
+  </div>
+</div>
+`;
