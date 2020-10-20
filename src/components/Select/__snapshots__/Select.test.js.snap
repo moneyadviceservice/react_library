@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select /> Snapshots should match snapshot disabled 1`] = `
+<div>
+  <label
+    class="StyledSelect__Label-sc-17qnzyp-0 kOMahN"
+    disabled=""
+    for="disabled"
+  >
+    test disabled
+  </label>
+  <select
+    class="StyledSelect__Field-sc-17qnzyp-1 hGHanr"
+    disabled=""
+    id="disabled"
+  >
+    <option
+      value="option 1"
+    >
+      option 1
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<Select /> Snapshots should match snapshot with multiple options 1`] = `
+<div>
+  <label
+    class="StyledSelect__Label-sc-17qnzyp-0 feVND"
+    for="options"
+  >
+    test options
+  </label>
+  <select
+    class="StyledSelect__Field-sc-17qnzyp-1 hGHanr"
+    id="options"
+  >
+    <option
+      value="option1"
+    >
+      option1
+    </option>
+    <option
+      value="option2"
+    >
+      option2
+    </option>
+    <option
+      value="option3"
+    >
+      option3
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<Select /> Snapshots should match snapshot with options, id and label 1`] = `
+<div>
+  <label
+    class="StyledSelect__Label-sc-17qnzyp-0 feVND"
+    for="test"
+  >
+    test label
+  </label>
+  <select
+    class="StyledSelect__Field-sc-17qnzyp-1 hGHanr"
+    id="test"
+  >
+    <option
+      value="option 1"
+    >
+      option 1
+    </option>
+  </select>
+</div>
+`;
