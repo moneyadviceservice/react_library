@@ -42,7 +42,7 @@ const NotFound = ({
       </NotFoundSection>
       <NotFoundSection grow={false}>
         <LinksHeading level={2}>{lng.links.title}</LinksHeading>
-        <Anchor href={LinkUrl || lng.links.link_1.url}>
+        <Anchor data-testid="url" href={LinkUrl || lng.links.link_1.url}>
           {linkText || lng.links.link_1.text}
         </Anchor>
         <Anchor href={lng.links.link_2.url}>{lng.links.link_2.text}</Anchor>
