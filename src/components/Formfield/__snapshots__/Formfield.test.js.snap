@@ -3,10 +3,11 @@
 exports[`<Formfield /> Snapshots should match snapshot with legend prop and children element 1`] = `
 <div>
   <fieldset
-    class="StyledFormfield-yeky1l-0 fvMpSK"
+    aria-label="example"
+    class="StyledFormfield-yeky1l-0 kIEUKv"
   >
     <legend
-      class="StyledFormfield__Legend-yeky1l-1 haPxoA"
+      class="StyledFormfield__Legend-yeky1l-1 bhMqHd"
     >
       example
     </legend>

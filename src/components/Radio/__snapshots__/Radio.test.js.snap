@@ -3,15 +3,18 @@
 exports[`<Radio /> Snapshots should match snapshot with checked and disabled prop 1`] = `
 <div>
   <label
-    class="StyledRadio__Label-sc-1awvsvp-0 fOeuR"
+    class="StyledRadio__Label-sc-1awvsvp-0 fDTlvj"
     disabled=""
   >
     <input
       checked=""
-      class="StyledRadio__Field-sc-1awvsvp-1 atQEc"
+      class="StyledRadio__Field-sc-1awvsvp-1 bBSLqf"
       disabled=""
       type="radio"
       value=""
+    />
+    <p
+      class="StyledParagraph-sc-1toaej-0 ZKQVH"
     />
   </label>
 </div>
@@ -20,13 +23,16 @@ exports[`<Radio /> Snapshots should match snapshot with checked and disabled pro
 exports[`<Radio /> Snapshots should match snapshot with checked prop 1`] = `
 <div>
   <label
-    class="StyledRadio__Label-sc-1awvsvp-0 jyUodG"
+    class="StyledRadio__Label-sc-1awvsvp-0 fYWYHJ"
   >
     <input
       checked=""
-      class="StyledRadio__Field-sc-1awvsvp-1 atQEc"
+      class="StyledRadio__Field-sc-1awvsvp-1 bBSLqf"
       type="radio"
       value=""
+    />
+    <p
+      class="StyledParagraph-sc-1toaej-0 ZKQVH"
     />
   </label>
 </div>
@@ -35,14 +41,17 @@ exports[`<Radio /> Snapshots should match snapshot with checked prop 1`] = `
 exports[`<Radio /> Snapshots should match snapshot with disabled prop 1`] = `
 <div>
   <label
-    class="StyledRadio__Label-sc-1awvsvp-0 fOeuR"
+    class="StyledRadio__Label-sc-1awvsvp-0 fDTlvj"
     disabled=""
   >
     <input
-      class="StyledRadio__Field-sc-1awvsvp-1 atQEc"
+      class="StyledRadio__Field-sc-1awvsvp-1 bBSLqf"
       disabled=""
       type="radio"
       value=""
+    />
+    <p
+      class="StyledParagraph-sc-1toaej-0 ZKQVH"
     />
   </label>
 </div>
@@ -51,12 +60,15 @@ exports[`<Radio /> Snapshots should match snapshot with disabled prop 1`] = `
 exports[`<Radio /> Snapshots should match snapshot without props 1`] = `
 <div>
   <label
-    class="StyledRadio__Label-sc-1awvsvp-0 jyUodG"
+    class="StyledRadio__Label-sc-1awvsvp-0 fYWYHJ"
   >
     <input
-      class="StyledRadio__Field-sc-1awvsvp-1 atQEc"
+      class="StyledRadio__Field-sc-1awvsvp-1 bBSLqf"
       type="radio"
       value=""
+    />
+    <p
+      class="StyledParagraph-sc-1toaej-0 ZKQVH"
     />
   </label>
 </div>

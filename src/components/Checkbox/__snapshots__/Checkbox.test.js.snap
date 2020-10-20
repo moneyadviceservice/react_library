@@ -3,12 +3,12 @@
 exports[`<Checkbox /> Snapshots should match snapshot with disabled prop 1`] = `
 <div>
   <label
-    class="StyledCheckbox__Label-sc-1atc3e8-0 fsfXDH"
+    class="StyledCheckbox__Label-sc-1atc3e8-0 dZCEwt"
     disabled=""
   >
     <input
       aria-required="false"
-      class="StyledCheckbox__Field-sc-1atc3e8-1 jaeJwW"
+      class="StyledCheckbox__Field-sc-1atc3e8-1 ggmXuk"
       disabled=""
       type="checkbox"
       value=""
@@ -20,11 +20,11 @@ exports[`<Checkbox /> Snapshots should match snapshot with disabled prop 1`] = `
 exports[`<Checkbox /> Snapshots should match snapshot without props 1`] = `
 <div>
   <label
-    class="StyledCheckbox__Label-sc-1atc3e8-0 bVAspM"
+    class="StyledCheckbox__Label-sc-1atc3e8-0 hGMOrn"
   >
     <input
       aria-required="false"
-      class="StyledCheckbox__Field-sc-1atc3e8-1 jaeJwW"
+      class="StyledCheckbox__Field-sc-1atc3e8-1 ggmXuk"
       type="checkbox"
       value=""
     />
