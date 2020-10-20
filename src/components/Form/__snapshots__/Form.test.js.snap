@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> Snapshots should match snapshot with children element 1`] = `
+<div>
+  <form
+    class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledForm-j6ft8m-0 hhgDcV"
+  >
+    <p>
+      example child
+    </p>
+  </form>
+</div>
+`;
