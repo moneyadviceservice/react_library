@@ -38,6 +38,7 @@ const Pagination = ({
         href={prevUrl}
         onClick={prevClick}
         noShow={currentPage === 1}
+        data-testid="prevBtn"
       />
       <PaginationCounter>
         {`${i18n.page} ${currentPage} ${i18n.of} ${totalPages}`}
@@ -48,6 +49,7 @@ const Pagination = ({
         href={nextUrl}
         onClick={nextClick}
         noShow={currentPage === totalPages}
+        data-testid="nextBtn"
       />
     </StyledPagination>
   )
