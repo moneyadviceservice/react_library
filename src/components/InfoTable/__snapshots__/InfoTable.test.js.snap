@@ -13,6 +13,7 @@ exports[`<InfoTable /> Snapshots should match snapshot with tableColor and title
     </h3>
     <div
       class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledInfoTable__TableContent-t9zemp-3 esOBTz"
+      data-testid="content"
     >
       <p
         class="StyledParagraph-sc-1toaej-0 gpltyO StyledInfoTable__TableText-t9zemp-4"
@@ -37,6 +38,7 @@ exports[`<InfoTable /> Snapshots should match snapshot with title and textConten
     </h3>
     <div
       class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledInfoTable__TableContent-t9zemp-3 esOBTz"
+      data-testid="content"
     >
       <p
         class="StyledParagraph-sc-1toaej-0 gpltyO StyledInfoTable__TableText-t9zemp-4"
@@ -61,10 +63,9 @@ exports[`<InfoTable /> Snapshots should match snapshot with title prop and child
     </h3>
     <div
       class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledInfoTable__TableContent-t9zemp-3 esOBTz"
+      data-testid="content"
     >
-      <p>
-        example child
-      </p>
+      example child
     </div>
   </div>
 </div>
