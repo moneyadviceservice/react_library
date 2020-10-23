@@ -59,7 +59,7 @@ describe('<Checkbox />', () => {
 
       fireEvent.click(getByTestId('checkbox'))
 
-      expect(onChangeMock).toHaveBeenCalled()
+      expect(onChangeMock).toHaveBeenCalledTimes(1)
     })
   })
 

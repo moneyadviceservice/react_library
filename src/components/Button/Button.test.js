@@ -45,7 +45,7 @@ describe('<Button />', () => {
 
       fireEvent.click(getByText('ok'))
 
-      expect(onClickMock).toHaveBeenCalled()
+      expect(onClickMock).toHaveBeenCalledTimes(1)
     })
   })
 })

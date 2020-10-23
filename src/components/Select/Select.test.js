@@ -66,7 +66,7 @@ describe('<Select />', () => {
         target: { value: 'option2' },
       })
 
-      expect(onChangeMock).toHaveBeenCalled()
+      expect(onChangeMock).toHaveBeenCalledTimes(1)
     })
   })
 })

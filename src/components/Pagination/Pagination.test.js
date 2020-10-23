@@ -39,7 +39,7 @@ describe('<Pagination />', () => {
 
       fireEvent.click(getByTestId('nextBtn'))
 
-      expect(nextClickMock).toHaveBeenCalled()
+      expect(nextClickMock).toHaveBeenCalledTimes(1)
     })
   })
 
@@ -52,7 +52,7 @@ describe('<Pagination />', () => {
 
       fireEvent.click(getByTestId('prevBtn'))
 
-      expect(prevClickMock).toHaveBeenCalled()
+      expect(prevClickMock).toHaveBeenCalledTimes(1)
     })
   })
 

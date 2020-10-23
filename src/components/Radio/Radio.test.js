@@ -37,7 +37,7 @@ describe('<Radio />', () => {
 
       fireEvent.click(getByTestId('radio'))
 
-      expect(onChangeMock).toHaveBeenCalled()
+      expect(onChangeMock).toHaveBeenCalledTimes(1)
     })
   })
 })

@@ -35,7 +35,7 @@ describe('<Header />', () => {
 
       fireEvent.click(getByTestId('localeAnchor'))
 
-      expect(onClickMock).toHaveBeenCalled()
+      expect(onClickMock).toHaveBeenCalledTimes(1)
     })
   })
 })
