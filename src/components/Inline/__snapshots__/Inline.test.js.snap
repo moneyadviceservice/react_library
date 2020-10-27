@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Inline /> Snapshots should match snapshot with children element 1`] = `
+<div>
+  <span
+    class="StyledParagraph-sc-1toaej-0 gpltyO"
+  >
+    example child
+  </span>
+</div>
+`;

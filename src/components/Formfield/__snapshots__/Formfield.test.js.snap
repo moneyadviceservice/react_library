@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Formfield /> Snapshots should match snapshot with legend prop and children element 1`] = `
+<div>
+  <fieldset
+    aria-label="example"
+    class="StyledFormfield-yeky1l-0 kIEUKv"
+  >
+    <legend
+      class="StyledFormfield__Legend-yeky1l-1 bhMqHd"
+    >
+      example
+    </legend>
+    <p>
+      example child
+    </p>
+  </fieldset>
+</div>
+`;

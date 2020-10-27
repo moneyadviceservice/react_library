@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Paragraph /> Snapshots should match snapshot with children element 1`] = `
+<div>
+  <p
+    class="StyledParagraph-sc-1toaej-0 gpltyO"
+  >
+    example child
+  </p>
+</div>
+`;
+
+exports[`<Paragraph /> Snapshots should match snapshot with color and strike props 1`] = `
+<div>
+  <p
+    class="StyledParagraph-sc-1toaej-0 fKkfYQ"
+  >
+    example child
+  </p>
+</div>
+`;
+
+exports[`<Paragraph /> Snapshots should match snapshot with italic, width and margin props 1`] = `
+<div>
+  <p
+    class="StyledParagraph-sc-1toaej-0 gZXJRU"
+  >
+    example child
+  </p>
+</div>
+`;
+
+exports[`<Paragraph /> Snapshots should match snapshot with underline, weight and textAlign props 1`] = `
+<div>
+  <p
+    class="StyledParagraph-sc-1toaej-0 dtXQbJ"
+  >
+    example child
+  </p>
+</div>
+`;

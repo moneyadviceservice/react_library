@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Anchor /> Snapshots should match snapshot 1`] = `
+<div>
+  <a
+    class="StyledParagraph-sc-1toaej-0 gpltyO StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+  >
+    example text
+  </a>
+</div>
+`;
+
+exports[`<Anchor /> Snapshots should match snapshot with italic and textSize props 1`] = `
+<div>
+  <a
+    class="StyledParagraph-sc-1toaej-0 blbiyd StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+  >
+    example text
+  </a>
+</div>
+`;
+
+exports[`<Anchor /> Snapshots should match snapshot with weight and underline props 1`] = `
+<div>
+  <a
+    class="StyledParagraph-sc-1toaej-0 koRzUD StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+  >
+    example text
+  </a>
+</div>
+`;
+
+exports[`<Anchor /> href prop should apply href property to the anchor 1`] = `
+<div>
+  <a
+    class="StyledParagraph-sc-1toaej-0 gpltyO StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+    href="https://www.test.com/"
+  >
+    example
+  </a>
+</div>
+`;

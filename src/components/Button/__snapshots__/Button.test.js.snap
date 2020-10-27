@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Snapshots should match blog snapshot 1`] = `
+<div>
+  <button
+    class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 hrYGQy"
+    type="button"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match default disabled snapshot 1`] = `
+<div>
+  <button
+    class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 cEHaJL"
+    disabled=""
+    type="button"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match default snapshot 1`] = `
+<div>
+  <button
+    class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 cEHaJL"
+    type="button"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match plain snapshot 1`] = `
+<div>
+  <button
+    class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 dBANDC"
+    type="button"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match primary disabled snapshot 1`] = `
+<div>
+  <button
+    class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 gxEGFn"
+    disabled=""
+    type="button"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match primary snapshot 1`] = `
+<div>
+  <button
+    class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 gxEGFn"
+    type="button"
+  />
+</div>
+`;

@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> Snapshots should match snapshot 1`] = `
+<div>
+  <nav
+    class="styledCol__ColWrapper-sc-1mivnjm-0 gaLJSE StyledPagination-hmwnoe-0 cmeGul"
+  >
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="prevBtn"
+      type="button"
+    >
+      &lt; Prev
+    </button>
+    <p
+      class="StyledParagraph-sc-1toaej-0 gpltyO StyledPagination__PaginationCounter-hmwnoe-2 dMIRzi"
+    >
+      Page 2 of 3
+    </p>
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="nextBtn"
+      type="button"
+    >
+      Next &gt;
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`<Pagination /> Snapshots should match snapshot in Welsh 1`] = `
+<div>
+  <nav
+    class="styledCol__ColWrapper-sc-1mivnjm-0 gaLJSE StyledPagination-hmwnoe-0 cmeGul"
+  >
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="prevBtn"
+      type="button"
+    >
+      &lt; Flaenorol
+    </button>
+    <p
+      class="StyledParagraph-sc-1toaej-0 gpltyO StyledPagination__PaginationCounter-hmwnoe-2 dMIRzi"
+    >
+      Tudalen 2 o 3
+    </p>
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="nextBtn"
+      type="button"
+    >
+      Nesaf &gt;
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`<Pagination /> Snapshots should match snapshot in first page 1`] = `
+<div>
+  <nav
+    class="styledCol__ColWrapper-sc-1mivnjm-0 gaLJSE StyledPagination-hmwnoe-0 cmeGul"
+  >
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1 cOvXO"
+      data-testid="prevBtn"
+      type="button"
+    >
+      &lt; Prev
+    </button>
+    <p
+      class="StyledParagraph-sc-1toaej-0 gpltyO StyledPagination__PaginationCounter-hmwnoe-2 dMIRzi"
+    >
+      Page 1 of 2
+    </p>
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="nextBtn"
+      type="button"
+    >
+      Next &gt;
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`<Pagination /> Snapshots should match snapshot in last page 1`] = `
+<div>
+  <nav
+    class="styledCol__ColWrapper-sc-1mivnjm-0 gaLJSE StyledPagination-hmwnoe-0 cmeGul"
+  >
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="prevBtn"
+      type="button"
+    >
+      &lt; Prev
+    </button>
+    <p
+      class="StyledParagraph-sc-1toaej-0 gpltyO StyledPagination__PaginationCounter-hmwnoe-2 dMIRzi"
+    >
+      Page 3 of 3
+    </p>
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1 cOvXO"
+      data-testid="nextBtn"
+      type="button"
+    >
+      Next &gt;
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`<Pagination /> nextUrl prop should apply href property to right button 1`] = `
+<div>
+  <nav
+    class="styledCol__ColWrapper-sc-1mivnjm-0 gaLJSE StyledPagination-hmwnoe-0 cmeGul"
+  >
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="prevBtn"
+      type="button"
+    >
+      &lt; Prev
+    </button>
+    <p
+      class="StyledParagraph-sc-1toaej-0 gpltyO StyledPagination__PaginationCounter-hmwnoe-2 dMIRzi"
+    >
+      Page 2 of 3
+    </p>
+    <a
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="nextBtn"
+      href="https://www.test.com/"
+    >
+      Next &gt;
+    </a>
+  </nav>
+</div>
+`;
+
+exports[`<Pagination /> prevUrl prop should apply href property to left button 1`] = `
+<div>
+  <nav
+    class="styledCol__ColWrapper-sc-1mivnjm-0 gaLJSE StyledPagination-hmwnoe-0 cmeGul"
+  >
+    <a
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="prevBtn"
+      href="https://www.test.com/"
+    >
+      &lt; Prev
+    </a>
+    <p
+      class="StyledParagraph-sc-1toaej-0 gpltyO StyledPagination__PaginationCounter-hmwnoe-2 dMIRzi"
+    >
+      Page 2 of 3
+    </p>
+    <button
+      class="buttonStyles__ButtonWrapper-sc-1c1ve7f-0 jEdQwJ StyledPagination__PaginationButton-hmwnoe-1"
+      data-testid="nextBtn"
+      type="button"
+    >
+      Next &gt;
+    </button>
+  </nav>
+</div>
+`;
