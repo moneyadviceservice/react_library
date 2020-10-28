@@ -1,4 +1,5 @@
-Pagination Component
+### A long list can be divided into several pages using Pagination, and only one page will be loaded at a time.
+Use this component when it will take a long time to load/render all items or if you want to browse the data by navigating through pages.
 
 ```jsx
 import React, { useState } from 'react';
