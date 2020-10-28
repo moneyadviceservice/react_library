@@ -1,4 +1,5 @@
-A check box allowing single values to be selected/deselected.
+### A checkbox allows the user to toggle between checked and unchecked.
+You can build a checkbox using the `Checkbox` component in combination with a `Formfield` component to group controls and use its `legend` prop for the label.
 
 ```jsx
 import { Form, Formfield, Checkbox } from '@moneypensionservice/directories';
