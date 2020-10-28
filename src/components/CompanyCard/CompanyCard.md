@@ -1,4 +1,4 @@
-Displays information about a given company.
+### Displays information about a given company.
 
 ```jsx
 import React, { useState } from 'react';
