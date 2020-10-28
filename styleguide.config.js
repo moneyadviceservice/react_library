@@ -44,15 +44,19 @@ module.exports = {
     {
       name: 'Documentation',
       content: './src/docs/documentation.md',
-      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand' code example
-      usageMode: 'hide', // 'hide' | 'collapse' | 'expand' props
+      pagePerSection: true,
+      sectionDepth: 1,
       sections: [
+        {
+          name: 'Library Setup',
+          content: './src/docs/build.md',
+        },
         {
           name: 'Usage',
           content: './src/docs/usage.md',
         },
         {
-          name: 'ThemeProvider',
+          name: 'ThemeProvider Component',
           content: './src/components/ThemeProvider/ThemeProvider.md',
         },
         {
