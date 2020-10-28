@@ -2,7 +2,7 @@
 [![Build Status](https://img.shields.io/travis/moneyadviceservice/react_library?branch=master)](https://travis-ci.org/github/moneyadviceservice/react_library)
 [![npm version](https://badge.fury.io/js/%40moneypensionservice%2Fdirectories.svg)](https://badge.fury.io/js/%40moneypensionservice%2Fdirectories)
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
-[![](https://img.shields.io/badge/Website-Money%20Pensions%20Service-green)](https://www.moneyadviceservice.org.uk/)
+[![](https://img.shields.io/badge/Styleguidist-Documentation%Website-green)](https://moneyadviceservice.github.io/react_library/)
 
 ## Installation
 The component library is available via NPM or Yarn:
@@ -77,7 +77,7 @@ or via [npmjs.com](npmjs.com) following [this guide](https://docs.npmjs.com/addi
 ## Deploying the [documentation](https://moneyadviceservice.github.io/react_library/)
 Documentation will automatically updated via TravisCI when changes are made to the master branch if the build is successfull. It is available online as a GitHub Page at [https://moneyadviceservice.github.io/react_library/](https://moneyadviceservice.github.io/react_library/).
 
-To generate the Styleguidist documentation to the `dist-docs` directory:
+To generate the Styleguidist documentation to the `dist-docs` directory on your local machine:
 ```shell
   $ npm run docs:build
 ```
