@@ -1,4 +1,5 @@
-Many props are available to style paragraphs by default as shown in the example below.
+### The `Paragraph` component should be used for all text on the page.
+Many props are available to style paragraphs by default as shown in the examples below.
 
 ```jsx
 import { Paragraph as P } from '@moneypensionservice/directories';
