@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> Snapshots should match snapshot 1`] = `
+<div>
+  <header
+    class="styledContainer__ContainerWrapper-ux129m-0 cBvoAu StyledHeader__HeaderContainer-nhaq8b-0 kqbXpf"
+  >
+    <div
+      class="styledRow__RowWrapper-sc-1ip85in-0 XbhRj StyledHeader__MapsBannerRow-nhaq8b-4 gZEGHo"
+    >
+      <div
+        class="styledCol__ColWrapper-sc-1mivnjm-0 echTSp"
+      >
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 hwdKXn StyledHeader__MapsLogo-nhaq8b-5 jhPcbu"
+        >
+          <span
+            class="StyledHeader__MapsLogoText-nhaq8b-6 gqpbPZ"
+          >
+            <span>
+              The Money Advice
+            </span>
+            <span>
+              Service is provided by
+            </span>
+          </span>
+          <test-file-stub />
+        </div>
+      </div>
+    </div>
+    <div
+      class="styledRow__RowWrapper-sc-1ip85in-0 cYiCXW StyledHeader__HeaderRow-nhaq8b-1 bGFUQm"
+    >
+      <div
+        class="styledCol__ColWrapper-sc-1mivnjm-0 hYHTJn"
+      >
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp"
+        >
+          <a
+            aria-label="Money Advice Service"
+            class="StyledParagraph-sc-1toaej-0 cBLpIS StyledAnchor-sc-1qj1ci5-0 fNhjgf StyledHeader__LogoContainer-nhaq8b-3 jcJypd"
+            href="https://www.moneyadviceservice.org.uk/en"
+          >
+            <test-file-stub />
+          </a>
+        </div>
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp"
+        >
+          <a
+            class="StyledParagraph-sc-1toaej-0 hZKqQo StyledAnchor-sc-1qj1ci5-0 jjWyuo StyledHeader__LocaleContainer-nhaq8b-2"
+            data-testid="localeAnchor"
+          >
+            Cymraeg
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`<Header /> Snapshots should match snapshot in Welsh 1`] = `
+<div>
+  <header
+    class="styledContainer__ContainerWrapper-ux129m-0 cBvoAu StyledHeader__HeaderContainer-nhaq8b-0 kqbXpf"
+  >
+    <div
+      class="styledRow__RowWrapper-sc-1ip85in-0 XbhRj StyledHeader__MapsBannerRow-nhaq8b-4 gZEGHo"
+    >
+      <div
+        class="styledCol__ColWrapper-sc-1mivnjm-0 echTSp"
+      >
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 hwdKXn StyledHeader__MapsLogo-nhaq8b-5 jhPcbu"
+        >
+          <span
+            class="StyledHeader__MapsLogoText-nhaq8b-6 gqpbPZ"
+          >
+            <span>
+              Gwasanaeth Cynghori Ariannol
+            </span>
+            <span>
+              yn cael ei ddarparu gan
+            </span>
+          </span>
+          <test-file-stub />
+        </div>
+      </div>
+    </div>
+    <div
+      class="styledRow__RowWrapper-sc-1ip85in-0 cYiCXW StyledHeader__HeaderRow-nhaq8b-1 bGFUQm"
+    >
+      <div
+        class="styledCol__ColWrapper-sc-1mivnjm-0 hYHTJn"
+      >
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp"
+        >
+          <a
+            aria-label="Money Advice Service"
+            class="StyledParagraph-sc-1toaej-0 cBLpIS StyledAnchor-sc-1qj1ci5-0 fNhjgf StyledHeader__LogoContainer-nhaq8b-3 jcJypd"
+            href="https://www.moneyadviceservice.org.uk/en"
+          >
+            <test-file-stub />
+          </a>
+        </div>
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp"
+        >
+          <a
+            class="StyledParagraph-sc-1toaej-0 hZKqQo StyledAnchor-sc-1qj1ci5-0 jjWyuo StyledHeader__LocaleContainer-nhaq8b-2"
+            data-testid="localeAnchor"
+          >
+            English
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`<Header /> lngUrl prop should change the anchor url 1`] = `
+<div>
+  <header
+    class="styledContainer__ContainerWrapper-ux129m-0 cBvoAu StyledHeader__HeaderContainer-nhaq8b-0 kqbXpf"
+  >
+    <div
+      class="styledRow__RowWrapper-sc-1ip85in-0 XbhRj StyledHeader__MapsBannerRow-nhaq8b-4 gZEGHo"
+    >
+      <div
+        class="styledCol__ColWrapper-sc-1mivnjm-0 echTSp"
+      >
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 hwdKXn StyledHeader__MapsLogo-nhaq8b-5 jhPcbu"
+        >
+          <span
+            class="StyledHeader__MapsLogoText-nhaq8b-6 gqpbPZ"
+          >
+            <span>
+              The Money Advice
+            </span>
+            <span>
+              Service is provided by
+            </span>
+          </span>
+          <test-file-stub />
+        </div>
+      </div>
+    </div>
+    <div
+      class="styledRow__RowWrapper-sc-1ip85in-0 cYiCXW StyledHeader__HeaderRow-nhaq8b-1 bGFUQm"
+    >
+      <div
+        class="styledCol__ColWrapper-sc-1mivnjm-0 hYHTJn"
+      >
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp"
+        >
+          <a
+            aria-label="Money Advice Service"
+            class="StyledParagraph-sc-1toaej-0 cBLpIS StyledAnchor-sc-1qj1ci5-0 fNhjgf StyledHeader__LogoContainer-nhaq8b-3 jcJypd"
+            href="https://www.moneyadviceservice.org.uk/en"
+          >
+            <test-file-stub />
+          </a>
+        </div>
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp"
+        >
+          <a
+            class="StyledParagraph-sc-1toaej-0 hZKqQo StyledAnchor-sc-1qj1ci5-0 jjWyuo StyledHeader__LocaleContainer-nhaq8b-2"
+            data-testid="localeAnchor"
+            href="https://www.test.com/"
+          >
+            Cymraeg
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`<Header /> setLng prop should call function on anchor click 1`] = `
+<div>
+  <header
+    class="styledContainer__ContainerWrapper-ux129m-0 cBvoAu StyledHeader__HeaderContainer-nhaq8b-0 kqbXpf"
+  >
+    <div
+      class="styledRow__RowWrapper-sc-1ip85in-0 XbhRj StyledHeader__MapsBannerRow-nhaq8b-4 gZEGHo"
+    >
+      <div
+        class="styledCol__ColWrapper-sc-1mivnjm-0 echTSp"
+      >
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 hwdKXn StyledHeader__MapsLogo-nhaq8b-5 jhPcbu"
+        >
+          <span
+            class="StyledHeader__MapsLogoText-nhaq8b-6 gqpbPZ"
+          >
+            <span>
+              The Money Advice
+            </span>
+            <span>
+              Service is provided by
+            </span>
+          </span>
+          <test-file-stub />
+        </div>
+      </div>
+    </div>
+    <div
+      class="styledRow__RowWrapper-sc-1ip85in-0 cYiCXW StyledHeader__HeaderRow-nhaq8b-1 bGFUQm"
+    >
+      <div
+        class="styledCol__ColWrapper-sc-1mivnjm-0 hYHTJn"
+      >
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp"
+        >
+          <a
+            aria-label="Money Advice Service"
+            class="StyledParagraph-sc-1toaej-0 cBLpIS StyledAnchor-sc-1qj1ci5-0 fNhjgf StyledHeader__LogoContainer-nhaq8b-3 jcJypd"
+            href="https://www.moneyadviceservice.org.uk/en"
+          >
+            <test-file-stub />
+          </a>
+        </div>
+        <div
+          class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp"
+        >
+          <a
+            class="StyledParagraph-sc-1toaej-0 hZKqQo StyledAnchor-sc-1qj1ci5-0 jjWyuo StyledHeader__LocaleContainer-nhaq8b-2"
+            data-testid="localeAnchor"
+          >
+            Cymraeg
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;

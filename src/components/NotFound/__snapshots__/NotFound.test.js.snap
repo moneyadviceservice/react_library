@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> Snapshots should match snapshot 1`] = `
+<div>
+  <section
+    class="styledRow__RowWrapper-sc-1ip85in-0 kGwesl StyledNotFound__NotFoundContainer-v06e70-0 ghBYdL"
+  >
+    <div
+      class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp StyledNotFound__NotFoundSection-v06e70-1"
+    >
+      <h1
+        class="StyledHeading-xxi4nn-0 likqsL StyledNotFound__NotFoundHeading-v06e70-2 cNoFKm"
+      >
+        We're sorry. We can't find that page.
+      </h1>
+      <p
+        class="StyledParagraph-sc-1toaej-0 gpltyO"
+      >
+        Please check the address you entered or try again later and you should be able to find it.
+      </p>
+    </div>
+    <div
+      class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp StyledNotFound__NotFoundSection-v06e70-1"
+    >
+      <h2
+        class="StyledHeading-xxi4nn-0 boqBEm StyledNotFound__LinksHeading-v06e70-3 eClJdW"
+      >
+        Useful links
+      </h2>
+      <a
+        class="StyledParagraph-sc-1toaej-0 gpltyO StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+        data-testid="url"
+        href="https://traveldirectory.moneyadviceservice.org.uk/en"
+      >
+        Return to the Travel Advice Directory homepage
+      </a>
+      <a
+        class="StyledParagraph-sc-1toaej-0 gpltyO StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+        href="https://www.moneyadviceservice.org.uk/en"
+      >
+        Go to the Money Advice Service homepage
+      </a>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`<NotFound /> Snapshots should match snapshot in Welsh 1`] = `
+<div>
+  <section
+    class="styledRow__RowWrapper-sc-1ip85in-0 kGwesl StyledNotFound__NotFoundContainer-v06e70-0 ghBYdL"
+  >
+    <div
+      class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp StyledNotFound__NotFoundSection-v06e70-1"
+    >
+      <h1
+        class="StyledHeading-xxi4nn-0 likqsL StyledNotFound__NotFoundHeading-v06e70-2 cNoFKm"
+      >
+        Mae'n ddrwg gennym. Ni allwn ddod o hyd i'r dudalen honno.
+      </h1>
+      <p
+        class="StyledParagraph-sc-1toaej-0 gpltyO"
+      >
+        Gwiriwch y cyfeiriad y gwnaethoch ei nodi neu ceisiwch eto yn nes ymlaen a dylech allu dod o hyd iddo.
+      </p>
+    </div>
+    <div
+      class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp StyledNotFound__NotFoundSection-v06e70-1"
+    >
+      <h2
+        class="StyledHeading-xxi4nn-0 boqBEm StyledNotFound__LinksHeading-v06e70-3 eClJdW"
+      >
+        Dolenni defnyddiol
+      </h2>
+      <a
+        class="StyledParagraph-sc-1toaej-0 gpltyO StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+        data-testid="url"
+        href="https://traveldirectory.moneyadviceservice.org.uk/cy"
+      >
+        Dychwelwch i hafan y Cyfeiriadur Cyngor Teithio
+      </a>
+      <a
+        class="StyledParagraph-sc-1toaej-0 gpltyO StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+        href="https://www.moneyadviceservice.org.uk/cy"
+      >
+        Ewch i hafan y Gwasanaeth Cyngor Arian
+      </a>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`<NotFound /> custom link props linkText and linkUrl props 1`] = `
+<div>
+  <section
+    class="styledRow__RowWrapper-sc-1ip85in-0 kGwesl StyledNotFound__NotFoundContainer-v06e70-0 ghBYdL"
+  >
+    <div
+      class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp StyledNotFound__NotFoundSection-v06e70-1"
+    >
+      <h1
+        class="StyledHeading-xxi4nn-0 likqsL StyledNotFound__NotFoundHeading-v06e70-2 cNoFKm"
+      >
+        We're sorry. We can't find that page.
+      </h1>
+      <p
+        class="StyledParagraph-sc-1toaej-0 gpltyO"
+      >
+        Please check the address you entered or try again later and you should be able to find it.
+      </p>
+    </div>
+    <div
+      class="styledCol__ColWrapper-sc-1mivnjm-0 kcBKMp StyledNotFound__NotFoundSection-v06e70-1"
+    >
+      <h2
+        class="StyledHeading-xxi4nn-0 boqBEm StyledNotFound__LinksHeading-v06e70-3 eClJdW"
+      >
+        Useful links
+      </h2>
+      <a
+        class="StyledParagraph-sc-1toaej-0 gpltyO StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+        data-testid="url"
+        href="https://www.test.com/"
+      >
+        customLinkText
+      </a>
+      <a
+        class="StyledParagraph-sc-1toaej-0 gpltyO StyledAnchor-sc-1qj1ci5-0 fNhjgf"
+        href="https://www.moneyadviceservice.org.uk/en"
+      >
+        Go to the Money Advice Service homepage
+      </a>
+    </div>
+  </section>
+</div>
+`;

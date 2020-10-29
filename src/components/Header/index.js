@@ -76,6 +76,7 @@ const Header = ({
                 margin="0"
                 onClick={setLng}
                 href={lngUrl}
+                data-testid="localeAnchor"
               >
                 {lng.localeButton}
               </LocaleContainer>

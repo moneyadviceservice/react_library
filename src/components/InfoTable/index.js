@@ -36,7 +36,7 @@ const InfoTable = ({
       {icon && <TableIcon titleColor={titleColor}>{icon}</TableIcon>}
       {title}
     </TableHead>
-    <TableContent padding={padding}>
+    <TableContent padding={padding} data-testid="content">
       {textContent && <TableText>{textContent}</TableText>}
       {children}
     </TableContent>

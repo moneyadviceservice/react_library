@@ -17,7 +17,7 @@ const Select = ({
 }) => (
   <>
     {label && (
-      <Label disabled={disabled} hide={hideLabel} for={id}>
+      <Label disabled={disabled} hide={hideLabel} htmlFor={id}>
         {label}
       </Label>
     )}
@@ -55,7 +55,7 @@ Select.propTypes = {
   /** Sets the width of the select element. */
   width: PropTypes.string,
   /** Options for the select element. */
-  options: PropTypes.array,
+  options: PropTypes.array.isRequired,
   /** On change trigger function event. */
   onChange: PropTypes.func,
   ...genericPropTypes,
