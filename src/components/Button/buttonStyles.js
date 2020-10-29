@@ -122,8 +122,8 @@ const ButtonWrapper = styled.button`
       line-height: 24px;
       border-radius: ${theme.sizes.button.border.radius};`}
   /** padding */
-  ${({ blog, theme }) =>
-    !blog && setStyle('padding', theme.sizes.button.padding)}
+  ${({ blog, theme, padding }) =>
+    !blog && !padding && setStyle('padding', theme.sizes.button.padding)}
   /** border */
   ${({ border, theme }) =>
     !border && borderStyle(theme.sizes.button.border.size)}
