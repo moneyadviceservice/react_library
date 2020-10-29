@@ -63,6 +63,10 @@ module.exports = {
           name: 'Generic Props',
           content: './src/docs/generic_props.md',
         },
+        {
+          name: 'Typography',
+          content: './src/docs/typography.md',
+        },
       ],
     },
     {
@@ -102,7 +106,6 @@ module.exports = {
         },
         {
           name: 'Typography',
-          content: './src/docs/typography.md',
           components: () => [
             './src/components/Anchor/index.js',
             './src/components/Heading/index.js',
