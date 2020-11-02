@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { Col } from '../Grid'
 import { genericStyles } from '../../utils/helpers'
 
-const StyledFormfield = styled.fieldset`
+const StyledFormfield = styled(Col)`
   ${genericStyles}
   ${props => !props.padding && `padding: 0 1.125rem;`}
 `

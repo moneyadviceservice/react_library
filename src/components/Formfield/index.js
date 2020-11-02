@@ -5,7 +5,11 @@ import { StyledFormfield, Legend } from './StyledFormfield'
 
 const Formfield = ({ a11yTitle, children, legend, legendColor, ...rest }) => {
   return (
-    <StyledFormfield aria-label={a11yTitle || legend} {...rest}>
+    <StyledFormfield
+      forwardedAs="fieldset"
+      aria-label={a11yTitle || legend}
+      {...rest}
+    >
       {legend && <Legend color={legendColor}>{legend}</Legend>}
       {children}
     </StyledFormfield>

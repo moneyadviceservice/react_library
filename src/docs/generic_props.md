@@ -1,29 +1,23 @@
-In order to facilitate the customisation of certain elements, some default props were established so that they're able to be modified inline and easier to implement.
-
-### **a11yTitle**
-
-> Custom label to be used by screen readers. When provided, an aria-label will be added to the element.
-
+#### In order to facilitate the customisation of certain elements, some default props were established so that they're able to be modified inline and easier to implement. **These props are available to all the components in this library.**
+---
+## a11yTitle
 ```json
 Prop.Type: String
 ```
-
+When provided, an aria-label will be added to the element.
 ```jsx
 import { Button } from '@moneypensionservice/directories';
 
 <Button 
   a11yTitle='A user friendly label for screen readers' 
-  text='Try me on a Screen Reader' />
+  text='I have an aria-label!' />
 ```
-
-### **alignSelf**
-
-> Aligns the element along the cross axis when contained in a Row or along the column axis when contained in a Column.
-
+---
+## alignSelf
 ```json
 Prop.Type: String
 ```
-
+Aligns the element along the cross axis when contained in a Row or along the column axis when contained in a Column.
 ```jsx
 import { Container, Row, Col, Button } from '@moneypensionservice/directories';
 
@@ -44,15 +38,23 @@ import { Container, Row, Col, Button } from '@moneypensionservice/directories';
   </Row>
 </Container>
 ```
+---
+## as
+```json
+Prop.Type: String
+```
+Renders an element with the specified tag.
+```jsx
+import { Col } from '@moneypensionservice/directories';
 
-### **hide**
-
-> Hides the element when provided by adding `display: none` to the styles.
-
+<Col as='section'>I'm inside a section element!</Col>
+```
+---
+## hide
 ```json
 Prop.Type: Boolean
 ```
-
+Hides the element when provided by adding `display: none` to the styles.
 ```jsx
 import { useState } from 'react'
 import { Button } from '@moneypensionservice/directories';
@@ -64,26 +66,12 @@ const [show, setShow] = useState(true);
   text='Click me!'
   onClick={() => setShow(false)} />
 ```
-
-### **margin**
-
-> The amount of margin around the component. An object can be specified to distinguish horizontal margin, vertical margin, and margin on a particular side.
-
-Prop.Type:
+---
+## margin
 ```json
-STRING:
+Prop.Type: String - "none", "xsmall", "small", "medium", "large", "xlarge" or any valid CSS size.
 
-"none"
-"xsmall"
-"small"
-"medium"
-"large"
-"xlarge"
-"any CSS size"
-
-OBJECT:
-
-{
+Prop.Type: Object - {
   "vertical": "...",
   "horizontal": "...",
   "top": "...",
@@ -92,7 +80,7 @@ OBJECT:
   "right": "..."
 }
 ```
-
+The amount of margin around the component. An object can be specified to distinguish horizontal margin, vertical margin, and margin on a particular side.
 ```jsx
 import { Row, Col, Button } from '@moneypensionservice/directories';
 
@@ -109,25 +97,12 @@ import { Row, Col, Button } from '@moneypensionservice/directories';
   </Col>
 </Row>
 ```
-
-### **padding**
-
-> Sets the padding area on all four sides of an element. An object can be specified to distinguish horizontal padding, vertical padding, and padding on a particular side.
-
-Prop.Type:
+---
+## padding
 ```json
-STRING:
+Prop.Type: String - "xsmall", "small", "medium", "large", "xlarge" or any valid CSS size.
 
-"xsmall"
-"small"
-"medium"
-"large"
-"xlarge"
-"any CSS size"
-
-OBJECT:
-
-{
+Prop.Type: Object - {
   "vertical": "...",
   "horizontal": "...",
   "top": "...",
@@ -136,7 +111,7 @@ OBJECT:
   "right": "..."
 }
 ```
-
+Sets the padding area on all four sides of an element. An object can be specified to distinguish horizontal padding, vertical padding, and padding on a particular side.
 ```jsx
 import { Row, Col, Button } from '@moneypensionservice/directories';
 
@@ -158,59 +133,19 @@ import { Row, Col, Button } from '@moneypensionservice/directories';
   </Col>
 </Row>
 ```
-
-### **border**
-
-> Include a border.
-
-Prop.Type:
+---
+## border
 ```json
-STRING:
+Prop.Type: String: "none", "xsmall", "small", "medium", "large", "xlarge" or "any CSS size".
 
-"none"
-"xsmall"
-"small"
-"medium"
-"large"
-"xlarge"
-"any CSS size"
-
-OBJECT: 
-
-{
-  "color": "black",
-  "size": "xsmall",
-  "style": "solid",
-  "side": "all"
+Prop.Type: Object - {
+  "color": any valid css color value,
+  "size": "none", "xsmall", "small", "medium", "large", "xlarge" or any valid CSS size.
+  "style": any valid css border style,
+  "side": "top", "left", "bottom", "right", "horizontal", "vertical" or "all".
 }
-
-where size could be:
-"xsmall"
-"small"
-"medium"
-"large"
-"xlarge"
-"any CSS size"
-where style could be:
-"solid"
-"dashed"
-"dotted"
-"double"
-"groove"
-"ridge"
-"inset"
-"outset"
-"hidden"
-where side could be:
-"top"
-"left"
-"bottom"
-"right"
-"horizontal"
-"vertical"
-"all"
 ```
-
+Adds a border to the element.
 ```jsx
 import { Row, Col, Button } from '@moneypensionservice/directories';
 
@@ -232,55 +167,29 @@ import { Row, Col, Button } from '@moneypensionservice/directories';
   </Col>
 </Row>
 ```
-
-### **background**
-
-> A color identifier to use for the background or image. For example: 'palevioletred' or '#000324'. Or, a 'url()' for an image.
-
-Prop.Type:
+---
+## background
 ```json
-STRING:
+Prop.Type: String
 
-"palevioletred",
-"salmon",
-"#FF1094"
-"url("http://assets.com/img.png")",
-
-OBJECT: 
-
-{
-  "color": "palevioletred",
-  "opacity": 1,
-  "position": "center center",
-  "image": "url("http://assets.com/img.png")",
-  "repeat": "no-repeat",
-  "size": "cover",
-  "dark": true,
+Prop.Type: Object - {
+  "color": any valid CSS color value,
+  "opacity": Number or any valid CSS opacity value,
+  "position": any valid CSS background-position value,
+  "image": any valid CSS image value (use for background url),
+  "repeat": any valid CSS background-repeat value,
+  "size": any valid CSS background-size value.
 }
-
-Where dark indicates there's a dark background and changes fonts to lighter colors.
-
-Where opacity could be: (this will not work for image backgrounds)
-"weak"
-"medium"
-"strong"
-a number where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent.
-
-Where position could be:
-any valid CSS for background-position
-https://www.w3schools.com/cssref/pr_background-position.asp
 ```
-
+A color identifier to use for the background or image. For example: 'palevioletred' or '#000324'. Or, a 'url()' for an image.
 ```jsx
 import { Container, Row, Col } from '@moneypensionservice/directories';
 
 <Container 
-  background={{
-    image: 'url("https://images.pexels.com/photos/3522094/pexels-photo-3522094.jpeg")',
-    dark: true}}>
+  background='url("https://images.pexels.com/photos/3522094/pexels-photo-3522094.jpeg")'>
   <Row>
-    <Col style={{height: 300}}>
-      This is a column inside a container.
+    <Col style={{height: 300, color: 'white'}} justify='center'>
+      This is a column inside a container with a background picture.
     </Col>
   </Row>
 </Container>

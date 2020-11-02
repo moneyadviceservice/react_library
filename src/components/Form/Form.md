@@ -1,20 +1,20 @@
-A modified Column component that renders a `form` element. All props enabled by the Column component can be used here as well. <br />
-This component also sets some default styles used by its children elements such as `input`.
+### A modified Column component that renders a form HTLM element. 
+All props enabled by the Column component can be used here as well. This component also sets some default styles used by its children elements such as `input`.
 
 ```jsx
-import { Form } from '@moneypensionservice/directories';
+import { Container, Row, Form, Formfield, Select, Button } from '@moneypensionservice/directories';
 
-<Form>
-  <fieldset>
-    <label>
-      Select Me
-      <input type="radio" name="radio" value={'Select Me'} />
-    </label>
-  </fieldset>
-  <fieldset>
-    <label>Name:
-    <input type="text" name="submittedName" autoComplete="name" />
-  </label>
-  </fieldset>
-</Form>
+<Container>
+  <Row>
+    <Form sizes={4}>
+      <Formfield padding="0">
+        <Select
+          id="location"
+          label="Location"
+          options={['NYC', 'DC', 'LA', 'SF']} />
+      </Formfield>
+      <Button text="Submit" type="submit" />
+    </Form>
+  </Row>
+</Container>
 ```

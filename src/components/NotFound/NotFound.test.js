@@ -17,7 +17,7 @@ describe('<NotFound />', () => {
   describe('custom link props', () => {
     it('linkText and linkUrl props', () => {
       const { container, getByTestId } = render(
-        <NotFound linkText="customLinkText" LinkUrl="https://www.test.com/" />
+        <NotFound linkText="customLinkText" linkUrl="https://www.test.com/" />
       )
       // snapshot
       expect(container).toMatchSnapshot()

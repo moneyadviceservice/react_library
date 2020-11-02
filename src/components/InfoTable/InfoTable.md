@@ -1,4 +1,5 @@
-The InfoTable component enables you to display information in a custom table format.
+### The InfoTable component enables you to display information in a custom table format.
+You can either use the `textContent` prop to pass text to be displayed inside the table or for more complex scenarios you can just pass the contents as children. Table colors are also customizable.
 
 ```jsx
 import React, { useState } from 'react';
@@ -18,5 +19,5 @@ const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam se
     textContent={lorem}
     tableColor="aqua"
     titleColor="black" />
-</ Row>
+</Row>
 ```

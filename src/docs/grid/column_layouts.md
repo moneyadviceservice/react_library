@@ -107,7 +107,7 @@ import { Container, Row, Col } from '@moneypensionservice/directories';
       col 9
     </Col>
     <Col sizes={4} debug>
-      col 4 <br />Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.
+      col 4 <br />Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.
     </Col>
     <Col sizes={6} debug>
       col 6 <br />Subsequent columns continue along the new line.

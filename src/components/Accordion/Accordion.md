@@ -1,10 +1,15 @@
-The accordion component lets users show and hide sections of related content on a page. Anchors are used as triggers and collapsing an element will animate the height from its current value to 0.
+### The accordion component lets users show and hide sections of related content on a page.
+Anchors are used as triggers and collapsing an element will animate the height from its current value to 0.
+
+You can configure the accordion item's heading using the `title` prop. Everything you pass in as a child of `Accordion` will be rendered in the accordion's collapsible panel.
+
+To create a controlled accordion, use the `active` prop to set each tab open state as showed in the example.
 
 ```jsx
 import React, { useState } from 'react';
 import { Accordion, InfoTable, Row } from '@moneypensionservice/directories';
 
-const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus, sapien id euismod suscipit, felis massa gravida lorem, a lacinia ipsum ipsum a neque. Cras nec pulvinar ligula. Pellentesque sollicitudin, nibh non ultricies ultrices, nulla eros tristique ligula, quis bibendum metus quam congue diam. Aenean tincidunt, purus eu mattis aliquam, mauris elit rhoncus lectus, at venenatis diam urna at turpis. Nam tempor, nisl et dignissim finibus, leo diam scelerisque est, eget rutrum risus sapien quis massa. Praesent condimentum ex vitae tincidunt eleifend. Nunc vehicula tellus ut nisi laoreet vulputate. Fusce luctus dui eu scelerisque euismod. Quisque aliquet lorem egestas elit faucibus commodo. In dictum at lectus ac auctor.";
+const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus, sapien id euismod suscipit, felis massa gravida lorem, a lacinia ipsum ipsum a neque. Cras nec pulvinar ligula.";
 
 const [activeIndex, changeIndex] = useState(0);
 
@@ -16,7 +21,7 @@ const handleClick = (current) => {
 <Row direction="column">
   <Accordion 
     text={lorem} 
-    title="Outside"
+    title="Outside controlled state"
     btnClass="customClass" />
   <Accordion 
     text={lorem + lorem + lorem} 

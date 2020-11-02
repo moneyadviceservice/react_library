@@ -4,7 +4,7 @@ exports[`<Formfield /> Snapshots should match snapshot with legend prop and chil
 <div>
   <fieldset
     aria-label="example"
-    class="StyledFormfield-yeky1l-0 kIEUKv"
+    class="styledCol__ColWrapper-sc-1mivnjm-0 fhguMU StyledFormfield-yeky1l-0 kIEUKv"
   >
     <legend
       class="StyledFormfield__Legend-yeky1l-1 bhMqHd"
