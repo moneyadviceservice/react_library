@@ -9,32 +9,32 @@ export default function() {
   const typography = {
     fontFace: css`
       @font-face {
-        font-family: 'Museo Sans';
+        font-family: 'Times';
         font-style: normal;
         font-weight: 300;
         src: url(${MuseoSans300}) format('woff');
       }
       @font-face {
-        font-family: 'Museo Sans';
+        font-family: 'Times';
         font-style: normal;
         font-weight: 500;
         src: url(${MuseoSans500}) format('woff');
       }
       @font-face {
-        font-family: 'Museo Sans';
+        font-family: 'Times';
         font-style: normal;
         font-weight: 700;
         src: url(${MuseoSans700}) format('woff');
       }
       @font-face {
-        font-family: 'Museo Sans';
+        font-family: 'Times';
         font-style: normal;
         font-weight: 900;
         src: url(${MuseoSlab900}) format('woff');
       }
     `,
     fontFamily: css`
-      font-family: 'Museo Sans', sans-serif;
+      font-family: 'Times', sans-serif;
     `,
     fontLighter: 300,
     fontLight: 400,
