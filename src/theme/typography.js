@@ -1,40 +1,40 @@
 import { css } from 'styled-components'
 // fonts
-import MuseoSans300 from '../assets/Fonts/MuseoSans300.woff'
-import MuseoSans500 from '../assets/Fonts/MuseoSans500.woff'
-import MuseoSans700 from '../assets/Fonts/MuseoSans700.woff'
-import MuseoSlab900 from '../assets/Fonts/MuseoSlab900.woff'
+import Roobert300 from '../assets/Fonts/RoobertRegular.woff'
+import Roobert500 from '../assets/Fonts/RoobertTWHINTRegular.woff'
+import Roobert700 from '../assets/Fonts/RoobertTWHINTSemiBold.woff'
+import Roobert900 from '../assets/Fonts/RoobertTWHINTBold.woff'
 
 export default function() {
   const typography = {
     fontFace: css`
       @font-face {
-        font-family: 'Museo Sans';
+        font-family: 'Roobert';
         font-style: normal;
         font-weight: 300;
-        src: url(${MuseoSans300}) format('woff');
+        src: url(${Roobert300}) format('woff');
       }
       @font-face {
-        font-family: 'Museo Sans';
+        font-family: 'Roobert';
         font-style: normal;
         font-weight: 500;
-        src: url(${MuseoSans500}) format('woff');
+        src: url(${Roobert500}) format('woff');
       }
       @font-face {
-        font-family: 'Museo Sans';
+        font-family: 'Roobert';
         font-style: normal;
         font-weight: 700;
-        src: url(${MuseoSans700}) format('woff');
+        src: url(${Roobert700}) format('woff');
       }
       @font-face {
-        font-family: 'Museo Sans';
+        font-family: 'Roobert';
         font-style: normal;
         font-weight: 900;
-        src: url(${MuseoSlab900}) format('woff');
+        src: url(${Roobert900}) format('woff');
       }
     `,
     fontFamily: css`
-      font-family: 'Museo Sans', sans-serif;
+      font-family: 'Roobert', sans-serif;
     `,
     fontLighter: 300,
     fontLight: 400,
