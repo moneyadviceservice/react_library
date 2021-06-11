@@ -9,7 +9,7 @@
 
 ---
 ### Font Family
-**Museo Sans** is used in this library and is based on the well-known Museo. It is a sturdy, low contrast, geometric, highly legible sans serif typeface very well suited for any display and text use.
+**Roobert** is used in this library.
 
 ```jsx
 import { Paragraph as P } from '@moneypensionservice/directories';
