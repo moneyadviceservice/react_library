@@ -99,7 +99,7 @@ const CompanyCard = ({
           {/** Buttons */}
           {!online && <Info>{lng.getInTouch.noInfo}</Info>}
           {phone && (
-            <CardButton href={`tel:${phone}`}>
+            <CardButton href={`tel:${phone}`} target="_blank">
               <PhoneIcon />
               {phone}
             </CardButton>
@@ -111,7 +111,7 @@ const CompanyCard = ({
             </CardButton>
           )}
           {email && (
-            <CardButton href={`mailto:${email}`}>
+            <CardButton href={`mailto:${email}`} target="_blank">
               <EnvelopeIcon />
               {lng.getInTouch.email}
             </CardButton>
