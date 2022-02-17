@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import { breakpoints, dimensions, isBrowserIE11 } from '../constants'
+import { breakpoints, dimensions } from '../constants'
 import { breakpointStyle } from './responsive'
 
 /**
@@ -10,15 +10,13 @@ import { breakpointStyle } from './responsive'
  */
 export const flexStyle = sizeProp => {
   if (typeof sizeProp === 'number') {
-    // IE11 fix
-    if(isBrowserIE11) {
-        return css`
-        flex-basis: auto;
-        width: ${(sizeProp / 12) * 100}%;
-      `
-    }
+    // IE11 media query - flex-basis fix: auto and width
     return css`
       flex-basis: ${(sizeProp / 12) * 100}%;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        flex-basis: auto;
+        width: ${(sizeProp / 12) * 100}%;
+      }
     `
   } else if (sizeProp === 'auto') {
     return css`
@@ -28,19 +26,15 @@ export const flexStyle = sizeProp => {
   } else {
     return dimensions.map(d => {
       if (breakpoints[d] && sizeProp[d] && sizeProp[d] !== 'auto') {
-        // IE11 fix
-        if(isBrowserIE11) {
-          return css`
-            ${breakpointStyle(
-              breakpoints[d],
-              `flex-basis: auto; width: ${(sizeProp[d] / 12) * 100}%;`
-            )}
-          `
-        }
+        // IE11 media query - flex-basis fix: auto and width
         return css`
           ${breakpointStyle(
             breakpoints[d],
-            `flex-basis: ${(sizeProp[d] / 12) * 100}%;`
+            `flex-basis: ${(sizeProp[d] / 12) * 100}%;
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+              flex-basis: auto; width: ${(sizeProp[d] / 12) * 100}%;
+            }
+            `
           )}
         `
       } else if (breakpoints[d] && sizeProp[d] === 'auto') {
