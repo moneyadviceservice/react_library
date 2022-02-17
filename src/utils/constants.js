@@ -26,5 +26,3 @@ export const SPACING_SIZES = [
   'xlarge',
 ]
 
-// detect IE11 only browsers
-export const isBrowserIE11 = !!window.MSInputMethodContext && !!document.documentMode;
